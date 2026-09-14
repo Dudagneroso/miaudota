@@ -1,55 +1,36 @@
-# Prerequisites
-*.d
+## Pastas de build
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+## Pasta de configurações do Visual Studio
+.vs/
 
-# Linker output
-*.ilk
-*.map
-*.exp
+## Arquivos de usuário (configurações pessoais, não do projeto)
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
 
-# Precompiled Headers
-*.gch
-*.pch
+## Arquivos de cache e temporários
+*.cache
+*.tmp
+*.log
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+## NuGet
+packages/
+*.nupkg
 
-# Shared objects (inc. Windows DLLs)
+## Arquivos de build do MSBuild
 *.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
 *.pdb
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+## ReSharper (caso use)
+_ReSharper*/
+*.[Rr]e[Ss]harper
 
-# debug information files
-*.dwo
+## Arquivos de teste
+TestResults/

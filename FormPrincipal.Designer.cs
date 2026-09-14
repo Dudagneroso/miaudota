@@ -1,0 +1,128 @@
+﻿namespace miaudota
+{
+    partial class FormPrincipal
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlConteudo = new System.Windows.Forms.Panel();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.btnConsulta = new System.Windows.Forms.Button();
+            this.btnCadastroGato = new System.Windows.Forms.Button();
+            this.btnCadastroTutor = new System.Windows.Forms.Button();
+            this.pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pnlMenu
+            // 
+            this.pnlMenu.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlMenu.Controls.Add(this.btnCadastroTutor);
+            this.pnlMenu.Controls.Add(this.btnCadastroGato);
+            this.pnlMenu.Controls.Add(this.btnConsulta);
+            this.pnlMenu.Controls.Add(this.pbLogo);
+            this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(200, 561);
+            this.pnlMenu.TabIndex = 0;
+            // 
+            // pnlConteudo
+            // 
+            this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlConteudo.Location = new System.Drawing.Point(200, 0);
+            this.pnlConteudo.Name = "pnlConteudo";
+            this.pnlConteudo.Size = new System.Drawing.Size(600, 561);
+            this.pnlConteudo.TabIndex = 1;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pbLogo.Image = global::miaudota.Properties.Resources.logoSemFundo2;
+            this.pbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(200, 50);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 2;
+            this.pbLogo.TabStop = false;
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConsulta.Location = new System.Drawing.Point(0, 50);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(200, 23);
+            this.btnConsulta.TabIndex = 3;
+            this.btnConsulta.Text = "Consultar Gatos";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            // 
+            // btnCadastroGato
+            // 
+            this.btnCadastroGato.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCadastroGato.Location = new System.Drawing.Point(0, 73);
+            this.btnCadastroGato.Name = "btnCadastroGato";
+            this.btnCadastroGato.Size = new System.Drawing.Size(200, 23);
+            this.btnCadastroGato.TabIndex = 4;
+            this.btnCadastroGato.Text = "Cadastrar Gato";
+            this.btnCadastroGato.UseVisualStyleBackColor = true;
+            // 
+            // btnCadastroTutor
+            // 
+            this.btnCadastroTutor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCadastroTutor.Location = new System.Drawing.Point(0, 96);
+            this.btnCadastroTutor.Name = "btnCadastroTutor";
+            this.btnCadastroTutor.Size = new System.Drawing.Size(200, 23);
+            this.btnCadastroTutor.TabIndex = 5;
+            this.btnCadastroTutor.Text = "Cadastrar Tutor e Adoção";
+            this.btnCadastroTutor.UseVisualStyleBackColor = true;
+            // 
+            // FormPrincipal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 561);
+            this.Controls.Add(this.pnlConteudo);
+            this.Controls.Add(this.pnlMenu);
+            this.Name = "FormPrincipal";
+            this.Text = "FormPrincipal";
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
+            this.pnlMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.Panel pnlConteudo;
+        private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Button btnCadastroGato;
+        private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.Button btnCadastroTutor;
+    }
+}
