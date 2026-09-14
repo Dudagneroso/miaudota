@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlConteudo = new System.Windows.Forms.Panel();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnConsulta = new System.Windows.Forms.Button();
-            this.btnCadastroGato = new System.Windows.Forms.Button();
             this.btnCadastroTutor = new System.Windows.Forms.Button();
+            this.btnCadastroGato = new System.Windows.Forms.Button();
+            this.btnConsulta = new System.Windows.Forms.Button();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.pnlConteudo = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -48,16 +48,38 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(200, 561);
+            this.pnlMenu.Size = new System.Drawing.Size(200, 656);
             this.pnlMenu.TabIndex = 0;
             // 
-            // pnlConteudo
+            // btnCadastroTutor
             // 
-            this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlConteudo.Location = new System.Drawing.Point(200, 0);
-            this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(600, 561);
-            this.pnlConteudo.TabIndex = 1;
+            this.btnCadastroTutor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCadastroTutor.Location = new System.Drawing.Point(0, 96);
+            this.btnCadastroTutor.Name = "btnCadastroTutor";
+            this.btnCadastroTutor.Size = new System.Drawing.Size(200, 23);
+            this.btnCadastroTutor.TabIndex = 5;
+            this.btnCadastroTutor.Text = "Cadastrar Tutor e Adoção";
+            this.btnCadastroTutor.UseVisualStyleBackColor = true;
+            // 
+            // btnCadastroGato
+            // 
+            this.btnCadastroGato.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCadastroGato.Location = new System.Drawing.Point(0, 73);
+            this.btnCadastroGato.Name = "btnCadastroGato";
+            this.btnCadastroGato.Size = new System.Drawing.Size(200, 23);
+            this.btnCadastroGato.TabIndex = 4;
+            this.btnCadastroGato.Text = "Cadastrar Gato";
+            this.btnCadastroGato.UseVisualStyleBackColor = true;
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConsulta.Location = new System.Drawing.Point(0, 50);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(200, 23);
+            this.btnConsulta.TabIndex = 3;
+            this.btnConsulta.Text = "Consultar Gatos";
+            this.btnConsulta.UseVisualStyleBackColor = true;
             // 
             // pbLogo
             // 
@@ -70,41 +92,19 @@
             this.pbLogo.TabIndex = 2;
             this.pbLogo.TabStop = false;
             // 
-            // btnConsulta
+            // pnlConteudo
             // 
-            this.btnConsulta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConsulta.Location = new System.Drawing.Point(0, 50);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(200, 23);
-            this.btnConsulta.TabIndex = 3;
-            this.btnConsulta.Text = "Consultar Gatos";
-            this.btnConsulta.UseVisualStyleBackColor = true;
-            // 
-            // btnCadastroGato
-            // 
-            this.btnCadastroGato.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCadastroGato.Location = new System.Drawing.Point(0, 73);
-            this.btnCadastroGato.Name = "btnCadastroGato";
-            this.btnCadastroGato.Size = new System.Drawing.Size(200, 23);
-            this.btnCadastroGato.TabIndex = 4;
-            this.btnCadastroGato.Text = "Cadastrar Gato";
-            this.btnCadastroGato.UseVisualStyleBackColor = true;
-            // 
-            // btnCadastroTutor
-            // 
-            this.btnCadastroTutor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCadastroTutor.Location = new System.Drawing.Point(0, 96);
-            this.btnCadastroTutor.Name = "btnCadastroTutor";
-            this.btnCadastroTutor.Size = new System.Drawing.Size(200, 23);
-            this.btnCadastroTutor.TabIndex = 5;
-            this.btnCadastroTutor.Text = "Cadastrar Tutor e Adoção";
-            this.btnCadastroTutor.UseVisualStyleBackColor = true;
+            this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlConteudo.Location = new System.Drawing.Point(200, 0);
+            this.pnlConteudo.Name = "pnlConteudo";
+            this.pnlConteudo.Size = new System.Drawing.Size(600, 656);
+            this.pnlConteudo.TabIndex = 1;
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 561);
+            this.ClientSize = new System.Drawing.Size(800, 656);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Name = "FormPrincipal";
