@@ -17,12 +17,15 @@ namespace miaudota
             InitializeComponent();
 
             List<Gato> listaDeGatos = RepositorioGatosFake.ObterTodos();
+            
+            int indice = 0;
 
             foreach (Gato gatoAtual in listaDeGatos)
             {
                 ucCartaoGato cartao = new ucCartaoGato();
                 cartao.CarregarDados(gatoAtual);
-                flpGatos.Controls.Add(cartao);
+                tlpGatos.Controls.Add(cartao, indice % 3, indice / 3);
+                indice++;
             }
         }
     }

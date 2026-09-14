@@ -28,30 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flpGatos = new System.Windows.Forms.FlowLayoutPanel();
+            this.tlpGatos = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
-            // flpGatos
+            // tlpGatos
             // 
-            this.flpGatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpGatos.Location = new System.Drawing.Point(0, 0);
-            this.flpGatos.Name = "flpGatos";
-            this.flpGatos.Size = new System.Drawing.Size(516, 401);
-            this.flpGatos.TabIndex = 0;
+            this.tlpGatos.ColumnCount = 3;
+            this.tlpGatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.41177F));
+            this.tlpGatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.58823F));
+            this.tlpGatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
+            this.tlpGatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpGatos.Location = new System.Drawing.Point(0, 0);
+            this.tlpGatos.Name = "tlpGatos";
+            this.tlpGatos.RowCount = 3;
+            this.tlpGatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.30769F));
+            this.tlpGatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.46154F));
+            this.tlpGatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.38462F));
+            this.tlpGatos.Size = new System.Drawing.Size(640, 650);
+            this.tlpGatos.TabIndex = 0;
             // 
             // ucConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flpGatos);
+            this.Controls.Add(this.tlpGatos);
             this.Name = "ucConsulta";
-            this.Size = new System.Drawing.Size(516, 401);
+            this.Size = new System.Drawing.Size(640, 650);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flpGatos;
+        private System.Windows.Forms.TableLayoutPanel tlpGatos;
     }
 }

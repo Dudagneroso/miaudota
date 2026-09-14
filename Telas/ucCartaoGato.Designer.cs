@@ -50,7 +50,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(3, 143);
+            this.lblNome.Location = new System.Drawing.Point(3, 152);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 1;
@@ -59,7 +59,7 @@
             // lblMicrochip
             // 
             this.lblMicrochip.AutoSize = true;
-            this.lblMicrochip.Location = new System.Drawing.Point(3, 156);
+            this.lblMicrochip.Location = new System.Drawing.Point(3, 165);
             this.lblMicrochip.Name = "lblMicrochip";
             this.lblMicrochip.Size = new System.Drawing.Size(53, 13);
             this.lblMicrochip.TabIndex = 2;
@@ -68,7 +68,7 @@
             // lblIdade
             // 
             this.lblIdade.AutoSize = true;
-            this.lblIdade.Location = new System.Drawing.Point(4, 169);
+            this.lblIdade.Location = new System.Drawing.Point(4, 178);
             this.lblIdade.Name = "lblIdade";
             this.lblIdade.Size = new System.Drawing.Size(34, 13);
             this.lblIdade.TabIndex = 3;
@@ -77,7 +77,7 @@
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(3, 182);
+            this.lblSexo.Location = new System.Drawing.Point(3, 191);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(31, 13);
             this.lblSexo.TabIndex = 4;
@@ -86,7 +86,7 @@
             // lblPelagem
             // 
             this.lblPelagem.AutoSize = true;
-            this.lblPelagem.Location = new System.Drawing.Point(4, 195);
+            this.lblPelagem.Location = new System.Drawing.Point(3, 204);
             this.lblPelagem.Name = "lblPelagem";
             this.lblPelagem.Size = new System.Drawing.Size(48, 13);
             this.lblPelagem.TabIndex = 5;
@@ -96,6 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.lblPelagem);
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.lblIdade);
@@ -103,7 +104,7 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.pbFoto);
             this.Name = "ucCartaoGato";
-            this.Size = new System.Drawing.Size(188, 220);
+            this.Size = new System.Drawing.Size(188, 231);
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
