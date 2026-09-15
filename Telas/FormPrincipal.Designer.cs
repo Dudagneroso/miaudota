@@ -48,7 +48,7 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(200, 746);
+            this.pnlMenu.Size = new System.Drawing.Size(200, 770);
             this.pnlMenu.TabIndex = 0;
             // 
             // btnCadastroTutor
@@ -104,14 +104,14 @@
             this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlConteudo.Location = new System.Drawing.Point(200, 0);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(640, 746);
+            this.pnlConteudo.Size = new System.Drawing.Size(640, 770);
             this.pnlConteudo.TabIndex = 1;
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 746);
+            this.ClientSize = new System.Drawing.Size(840, 770);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Name = "FormPrincipal";

@@ -23,6 +23,8 @@ namespace miaudota
             foreach (Gato gatoAtual in listaDeGatos)
             {
                 ucCartaoGato cartao = new ucCartaoGato();
+
+                cartao.Dock = DockStyle.Fill;
                 cartao.CarregarDados(gatoAtual);
                 tlpGatos.Controls.Add(cartao, indice % 3, indice / 3);
                 indice++;
