@@ -74,6 +74,7 @@
             this.btnCadastroGato.TabIndex = 4;
             this.btnCadastroGato.Text = "Cadastrar Gato";
             this.btnCadastroGato.UseVisualStyleBackColor = true;
+            this.btnCadastroGato.Click += new System.EventHandler(this.btnCadastroGato_Click);
             // 
             // btnConsulta
             // 

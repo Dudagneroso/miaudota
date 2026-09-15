@@ -74,6 +74,12 @@
     <Compile Include="Telas\ucConsulta.Designer.cs">
       <DependentUpon>ucConsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucCadastroGato.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucCadastroGato.Designer.cs">
+      <DependentUpon>ucCadastroGato.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Telas\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\ucConsulta.resx">
       <DependentUpon>ucConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucCadastroGato.resx">
+      <DependentUpon>ucCadastroGato.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

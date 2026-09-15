@@ -27,6 +27,12 @@ namespace miaudota
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             AbrirTela(new ucConsulta());
+
+        }
+
+        private void btnCadastroGato_Click(object sender, EventArgs e)
+        {
+            AbrirTela(new ucCadastroGato());
         }
     }
 }

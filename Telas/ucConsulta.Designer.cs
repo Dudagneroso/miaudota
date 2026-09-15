@@ -52,9 +52,7 @@
             this.cbxFiltro.FormattingEnabled = true;
             this.cbxFiltro.Items.AddRange(new object[] {
             "Mais recentes",
-            "",
             "Mais tempo na ONG",
-            "",
             "Idade"});
             this.cbxFiltro.Location = new System.Drawing.Point(455, 28);
             this.cbxFiltro.Name = "cbxFiltro";
