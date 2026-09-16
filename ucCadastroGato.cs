@@ -12,9 +12,19 @@ namespace miaudota
 {
     public partial class ucCadastroGato : UserControl
     {
+        string caminhoFotoSelecionada = string.Empty;
         public ucCadastroGato()
         {
             InitializeComponent();
+        }
+
+        private void btnEscolherFoto_Click(object sender, EventArgs e)
+        {
+            if (ofdFoto.ShowDialog() == DialogResult.OK)
+            {
+                pbFotoGato.Image = Image.FromFile(ofdFoto.FileName);
+                caminhoFotoSelecionada = ofdFoto.FileName;
+            }
         }
     }
 }
