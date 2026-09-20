@@ -32,8 +32,8 @@
             this.btnCadastroTutor = new System.Windows.Forms.Button();
             this.btnCadastroGato = new System.Windows.Forms.Button();
             this.btnConsulta = new System.Windows.Forms.Button();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnlConteudo = new System.Windows.Forms.Panel();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,7 @@
             this.btnCadastroTutor.TabIndex = 5;
             this.btnCadastroTutor.Text = "Cadastrar Tutor e Adoção";
             this.btnCadastroTutor.UseVisualStyleBackColor = true;
+            this.btnCadastroTutor.Click += new System.EventHandler(this.btnCadastroTutor_Click);
             // 
             // btnCadastroGato
             // 
@@ -87,6 +88,16 @@
             this.btnConsulta.TabIndex = 3;
             this.btnConsulta.Text = "Consultar Gatos";
             this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
+            // pnlConteudo
+            // 
+            this.pnlConteudo.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlConteudo.Location = new System.Drawing.Point(200, 0);
+            this.pnlConteudo.Name = "pnlConteudo";
+            this.pnlConteudo.Size = new System.Drawing.Size(640, 770);
+            this.pnlConteudo.TabIndex = 1;
             // 
             // pbLogo
             // 
@@ -98,15 +109,7 @@
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 2;
             this.pbLogo.TabStop = false;
-            // 
-            // pnlConteudo
-            // 
-            this.pnlConteudo.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlConteudo.Location = new System.Drawing.Point(200, 0);
-            this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(640, 770);
-            this.pnlConteudo.TabIndex = 1;
+            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
             // 
             // FormPrincipal
             // 

@@ -52,11 +52,11 @@
             this.txtDeficiencias = new System.Windows.Forms.TextBox();
             this.lblObservacao = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pbFotoGato = new System.Windows.Forms.PictureBox();
             this.lblEscolherFoto = new System.Windows.Forms.Label();
             this.btnEscolherFoto = new System.Windows.Forms.Button();
             this.ofdFoto = new System.Windows.Forms.OpenFileDialog();
             this.btnSalvarGato = new System.Windows.Forms.Button();
+            this.pbFotoGato = new System.Windows.Forms.PictureBox();
             this.gbSexo.SuspendLayout();
             this.gbCastracao.SuspendLayout();
             this.gbVacinas.SuspendLayout();
@@ -88,7 +88,7 @@
             this.txtMicrochip.Location = new System.Drawing.Point(20, 72);
             this.txtMicrochip.Multiline = true;
             this.txtMicrochip.Name = "txtMicrochip";
-            this.txtMicrochip.Size = new System.Drawing.Size(520, 25);
+            this.txtMicrochip.Size = new System.Drawing.Size(538, 25);
             this.txtMicrochip.TabIndex = 2;
             // 
             // lblNome
@@ -105,7 +105,7 @@
             this.txtNome.Location = new System.Drawing.Point(20, 122);
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(520, 25);
+            this.txtNome.Size = new System.Drawing.Size(538, 25);
             this.txtNome.TabIndex = 4;
             // 
             // gbSexo
@@ -114,7 +114,7 @@
             this.gbSexo.Controls.Add(this.rbMacho);
             this.gbSexo.Location = new System.Drawing.Point(21, 162);
             this.gbSexo.Name = "gbSexo";
-            this.gbSexo.Size = new System.Drawing.Size(519, 75);
+            this.gbSexo.Size = new System.Drawing.Size(537, 75);
             this.gbSexo.TabIndex = 6;
             this.gbSexo.TabStop = false;
             this.gbSexo.Text = "Sexo:";
@@ -167,7 +167,7 @@
             "Bicolor"});
             this.cbPelagem.Location = new System.Drawing.Point(20, 267);
             this.cbPelagem.Name = "cbPelagem";
-            this.cbPelagem.Size = new System.Drawing.Size(520, 24);
+            this.cbPelagem.Size = new System.Drawing.Size(538, 24);
             this.cbPelagem.TabIndex = 8;
             // 
             // lblDataNascimento
@@ -185,7 +185,7 @@
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataNascimento.Location = new System.Drawing.Point(21, 317);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(519, 20);
+            this.dtpDataNascimento.Size = new System.Drawing.Size(537, 20);
             this.dtpDataNascimento.TabIndex = 10;
             // 
             // lblLarTemporario
@@ -202,7 +202,7 @@
             this.txtLarTemporario.Location = new System.Drawing.Point(20, 371);
             this.txtLarTemporario.Multiline = true;
             this.txtLarTemporario.Name = "txtLarTemporario";
-            this.txtLarTemporario.Size = new System.Drawing.Size(520, 25);
+            this.txtLarTemporario.Size = new System.Drawing.Size(538, 25);
             this.txtLarTemporario.TabIndex = 12;
             // 
             // gbCastracao
@@ -211,7 +211,7 @@
             this.gbCastracao.Controls.Add(this.rbCastrado);
             this.gbCastracao.Location = new System.Drawing.Point(20, 415);
             this.gbCastracao.Name = "gbCastracao";
-            this.gbCastracao.Size = new System.Drawing.Size(520, 72);
+            this.gbCastracao.Size = new System.Drawing.Size(538, 72);
             this.gbCastracao.TabIndex = 13;
             this.gbCastracao.TabStop = false;
             this.gbCastracao.Text = "Já foi Castrado?";
@@ -244,7 +244,7 @@
             this.gbVacinas.Controls.Add(this.rbVacinaSim);
             this.gbVacinas.Location = new System.Drawing.Point(20, 511);
             this.gbVacinas.Name = "gbVacinas";
-            this.gbVacinas.Size = new System.Drawing.Size(520, 72);
+            this.gbVacinas.Size = new System.Drawing.Size(538, 72);
             this.gbVacinas.TabIndex = 14;
             this.gbVacinas.TabStop = false;
             this.gbVacinas.Text = "Possui vacinas em dia?";
@@ -285,7 +285,7 @@
             this.txtDeficiencias.Location = new System.Drawing.Point(20, 615);
             this.txtDeficiencias.Multiline = true;
             this.txtDeficiencias.Name = "txtDeficiencias";
-            this.txtDeficiencias.Size = new System.Drawing.Size(520, 25);
+            this.txtDeficiencias.Size = new System.Drawing.Size(538, 25);
             this.txtDeficiencias.TabIndex = 16;
             // 
             // lblObservacao
@@ -303,17 +303,8 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(520, 79);
+            this.textBox1.Size = new System.Drawing.Size(538, 79);
             this.textBox1.TabIndex = 18;
-            // 
-            // pbFotoGato
-            // 
-            this.pbFotoGato.Location = new System.Drawing.Point(20, 777);
-            this.pbFotoGato.Name = "pbFotoGato";
-            this.pbFotoGato.Size = new System.Drawing.Size(197, 102);
-            this.pbFotoGato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbFotoGato.TabIndex = 19;
-            this.pbFotoGato.TabStop = false;
             // 
             // lblEscolherFoto
             // 
@@ -358,6 +349,15 @@
             this.btnSalvarGato.Text = "Salvar";
             this.btnSalvarGato.UseVisualStyleBackColor = false;
             // 
+            // pbFotoGato
+            // 
+            this.pbFotoGato.Location = new System.Drawing.Point(20, 777);
+            this.pbFotoGato.Name = "pbFotoGato";
+            this.pbFotoGato.Size = new System.Drawing.Size(197, 102);
+            this.pbFotoGato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFotoGato.TabIndex = 19;
+            this.pbFotoGato.TabStop = false;
+            // 
             // ucCadastroGato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,7 +386,7 @@
             this.Controls.Add(this.lblMicrochip);
             this.Controls.Add(this.lblTituloCadastroGato);
             this.Name = "ucCadastroGato";
-            this.Size = new System.Drawing.Size(603, 979);
+            this.Size = new System.Drawing.Size(598, 979);
             this.gbSexo.ResumeLayout(false);
             this.gbSexo.PerformLayout();
             this.gbCastracao.ResumeLayout(false);
