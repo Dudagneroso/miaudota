@@ -58,7 +58,7 @@
             this.rbVacinaNao = new System.Windows.Forms.RadioButton();
             this.gbVacinas = new System.Windows.Forms.GroupBox();
             this.pnlCadastroGato = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
             this.lblSatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoGato)).BeginInit();
             this.gbSexo.SuspendLayout();
@@ -378,7 +378,7 @@
             // 
             this.pnlCadastroGato.BackColor = System.Drawing.Color.White;
             this.pnlCadastroGato.Controls.Add(this.lblSatus);
-            this.pnlCadastroGato.Controls.Add(this.comboBox1);
+            this.pnlCadastroGato.Controls.Add(this.cbStatus);
             this.pnlCadastroGato.Controls.Add(this.btnEscolherFoto);
             this.pnlCadastroGato.Controls.Add(this.btnSalvarGato);
             this.pnlCadastroGato.Controls.Add(this.lblEscolherFoto);
@@ -388,18 +388,18 @@
             this.pnlCadastroGato.Size = new System.Drawing.Size(575, 1009);
             this.pnlCadastroGato.TabIndex = 23;
             // 
-            // comboBox1
+            // cbStatus
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Items.AddRange(new object[] {
             "Disponível",
             "Adotado"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 726);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(538, 23);
-            this.comboBox1.TabIndex = 23;
+            this.cbStatus.Location = new System.Drawing.Point(12, 726);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(538, 23);
+            this.cbStatus.TabIndex = 23;
             // 
             // lblSatus
             // 
@@ -483,6 +483,6 @@
         private System.Windows.Forms.GroupBox gbVacinas;
         private System.Windows.Forms.Panel pnlCadastroGato;
         private System.Windows.Forms.Label lblSatus;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbStatus;
     }
 }
