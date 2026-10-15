@@ -55,7 +55,7 @@
             this.pnlFiltros.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlFiltros.Location = new System.Drawing.Point(0, 0);
             this.pnlFiltros.Name = "pnlFiltros";
-            this.pnlFiltros.Size = new System.Drawing.Size(618, 111);
+            this.pnlFiltros.Size = new System.Drawing.Size(637, 111);
             this.pnlFiltros.TabIndex = 2;
             // 
             // lblConsultaTutorSubtitulo
@@ -75,7 +75,7 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuscar.Location = new System.Drawing.Point(524, 71);
+            this.btnBuscar.Location = new System.Drawing.Point(534, 71);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(76, 25);
             this.btnBuscar.TabIndex = 24;
@@ -87,7 +87,7 @@
             this.txtPesquisar.Location = new System.Drawing.Point(88, 71);
             this.txtPesquisar.Multiline = true;
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(430, 25);
+            this.txtPesquisar.Size = new System.Drawing.Size(440, 25);
             this.txtPesquisar.TabIndex = 6;
             // 
             // lblPesquisar
@@ -118,7 +118,7 @@
             this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlConteudo.Location = new System.Drawing.Point(0, 0);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(618, 799);
+            this.pnlConteudo.Size = new System.Drawing.Size(637, 799);
             this.pnlConteudo.TabIndex = 3;
             // 
             // lblQtdTutores
@@ -170,7 +170,7 @@
             this.dgvTutores.ReadOnly = true;
             this.dgvTutores.RowHeadersVisible = false;
             this.dgvTutores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTutores.Size = new System.Drawing.Size(573, 628);
+            this.dgvTutores.Size = new System.Drawing.Size(583, 628);
             this.dgvTutores.TabIndex = 0;
             // 
             // ucConsultaTutor
@@ -180,7 +180,7 @@
             this.Controls.Add(this.pnlFiltros);
             this.Controls.Add(this.pnlConteudo);
             this.Name = "ucConsultaTutor";
-            this.Size = new System.Drawing.Size(618, 799);
+            this.Size = new System.Drawing.Size(637, 799);
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
             this.pnlConteudo.ResumeLayout(false);

@@ -78,7 +78,7 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuscar.Location = new System.Drawing.Point(524, 71);
+            this.btnBuscar.Location = new System.Drawing.Point(534, 71);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(76, 25);
             this.btnBuscar.TabIndex = 24;
@@ -89,7 +89,7 @@
             // 
             this.lblFiltrarGato.AutoSize = true;
             this.lblFiltrarGato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltrarGato.Location = new System.Drawing.Point(347, 17);
+            this.lblFiltrarGato.Location = new System.Drawing.Point(357, 17);
             this.lblFiltrarGato.Name = "lblFiltrarGato";
             this.lblFiltrarGato.Size = new System.Drawing.Size(62, 15);
             this.lblFiltrarGato.TabIndex = 7;
@@ -100,7 +100,7 @@
             this.txtPesquisar.Location = new System.Drawing.Point(88, 71);
             this.txtPesquisar.Multiline = true;
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(430, 25);
+            this.txtPesquisar.Size = new System.Drawing.Size(440, 25);
             this.txtPesquisar.TabIndex = 6;
             // 
             // lblPesquisar
@@ -121,7 +121,7 @@
             "Todos",
             "Apenas disponíveis",
             "Apenas adotados"});
-            this.cbFiltroGatos.Location = new System.Drawing.Point(415, 16);
+            this.cbFiltroGatos.Location = new System.Drawing.Point(425, 16);
             this.cbFiltroGatos.Name = "cbFiltroGatos";
             this.cbFiltroGatos.Size = new System.Drawing.Size(185, 21);
             this.cbFiltroGatos.TabIndex = 4;
@@ -186,7 +186,7 @@
             this.dgvGatos.ReadOnly = true;
             this.dgvGatos.RowHeadersVisible = false;
             this.dgvGatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGatos.Size = new System.Drawing.Size(573, 619);
+            this.dgvGatos.Size = new System.Drawing.Size(583, 619);
             this.dgvGatos.TabIndex = 0;
             // 
             // ucConsultaGatos1
