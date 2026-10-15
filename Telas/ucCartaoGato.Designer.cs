@@ -51,7 +51,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(3, 150);
+            this.lblNome.Location = new System.Drawing.Point(7, 143);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(45, 15);
             this.lblNome.TabIndex = 1;
@@ -62,36 +62,36 @@
             this.lblMicrochip.AutoSize = true;
             this.lblMicrochip.Location = new System.Drawing.Point(3, 165);
             this.lblMicrochip.Name = "lblMicrochip";
-            this.lblMicrochip.Size = new System.Drawing.Size(53, 13);
+            this.lblMicrochip.Size = new System.Drawing.Size(71, 13);
             this.lblMicrochip.TabIndex = 2;
-            this.lblMicrochip.Text = "Microchip";
+            this.lblMicrochip.Text = "💉 Microchip:";
             // 
             // lblIdade
             // 
             this.lblIdade.AutoSize = true;
             this.lblIdade.Location = new System.Drawing.Point(4, 178);
             this.lblIdade.Name = "lblIdade";
-            this.lblIdade.Size = new System.Drawing.Size(34, 13);
+            this.lblIdade.Size = new System.Drawing.Size(52, 13);
             this.lblIdade.TabIndex = 3;
-            this.lblIdade.Text = "Idade";
+            this.lblIdade.Text = "🎂 Idade:";
             // 
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
             this.lblSexo.Location = new System.Drawing.Point(3, 191);
             this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(31, 13);
+            this.lblSexo.Size = new System.Drawing.Size(49, 13);
             this.lblSexo.TabIndex = 4;
-            this.lblSexo.Text = "Sexo";
+            this.lblSexo.Text = "🐾 Sexo:";
             // 
             // lblPelagem
             // 
             this.lblPelagem.AutoSize = true;
             this.lblPelagem.Location = new System.Drawing.Point(3, 204);
             this.lblPelagem.Name = "lblPelagem";
-            this.lblPelagem.Size = new System.Drawing.Size(48, 13);
+            this.lblPelagem.Size = new System.Drawing.Size(66, 13);
             this.lblPelagem.TabIndex = 5;
-            this.lblPelagem.Text = "Pelagem";
+            this.lblPelagem.Text = "🚿 Pelagem:";
             // 
             // ucCartaoGato
             // 

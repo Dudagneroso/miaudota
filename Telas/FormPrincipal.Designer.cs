@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnConsultaTutor = new System.Windows.Forms.Button();
             this.btnCadastroTutor = new System.Windows.Forms.Button();
             this.btnCadastroGato = new System.Windows.Forms.Button();
             this.btnConsulta = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnlConteudo = new System.Windows.Forms.Panel();
-            this.btnConsultaTutor = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -53,8 +53,26 @@
             this.pnlMenu.Size = new System.Drawing.Size(200, 770);
             this.pnlMenu.TabIndex = 0;
             // 
+            // btnConsultaTutor
+            // 
+            this.btnConsultaTutor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultaTutor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConsultaTutor.FlatAppearance.BorderSize = 0;
+            this.btnConsultaTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultaTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultaTutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(92)))), ((int)(((byte)(116)))));
+            this.btnConsultaTutor.Location = new System.Drawing.Point(0, 163);
+            this.btnConsultaTutor.Name = "btnConsultaTutor";
+            this.btnConsultaTutor.Size = new System.Drawing.Size(200, 35);
+            this.btnConsultaTutor.TabIndex = 6;
+            this.btnConsultaTutor.Text = "📋 Consultar Tutores";
+            this.btnConsultaTutor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultaTutor.UseVisualStyleBackColor = true;
+            this.btnConsultaTutor.Click += new System.EventHandler(this.btnConsultaTutor_Click);
+            // 
             // btnCadastroTutor
             // 
+            this.btnCadastroTutor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastroTutor.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCadastroTutor.FlatAppearance.BorderSize = 0;
             this.btnCadastroTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -71,6 +89,7 @@
             // 
             // btnCadastroGato
             // 
+            this.btnCadastroGato.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastroGato.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCadastroGato.FlatAppearance.BorderSize = 0;
             this.btnCadastroGato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -87,6 +106,7 @@
             // 
             // btnConsulta
             // 
+            this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsulta.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConsulta.FlatAppearance.BorderSize = 0;
             this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -103,6 +123,7 @@
             // 
             // pbLogo
             // 
+            this.pbLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pbLogo.Image = global::miaudota.Properties.Resources.logoSemFundo2;
             this.pbLogo.Location = new System.Drawing.Point(0, 0);
@@ -121,21 +142,6 @@
             this.pnlConteudo.Name = "pnlConteudo";
             this.pnlConteudo.Size = new System.Drawing.Size(640, 770);
             this.pnlConteudo.TabIndex = 1;
-            // 
-            // btnConsultaTutor
-            // 
-            this.btnConsultaTutor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConsultaTutor.FlatAppearance.BorderSize = 0;
-            this.btnConsultaTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultaTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultaTutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(92)))), ((int)(((byte)(116)))));
-            this.btnConsultaTutor.Location = new System.Drawing.Point(0, 163);
-            this.btnConsultaTutor.Name = "btnConsultaTutor";
-            this.btnConsultaTutor.Size = new System.Drawing.Size(200, 35);
-            this.btnConsultaTutor.TabIndex = 6;
-            this.btnConsultaTutor.Text = "📋 Consultar Tutores";
-            this.btnConsultaTutor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultaTutor.UseVisualStyleBackColor = true;
             // 
             // FormPrincipal
             // 

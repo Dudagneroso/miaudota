@@ -50,5 +50,10 @@ namespace miaudota
         {
             AbrirTela(new ucConsulta());
         }
+
+        private void btnConsultaTutor_Click(object sender, EventArgs e)
+        {
+            AbrirTela(new ucConsultaTutor());
+        }
     }
 }

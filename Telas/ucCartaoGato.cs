@@ -21,10 +21,10 @@ namespace miaudota
         public void CarregarDados(Gato gato)
         {
             lblNome.Text = gato.Nome;
-            lblIdade.Text = $"Idade: {gato.Idade}";
-            lblSexo.Text = $"Sexo: {gato.Sexo}";
-            lblPelagem.Text = $"Pelagem: {gato.Pelagem}";
-            lblMicrochip.Text = $"Microchip: {gato.NumeroMicrochip}";
+            lblIdade.Text = $"🎂 Idade: {gato.Idade}";
+            lblSexo.Text = $"🐾 Sexo: {gato.Sexo}";
+            lblPelagem.Text = $"🚿 Pelagem: {gato.Pelagem}";
+            lblMicrochip.Text = $"💉 Microchip: {gato.NumeroMicrochip}";
             string caminho = gato.CaminhoFoto;
 
             if (string.IsNullOrEmpty(caminho))

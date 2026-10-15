@@ -15,6 +15,8 @@ namespace miaudota.Telas
         public ucConsultaGatos1()
         {
             InitializeComponent();
+            dgvGatos.DataSource = RepositorioGatosFake.ObterTodos();
+            dgvGatos.RowTemplate.Height = 60;
         }
     }
 }

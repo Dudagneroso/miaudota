@@ -92,6 +92,12 @@
     <Compile Include="Telas\ucConsultaGatos1.Designer.cs">
       <DependentUpon>ucConsultaGatos1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\ucConsultaTutor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\ucConsultaTutor.Designer.cs">
+      <DependentUpon>ucConsultaTutor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Telas\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\ucConsultaGatos1.resx">
       <DependentUpon>ucConsultaGatos1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ucConsultaTutor.resx">
+      <DependentUpon>ucConsultaTutor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
