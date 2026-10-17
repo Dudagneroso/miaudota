@@ -51,7 +51,7 @@
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.lblGatoSelecionado = new System.Windows.Forms.Label();
             this.lblVinculoAdocao = new System.Windows.Forms.Label();
-            this.txtEndereço = new System.Windows.Forms.TextBox();
+            this.txtEndereco = new System.Windows.Forms.TextBox();
             this.lblEndereco = new System.Windows.Forms.Label();
             this.lblCadastroTutor = new System.Windows.Forms.Label();
             this.pnlCadastroTutor = new System.Windows.Forms.Panel();
@@ -298,13 +298,13 @@
             this.lblVinculoAdocao.TabIndex = 26;
             this.lblVinculoAdocao.Text = "Selecione um gato disponível para vincular a este tutor";
             // 
-            // txtEndereço
+            // txtEndereco
             // 
-            this.txtEndereço.Location = new System.Drawing.Point(31, 392);
-            this.txtEndereço.Multiline = true;
-            this.txtEndereço.Name = "txtEndereço";
-            this.txtEndereço.Size = new System.Drawing.Size(538, 25);
-            this.txtEndereço.TabIndex = 28;
+            this.txtEndereco.Location = new System.Drawing.Point(31, 392);
+            this.txtEndereco.Multiline = true;
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Size = new System.Drawing.Size(538, 25);
+            this.txtEndereco.TabIndex = 28;
             // 
             // lblEndereco
             // 
@@ -357,7 +357,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.Controls.Add(this.lblCadastroTutor);
-            this.Controls.Add(this.txtEndereço);
+            this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.lblEndereco);
             this.Controls.Add(this.lblVinculoAdocao);
             this.Controls.Add(this.lblGatoSelecionado);
@@ -412,7 +412,7 @@
         private System.Windows.Forms.Label lblPesquisar;
         private System.Windows.Forms.Label lblGatoSelecionado;
         private System.Windows.Forms.Label lblVinculoAdocao;
-        private System.Windows.Forms.TextBox txtEndereço;
+        private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.Label lblCadastroTutor;
         private System.Windows.Forms.Panel pnlCadastroTutor;

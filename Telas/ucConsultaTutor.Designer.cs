@@ -172,6 +172,7 @@
             this.dgvTutores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTutores.Size = new System.Drawing.Size(583, 628);
             this.dgvTutores.TabIndex = 0;
+            this.dgvTutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTutores_CellClick);
             // 
             // ucConsultaTutor
             // 

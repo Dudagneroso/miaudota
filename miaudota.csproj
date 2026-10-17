@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dados\RepositorioTutoresFake.cs" />
     <Compile Include="Telas\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +99,13 @@
     <Compile Include="Telas\ucConsultaTutor.Designer.cs">
       <DependentUpon>ucConsultaTutor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Tutor.cs" />
+    <Compile Include="Telas\ucEdicaoTutor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\ucEdicaoTutor.Designer.cs">
+      <DependentUpon>ucEdicaoTutor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Telas\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\ucConsultaTutor.resx">
       <DependentUpon>ucConsultaTutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ucEdicaoTutor.resx">
+      <DependentUpon>ucEdicaoTutor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

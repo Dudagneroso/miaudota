@@ -15,6 +15,20 @@ namespace miaudota.Telas
         public ucConsultaTutor()
         {
             InitializeComponent();
+            dgvTutores.DataSource = RepositorioTutoresFake.ObterTodos();
+            dgvTutores.RowTemplate.Height = 60;
+        }
+
+        private void dgvTutores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                ucEdicaoTutor tela = new ucEdicaoTutor();
+                Tutor tutorSelecionado =(Tutor)dgvTutores.Rows[e.RowIndex].DataBoundItem;
+                tela.CarregarTutor(tutorSelecionado);
+                ((FormPrincipal)this.ParentForm).AbrirTela(tela);
+
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ namespace miaudota
             InitializeComponent();
         }
 
-        private void AbrirTela(UserControl tela)
+        public void AbrirTela(UserControl tela)
         {
             tela.Dock = DockStyle.Fill;
             pnlConteudo.Controls.Clear();

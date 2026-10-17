@@ -19,6 +19,7 @@ namespace miaudota.Telas
             dgvGatos.DataSource = RepositorioGatosFake.ObterTodos();
         }
 
+
         private void dgvGatos_SelectionChanged(object sender, EventArgs e)
         {
             lblGatoSelecionado.Text = $"Gato selecionado: {dgvGatos.CurrentRow?.Cells["Nome"].Value} | Microchip: {dgvGatos.CurrentRow?.Cells["NumeroMicrochip"].Value}";
