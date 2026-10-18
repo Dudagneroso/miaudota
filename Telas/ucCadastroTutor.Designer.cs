@@ -318,10 +318,9 @@
             // 
             // lblCadastroTutor
             // 
-            this.lblCadastroTutor.AutoSize = true;
             this.lblCadastroTutor.Location = new System.Drawing.Point(19, 43);
             this.lblCadastroTutor.Name = "lblCadastroTutor";
-            this.lblCadastroTutor.Size = new System.Drawing.Size(190, 13);
+            this.lblCadastroTutor.Size = new System.Drawing.Size(203, 13);
             this.lblCadastroTutor.TabIndex = 29;
             this.lblCadastroTutor.Text = "Dados do responsável pela adoção 👤";
             // 

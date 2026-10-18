@@ -32,11 +32,13 @@
             this.cbxFiltro = new System.Windows.Forms.ComboBox();
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.tlpGatos = new System.Windows.Forms.TableLayoutPanel();
+            this.lblFiltro = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
+            this.pnlTop.Controls.Add(this.lblFiltro);
             this.pnlTop.Controls.Add(this.cbxFiltro);
             this.pnlTop.Controls.Add(this.lblBemVindo);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -63,6 +65,7 @@
             // 
             this.lblBemVindo.AutoSize = true;
             this.lblBemVindo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBemVindo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
             this.lblBemVindo.Location = new System.Drawing.Point(14, 33);
             this.lblBemVindo.Name = "lblBemVindo";
             this.lblBemVindo.Size = new System.Drawing.Size(213, 16);
@@ -85,6 +88,15 @@
             this.tlpGatos.Size = new System.Drawing.Size(640, 604);
             this.tlpGatos.TabIndex = 2;
             // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(452, 12);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(45, 13);
+            this.lblFiltro.TabIndex = 2;
+            this.lblFiltro.Text = "Mostrar:";
+            // 
             // ucConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,5 +116,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpGatos;
         private System.Windows.Forms.ComboBox cbxFiltro;
         private System.Windows.Forms.Label lblBemVindo;
+        private System.Windows.Forms.Label lblFiltro;
     }
 }

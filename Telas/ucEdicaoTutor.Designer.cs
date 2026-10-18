@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.pnlCadastroTutor = new System.Windows.Forms.Panel();
+            this.lblGatosAdotados = new System.Windows.Forms.Label();
             this.pnlNovoGato = new System.Windows.Forms.Panel();
+            this.lblNomeGato = new System.Windows.Forms.Label();
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblGatosDisponiveis = new System.Windows.Forms.Label();
             this.flpGatos = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.lblEmailTutor = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.lblTituloEdicaoTutor = new System.Windows.Forms.Label();
-            this.lblNomeGato = new System.Windows.Forms.Label();
             this.pnlCadastroTutor.SuspendLayout();
             this.pnlNovoGato.SuspendLayout();
             this.SuspendLayout();
@@ -61,9 +61,9 @@
             // pnlCadastroTutor
             // 
             this.pnlCadastroTutor.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlCadastroTutor.Controls.Add(this.lblGatosAdotados);
             this.pnlCadastroTutor.Controls.Add(this.pnlNovoGato);
             this.pnlCadastroTutor.Controls.Add(this.button1);
-            this.pnlCadastroTutor.Controls.Add(this.lblGatosDisponiveis);
             this.pnlCadastroTutor.Controls.Add(this.flpGatos);
             this.pnlCadastroTutor.Controls.Add(this.btnExcluir);
             this.pnlCadastroTutor.Controls.Add(this.lblEmailTutor);
@@ -87,6 +87,16 @@
             this.pnlCadastroTutor.Size = new System.Drawing.Size(583, 928);
             this.pnlCadastroTutor.TabIndex = 31;
             // 
+            // lblGatosAdotados
+            // 
+            this.lblGatosAdotados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGatosAdotados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblGatosAdotados.Location = new System.Drawing.Point(14, 423);
+            this.lblGatosAdotados.Name = "lblGatosAdotados";
+            this.lblGatosAdotados.Size = new System.Drawing.Size(181, 20);
+            this.lblGatosAdotados.TabIndex = 49;
+            this.lblGatosAdotados.Text = "🩵 Gatos Adotados";
+            // 
             // pnlNovoGato
             // 
             this.pnlNovoGato.Controls.Add(this.lblNomeGato);
@@ -97,6 +107,14 @@
             this.pnlNovoGato.Size = new System.Drawing.Size(538, 95);
             this.pnlNovoGato.TabIndex = 48;
             this.pnlNovoGato.Visible = false;
+            // 
+            // lblNomeGato
+            // 
+            this.lblNomeGato.AutoSize = true;
+            this.lblNomeGato.Location = new System.Drawing.Point(1, 66);
+            this.lblNomeGato.Name = "lblNomeGato";
+            this.lblNomeGato.Size = new System.Drawing.Size(0, 13);
+            this.lblNomeGato.TabIndex = 43;
             // 
             // txtMicrochip
             // 
@@ -134,18 +152,6 @@
             this.button1.Text = "Adicionar Gato";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lblGatosDisponiveis
-            // 
-            this.lblGatosDisponiveis.AutoSize = true;
-            this.lblGatosDisponiveis.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblGatosDisponiveis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGatosDisponiveis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
-            this.lblGatosDisponiveis.Location = new System.Drawing.Point(14, 424);
-            this.lblGatosDisponiveis.Name = "lblGatosDisponiveis";
-            this.lblGatosDisponiveis.Size = new System.Drawing.Size(162, 20);
-            this.lblGatosDisponiveis.TabIndex = 46;
-            this.lblGatosDisponiveis.Text = "🩵 Gatos Adotados";
             // 
             // flpGatos
             // 
@@ -348,14 +354,6 @@
             this.lblTituloEdicaoTutor.TabIndex = 32;
             this.lblTituloEdicaoTutor.Text = "Edição de Tutor";
             // 
-            // lblNomeGato
-            // 
-            this.lblNomeGato.AutoSize = true;
-            this.lblNomeGato.Location = new System.Drawing.Point(1, 66);
-            this.lblNomeGato.Name = "lblNomeGato";
-            this.lblNomeGato.Size = new System.Drawing.Size(0, 13);
-            this.lblNomeGato.TabIndex = 43;
-            // 
             // ucEdicaoTutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,11 +394,11 @@
         private System.Windows.Forms.Label lblEmailTutor;
         private System.Windows.Forms.Label lblNomeTutor;
         private System.Windows.Forms.FlowLayoutPanel flpGatos;
-        private System.Windows.Forms.Label lblGatosDisponiveis;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnlNovoGato;
         private System.Windows.Forms.TextBox txtMicrochip;
         private System.Windows.Forms.Label lblMicrochip;
         private System.Windows.Forms.Label lblNomeGato;
+        private System.Windows.Forms.Label lblGatosAdotados;
     }
 }

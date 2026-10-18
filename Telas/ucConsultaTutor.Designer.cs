@@ -124,9 +124,11 @@
             // lblQtdTutores
             // 
             this.lblQtdTutores.AutoSize = true;
+            this.lblQtdTutores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdTutores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(160)))), ((int)(((byte)(180)))));
             this.lblQtdTutores.Location = new System.Drawing.Point(24, 772);
             this.lblQtdTutores.Name = "lblQtdTutores";
-            this.lblQtdTutores.Size = new System.Drawing.Size(54, 13);
+            this.lblQtdTutores.Size = new System.Drawing.Size(65, 13);
             this.lblQtdTutores.TabIndex = 1;
             this.lblQtdTutores.Text = "0 tutor(es)";
             // 

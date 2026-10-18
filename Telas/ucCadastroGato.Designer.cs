@@ -62,6 +62,8 @@
             this.lblSatus = new System.Windows.Forms.Label();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.lblCadastroSubtitulo = new System.Windows.Forms.Label();
+            this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
+            this.lblDataEntrada = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoGato)).BeginInit();
             this.gbSexo.SuspendLayout();
             this.gbCastracao.SuspendLayout();
@@ -84,7 +86,7 @@
             // 
             this.lblDeficiencias.AutoSize = true;
             this.lblDeficiencias.BackColor = System.Drawing.Color.White;
-            this.lblDeficiencias.Location = new System.Drawing.Point(30, 621);
+            this.lblDeficiencias.Location = new System.Drawing.Point(8, 545);
             this.lblDeficiencias.Name = "lblDeficiencias";
             this.lblDeficiencias.Size = new System.Drawing.Size(189, 13);
             this.lblDeficiencias.TabIndex = 15;
@@ -92,7 +94,7 @@
             // 
             // txtDeficiencias
             // 
-            this.txtDeficiencias.Location = new System.Drawing.Point(33, 637);
+            this.txtDeficiencias.Location = new System.Drawing.Point(11, 561);
             this.txtDeficiencias.Multiline = true;
             this.txtDeficiencias.Name = "txtDeficiencias";
             this.txtDeficiencias.Size = new System.Drawing.Size(538, 25);
@@ -121,7 +123,7 @@
             // 
             this.lblEscolherFoto.AutoSize = true;
             this.lblEscolherFoto.BackColor = System.Drawing.Color.White;
-            this.lblEscolherFoto.Location = new System.Drawing.Point(9, 769);
+            this.lblEscolherFoto.Location = new System.Drawing.Point(9, 823);
             this.lblEscolherFoto.Name = "lblEscolherFoto";
             this.lblEscolherFoto.Size = new System.Drawing.Size(72, 13);
             this.lblEscolherFoto.TabIndex = 20;
@@ -135,7 +137,7 @@
             this.btnEscolherFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEscolherFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEscolherFoto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEscolherFoto.Location = new System.Drawing.Point(12, 893);
+            this.btnEscolherFoto.Location = new System.Drawing.Point(12, 947);
             this.btnEscolherFoto.Name = "btnEscolherFoto";
             this.btnEscolherFoto.Size = new System.Drawing.Size(200, 30);
             this.btnEscolherFoto.TabIndex = 21;
@@ -156,7 +158,7 @@
             this.btnSalvarGato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarGato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarGato.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalvarGato.Location = new System.Drawing.Point(351, 960);
+            this.btnSalvarGato.Location = new System.Drawing.Point(351, 1014);
             this.btnSalvarGato.Name = "btnSalvarGato";
             this.btnSalvarGato.Size = new System.Drawing.Size(200, 30);
             this.btnSalvarGato.TabIndex = 22;
@@ -166,7 +168,7 @@
             // pbFotoGato
             // 
             this.pbFotoGato.BackColor = System.Drawing.Color.White;
-            this.pbFotoGato.Location = new System.Drawing.Point(12, 785);
+            this.pbFotoGato.Location = new System.Drawing.Point(12, 839);
             this.pbFotoGato.Name = "pbFotoGato";
             this.pbFotoGato.Size = new System.Drawing.Size(197, 102);
             this.pbFotoGato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -279,7 +281,7 @@
             // 
             this.lblDataNascimento.AutoSize = true;
             this.lblDataNascimento.BackColor = System.Drawing.Color.White;
-            this.lblDataNascimento.Location = new System.Drawing.Point(29, 323);
+            this.lblDataNascimento.Location = new System.Drawing.Point(8, 258);
             this.lblDataNascimento.Name = "lblDataNascimento";
             this.lblDataNascimento.Size = new System.Drawing.Size(107, 13);
             this.lblDataNascimento.TabIndex = 9;
@@ -289,9 +291,9 @@
             // 
             this.dtpDataNascimento.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNascimento.Location = new System.Drawing.Point(33, 340);
+            this.dtpDataNascimento.Location = new System.Drawing.Point(11, 274);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(537, 20);
+            this.dtpDataNascimento.Size = new System.Drawing.Size(539, 20);
             this.dtpDataNascimento.TabIndex = 10;
             // 
             // lblLarTemporario
@@ -339,7 +341,7 @@
             this.gbCastracao.BackColor = System.Drawing.Color.White;
             this.gbCastracao.Controls.Add(this.rbNaoCastrado);
             this.gbCastracao.Controls.Add(this.rbCastrado);
-            this.gbCastracao.Location = new System.Drawing.Point(32, 438);
+            this.gbCastracao.Location = new System.Drawing.Point(12, 368);
             this.gbCastracao.Name = "gbCastracao";
             this.gbCastracao.Size = new System.Drawing.Size(538, 72);
             this.gbCastracao.TabIndex = 13;
@@ -373,7 +375,7 @@
             this.gbVacinas.BackColor = System.Drawing.Color.White;
             this.gbVacinas.Controls.Add(this.rbVacinaNao);
             this.gbVacinas.Controls.Add(this.rbVacinaSim);
-            this.gbVacinas.Location = new System.Drawing.Point(32, 534);
+            this.gbVacinas.Location = new System.Drawing.Point(11, 459);
             this.gbVacinas.Name = "gbVacinas";
             this.gbVacinas.Size = new System.Drawing.Size(538, 72);
             this.gbVacinas.TabIndex = 14;
@@ -383,16 +385,24 @@
             // pnlCadastroGato
             // 
             this.pnlCadastroGato.BackColor = System.Drawing.Color.White;
+            this.pnlCadastroGato.Controls.Add(this.dtpDataEntrada);
+            this.pnlCadastroGato.Controls.Add(this.lblDataEntrada);
             this.pnlCadastroGato.Controls.Add(this.btnLimpar);
+            this.pnlCadastroGato.Controls.Add(this.txtDeficiencias);
+            this.pnlCadastroGato.Controls.Add(this.lblDeficiencias);
             this.pnlCadastroGato.Controls.Add(this.lblSatus);
             this.pnlCadastroGato.Controls.Add(this.cbStatus);
+            this.pnlCadastroGato.Controls.Add(this.gbCastracao);
+            this.pnlCadastroGato.Controls.Add(this.gbVacinas);
             this.pnlCadastroGato.Controls.Add(this.btnEscolherFoto);
             this.pnlCadastroGato.Controls.Add(this.btnSalvarGato);
             this.pnlCadastroGato.Controls.Add(this.lblEscolherFoto);
             this.pnlCadastroGato.Controls.Add(this.pbFotoGato);
+            this.pnlCadastroGato.Controls.Add(this.dtpDataNascimento);
+            this.pnlCadastroGato.Controls.Add(this.lblDataNascimento);
             this.pnlCadastroGato.Location = new System.Drawing.Point(20, 70);
             this.pnlCadastroGato.Name = "pnlCadastroGato";
-            this.pnlCadastroGato.Size = new System.Drawing.Size(575, 1009);
+            this.pnlCadastroGato.Size = new System.Drawing.Size(575, 1060);
             this.pnlCadastroGato.TabIndex = 23;
             // 
             // btnLimpar
@@ -405,7 +415,7 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(150)))), ((int)(((byte)(148)))));
-            this.btnLimpar.Location = new System.Drawing.Point(206, 960);
+            this.btnLimpar.Location = new System.Drawing.Point(206, 1014);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(139, 30);
             this.btnLimpar.TabIndex = 25;
@@ -415,7 +425,7 @@
             // lblSatus
             // 
             this.lblSatus.AutoSize = true;
-            this.lblSatus.Location = new System.Drawing.Point(10, 710);
+            this.lblSatus.Location = new System.Drawing.Point(10, 715);
             this.lblSatus.Name = "lblSatus";
             this.lblSatus.Size = new System.Drawing.Size(40, 13);
             this.lblSatus.TabIndex = 24;
@@ -429,19 +439,37 @@
             this.cbStatus.Items.AddRange(new object[] {
             "Disponível",
             "Adotado"});
-            this.cbStatus.Location = new System.Drawing.Point(12, 726);
+            this.cbStatus.Location = new System.Drawing.Point(12, 731);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(538, 23);
             this.cbStatus.TabIndex = 23;
             // 
             // lblCadastroSubtitulo
             // 
-            this.lblCadastroSubtitulo.AutoSize = true;
             this.lblCadastroSubtitulo.Location = new System.Drawing.Point(17, 45);
             this.lblCadastroSubtitulo.Name = "lblCadastroSubtitulo";
-            this.lblCadastroSubtitulo.Size = new System.Drawing.Size(194, 13);
+            this.lblCadastroSubtitulo.Size = new System.Drawing.Size(212, 13);
             this.lblCadastroSubtitulo.TabIndex = 24;
             this.lblCadastroSubtitulo.Text = "Preencha os dados do novo gatinho 🐱";
+            // 
+            // dtpDataEntrada
+            // 
+            this.dtpDataEntrada.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataEntrada.Location = new System.Drawing.Point(12, 785);
+            this.dtpDataEntrada.Name = "dtpDataEntrada";
+            this.dtpDataEntrada.Size = new System.Drawing.Size(539, 20);
+            this.dtpDataEntrada.TabIndex = 27;
+            // 
+            // lblDataEntrada
+            // 
+            this.lblDataEntrada.AutoSize = true;
+            this.lblDataEntrada.BackColor = System.Drawing.Color.White;
+            this.lblDataEntrada.Location = new System.Drawing.Point(8, 768);
+            this.lblDataEntrada.Name = "lblDataEntrada";
+            this.lblDataEntrada.Size = new System.Drawing.Size(88, 13);
+            this.lblDataEntrada.TabIndex = 26;
+            this.lblDataEntrada.Text = "Data de Entrada:";
             // 
             // ucCadastroGato
             // 
@@ -451,14 +479,8 @@
             this.Controls.Add(this.lblCadastroSubtitulo);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblObservacao);
-            this.Controls.Add(this.txtDeficiencias);
-            this.Controls.Add(this.lblDeficiencias);
-            this.Controls.Add(this.gbVacinas);
-            this.Controls.Add(this.gbCastracao);
             this.Controls.Add(this.txtLarTemporario);
             this.Controls.Add(this.lblLarTemporario);
-            this.Controls.Add(this.dtpDataNascimento);
-            this.Controls.Add(this.lblDataNascimento);
             this.Controls.Add(this.cbPelagem);
             this.Controls.Add(this.lblPelagem);
             this.Controls.Add(this.gbSexo);
@@ -469,7 +491,7 @@
             this.Controls.Add(this.lblTituloCadastroGato);
             this.Controls.Add(this.pnlCadastroGato);
             this.Name = "ucCadastroGato";
-            this.Size = new System.Drawing.Size(620, 1110);
+            this.Size = new System.Drawing.Size(620, 1152);
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoGato)).EndInit();
             this.gbSexo.ResumeLayout(false);
             this.gbSexo.PerformLayout();
@@ -520,5 +542,7 @@
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.Label lblCadastroSubtitulo;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.DateTimePicker dtpDataEntrada;
+        private System.Windows.Forms.Label lblDataEntrada;
     }
 }
