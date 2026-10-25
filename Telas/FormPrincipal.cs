@@ -20,6 +20,7 @@ namespace miaudota
 
         public void AbrirTela(UserControl tela)
         {
+            pnlPerfilContainer.Visible = false;
             tela.Dock = DockStyle.Fill;
             pnlConteudo.Controls.Clear();
             pnlConteudo.Controls.Add(tela);
@@ -54,6 +55,23 @@ namespace miaudota
         private void btnConsultaTutor_Click(object sender, EventArgs e)
         {
             AbrirTela(new ucConsultaTutor());
+        }
+
+        public void MostrarPerfilGato(Gato gato)
+        {
+            lblNomeGato.Text = gato.Nome;
+            lblIdadeGato.Text = gato.Idade.ToString() + " anos";
+            lblMicrochipGato.Text = gato.NumeroMicrochip;
+            lblDisponibilidadeGato.Text = gato.Status;
+            if (string.IsNullOrEmpty(gato.CaminhoFoto))
+            {
+                pbFotoGato.Image = Properties.Resources.sem_foto;
+            }
+            else
+            {
+                pbFotoGato.Image = Image.FromFile(gato.CaminhoFoto);
+            }
+            pnlPerfilContainer.Visible = true;
         }
     }
 }

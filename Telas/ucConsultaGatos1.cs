@@ -18,5 +18,17 @@ namespace miaudota.Telas
             dgvGatos.DataSource = RepositorioGatosFake.ObterTodos();
             dgvGatos.RowTemplate.Height = 60;
         }
+
+        private void dgvGatos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                ucEdicaoGato tela = new ucEdicaoGato();
+                Gato gatoSelecionado = (Gato)dgvGatos.Rows[e.RowIndex].DataBoundItem;
+                FormPrincipal principal = (FormPrincipal)this.ParentForm;
+                principal.AbrirTela(tela);
+                principal.MostrarPerfilGato(gatoSelecionado);
+            }
+        }
     }
 }

@@ -58,17 +58,26 @@
             this.rbVacinaNao = new System.Windows.Forms.RadioButton();
             this.gbVacinas = new System.Windows.Forms.GroupBox();
             this.pnlCadastroGato = new System.Windows.Forms.Panel();
+            this.gbCadastrarLocal = new System.Windows.Forms.GroupBox();
+            this.rbNaoLocal = new System.Windows.Forms.RadioButton();
+            this.rbSimLocal = new System.Windows.Forms.RadioButton();
+            this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
+            this.lblDataEntrada = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.lblSatus = new System.Windows.Forms.Label();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.lblCadastroSubtitulo = new System.Windows.Forms.Label();
-            this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
-            this.lblDataEntrada = new System.Windows.Forms.Label();
+            this.pnlMapa = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.wvMapa = new Microsoft.Web.WebView2.WinForms.WebView2();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoGato)).BeginInit();
             this.gbSexo.SuspendLayout();
             this.gbCastracao.SuspendLayout();
             this.gbVacinas.SuspendLayout();
             this.pnlCadastroGato.SuspendLayout();
+            this.gbCadastrarLocal.SuspendLayout();
+            this.pnlMapa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wvMapa)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTituloCadastroGato
@@ -112,7 +121,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(33, 689);
+            this.textBox1.Location = new System.Drawing.Point(13, 619);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -158,7 +167,7 @@
             this.btnSalvarGato.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarGato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarGato.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalvarGato.Location = new System.Drawing.Point(351, 1014);
+            this.btnSalvarGato.Location = new System.Drawing.Point(351, 1209);
             this.btnSalvarGato.Name = "btnSalvarGato";
             this.btnSalvarGato.Size = new System.Drawing.Size(200, 30);
             this.btnSalvarGato.TabIndex = 22;
@@ -385,6 +394,9 @@
             // pnlCadastroGato
             // 
             this.pnlCadastroGato.BackColor = System.Drawing.Color.White;
+            this.pnlCadastroGato.Controls.Add(this.pnlMapa);
+            this.pnlCadastroGato.Controls.Add(this.textBox1);
+            this.pnlCadastroGato.Controls.Add(this.gbCadastrarLocal);
             this.pnlCadastroGato.Controls.Add(this.dtpDataEntrada);
             this.pnlCadastroGato.Controls.Add(this.lblDataEntrada);
             this.pnlCadastroGato.Controls.Add(this.btnLimpar);
@@ -402,8 +414,61 @@
             this.pnlCadastroGato.Controls.Add(this.lblDataNascimento);
             this.pnlCadastroGato.Location = new System.Drawing.Point(20, 70);
             this.pnlCadastroGato.Name = "pnlCadastroGato";
-            this.pnlCadastroGato.Size = new System.Drawing.Size(575, 1060);
+            this.pnlCadastroGato.Size = new System.Drawing.Size(575, 1263);
             this.pnlCadastroGato.TabIndex = 23;
+            // 
+            // gbCadastrarLocal
+            // 
+            this.gbCadastrarLocal.Controls.Add(this.rbNaoLocal);
+            this.gbCadastrarLocal.Controls.Add(this.rbSimLocal);
+            this.gbCadastrarLocal.Location = new System.Drawing.Point(13, 993);
+            this.gbCadastrarLocal.Name = "gbCadastrarLocal";
+            this.gbCadastrarLocal.Size = new System.Drawing.Size(196, 109);
+            this.gbCadastrarLocal.TabIndex = 28;
+            this.gbCadastrarLocal.TabStop = false;
+            this.gbCadastrarLocal.Text = "Deseja resgistar o local de resgate?";
+            // 
+            // rbNaoLocal
+            // 
+            this.rbNaoLocal.AutoSize = true;
+            this.rbNaoLocal.Location = new System.Drawing.Point(16, 66);
+            this.rbNaoLocal.Name = "rbNaoLocal";
+            this.rbNaoLocal.Size = new System.Drawing.Size(45, 17);
+            this.rbNaoLocal.TabIndex = 30;
+            this.rbNaoLocal.TabStop = true;
+            this.rbNaoLocal.Text = "Não";
+            this.rbNaoLocal.UseVisualStyleBackColor = true;
+            // 
+            // rbSimLocal
+            // 
+            this.rbSimLocal.AutoSize = true;
+            this.rbSimLocal.Location = new System.Drawing.Point(16, 33);
+            this.rbSimLocal.Name = "rbSimLocal";
+            this.rbSimLocal.Size = new System.Drawing.Size(42, 17);
+            this.rbSimLocal.TabIndex = 29;
+            this.rbSimLocal.TabStop = true;
+            this.rbSimLocal.Text = "Sim";
+            this.rbSimLocal.UseVisualStyleBackColor = true;
+            this.rbSimLocal.CheckedChanged += new System.EventHandler(this.rbSimLocal_CheckedChanged);
+            // 
+            // dtpDataEntrada
+            // 
+            this.dtpDataEntrada.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataEntrada.Location = new System.Drawing.Point(12, 785);
+            this.dtpDataEntrada.Name = "dtpDataEntrada";
+            this.dtpDataEntrada.Size = new System.Drawing.Size(539, 20);
+            this.dtpDataEntrada.TabIndex = 27;
+            // 
+            // lblDataEntrada
+            // 
+            this.lblDataEntrada.AutoSize = true;
+            this.lblDataEntrada.BackColor = System.Drawing.Color.White;
+            this.lblDataEntrada.Location = new System.Drawing.Point(8, 768);
+            this.lblDataEntrada.Name = "lblDataEntrada";
+            this.lblDataEntrada.Size = new System.Drawing.Size(88, 13);
+            this.lblDataEntrada.TabIndex = 26;
+            this.lblDataEntrada.Text = "Data de Entrada:";
             // 
             // btnLimpar
             // 
@@ -415,7 +480,7 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(150)))), ((int)(((byte)(148)))));
-            this.btnLimpar.Location = new System.Drawing.Point(206, 1014);
+            this.btnLimpar.Location = new System.Drawing.Point(206, 1209);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(139, 30);
             this.btnLimpar.TabIndex = 25;
@@ -452,24 +517,36 @@
             this.lblCadastroSubtitulo.TabIndex = 24;
             this.lblCadastroSubtitulo.Text = "Preencha os dados do novo gatinho 🐱";
             // 
-            // dtpDataEntrada
+            // pnlMapa
             // 
-            this.dtpDataEntrada.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataEntrada.Location = new System.Drawing.Point(12, 785);
-            this.dtpDataEntrada.Name = "dtpDataEntrada";
-            this.dtpDataEntrada.Size = new System.Drawing.Size(539, 20);
-            this.dtpDataEntrada.TabIndex = 27;
+            this.pnlMapa.Controls.Add(this.label1);
+            this.pnlMapa.Controls.Add(this.wvMapa);
+            this.pnlMapa.Location = new System.Drawing.Point(218, 823);
+            this.pnlMapa.Name = "pnlMapa";
+            this.pnlMapa.Size = new System.Drawing.Size(346, 370);
+            this.pnlMapa.TabIndex = 31;
+            this.pnlMapa.Visible = false;
             // 
-            // lblDataEntrada
+            // label1
             // 
-            this.lblDataEntrada.AutoSize = true;
-            this.lblDataEntrada.BackColor = System.Drawing.Color.White;
-            this.lblDataEntrada.Location = new System.Drawing.Point(8, 768);
-            this.lblDataEntrada.Name = "lblDataEntrada";
-            this.lblDataEntrada.Size = new System.Drawing.Size(88, 13);
-            this.lblDataEntrada.TabIndex = 26;
-            this.lblDataEntrada.Text = "Data de Entrada:";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Local de resgate:";
+            // 
+            // wvMapa
+            // 
+            this.wvMapa.AllowExternalDrop = true;
+            this.wvMapa.CreationProperties = null;
+            this.wvMapa.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.wvMapa.Location = new System.Drawing.Point(6, 28);
+            this.wvMapa.Name = "wvMapa";
+            this.wvMapa.Size = new System.Drawing.Size(333, 336);
+            this.wvMapa.TabIndex = 31;
+            this.wvMapa.ZoomFactor = 1D;
             // 
             // ucCadastroGato
             // 
@@ -477,7 +554,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.Controls.Add(this.lblCadastroSubtitulo);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblObservacao);
             this.Controls.Add(this.txtLarTemporario);
             this.Controls.Add(this.lblLarTemporario);
@@ -491,7 +567,8 @@
             this.Controls.Add(this.lblTituloCadastroGato);
             this.Controls.Add(this.pnlCadastroGato);
             this.Name = "ucCadastroGato";
-            this.Size = new System.Drawing.Size(620, 1152);
+            this.Size = new System.Drawing.Size(620, 1356);
+            this.Load += new System.EventHandler(this.ucCadastroGato_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoGato)).EndInit();
             this.gbSexo.ResumeLayout(false);
             this.gbSexo.PerformLayout();
@@ -501,6 +578,11 @@
             this.gbVacinas.PerformLayout();
             this.pnlCadastroGato.ResumeLayout(false);
             this.pnlCadastroGato.PerformLayout();
+            this.gbCadastrarLocal.ResumeLayout(false);
+            this.gbCadastrarLocal.PerformLayout();
+            this.pnlMapa.ResumeLayout(false);
+            this.pnlMapa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wvMapa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -544,5 +626,11 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.DateTimePicker dtpDataEntrada;
         private System.Windows.Forms.Label lblDataEntrada;
+        private System.Windows.Forms.GroupBox gbCadastrarLocal;
+        private System.Windows.Forms.RadioButton rbNaoLocal;
+        private System.Windows.Forms.RadioButton rbSimLocal;
+        private System.Windows.Forms.Panel pnlMapa;
+        private System.Windows.Forms.Label label1;
+        private Microsoft.Web.WebView2.WinForms.WebView2 wvMapa;
     }
 }

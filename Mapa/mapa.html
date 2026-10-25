@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>html, body, #mapa { height: 100%; margin: 0; }</style>
+</head>
+<body>
+<div id="mapa"></div>
+<script>
+  var mapa = L.map('mapa').setView([-22.9056, -47.0608], 12);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
+  }).addTo(mapa);
+
+  var marcador = null;
+  mapa.on('click', function (e) {
+      if (marcador) { mapa.removeLayer(marcador); }
+      marcador = L.marker(e.latlng).addTo(mapa);
+      window.chrome.webview.postMessage(e.latlng.lat + ';' + e.latlng.lng);
+  });
+</script>
+</body>
+</html>
