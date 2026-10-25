@@ -29,40 +29,42 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLarTemporario = new System.Windows.Forms.Label();
+            this.lblSaudeStatus = new System.Windows.Forms.Label();
+            this.pnlCaracteristicas = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txbPeso = new System.Windows.Forms.TextBox();
+            this.lblPeso = new System.Windows.Forms.Label();
+            this.pnlPelagem = new System.Windows.Forms.Panel();
+            this.cbColoracao = new System.Windows.Forms.ComboBox();
+            this.lblColoracao = new System.Windows.Forms.Label();
+            this.cbPelagem = new System.Windows.Forms.ComboBox();
+            this.lblPelagem = new System.Windows.Forms.Label();
+            this.gbSexo = new System.Windows.Forms.GroupBox();
+            this.rbFemea = new System.Windows.Forms.RadioButton();
+            this.rbMacho = new System.Windows.Forms.RadioButton();
+            this.lblCaracteristicas = new System.Windows.Forms.Label();
+            this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
+            this.lblDataNascimento = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
             this.lblIdentificacao = new System.Windows.Forms.Label();
             this.lblPerfil = new System.Windows.Forms.Label();
             this.lblDescricaoPerfil = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.lblDataNascimento = new System.Windows.Forms.Label();
-            this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
-            this.lblCaracteristicas = new System.Windows.Forms.Label();
-            this.pnlCaracteristicas = new System.Windows.Forms.Panel();
-            this.gbSexo = new System.Windows.Forms.GroupBox();
-            this.rbFemea = new System.Windows.Forms.RadioButton();
-            this.rbMacho = new System.Windows.Forms.RadioButton();
-            this.pnlPelagem = new System.Windows.Forms.Panel();
-            this.cbColoracao = new System.Windows.Forms.ComboBox();
-            this.lblColoracao = new System.Windows.Forms.Label();
-            this.cbPelagem = new System.Windows.Forms.ComboBox();
-            this.lblPelagem = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txbPeso = new System.Windows.Forms.TextBox();
-            this.lblPeso = new System.Windows.Forms.Label();
-            this.lblSaudeStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlCaracteristicas.SuspendLayout();
-            this.gbSexo.SuspendLayout();
-            this.pnlPelagem.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnlPelagem.SuspendLayout();
+            this.gbSexo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.lblLarTemporario);
             this.panel1.Controls.Add(this.lblSaudeStatus);
             this.panel1.Controls.Add(this.pnlCaracteristicas);
             this.panel1.Controls.Add(this.lblCaracteristicas);
@@ -80,119 +82,26 @@
             this.panel1.Size = new System.Drawing.Size(560, 1369);
             this.panel1.TabIndex = 0;
             // 
-            // txtMicrochip
+            // lblLarTemporario
             // 
-            this.txtMicrochip.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtMicrochip.Location = new System.Drawing.Point(15, 61);
-            this.txtMicrochip.Name = "txtMicrochip";
-            this.txtMicrochip.Size = new System.Drawing.Size(530, 20);
-            this.txtMicrochip.TabIndex = 2;
+            this.lblLarTemporario.AutoSize = true;
+            this.lblLarTemporario.Location = new System.Drawing.Point(19, 377);
+            this.lblLarTemporario.Name = "lblLarTemporario";
+            this.lblLarTemporario.Size = new System.Drawing.Size(81, 13);
+            this.lblLarTemporario.TabIndex = 16;
+            this.lblLarTemporario.Text = "Lar Temporário:";
             // 
-            // lblMicrochip
+            // lblSaudeStatus
             // 
-            this.lblMicrochip.AutoSize = true;
-            this.lblMicrochip.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblMicrochip.Location = new System.Drawing.Point(15, 43);
-            this.lblMicrochip.Name = "lblMicrochip";
-            this.lblMicrochip.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lblMicrochip.Size = new System.Drawing.Size(110, 18);
-            this.lblMicrochip.TabIndex = 1;
-            this.lblMicrochip.Text = "Número do microchip:";
-            // 
-            // lblIdentificacao
-            // 
-            this.lblIdentificacao.AutoSize = true;
-            this.lblIdentificacao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblIdentificacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
-            this.lblIdentificacao.Location = new System.Drawing.Point(15, 15);
-            this.lblIdentificacao.Name = "lblIdentificacao";
-            this.lblIdentificacao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
-            this.lblIdentificacao.Size = new System.Drawing.Size(88, 28);
-            this.lblIdentificacao.TabIndex = 0;
-            this.lblIdentificacao.Text = "IDENTIFICAÇÃO";
-            // 
-            // lblPerfil
-            // 
-            this.lblPerfil.AutoSize = true;
-            this.lblPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPerfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblPerfil.Location = new System.Drawing.Point(33, 13);
-            this.lblPerfil.Name = "lblPerfil";
-            this.lblPerfil.Size = new System.Drawing.Size(120, 20);
-            this.lblPerfil.TabIndex = 1;
-            this.lblPerfil.Text = "Perfil do Gato";
-            // 
-            // lblDescricaoPerfil
-            // 
-            this.lblDescricaoPerfil.AutoSize = true;
-            this.lblDescricaoPerfil.Location = new System.Drawing.Point(34, 42);
-            this.lblDescricaoPerfil.Name = "lblDescricaoPerfil";
-            this.lblDescricaoPerfil.Size = new System.Drawing.Size(251, 13);
-            this.lblDescricaoPerfil.TabIndex = 2;
-            this.lblDescricaoPerfil.Text = "Edite os dados do gatinho e salve as alterações 😸 ";
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(75)))), ((int)(((byte)(130)))));
-            this.btnExcluir.Location = new System.Drawing.Point(482, 25);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(108, 30);
-            this.btnExcluir.TabIndex = 3;
-            this.btnExcluir.Text = "🗑️ Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblNome.Location = new System.Drawing.Point(15, 81);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
-            this.lblNome.Size = new System.Drawing.Size(38, 28);
-            this.lblNome.TabIndex = 3;
-            this.lblNome.Text = "Nome:";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtNome.Location = new System.Drawing.Point(15, 109);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(530, 20);
-            this.txtNome.TabIndex = 4;
-            // 
-            // lblDataNascimento
-            // 
-            this.lblDataNascimento.AutoSize = true;
-            this.lblDataNascimento.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDataNascimento.Location = new System.Drawing.Point(15, 129);
-            this.lblDataNascimento.Name = "lblDataNascimento";
-            this.lblDataNascimento.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
-            this.lblDataNascimento.Size = new System.Drawing.Size(105, 28);
-            this.lblDataNascimento.TabIndex = 5;
-            this.lblDataNascimento.Text = "Data de nascimento:";
-            // 
-            // dtpDataNascimento
-            // 
-            this.dtpDataNascimento.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNascimento.Location = new System.Drawing.Point(15, 157);
-            this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(530, 20);
-            this.dtpDataNascimento.TabIndex = 6;
-            // 
-            // lblCaracteristicas
-            // 
-            this.lblCaracteristicas.AutoSize = true;
-            this.lblCaracteristicas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblCaracteristicas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
-            this.lblCaracteristicas.Location = new System.Drawing.Point(15, 177);
-            this.lblCaracteristicas.Name = "lblCaracteristicas";
-            this.lblCaracteristicas.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.lblCaracteristicas.Size = new System.Drawing.Size(106, 53);
-            this.lblCaracteristicas.TabIndex = 7;
-            this.lblCaracteristicas.Text = "CARACTERÍSTICAS";
+            this.lblSaudeStatus.AutoSize = true;
+            this.lblSaudeStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSaudeStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
+            this.lblSaudeStatus.Location = new System.Drawing.Point(15, 332);
+            this.lblSaudeStatus.Name = "lblSaudeStatus";
+            this.lblSaudeStatus.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
+            this.lblSaudeStatus.Size = new System.Drawing.Size(100, 53);
+            this.lblSaudeStatus.TabIndex = 15;
+            this.lblSaudeStatus.Text = "SAÚDE E STATUS";
             // 
             // pnlCaracteristicas
             // 
@@ -205,39 +114,35 @@
             this.pnlCaracteristicas.Size = new System.Drawing.Size(530, 102);
             this.pnlCaracteristicas.TabIndex = 14;
             // 
-            // gbSexo
+            // panel2
             // 
-            this.gbSexo.Controls.Add(this.rbFemea);
-            this.gbSexo.Controls.Add(this.rbMacho);
-            this.gbSexo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gbSexo.Location = new System.Drawing.Point(0, 0);
-            this.gbSexo.Name = "gbSexo";
-            this.gbSexo.Size = new System.Drawing.Size(125, 102);
-            this.gbSexo.TabIndex = 9;
-            this.gbSexo.TabStop = false;
-            this.gbSexo.Text = "Sexo:";
+            this.panel2.Controls.Add(this.txbPeso);
+            this.panel2.Controls.Add(this.lblPeso);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(323, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panel2.Size = new System.Drawing.Size(200, 102);
+            this.panel2.TabIndex = 13;
             // 
-            // rbFemea
+            // txbPeso
             // 
-            this.rbFemea.AutoSize = true;
-            this.rbFemea.Location = new System.Drawing.Point(22, 52);
-            this.rbFemea.Name = "rbFemea";
-            this.rbFemea.Size = new System.Drawing.Size(60, 17);
-            this.rbFemea.TabIndex = 1;
-            this.rbFemea.TabStop = true;
-            this.rbFemea.Text = "Femêa ";
-            this.rbFemea.UseVisualStyleBackColor = true;
+            this.txbPeso.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txbPeso.Location = new System.Drawing.Point(5, 18);
+            this.txbPeso.Name = "txbPeso";
+            this.txbPeso.Size = new System.Drawing.Size(190, 20);
+            this.txbPeso.TabIndex = 1;
             // 
-            // rbMacho
+            // lblPeso
             // 
-            this.rbMacho.AutoSize = true;
-            this.rbMacho.Location = new System.Drawing.Point(22, 29);
-            this.rbMacho.Name = "rbMacho";
-            this.rbMacho.Size = new System.Drawing.Size(58, 17);
-            this.rbMacho.TabIndex = 0;
-            this.rbMacho.TabStop = true;
-            this.rbMacho.Text = "Macho";
-            this.rbMacho.UseVisualStyleBackColor = true;
+            this.lblPeso.AutoSize = true;
+            this.lblPeso.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblPeso.Location = new System.Drawing.Point(5, 0);
+            this.lblPeso.Name = "lblPeso";
+            this.lblPeso.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lblPeso.Size = new System.Drawing.Size(56, 18);
+            this.lblPeso.TabIndex = 0;
+            this.lblPeso.Text = "Peso (Kg):";
             // 
             // pnlPelagem
             // 
@@ -308,47 +213,153 @@
             this.lblPelagem.TabIndex = 11;
             this.lblPelagem.Text = "Pelagem:";
             // 
-            // panel2
+            // gbSexo
             // 
-            this.panel2.Controls.Add(this.txbPeso);
-            this.panel2.Controls.Add(this.lblPeso);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(323, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panel2.Size = new System.Drawing.Size(200, 102);
-            this.panel2.TabIndex = 13;
+            this.gbSexo.Controls.Add(this.rbFemea);
+            this.gbSexo.Controls.Add(this.rbMacho);
+            this.gbSexo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gbSexo.Location = new System.Drawing.Point(0, 0);
+            this.gbSexo.Name = "gbSexo";
+            this.gbSexo.Size = new System.Drawing.Size(125, 102);
+            this.gbSexo.TabIndex = 9;
+            this.gbSexo.TabStop = false;
+            this.gbSexo.Text = "Sexo:";
             // 
-            // txbPeso
+            // rbFemea
             // 
-            this.txbPeso.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txbPeso.Location = new System.Drawing.Point(5, 18);
-            this.txbPeso.Name = "txbPeso";
-            this.txbPeso.Size = new System.Drawing.Size(190, 20);
-            this.txbPeso.TabIndex = 1;
+            this.rbFemea.AutoSize = true;
+            this.rbFemea.Location = new System.Drawing.Point(22, 52);
+            this.rbFemea.Name = "rbFemea";
+            this.rbFemea.Size = new System.Drawing.Size(60, 17);
+            this.rbFemea.TabIndex = 1;
+            this.rbFemea.TabStop = true;
+            this.rbFemea.Text = "Femêa ";
+            this.rbFemea.UseVisualStyleBackColor = true;
             // 
-            // lblPeso
+            // rbMacho
             // 
-            this.lblPeso.AutoSize = true;
-            this.lblPeso.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPeso.Location = new System.Drawing.Point(5, 0);
-            this.lblPeso.Name = "lblPeso";
-            this.lblPeso.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lblPeso.Size = new System.Drawing.Size(56, 18);
-            this.lblPeso.TabIndex = 0;
-            this.lblPeso.Text = "Peso (Kg):";
+            this.rbMacho.AutoSize = true;
+            this.rbMacho.Location = new System.Drawing.Point(22, 29);
+            this.rbMacho.Name = "rbMacho";
+            this.rbMacho.Size = new System.Drawing.Size(58, 17);
+            this.rbMacho.TabIndex = 0;
+            this.rbMacho.TabStop = true;
+            this.rbMacho.Text = "Macho";
+            this.rbMacho.UseVisualStyleBackColor = true;
             // 
-            // lblSaudeStatus
+            // lblCaracteristicas
             // 
-            this.lblSaudeStatus.AutoSize = true;
-            this.lblSaudeStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblSaudeStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
-            this.lblSaudeStatus.Location = new System.Drawing.Point(15, 332);
-            this.lblSaudeStatus.Name = "lblSaudeStatus";
-            this.lblSaudeStatus.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.lblSaudeStatus.Size = new System.Drawing.Size(100, 53);
-            this.lblSaudeStatus.TabIndex = 15;
-            this.lblSaudeStatus.Text = "SAÚDE E STATUS";
+            this.lblCaracteristicas.AutoSize = true;
+            this.lblCaracteristicas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblCaracteristicas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
+            this.lblCaracteristicas.Location = new System.Drawing.Point(15, 177);
+            this.lblCaracteristicas.Name = "lblCaracteristicas";
+            this.lblCaracteristicas.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
+            this.lblCaracteristicas.Size = new System.Drawing.Size(106, 53);
+            this.lblCaracteristicas.TabIndex = 7;
+            this.lblCaracteristicas.Text = "CARACTERÍSTICAS";
+            // 
+            // dtpDataNascimento
+            // 
+            this.dtpDataNascimento.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataNascimento.Location = new System.Drawing.Point(15, 157);
+            this.dtpDataNascimento.Name = "dtpDataNascimento";
+            this.dtpDataNascimento.Size = new System.Drawing.Size(530, 20);
+            this.dtpDataNascimento.TabIndex = 6;
+            // 
+            // lblDataNascimento
+            // 
+            this.lblDataNascimento.AutoSize = true;
+            this.lblDataNascimento.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDataNascimento.Location = new System.Drawing.Point(15, 129);
+            this.lblDataNascimento.Name = "lblDataNascimento";
+            this.lblDataNascimento.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.lblDataNascimento.Size = new System.Drawing.Size(105, 28);
+            this.lblDataNascimento.TabIndex = 5;
+            this.lblDataNascimento.Text = "Data de nascimento:";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtNome.Location = new System.Drawing.Point(15, 109);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(530, 20);
+            this.txtNome.TabIndex = 4;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblNome.Location = new System.Drawing.Point(15, 81);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.lblNome.Size = new System.Drawing.Size(38, 28);
+            this.lblNome.TabIndex = 3;
+            this.lblNome.Text = "Nome:";
+            // 
+            // txtMicrochip
+            // 
+            this.txtMicrochip.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtMicrochip.Location = new System.Drawing.Point(15, 61);
+            this.txtMicrochip.Name = "txtMicrochip";
+            this.txtMicrochip.Size = new System.Drawing.Size(530, 20);
+            this.txtMicrochip.TabIndex = 2;
+            // 
+            // lblMicrochip
+            // 
+            this.lblMicrochip.AutoSize = true;
+            this.lblMicrochip.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblMicrochip.Location = new System.Drawing.Point(15, 43);
+            this.lblMicrochip.Name = "lblMicrochip";
+            this.lblMicrochip.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lblMicrochip.Size = new System.Drawing.Size(110, 18);
+            this.lblMicrochip.TabIndex = 1;
+            this.lblMicrochip.Text = "Número do microchip:";
+            // 
+            // lblIdentificacao
+            // 
+            this.lblIdentificacao.AutoSize = true;
+            this.lblIdentificacao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblIdentificacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
+            this.lblIdentificacao.Location = new System.Drawing.Point(15, 15);
+            this.lblIdentificacao.Name = "lblIdentificacao";
+            this.lblIdentificacao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.lblIdentificacao.Size = new System.Drawing.Size(88, 28);
+            this.lblIdentificacao.TabIndex = 0;
+            this.lblIdentificacao.Text = "IDENTIFICAÇÃO";
+            // 
+            // lblPerfil
+            // 
+            this.lblPerfil.AutoSize = true;
+            this.lblPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPerfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblPerfil.Location = new System.Drawing.Point(33, 13);
+            this.lblPerfil.Name = "lblPerfil";
+            this.lblPerfil.Size = new System.Drawing.Size(120, 20);
+            this.lblPerfil.TabIndex = 1;
+            this.lblPerfil.Text = "Perfil do Gato";
+            // 
+            // lblDescricaoPerfil
+            // 
+            this.lblDescricaoPerfil.AutoSize = true;
+            this.lblDescricaoPerfil.Location = new System.Drawing.Point(34, 42);
+            this.lblDescricaoPerfil.Name = "lblDescricaoPerfil";
+            this.lblDescricaoPerfil.Size = new System.Drawing.Size(251, 13);
+            this.lblDescricaoPerfil.TabIndex = 2;
+            this.lblDescricaoPerfil.Text = "Edite os dados do gatinho e salve as alterações 😸 ";
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(75)))), ((int)(((byte)(130)))));
+            this.btnExcluir.Location = new System.Drawing.Point(482, 25);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(108, 30);
+            this.btnExcluir.TabIndex = 3;
+            this.btnExcluir.Text = "🗑️ Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
             // 
             // ucEdicaoGato
             // 
@@ -365,12 +376,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlCaracteristicas.ResumeLayout(false);
-            this.gbSexo.ResumeLayout(false);
-            this.gbSexo.PerformLayout();
-            this.pnlPelagem.ResumeLayout(false);
-            this.pnlPelagem.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnlPelagem.ResumeLayout(false);
+            this.pnlPelagem.PerformLayout();
+            this.gbSexo.ResumeLayout(false);
+            this.gbSexo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,5 +414,6 @@
         private System.Windows.Forms.GroupBox gbSexo;
         private System.Windows.Forms.RadioButton rbFemea;
         private System.Windows.Forms.RadioButton rbMacho;
+        private System.Windows.Forms.Label lblLarTemporario;
     }
 }
