@@ -772,6 +772,7 @@
             this.btnEscolherFoto.TabIndex = 38;
             this.btnEscolherFoto.Text = "Escolher Foto";
             this.btnEscolherFoto.UseVisualStyleBackColor = false;
+            this.btnEscolherFoto.Click += new System.EventHandler(this.btnEscolherFoto_Click);
             // 
             // gbCadastrarLocal
             // 
