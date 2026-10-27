@@ -16,5 +16,10 @@ namespace miaudota.Telas
         {
             InitializeComponent();
         }
+
+        private void txtLarTemporario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

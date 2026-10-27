@@ -29,10 +29,24 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDeficiencia = new System.Windows.Forms.TextBox();
+            this.lblDeficiencias = new System.Windows.Forms.Label();
+            this.tlpInfos = new System.Windows.Forms.TableLayoutPanel();
+            this.gbCastracao = new System.Windows.Forms.GroupBox();
+            this.rbNaoCastrado = new System.Windows.Forms.RadioButton();
+            this.rbCastrado = new System.Windows.Forms.RadioButton();
+            this.gbVacina = new System.Windows.Forms.GroupBox();
+            this.rbNaoVacinado = new System.Windows.Forms.RadioButton();
+            this.rbVacinado = new System.Windows.Forms.RadioButton();
+            this.pnlStatus = new System.Windows.Forms.Panel();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblEspaco = new System.Windows.Forms.Label();
+            this.txtLarTemporario = new System.Windows.Forms.TextBox();
             this.lblLarTemporario = new System.Windows.Forms.Label();
             this.lblSaudeStatus = new System.Windows.Forms.Label();
             this.pnlCaracteristicas = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlPeso = new System.Windows.Forms.Panel();
             this.txbPeso = new System.Windows.Forms.TextBox();
             this.lblPeso = new System.Windows.Forms.Label();
             this.pnlPelagem = new System.Windows.Forms.Panel();
@@ -54,16 +68,38 @@
             this.lblPerfil = new System.Windows.Forms.Label();
             this.lblDescricaoPerfil = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.lblObservacoes = new System.Windows.Forms.Label();
+            this.txtObservacoes = new System.Windows.Forms.TextBox();
+            this.lblDataEntrada = new System.Windows.Forms.Label();
+            this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
+            this.lblFotoGato = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.tlpInfos.SuspendLayout();
+            this.gbCastracao.SuspendLayout();
+            this.gbVacina.SuspendLayout();
+            this.pnlStatus.SuspendLayout();
             this.pnlCaracteristicas.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlPeso.SuspendLayout();
             this.pnlPelagem.SuspendLayout();
             this.gbSexo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.lblFotoGato);
+            this.panel1.Controls.Add(this.dtpDataEntrada);
+            this.panel1.Controls.Add(this.lblDataEntrada);
+            this.panel1.Controls.Add(this.txtObservacoes);
+            this.panel1.Controls.Add(this.lblObservacoes);
+            this.panel1.Controls.Add(this.txtDeficiencia);
+            this.panel1.Controls.Add(this.lblDeficiencias);
+            this.panel1.Controls.Add(this.tlpInfos);
+            this.panel1.Controls.Add(this.lblEspaco);
+            this.panel1.Controls.Add(this.txtLarTemporario);
             this.panel1.Controls.Add(this.lblLarTemporario);
             this.panel1.Controls.Add(this.lblSaudeStatus);
             this.panel1.Controls.Add(this.pnlCaracteristicas);
@@ -82,12 +118,168 @@
             this.panel1.Size = new System.Drawing.Size(560, 1369);
             this.panel1.TabIndex = 0;
             // 
+            // txtDeficiencia
+            // 
+            this.txtDeficiencia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtDeficiencia.Location = new System.Drawing.Point(15, 567);
+            this.txtDeficiencia.Name = "txtDeficiencia";
+            this.txtDeficiencia.Size = new System.Drawing.Size(530, 20);
+            this.txtDeficiencia.TabIndex = 21;
+            // 
+            // lblDeficiencias
+            // 
+            this.lblDeficiencias.AutoSize = true;
+            this.lblDeficiencias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDeficiencias.Location = new System.Drawing.Point(15, 539);
+            this.lblDeficiencias.Name = "lblDeficiencias";
+            this.lblDeficiencias.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.lblDeficiencias.Size = new System.Drawing.Size(189, 28);
+            this.lblDeficiencias.TabIndex = 20;
+            this.lblDeficiencias.Text = "Possui alguma doença ou deficiência?";
+            // 
+            // tlpInfos
+            // 
+            this.tlpInfos.ColumnCount = 3;
+            this.tlpInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpInfos.Controls.Add(this.gbCastracao, 0, 0);
+            this.tlpInfos.Controls.Add(this.gbVacina, 1, 0);
+            this.tlpInfos.Controls.Add(this.pnlStatus, 2, 0);
+            this.tlpInfos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlpInfos.Location = new System.Drawing.Point(15, 451);
+            this.tlpInfos.Name = "tlpInfos";
+            this.tlpInfos.RowCount = 1;
+            this.tlpInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpInfos.Size = new System.Drawing.Size(530, 88);
+            this.tlpInfos.TabIndex = 19;
+            // 
+            // gbCastracao
+            // 
+            this.gbCastracao.Controls.Add(this.rbNaoCastrado);
+            this.gbCastracao.Controls.Add(this.rbCastrado);
+            this.gbCastracao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbCastracao.Location = new System.Drawing.Point(3, 3);
+            this.gbCastracao.Name = "gbCastracao";
+            this.gbCastracao.Size = new System.Drawing.Size(170, 82);
+            this.gbCastracao.TabIndex = 0;
+            this.gbCastracao.TabStop = false;
+            this.gbCastracao.Text = "Já foi Castrado?";
+            // 
+            // rbNaoCastrado
+            // 
+            this.rbNaoCastrado.AutoSize = true;
+            this.rbNaoCastrado.Location = new System.Drawing.Point(12, 53);
+            this.rbNaoCastrado.Name = "rbNaoCastrado";
+            this.rbNaoCastrado.Size = new System.Drawing.Size(45, 17);
+            this.rbNaoCastrado.TabIndex = 1;
+            this.rbNaoCastrado.TabStop = true;
+            this.rbNaoCastrado.Text = "Não";
+            this.rbNaoCastrado.UseVisualStyleBackColor = true;
+            // 
+            // rbCastrado
+            // 
+            this.rbCastrado.AutoSize = true;
+            this.rbCastrado.Location = new System.Drawing.Point(12, 30);
+            this.rbCastrado.Name = "rbCastrado";
+            this.rbCastrado.Size = new System.Drawing.Size(42, 17);
+            this.rbCastrado.TabIndex = 0;
+            this.rbCastrado.TabStop = true;
+            this.rbCastrado.Text = "Sim";
+            this.rbCastrado.UseVisualStyleBackColor = true;
+            // 
+            // gbVacina
+            // 
+            this.gbVacina.Controls.Add(this.rbNaoVacinado);
+            this.gbVacina.Controls.Add(this.rbVacinado);
+            this.gbVacina.Location = new System.Drawing.Point(179, 3);
+            this.gbVacina.Name = "gbVacina";
+            this.gbVacina.Size = new System.Drawing.Size(170, 82);
+            this.gbVacina.TabIndex = 1;
+            this.gbVacina.TabStop = false;
+            this.gbVacina.Text = "Possui vacinas em dia?";
+            // 
+            // rbNaoVacinado
+            // 
+            this.rbNaoVacinado.AutoSize = true;
+            this.rbNaoVacinado.Location = new System.Drawing.Point(16, 53);
+            this.rbNaoVacinado.Name = "rbNaoVacinado";
+            this.rbNaoVacinado.Size = new System.Drawing.Size(45, 17);
+            this.rbNaoVacinado.TabIndex = 1;
+            this.rbNaoVacinado.TabStop = true;
+            this.rbNaoVacinado.Text = "Não";
+            this.rbNaoVacinado.UseVisualStyleBackColor = true;
+            // 
+            // rbVacinado
+            // 
+            this.rbVacinado.AutoSize = true;
+            this.rbVacinado.Location = new System.Drawing.Point(16, 30);
+            this.rbVacinado.Name = "rbVacinado";
+            this.rbVacinado.Size = new System.Drawing.Size(42, 17);
+            this.rbVacinado.TabIndex = 0;
+            this.rbVacinado.TabStop = true;
+            this.rbVacinado.Text = "Sim";
+            this.rbVacinado.UseVisualStyleBackColor = true;
+            // 
+            // pnlStatus
+            // 
+            this.pnlStatus.Controls.Add(this.cbStatus);
+            this.pnlStatus.Controls.Add(this.lblStatus);
+            this.pnlStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlStatus.Location = new System.Drawing.Point(355, 3);
+            this.pnlStatus.Name = "pnlStatus";
+            this.pnlStatus.Size = new System.Drawing.Size(172, 82);
+            this.pnlStatus.TabIndex = 2;
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Items.AddRange(new object[] {
+            "Disponível",
+            "Adotado"});
+            this.cbStatus.Location = new System.Drawing.Point(0, 13);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(172, 21);
+            this.cbStatus.TabIndex = 1;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblStatus.Location = new System.Drawing.Point(0, 0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(40, 13);
+            this.lblStatus.TabIndex = 0;
+            this.lblStatus.Text = "Status:";
+            // 
+            // lblEspaco
+            // 
+            this.lblEspaco.AutoSize = true;
+            this.lblEspaco.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblEspaco.Location = new System.Drawing.Point(15, 433);
+            this.lblEspaco.Name = "lblEspaco";
+            this.lblEspaco.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lblEspaco.Size = new System.Drawing.Size(0, 18);
+            this.lblEspaco.TabIndex = 18;
+            // 
+            // txtLarTemporario
+            // 
+            this.txtLarTemporario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtLarTemporario.Location = new System.Drawing.Point(15, 413);
+            this.txtLarTemporario.Name = "txtLarTemporario";
+            this.txtLarTemporario.Size = new System.Drawing.Size(530, 20);
+            this.txtLarTemporario.TabIndex = 17;
+            this.txtLarTemporario.TextChanged += new System.EventHandler(this.txtLarTemporario_TextChanged);
+            // 
             // lblLarTemporario
             // 
             this.lblLarTemporario.AutoSize = true;
-            this.lblLarTemporario.Location = new System.Drawing.Point(19, 377);
+            this.lblLarTemporario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblLarTemporario.Location = new System.Drawing.Point(15, 385);
             this.lblLarTemporario.Name = "lblLarTemporario";
-            this.lblLarTemporario.Size = new System.Drawing.Size(81, 13);
+            this.lblLarTemporario.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.lblLarTemporario.Size = new System.Drawing.Size(81, 28);
             this.lblLarTemporario.TabIndex = 16;
             this.lblLarTemporario.Text = "Lar Temporário:";
             // 
@@ -105,7 +297,7 @@
             // 
             // pnlCaracteristicas
             // 
-            this.pnlCaracteristicas.Controls.Add(this.panel2);
+            this.pnlCaracteristicas.Controls.Add(this.pnlPeso);
             this.pnlCaracteristicas.Controls.Add(this.pnlPelagem);
             this.pnlCaracteristicas.Controls.Add(this.gbSexo);
             this.pnlCaracteristicas.Dock = System.Windows.Forms.DockStyle.Top;
@@ -114,16 +306,16 @@
             this.pnlCaracteristicas.Size = new System.Drawing.Size(530, 102);
             this.pnlCaracteristicas.TabIndex = 14;
             // 
-            // panel2
+            // pnlPeso
             // 
-            this.panel2.Controls.Add(this.txbPeso);
-            this.panel2.Controls.Add(this.lblPeso);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(323, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panel2.Size = new System.Drawing.Size(200, 102);
-            this.panel2.TabIndex = 13;
+            this.pnlPeso.Controls.Add(this.txbPeso);
+            this.pnlPeso.Controls.Add(this.lblPeso);
+            this.pnlPeso.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlPeso.Location = new System.Drawing.Point(323, 0);
+            this.pnlPeso.Name = "pnlPeso";
+            this.pnlPeso.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.pnlPeso.Size = new System.Drawing.Size(200, 102);
+            this.pnlPeso.TabIndex = 13;
             // 
             // txbPeso
             // 
@@ -361,6 +553,65 @@
             this.btnExcluir.Text = "🗑️ Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
             // 
+            // lblObservacoes
+            // 
+            this.lblObservacoes.AutoSize = true;
+            this.lblObservacoes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblObservacoes.Location = new System.Drawing.Point(15, 587);
+            this.lblObservacoes.Name = "lblObservacoes";
+            this.lblObservacoes.Padding = new System.Windows.Forms.Padding(0, 15, 0, 5);
+            this.lblObservacoes.Size = new System.Drawing.Size(73, 33);
+            this.lblObservacoes.TabIndex = 22;
+            this.lblObservacoes.Text = "Observações:";
+            // 
+            // txtObservacoes
+            // 
+            this.txtObservacoes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtObservacoes.Location = new System.Drawing.Point(15, 620);
+            this.txtObservacoes.Multiline = true;
+            this.txtObservacoes.Name = "txtObservacoes";
+            this.txtObservacoes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtObservacoes.Size = new System.Drawing.Size(530, 79);
+            this.txtObservacoes.TabIndex = 23;
+            // 
+            // lblDataEntrada
+            // 
+            this.lblDataEntrada.AutoSize = true;
+            this.lblDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDataEntrada.Location = new System.Drawing.Point(15, 699);
+            this.lblDataEntrada.Name = "lblDataEntrada";
+            this.lblDataEntrada.Padding = new System.Windows.Forms.Padding(0, 15, 0, 5);
+            this.lblDataEntrada.Size = new System.Drawing.Size(88, 33);
+            this.lblDataEntrada.TabIndex = 24;
+            this.lblDataEntrada.Text = "Data de Entrada:";
+            // 
+            // dtpDataEntrada
+            // 
+            this.dtpDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtpDataEntrada.Location = new System.Drawing.Point(15, 732);
+            this.dtpDataEntrada.Name = "dtpDataEntrada";
+            this.dtpDataEntrada.Size = new System.Drawing.Size(530, 20);
+            this.dtpDataEntrada.TabIndex = 25;
+            // 
+            // lblFotoGato
+            // 
+            this.lblFotoGato.AutoSize = true;
+            this.lblFotoGato.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblFotoGato.Location = new System.Drawing.Point(15, 752);
+            this.lblFotoGato.Name = "lblFotoGato";
+            this.lblFotoGato.Padding = new System.Windows.Forms.Padding(0, 15, 0, 5);
+            this.lblFotoGato.Size = new System.Drawing.Size(72, 33);
+            this.lblFotoGato.TabIndex = 26;
+            this.lblFotoGato.Text = "Foto do Gato:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(26, 802);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
             // ucEdicaoGato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,13 +626,21 @@
             this.Size = new System.Drawing.Size(620, 1439);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tlpInfos.ResumeLayout(false);
+            this.gbCastracao.ResumeLayout(false);
+            this.gbCastracao.PerformLayout();
+            this.gbVacina.ResumeLayout(false);
+            this.gbVacina.PerformLayout();
+            this.pnlStatus.ResumeLayout(false);
+            this.pnlStatus.PerformLayout();
             this.pnlCaracteristicas.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlPeso.ResumeLayout(false);
+            this.pnlPeso.PerformLayout();
             this.pnlPelagem.ResumeLayout(false);
             this.pnlPelagem.PerformLayout();
             this.gbSexo.ResumeLayout(false);
             this.gbSexo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,7 +662,7 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblSaudeStatus;
         private System.Windows.Forms.Panel pnlCaracteristicas;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlPeso;
         private System.Windows.Forms.TextBox txbPeso;
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.Panel pnlPelagem;
@@ -415,5 +674,25 @@
         private System.Windows.Forms.RadioButton rbFemea;
         private System.Windows.Forms.RadioButton rbMacho;
         private System.Windows.Forms.Label lblLarTemporario;
+        private System.Windows.Forms.TextBox txtLarTemporario;
+        private System.Windows.Forms.TableLayoutPanel tlpInfos;
+        private System.Windows.Forms.GroupBox gbCastracao;
+        private System.Windows.Forms.Label lblEspaco;
+        private System.Windows.Forms.RadioButton rbNaoCastrado;
+        private System.Windows.Forms.RadioButton rbCastrado;
+        private System.Windows.Forms.GroupBox gbVacina;
+        private System.Windows.Forms.RadioButton rbNaoVacinado;
+        private System.Windows.Forms.RadioButton rbVacinado;
+        private System.Windows.Forms.Panel pnlStatus;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.Label lblDeficiencias;
+        private System.Windows.Forms.TextBox txtDeficiencia;
+        private System.Windows.Forms.TextBox txtObservacoes;
+        private System.Windows.Forms.Label lblObservacoes;
+        private System.Windows.Forms.Label lblDataEntrada;
+        private System.Windows.Forms.DateTimePicker dtpDataEntrada;
+        private System.Windows.Forms.Label lblFotoGato;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
