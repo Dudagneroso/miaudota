@@ -123,6 +123,12 @@
     <Compile Include="Telas\ucEdicaoTutor.Designer.cs">
       <DependentUpon>ucEdicaoTutor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\ucOcorrencia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\ucOcorrencia.Designer.cs">
+      <DependentUpon>ucOcorrencia.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Telas\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\ucEdicaoTutor.resx">
       <DependentUpon>ucEdicaoTutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ucOcorrencia.resx">
+      <DependentUpon>ucOcorrencia.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
