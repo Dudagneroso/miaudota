@@ -32,6 +32,27 @@
             this.ofdFoto = new System.Windows.Forms.OpenFileDialog();
             this.lblCadastroSubtitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEspaco3 = new System.Windows.Forms.Label();
+            this.pnlMapa = new System.Windows.Forms.Panel();
+            this.wvMapa = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.lblLocalResgate = new System.Windows.Forms.Label();
+            this.tlpFotoLocal = new System.Windows.Forms.TableLayoutPanel();
+            this.gbCadastrarLocal = new System.Windows.Forms.GroupBox();
+            this.rbNaoLocal = new System.Windows.Forms.RadioButton();
+            this.rbSimLocal = new System.Windows.Forms.RadioButton();
+            this.pnlFoto = new System.Windows.Forms.Panel();
+            this.btnEscolherFoto = new System.Windows.Forms.Button();
+            this.pbFotoGato = new System.Windows.Forms.PictureBox();
+            this.lblEscolherFoto = new System.Windows.Forms.Label();
+            this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
+            this.lblDataEntrada = new System.Windows.Forms.Label();
+            this.txtObservacao = new System.Windows.Forms.TextBox();
+            this.lblObservacao = new System.Windows.Forms.Label();
+            this.txtDeficiencias = new System.Windows.Forms.TextBox();
+            this.lblDeficiencias = new System.Windows.Forms.Label();
+            this.pnlVacinasTomadas = new System.Windows.Forms.Panel();
+            this.clbVacinas = new System.Windows.Forms.CheckedListBox();
+            this.lblCheckVacinas = new System.Windows.Forms.Label();
             this.tlpBotoes = new System.Windows.Forms.TableLayoutPanel();
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -70,28 +91,14 @@
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
             this.lblIdentificacao = new System.Windows.Forms.Label();
-            this.pnlVacinasTomadas = new System.Windows.Forms.Panel();
-            this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
-            this.lblDataEntrada = new System.Windows.Forms.Label();
-            this.txtObservacao = new System.Windows.Forms.TextBox();
-            this.lblObservacao = new System.Windows.Forms.Label();
-            this.txtDeficiencias = new System.Windows.Forms.TextBox();
-            this.lblDeficiencias = new System.Windows.Forms.Label();
-            this.pnlMapa = new System.Windows.Forms.Panel();
-            this.wvMapa = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.lblLocalResgate = new System.Windows.Forms.Label();
-            this.tlpFotoLocal = new System.Windows.Forms.TableLayoutPanel();
-            this.gbCadastrarLocal = new System.Windows.Forms.GroupBox();
-            this.rbNaoLocal = new System.Windows.Forms.RadioButton();
-            this.rbSimLocal = new System.Windows.Forms.RadioButton();
-            this.pnlFoto = new System.Windows.Forms.Panel();
-            this.btnEscolherFoto = new System.Windows.Forms.Button();
-            this.pbFotoGato = new System.Windows.Forms.PictureBox();
-            this.lblEscolherFoto = new System.Windows.Forms.Label();
-            this.lblCheckVacinas = new System.Windows.Forms.Label();
-            this.clbVacinas = new System.Windows.Forms.CheckedListBox();
-            this.lblEspaco3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.pnlMapa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wvMapa)).BeginInit();
+            this.tlpFotoLocal.SuspendLayout();
+            this.gbCadastrarLocal.SuspendLayout();
+            this.pnlFoto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoGato)).BeginInit();
+            this.pnlVacinasTomadas.SuspendLayout();
             this.tlpBotoes.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -102,13 +109,6 @@
             this.gbSexo.SuspendLayout();
             this.pnlPelagem.SuspendLayout();
             this.pnlPeso.SuspendLayout();
-            this.pnlVacinasTomadas.SuspendLayout();
-            this.pnlMapa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wvMapa)).BeginInit();
-            this.tlpFotoLocal.SuspendLayout();
-            this.gbCadastrarLocal.SuspendLayout();
-            this.pnlFoto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotoGato)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTituloCadastroGato
@@ -170,6 +170,264 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
             this.panel1.Size = new System.Drawing.Size(670, 1752);
             this.panel1.TabIndex = 25;
+            // 
+            // lblEspaco3
+            // 
+            this.lblEspaco3.AutoSize = true;
+            this.lblEspaco3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblEspaco3.Location = new System.Drawing.Point(10, 1480);
+            this.lblEspaco3.Name = "lblEspaco3";
+            this.lblEspaco3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lblEspaco3.Size = new System.Drawing.Size(0, 18);
+            this.lblEspaco3.TabIndex = 85;
+            // 
+            // pnlMapa
+            // 
+            this.pnlMapa.Controls.Add(this.wvMapa);
+            this.pnlMapa.Controls.Add(this.lblLocalResgate);
+            this.pnlMapa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlMapa.Location = new System.Drawing.Point(10, 1110);
+            this.pnlMapa.Name = "pnlMapa";
+            this.pnlMapa.Padding = new System.Windows.Forms.Padding(7, 10, 7, 5);
+            this.pnlMapa.Size = new System.Drawing.Size(650, 370);
+            this.pnlMapa.TabIndex = 84;
+            this.pnlMapa.Visible = false;
+            // 
+            // wvMapa
+            // 
+            this.wvMapa.AllowExternalDrop = true;
+            this.wvMapa.CreationProperties = null;
+            this.wvMapa.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.wvMapa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wvMapa.Location = new System.Drawing.Point(7, 28);
+            this.wvMapa.Name = "wvMapa";
+            this.wvMapa.Size = new System.Drawing.Size(636, 337);
+            this.wvMapa.TabIndex = 33;
+            this.wvMapa.ZoomFactor = 1D;
+            // 
+            // lblLocalResgate
+            // 
+            this.lblLocalResgate.AutoSize = true;
+            this.lblLocalResgate.BackColor = System.Drawing.Color.White;
+            this.lblLocalResgate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblLocalResgate.Location = new System.Drawing.Point(7, 10);
+            this.lblLocalResgate.Name = "lblLocalResgate";
+            this.lblLocalResgate.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lblLocalResgate.Size = new System.Drawing.Size(89, 18);
+            this.lblLocalResgate.TabIndex = 32;
+            this.lblLocalResgate.Text = "Local de resgate:";
+            // 
+            // tlpFotoLocal
+            // 
+            this.tlpFotoLocal.ColumnCount = 2;
+            this.tlpFotoLocal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpFotoLocal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpFotoLocal.Controls.Add(this.gbCadastrarLocal, 1, 0);
+            this.tlpFotoLocal.Controls.Add(this.pnlFoto, 0, 0);
+            this.tlpFotoLocal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlpFotoLocal.Location = new System.Drawing.Point(10, 887);
+            this.tlpFotoLocal.Name = "tlpFotoLocal";
+            this.tlpFotoLocal.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.tlpFotoLocal.RowCount = 1;
+            this.tlpFotoLocal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpFotoLocal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 213F));
+            this.tlpFotoLocal.Size = new System.Drawing.Size(650, 223);
+            this.tlpFotoLocal.TabIndex = 83;
+            // 
+            // gbCadastrarLocal
+            // 
+            this.gbCadastrarLocal.Controls.Add(this.rbNaoLocal);
+            this.gbCadastrarLocal.Controls.Add(this.rbSimLocal);
+            this.gbCadastrarLocal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbCadastrarLocal.Location = new System.Drawing.Point(328, 13);
+            this.gbCadastrarLocal.Name = "gbCadastrarLocal";
+            this.gbCadastrarLocal.Size = new System.Drawing.Size(319, 207);
+            this.gbCadastrarLocal.TabIndex = 29;
+            this.gbCadastrarLocal.TabStop = false;
+            this.gbCadastrarLocal.Text = "Deseja resgistar o local de resgate?";
+            // 
+            // rbNaoLocal
+            // 
+            this.rbNaoLocal.AutoSize = true;
+            this.rbNaoLocal.Location = new System.Drawing.Point(16, 66);
+            this.rbNaoLocal.Name = "rbNaoLocal";
+            this.rbNaoLocal.Size = new System.Drawing.Size(45, 17);
+            this.rbNaoLocal.TabIndex = 30;
+            this.rbNaoLocal.TabStop = true;
+            this.rbNaoLocal.Text = "Não";
+            this.rbNaoLocal.UseVisualStyleBackColor = true;
+            // 
+            // rbSimLocal
+            // 
+            this.rbSimLocal.AutoSize = true;
+            this.rbSimLocal.Location = new System.Drawing.Point(16, 33);
+            this.rbSimLocal.Name = "rbSimLocal";
+            this.rbSimLocal.Size = new System.Drawing.Size(42, 17);
+            this.rbSimLocal.TabIndex = 29;
+            this.rbSimLocal.TabStop = true;
+            this.rbSimLocal.Text = "Sim";
+            this.rbSimLocal.UseVisualStyleBackColor = true;
+            this.rbSimLocal.CheckedChanged += new System.EventHandler(this.rbSimLocal_CheckedChanged);
+            // 
+            // pnlFoto
+            // 
+            this.pnlFoto.Controls.Add(this.btnEscolherFoto);
+            this.pnlFoto.Controls.Add(this.pbFotoGato);
+            this.pnlFoto.Controls.Add(this.lblEscolherFoto);
+            this.pnlFoto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFoto.Location = new System.Drawing.Point(3, 13);
+            this.pnlFoto.Name = "pnlFoto";
+            this.pnlFoto.Size = new System.Drawing.Size(319, 207);
+            this.pnlFoto.TabIndex = 0;
+            // 
+            // btnEscolherFoto
+            // 
+            this.btnEscolherFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(201)))), ((int)(((byte)(200)))));
+            this.btnEscolherFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEscolherFoto.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnEscolherFoto.FlatAppearance.BorderSize = 0;
+            this.btnEscolherFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEscolherFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEscolherFoto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEscolherFoto.Location = new System.Drawing.Point(0, 177);
+            this.btnEscolherFoto.Name = "btnEscolherFoto";
+            this.btnEscolherFoto.Size = new System.Drawing.Size(319, 30);
+            this.btnEscolherFoto.TabIndex = 38;
+            this.btnEscolherFoto.Text = "Escolher Foto";
+            this.btnEscolherFoto.UseVisualStyleBackColor = false;
+            this.btnEscolherFoto.Click += new System.EventHandler(this.btnEscolherFoto_Click);
+            // 
+            // pbFotoGato
+            // 
+            this.pbFotoGato.BackColor = System.Drawing.Color.White;
+            this.pbFotoGato.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pbFotoGato.Location = new System.Drawing.Point(0, 18);
+            this.pbFotoGato.Name = "pbFotoGato";
+            this.pbFotoGato.Size = new System.Drawing.Size(319, 165);
+            this.pbFotoGato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFotoGato.TabIndex = 35;
+            this.pbFotoGato.TabStop = false;
+            // 
+            // lblEscolherFoto
+            // 
+            this.lblEscolherFoto.AutoSize = true;
+            this.lblEscolherFoto.BackColor = System.Drawing.Color.White;
+            this.lblEscolherFoto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblEscolherFoto.Location = new System.Drawing.Point(0, 0);
+            this.lblEscolherFoto.Name = "lblEscolherFoto";
+            this.lblEscolherFoto.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lblEscolherFoto.Size = new System.Drawing.Size(72, 18);
+            this.lblEscolherFoto.TabIndex = 34;
+            this.lblEscolherFoto.Text = "Foto do Gato:";
+            // 
+            // dtpDataEntrada
+            // 
+            this.dtpDataEntrada.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtpDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataEntrada.Location = new System.Drawing.Point(10, 867);
+            this.dtpDataEntrada.Name = "dtpDataEntrada";
+            this.dtpDataEntrada.Size = new System.Drawing.Size(650, 20);
+            this.dtpDataEntrada.TabIndex = 78;
+            // 
+            // lblDataEntrada
+            // 
+            this.lblDataEntrada.AutoSize = true;
+            this.lblDataEntrada.BackColor = System.Drawing.Color.White;
+            this.lblDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDataEntrada.Location = new System.Drawing.Point(10, 839);
+            this.lblDataEntrada.Name = "lblDataEntrada";
+            this.lblDataEntrada.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.lblDataEntrada.Size = new System.Drawing.Size(88, 28);
+            this.lblDataEntrada.TabIndex = 77;
+            this.lblDataEntrada.Text = "Data de Entrada:";
+            // 
+            // txtObservacao
+            // 
+            this.txtObservacao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtObservacao.Location = new System.Drawing.Point(10, 760);
+            this.txtObservacao.Multiline = true;
+            this.txtObservacao.Name = "txtObservacao";
+            this.txtObservacao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtObservacao.Size = new System.Drawing.Size(650, 79);
+            this.txtObservacao.TabIndex = 76;
+            // 
+            // lblObservacao
+            // 
+            this.lblObservacao.AutoSize = true;
+            this.lblObservacao.BackColor = System.Drawing.Color.White;
+            this.lblObservacao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblObservacao.Location = new System.Drawing.Point(10, 732);
+            this.lblObservacao.Name = "lblObservacao";
+            this.lblObservacao.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.lblObservacao.Size = new System.Drawing.Size(73, 28);
+            this.lblObservacao.TabIndex = 75;
+            this.lblObservacao.Text = "Observações:";
+            // 
+            // txtDeficiencias
+            // 
+            this.txtDeficiencias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtDeficiencias.Location = new System.Drawing.Point(10, 707);
+            this.txtDeficiencias.Multiline = true;
+            this.txtDeficiencias.Name = "txtDeficiencias";
+            this.txtDeficiencias.Size = new System.Drawing.Size(650, 25);
+            this.txtDeficiencias.TabIndex = 70;
+            // 
+            // lblDeficiencias
+            // 
+            this.lblDeficiencias.AutoSize = true;
+            this.lblDeficiencias.BackColor = System.Drawing.Color.White;
+            this.lblDeficiencias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDeficiencias.Location = new System.Drawing.Point(10, 679);
+            this.lblDeficiencias.Name = "lblDeficiencias";
+            this.lblDeficiencias.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.lblDeficiencias.Size = new System.Drawing.Size(189, 28);
+            this.lblDeficiencias.TabIndex = 69;
+            this.lblDeficiencias.Text = "Possui alguma doença ou deficiência?";
+            // 
+            // pnlVacinasTomadas
+            // 
+            this.pnlVacinasTomadas.Controls.Add(this.clbVacinas);
+            this.pnlVacinasTomadas.Controls.Add(this.lblCheckVacinas);
+            this.pnlVacinasTomadas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlVacinasTomadas.Location = new System.Drawing.Point(10, 554);
+            this.pnlVacinasTomadas.Name = "pnlVacinasTomadas";
+            this.pnlVacinasTomadas.Size = new System.Drawing.Size(650, 125);
+            this.pnlVacinasTomadas.TabIndex = 61;
+            this.pnlVacinasTomadas.Visible = false;
+            // 
+            // clbVacinas
+            // 
+            this.clbVacinas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.clbVacinas.FormattingEnabled = true;
+            this.clbVacinas.IntegralHeight = false;
+            this.clbVacinas.Items.AddRange(new object[] {
+            "Nobivac Tricat Trio",
+            "Feline Vanguard Plus",
+            "Felocell 4",
+            "Leucogen",
+            "Feline Vanguard Crv",
+            "Purevax Recombinant FeLV",
+            "Defensor",
+            "Nobivac Raiva",
+            "Rabisin",
+            "Nobivac Bb"});
+            this.clbVacinas.Location = new System.Drawing.Point(0, 28);
+            this.clbVacinas.MultiColumn = true;
+            this.clbVacinas.Name = "clbVacinas";
+            this.clbVacinas.Size = new System.Drawing.Size(650, 97);
+            this.clbVacinas.TabIndex = 2;
+            // 
+            // lblCheckVacinas
+            // 
+            this.lblCheckVacinas.AutoSize = true;
+            this.lblCheckVacinas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblCheckVacinas.Location = new System.Drawing.Point(0, 0);
+            this.lblCheckVacinas.Name = "lblCheckVacinas";
+            this.lblCheckVacinas.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.lblCheckVacinas.Size = new System.Drawing.Size(143, 28);
+            this.lblCheckVacinas.TabIndex = 1;
+            this.lblCheckVacinas.Text = "Marque as vacinas tomadas:";
             // 
             // tlpBotoes
             // 
@@ -641,264 +899,6 @@
             this.lblIdentificacao.TabIndex = 32;
             this.lblIdentificacao.Text = "IDENTIFICAÇÃO";
             // 
-            // pnlVacinasTomadas
-            // 
-            this.pnlVacinasTomadas.Controls.Add(this.clbVacinas);
-            this.pnlVacinasTomadas.Controls.Add(this.lblCheckVacinas);
-            this.pnlVacinasTomadas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlVacinasTomadas.Location = new System.Drawing.Point(10, 554);
-            this.pnlVacinasTomadas.Name = "pnlVacinasTomadas";
-            this.pnlVacinasTomadas.Size = new System.Drawing.Size(650, 125);
-            this.pnlVacinasTomadas.TabIndex = 61;
-            this.pnlVacinasTomadas.Visible = false;
-            // 
-            // dtpDataEntrada
-            // 
-            this.dtpDataEntrada.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dtpDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataEntrada.Location = new System.Drawing.Point(10, 867);
-            this.dtpDataEntrada.Name = "dtpDataEntrada";
-            this.dtpDataEntrada.Size = new System.Drawing.Size(650, 20);
-            this.dtpDataEntrada.TabIndex = 78;
-            // 
-            // lblDataEntrada
-            // 
-            this.lblDataEntrada.AutoSize = true;
-            this.lblDataEntrada.BackColor = System.Drawing.Color.White;
-            this.lblDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDataEntrada.Location = new System.Drawing.Point(10, 839);
-            this.lblDataEntrada.Name = "lblDataEntrada";
-            this.lblDataEntrada.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
-            this.lblDataEntrada.Size = new System.Drawing.Size(88, 28);
-            this.lblDataEntrada.TabIndex = 77;
-            this.lblDataEntrada.Text = "Data de Entrada:";
-            // 
-            // txtObservacao
-            // 
-            this.txtObservacao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtObservacao.Location = new System.Drawing.Point(10, 760);
-            this.txtObservacao.Multiline = true;
-            this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtObservacao.Size = new System.Drawing.Size(650, 79);
-            this.txtObservacao.TabIndex = 76;
-            // 
-            // lblObservacao
-            // 
-            this.lblObservacao.AutoSize = true;
-            this.lblObservacao.BackColor = System.Drawing.Color.White;
-            this.lblObservacao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblObservacao.Location = new System.Drawing.Point(10, 732);
-            this.lblObservacao.Name = "lblObservacao";
-            this.lblObservacao.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
-            this.lblObservacao.Size = new System.Drawing.Size(73, 28);
-            this.lblObservacao.TabIndex = 75;
-            this.lblObservacao.Text = "Observações:";
-            // 
-            // txtDeficiencias
-            // 
-            this.txtDeficiencias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtDeficiencias.Location = new System.Drawing.Point(10, 707);
-            this.txtDeficiencias.Multiline = true;
-            this.txtDeficiencias.Name = "txtDeficiencias";
-            this.txtDeficiencias.Size = new System.Drawing.Size(650, 25);
-            this.txtDeficiencias.TabIndex = 70;
-            // 
-            // lblDeficiencias
-            // 
-            this.lblDeficiencias.AutoSize = true;
-            this.lblDeficiencias.BackColor = System.Drawing.Color.White;
-            this.lblDeficiencias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDeficiencias.Location = new System.Drawing.Point(10, 679);
-            this.lblDeficiencias.Name = "lblDeficiencias";
-            this.lblDeficiencias.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
-            this.lblDeficiencias.Size = new System.Drawing.Size(189, 28);
-            this.lblDeficiencias.TabIndex = 69;
-            this.lblDeficiencias.Text = "Possui alguma doença ou deficiência?";
-            // 
-            // pnlMapa
-            // 
-            this.pnlMapa.Controls.Add(this.wvMapa);
-            this.pnlMapa.Controls.Add(this.lblLocalResgate);
-            this.pnlMapa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMapa.Location = new System.Drawing.Point(10, 1110);
-            this.pnlMapa.Name = "pnlMapa";
-            this.pnlMapa.Padding = new System.Windows.Forms.Padding(7, 10, 7, 5);
-            this.pnlMapa.Size = new System.Drawing.Size(650, 370);
-            this.pnlMapa.TabIndex = 84;
-            this.pnlMapa.Visible = false;
-            // 
-            // wvMapa
-            // 
-            this.wvMapa.AllowExternalDrop = true;
-            this.wvMapa.CreationProperties = null;
-            this.wvMapa.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.wvMapa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wvMapa.Location = new System.Drawing.Point(7, 28);
-            this.wvMapa.Name = "wvMapa";
-            this.wvMapa.Size = new System.Drawing.Size(636, 337);
-            this.wvMapa.TabIndex = 33;
-            this.wvMapa.ZoomFactor = 1D;
-            // 
-            // lblLocalResgate
-            // 
-            this.lblLocalResgate.AutoSize = true;
-            this.lblLocalResgate.BackColor = System.Drawing.Color.White;
-            this.lblLocalResgate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblLocalResgate.Location = new System.Drawing.Point(7, 10);
-            this.lblLocalResgate.Name = "lblLocalResgate";
-            this.lblLocalResgate.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lblLocalResgate.Size = new System.Drawing.Size(89, 18);
-            this.lblLocalResgate.TabIndex = 32;
-            this.lblLocalResgate.Text = "Local de resgate:";
-            // 
-            // tlpFotoLocal
-            // 
-            this.tlpFotoLocal.ColumnCount = 2;
-            this.tlpFotoLocal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpFotoLocal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpFotoLocal.Controls.Add(this.gbCadastrarLocal, 1, 0);
-            this.tlpFotoLocal.Controls.Add(this.pnlFoto, 0, 0);
-            this.tlpFotoLocal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpFotoLocal.Location = new System.Drawing.Point(10, 887);
-            this.tlpFotoLocal.Name = "tlpFotoLocal";
-            this.tlpFotoLocal.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.tlpFotoLocal.RowCount = 1;
-            this.tlpFotoLocal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpFotoLocal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 187F));
-            this.tlpFotoLocal.Size = new System.Drawing.Size(650, 223);
-            this.tlpFotoLocal.TabIndex = 83;
-            // 
-            // gbCadastrarLocal
-            // 
-            this.gbCadastrarLocal.Controls.Add(this.rbNaoLocal);
-            this.gbCadastrarLocal.Controls.Add(this.rbSimLocal);
-            this.gbCadastrarLocal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbCadastrarLocal.Location = new System.Drawing.Point(328, 13);
-            this.gbCadastrarLocal.Name = "gbCadastrarLocal";
-            this.gbCadastrarLocal.Size = new System.Drawing.Size(319, 207);
-            this.gbCadastrarLocal.TabIndex = 29;
-            this.gbCadastrarLocal.TabStop = false;
-            this.gbCadastrarLocal.Text = "Deseja resgistar o local de resgate?";
-            // 
-            // rbNaoLocal
-            // 
-            this.rbNaoLocal.AutoSize = true;
-            this.rbNaoLocal.Location = new System.Drawing.Point(16, 66);
-            this.rbNaoLocal.Name = "rbNaoLocal";
-            this.rbNaoLocal.Size = new System.Drawing.Size(45, 17);
-            this.rbNaoLocal.TabIndex = 30;
-            this.rbNaoLocal.TabStop = true;
-            this.rbNaoLocal.Text = "Não";
-            this.rbNaoLocal.UseVisualStyleBackColor = true;
-            // 
-            // rbSimLocal
-            // 
-            this.rbSimLocal.AutoSize = true;
-            this.rbSimLocal.Location = new System.Drawing.Point(16, 33);
-            this.rbSimLocal.Name = "rbSimLocal";
-            this.rbSimLocal.Size = new System.Drawing.Size(42, 17);
-            this.rbSimLocal.TabIndex = 29;
-            this.rbSimLocal.TabStop = true;
-            this.rbSimLocal.Text = "Sim";
-            this.rbSimLocal.UseVisualStyleBackColor = true;
-            this.rbSimLocal.CheckedChanged += new System.EventHandler(this.rbSimLocal_CheckedChanged);
-            // 
-            // pnlFoto
-            // 
-            this.pnlFoto.Controls.Add(this.btnEscolherFoto);
-            this.pnlFoto.Controls.Add(this.pbFotoGato);
-            this.pnlFoto.Controls.Add(this.lblEscolherFoto);
-            this.pnlFoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFoto.Location = new System.Drawing.Point(3, 13);
-            this.pnlFoto.Name = "pnlFoto";
-            this.pnlFoto.Size = new System.Drawing.Size(319, 207);
-            this.pnlFoto.TabIndex = 0;
-            // 
-            // btnEscolherFoto
-            // 
-            this.btnEscolherFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(201)))), ((int)(((byte)(200)))));
-            this.btnEscolherFoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEscolherFoto.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnEscolherFoto.FlatAppearance.BorderSize = 0;
-            this.btnEscolherFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEscolherFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEscolherFoto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEscolherFoto.Location = new System.Drawing.Point(0, 177);
-            this.btnEscolherFoto.Name = "btnEscolherFoto";
-            this.btnEscolherFoto.Size = new System.Drawing.Size(319, 30);
-            this.btnEscolherFoto.TabIndex = 38;
-            this.btnEscolherFoto.Text = "Escolher Foto";
-            this.btnEscolherFoto.UseVisualStyleBackColor = false;
-            this.btnEscolherFoto.Click += new System.EventHandler(this.btnEscolherFoto_Click);
-            // 
-            // pbFotoGato
-            // 
-            this.pbFotoGato.BackColor = System.Drawing.Color.White;
-            this.pbFotoGato.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pbFotoGato.Location = new System.Drawing.Point(0, 18);
-            this.pbFotoGato.Name = "pbFotoGato";
-            this.pbFotoGato.Size = new System.Drawing.Size(319, 165);
-            this.pbFotoGato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbFotoGato.TabIndex = 35;
-            this.pbFotoGato.TabStop = false;
-            // 
-            // lblEscolherFoto
-            // 
-            this.lblEscolherFoto.AutoSize = true;
-            this.lblEscolherFoto.BackColor = System.Drawing.Color.White;
-            this.lblEscolherFoto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblEscolherFoto.Location = new System.Drawing.Point(0, 0);
-            this.lblEscolherFoto.Name = "lblEscolherFoto";
-            this.lblEscolherFoto.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lblEscolherFoto.Size = new System.Drawing.Size(72, 18);
-            this.lblEscolherFoto.TabIndex = 34;
-            this.lblEscolherFoto.Text = "Foto do Gato:";
-            // 
-            // lblCheckVacinas
-            // 
-            this.lblCheckVacinas.AutoSize = true;
-            this.lblCheckVacinas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblCheckVacinas.Location = new System.Drawing.Point(0, 0);
-            this.lblCheckVacinas.Name = "lblCheckVacinas";
-            this.lblCheckVacinas.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
-            this.lblCheckVacinas.Size = new System.Drawing.Size(143, 28);
-            this.lblCheckVacinas.TabIndex = 1;
-            this.lblCheckVacinas.Text = "Marque as vacinas tomadas:";
-            // 
-            // clbVacinas
-            // 
-            this.clbVacinas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.clbVacinas.FormattingEnabled = true;
-            this.clbVacinas.IntegralHeight = false;
-            this.clbVacinas.Items.AddRange(new object[] {
-            "Nobivac Tricat Trio",
-            "Feline Vanguard Plus",
-            "Felocell 4",
-            "Leucogen",
-            "Feline Vanguard Crv",
-            "Purevax Recombinant FeLV",
-            "Defensor",
-            "Nobivac Raiva",
-            "Rabisin",
-            "Nobivac Bb"});
-            this.clbVacinas.Location = new System.Drawing.Point(0, 28);
-            this.clbVacinas.MultiColumn = true;
-            this.clbVacinas.Name = "clbVacinas";
-            this.clbVacinas.Size = new System.Drawing.Size(650, 97);
-            this.clbVacinas.TabIndex = 2;
-            // 
-            // lblEspaco3
-            // 
-            this.lblEspaco3.AutoSize = true;
-            this.lblEspaco3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblEspaco3.Location = new System.Drawing.Point(10, 1480);
-            this.lblEspaco3.Name = "lblEspaco3";
-            this.lblEspaco3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lblEspaco3.Size = new System.Drawing.Size(0, 18);
-            this.lblEspaco3.TabIndex = 85;
-            // 
             // ucCadastroGato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -912,6 +912,17 @@
             this.Load += new System.EventHandler(this.ucCadastroGato_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlMapa.ResumeLayout(false);
+            this.pnlMapa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wvMapa)).EndInit();
+            this.tlpFotoLocal.ResumeLayout(false);
+            this.gbCadastrarLocal.ResumeLayout(false);
+            this.gbCadastrarLocal.PerformLayout();
+            this.pnlFoto.ResumeLayout(false);
+            this.pnlFoto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoGato)).EndInit();
+            this.pnlVacinasTomadas.ResumeLayout(false);
+            this.pnlVacinasTomadas.PerformLayout();
             this.tlpBotoes.ResumeLayout(false);
             this.pnlBotoes.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -928,17 +939,6 @@
             this.pnlPelagem.PerformLayout();
             this.pnlPeso.ResumeLayout(false);
             this.pnlPeso.PerformLayout();
-            this.pnlVacinasTomadas.ResumeLayout(false);
-            this.pnlVacinasTomadas.PerformLayout();
-            this.pnlMapa.ResumeLayout(false);
-            this.pnlMapa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wvMapa)).EndInit();
-            this.tlpFotoLocal.ResumeLayout(false);
-            this.gbCadastrarLocal.ResumeLayout(false);
-            this.gbCadastrarLocal.PerformLayout();
-            this.pnlFoto.ResumeLayout(false);
-            this.pnlFoto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFotoGato)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
