@@ -63,5 +63,10 @@ namespace miaudota
         {
             pnlMapa.Visible = rbSimLocal.Checked;
         }
+
+        private void rbVacinado_CheckedChanged(object sender, EventArgs e)
+        {
+            pnlVacinasTomadas.Visible = rbVacinado.Checked || rbNaoVacinado.Checked;
+        }
     }
 }
