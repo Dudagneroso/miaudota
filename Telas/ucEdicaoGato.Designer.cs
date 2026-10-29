@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblFotoGato = new System.Windows.Forms.Label();
+            this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
+            this.lblDataEntrada = new System.Windows.Forms.Label();
+            this.txtObservacoes = new System.Windows.Forms.TextBox();
+            this.lblObservacoes = new System.Windows.Forms.Label();
             this.txtDeficiencia = new System.Windows.Forms.TextBox();
             this.lblDeficiencias = new System.Windows.Forms.Label();
             this.tlpInfos = new System.Windows.Forms.TableLayoutPanel();
@@ -68,13 +74,8 @@
             this.lblPerfil = new System.Windows.Forms.Label();
             this.lblDescricaoPerfil = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.lblObservacoes = new System.Windows.Forms.Label();
-            this.txtObservacoes = new System.Windows.Forms.TextBox();
-            this.lblDataEntrada = new System.Windows.Forms.Label();
-            this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
-            this.lblFotoGato = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tlpInfos.SuspendLayout();
             this.gbCastracao.SuspendLayout();
             this.gbVacina.SuspendLayout();
@@ -83,7 +84,6 @@
             this.pnlPeso.SuspendLayout();
             this.pnlPelagem.SuspendLayout();
             this.gbSexo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -117,6 +117,65 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(15);
             this.panel1.Size = new System.Drawing.Size(560, 1369);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(26, 802);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblFotoGato
+            // 
+            this.lblFotoGato.AutoSize = true;
+            this.lblFotoGato.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblFotoGato.Location = new System.Drawing.Point(15, 752);
+            this.lblFotoGato.Name = "lblFotoGato";
+            this.lblFotoGato.Padding = new System.Windows.Forms.Padding(0, 15, 0, 5);
+            this.lblFotoGato.Size = new System.Drawing.Size(72, 33);
+            this.lblFotoGato.TabIndex = 26;
+            this.lblFotoGato.Text = "Foto do Gato:";
+            // 
+            // dtpDataEntrada
+            // 
+            this.dtpDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dtpDataEntrada.Location = new System.Drawing.Point(15, 732);
+            this.dtpDataEntrada.Name = "dtpDataEntrada";
+            this.dtpDataEntrada.Size = new System.Drawing.Size(530, 20);
+            this.dtpDataEntrada.TabIndex = 25;
+            // 
+            // lblDataEntrada
+            // 
+            this.lblDataEntrada.AutoSize = true;
+            this.lblDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDataEntrada.Location = new System.Drawing.Point(15, 699);
+            this.lblDataEntrada.Name = "lblDataEntrada";
+            this.lblDataEntrada.Padding = new System.Windows.Forms.Padding(0, 15, 0, 5);
+            this.lblDataEntrada.Size = new System.Drawing.Size(88, 33);
+            this.lblDataEntrada.TabIndex = 24;
+            this.lblDataEntrada.Text = "Data de Entrada:";
+            // 
+            // txtObservacoes
+            // 
+            this.txtObservacoes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtObservacoes.Location = new System.Drawing.Point(15, 620);
+            this.txtObservacoes.Multiline = true;
+            this.txtObservacoes.Name = "txtObservacoes";
+            this.txtObservacoes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtObservacoes.Size = new System.Drawing.Size(530, 79);
+            this.txtObservacoes.TabIndex = 23;
+            // 
+            // lblObservacoes
+            // 
+            this.lblObservacoes.AutoSize = true;
+            this.lblObservacoes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblObservacoes.Location = new System.Drawing.Point(15, 587);
+            this.lblObservacoes.Name = "lblObservacoes";
+            this.lblObservacoes.Padding = new System.Windows.Forms.Padding(0, 15, 0, 5);
+            this.lblObservacoes.Size = new System.Drawing.Size(73, 33);
+            this.lblObservacoes.TabIndex = 22;
+            this.lblObservacoes.Text = "Observações:";
             // 
             // txtDeficiencia
             // 
@@ -553,65 +612,6 @@
             this.btnExcluir.Text = "🗑️ Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
             // 
-            // lblObservacoes
-            // 
-            this.lblObservacoes.AutoSize = true;
-            this.lblObservacoes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblObservacoes.Location = new System.Drawing.Point(15, 587);
-            this.lblObservacoes.Name = "lblObservacoes";
-            this.lblObservacoes.Padding = new System.Windows.Forms.Padding(0, 15, 0, 5);
-            this.lblObservacoes.Size = new System.Drawing.Size(73, 33);
-            this.lblObservacoes.TabIndex = 22;
-            this.lblObservacoes.Text = "Observações:";
-            // 
-            // txtObservacoes
-            // 
-            this.txtObservacoes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtObservacoes.Location = new System.Drawing.Point(15, 620);
-            this.txtObservacoes.Multiline = true;
-            this.txtObservacoes.Name = "txtObservacoes";
-            this.txtObservacoes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtObservacoes.Size = new System.Drawing.Size(530, 79);
-            this.txtObservacoes.TabIndex = 23;
-            // 
-            // lblDataEntrada
-            // 
-            this.lblDataEntrada.AutoSize = true;
-            this.lblDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDataEntrada.Location = new System.Drawing.Point(15, 699);
-            this.lblDataEntrada.Name = "lblDataEntrada";
-            this.lblDataEntrada.Padding = new System.Windows.Forms.Padding(0, 15, 0, 5);
-            this.lblDataEntrada.Size = new System.Drawing.Size(88, 33);
-            this.lblDataEntrada.TabIndex = 24;
-            this.lblDataEntrada.Text = "Data de Entrada:";
-            // 
-            // dtpDataEntrada
-            // 
-            this.dtpDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dtpDataEntrada.Location = new System.Drawing.Point(15, 732);
-            this.dtpDataEntrada.Name = "dtpDataEntrada";
-            this.dtpDataEntrada.Size = new System.Drawing.Size(530, 20);
-            this.dtpDataEntrada.TabIndex = 25;
-            // 
-            // lblFotoGato
-            // 
-            this.lblFotoGato.AutoSize = true;
-            this.lblFotoGato.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblFotoGato.Location = new System.Drawing.Point(15, 752);
-            this.lblFotoGato.Name = "lblFotoGato";
-            this.lblFotoGato.Padding = new System.Windows.Forms.Padding(0, 15, 0, 5);
-            this.lblFotoGato.Size = new System.Drawing.Size(72, 33);
-            this.lblFotoGato.TabIndex = 26;
-            this.lblFotoGato.Text = "Foto do Gato:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(26, 802);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
             // ucEdicaoGato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -626,6 +626,7 @@
             this.Size = new System.Drawing.Size(620, 1439);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tlpInfos.ResumeLayout(false);
             this.gbCastracao.ResumeLayout(false);
             this.gbCastracao.PerformLayout();
@@ -640,7 +641,6 @@
             this.pnlPelagem.PerformLayout();
             this.gbSexo.ResumeLayout(false);
             this.gbSexo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
