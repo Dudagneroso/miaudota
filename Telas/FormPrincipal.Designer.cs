@@ -67,7 +67,7 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(200, 770);
+            this.pnlMenu.Size = new System.Drawing.Size(200, 749);
             this.pnlMenu.TabIndex = 0;
             // 
             // btnDashboards
@@ -151,6 +151,7 @@
             this.btnCadastroLar.Text = "🏠 Cadastrar Lar Temporário";
             this.btnCadastroLar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastroLar.UseVisualStyleBackColor = true;
+            this.btnCadastroLar.Click += new System.EventHandler(this.btnCadastroLar_Click);
             // 
             // btnCadastroTutor
             // 
@@ -290,14 +291,14 @@
             this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlConteudo.Location = new System.Drawing.Point(200, 0);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(640, 770);
+            this.pnlConteudo.Size = new System.Drawing.Size(640, 749);
             this.pnlConteudo.TabIndex = 1;
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 770);
+            this.ClientSize = new System.Drawing.Size(840, 749);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
             this.Name = "FormPrincipal";
