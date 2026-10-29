@@ -91,6 +91,10 @@
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
             this.lblIdentificacao = new System.Windows.Forms.Label();
+            this.cbFIV = new System.Windows.Forms.ComboBox();
+            this.lblFIV = new System.Windows.Forms.Label();
+            this.cbFELV = new System.Windows.Forms.ComboBox();
+            this.lblFELV = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlMapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wvMapa)).BeginInit();
@@ -168,14 +172,14 @@
             this.panel1.Location = new System.Drawing.Point(20, 70);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(670, 1752);
+            this.panel1.Size = new System.Drawing.Size(670, 1601);
             this.panel1.TabIndex = 25;
             // 
             // lblEspaco3
             // 
             this.lblEspaco3.AutoSize = true;
             this.lblEspaco3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblEspaco3.Location = new System.Drawing.Point(10, 1480);
+            this.lblEspaco3.Location = new System.Drawing.Point(10, 1529);
             this.lblEspaco3.Name = "lblEspaco3";
             this.lblEspaco3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.lblEspaco3.Size = new System.Drawing.Size(0, 18);
@@ -186,7 +190,7 @@
             this.pnlMapa.Controls.Add(this.wvMapa);
             this.pnlMapa.Controls.Add(this.lblLocalResgate);
             this.pnlMapa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMapa.Location = new System.Drawing.Point(10, 1110);
+            this.pnlMapa.Location = new System.Drawing.Point(10, 1159);
             this.pnlMapa.Name = "pnlMapa";
             this.pnlMapa.Padding = new System.Windows.Forms.Padding(7, 10, 7, 5);
             this.pnlMapa.Size = new System.Drawing.Size(650, 370);
@@ -225,7 +229,7 @@
             this.tlpFotoLocal.Controls.Add(this.gbCadastrarLocal, 1, 0);
             this.tlpFotoLocal.Controls.Add(this.pnlFoto, 0, 0);
             this.tlpFotoLocal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpFotoLocal.Location = new System.Drawing.Point(10, 887);
+            this.tlpFotoLocal.Location = new System.Drawing.Point(10, 936);
             this.tlpFotoLocal.Name = "tlpFotoLocal";
             this.tlpFotoLocal.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.tlpFotoLocal.RowCount = 1;
@@ -325,7 +329,7 @@
             this.dtpDataEntrada.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtpDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataEntrada.Location = new System.Drawing.Point(10, 867);
+            this.dtpDataEntrada.Location = new System.Drawing.Point(10, 916);
             this.dtpDataEntrada.Name = "dtpDataEntrada";
             this.dtpDataEntrada.Size = new System.Drawing.Size(650, 20);
             this.dtpDataEntrada.TabIndex = 78;
@@ -335,7 +339,7 @@
             this.lblDataEntrada.AutoSize = true;
             this.lblDataEntrada.BackColor = System.Drawing.Color.White;
             this.lblDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDataEntrada.Location = new System.Drawing.Point(10, 839);
+            this.lblDataEntrada.Location = new System.Drawing.Point(10, 888);
             this.lblDataEntrada.Name = "lblDataEntrada";
             this.lblDataEntrada.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.lblDataEntrada.Size = new System.Drawing.Size(88, 28);
@@ -345,7 +349,7 @@
             // txtObservacao
             // 
             this.txtObservacao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtObservacao.Location = new System.Drawing.Point(10, 760);
+            this.txtObservacao.Location = new System.Drawing.Point(10, 809);
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -357,7 +361,7 @@
             this.lblObservacao.AutoSize = true;
             this.lblObservacao.BackColor = System.Drawing.Color.White;
             this.lblObservacao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblObservacao.Location = new System.Drawing.Point(10, 732);
+            this.lblObservacao.Location = new System.Drawing.Point(10, 781);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.lblObservacao.Size = new System.Drawing.Size(73, 28);
@@ -367,7 +371,7 @@
             // txtDeficiencias
             // 
             this.txtDeficiencias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtDeficiencias.Location = new System.Drawing.Point(10, 707);
+            this.txtDeficiencias.Location = new System.Drawing.Point(10, 756);
             this.txtDeficiencias.Multiline = true;
             this.txtDeficiencias.Name = "txtDeficiencias";
             this.txtDeficiencias.Size = new System.Drawing.Size(650, 25);
@@ -378,7 +382,7 @@
             this.lblDeficiencias.AutoSize = true;
             this.lblDeficiencias.BackColor = System.Drawing.Color.White;
             this.lblDeficiencias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDeficiencias.Location = new System.Drawing.Point(10, 679);
+            this.lblDeficiencias.Location = new System.Drawing.Point(10, 728);
             this.lblDeficiencias.Name = "lblDeficiencias";
             this.lblDeficiencias.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.lblDeficiencias.Size = new System.Drawing.Size(189, 28);
@@ -390,7 +394,7 @@
             this.pnlVacinasTomadas.Controls.Add(this.clbVacinas);
             this.pnlVacinasTomadas.Controls.Add(this.lblCheckVacinas);
             this.pnlVacinasTomadas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlVacinasTomadas.Location = new System.Drawing.Point(10, 554);
+            this.pnlVacinasTomadas.Location = new System.Drawing.Point(10, 603);
             this.pnlVacinasTomadas.Name = "pnlVacinasTomadas";
             this.pnlVacinasTomadas.Size = new System.Drawing.Size(650, 125);
             this.pnlVacinasTomadas.TabIndex = 61;
@@ -436,7 +440,7 @@
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tlpBotoes.Controls.Add(this.pnlBotoes, 1, 0);
             this.tlpBotoes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpBotoes.Location = new System.Drawing.Point(10, 1702);
+            this.tlpBotoes.Location = new System.Drawing.Point(10, 1551);
             this.tlpBotoes.Name = "tlpBotoes";
             this.tlpBotoes.RowCount = 1;
             this.tlpBotoes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -500,17 +504,21 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(650, 100);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(650, 149);
             this.tableLayoutPanel2.TabIndex = 45;
             // 
             // pnlStatus
             // 
+            this.pnlStatus.Controls.Add(this.cbFELV);
+            this.pnlStatus.Controls.Add(this.lblFELV);
+            this.pnlStatus.Controls.Add(this.cbFIV);
+            this.pnlStatus.Controls.Add(this.lblFIV);
             this.pnlStatus.Controls.Add(this.cbStatus);
             this.pnlStatus.Controls.Add(this.lblSatus);
             this.pnlStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlStatus.Location = new System.Drawing.Point(435, 3);
             this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Size = new System.Drawing.Size(212, 94);
+            this.pnlStatus.Size = new System.Drawing.Size(212, 143);
             this.pnlStatus.TabIndex = 16;
             // 
             // cbStatus
@@ -546,7 +554,7 @@
             this.gbVacinas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbVacinas.Location = new System.Drawing.Point(219, 3);
             this.gbVacinas.Name = "gbVacinas";
-            this.gbVacinas.Size = new System.Drawing.Size(210, 94);
+            this.gbVacinas.Size = new System.Drawing.Size(210, 143);
             this.gbVacinas.TabIndex = 15;
             this.gbVacinas.TabStop = false;
             this.gbVacinas.Text = "Possui vacinas em dia?";
@@ -583,7 +591,7 @@
             this.gbCastracao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbCastracao.Location = new System.Drawing.Point(3, 3);
             this.gbCastracao.Name = "gbCastracao";
-            this.gbCastracao.Size = new System.Drawing.Size(210, 94);
+            this.gbCastracao.Size = new System.Drawing.Size(210, 143);
             this.gbCastracao.TabIndex = 14;
             this.gbCastracao.TabStop = false;
             this.gbCastracao.Text = "Já foi Castrado?";
@@ -736,7 +744,7 @@
             "Bicolor",
             "Siamês",
             "Outros"});
-            this.cbColoracao.Location = new System.Drawing.Point(0, 60);
+            this.cbColoracao.Location = new System.Drawing.Point(0, 65);
             this.cbColoracao.Name = "cbColoracao";
             this.cbColoracao.Size = new System.Drawing.Size(210, 24);
             this.cbColoracao.TabIndex = 40;
@@ -748,8 +756,8 @@
             this.lblColoracao.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblColoracao.Location = new System.Drawing.Point(0, 42);
             this.lblColoracao.Name = "lblColoracao";
-            this.lblColoracao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lblColoracao.Size = new System.Drawing.Size(58, 18);
+            this.lblColoracao.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.lblColoracao.Size = new System.Drawing.Size(58, 23);
             this.lblColoracao.TabIndex = 39;
             this.lblColoracao.Text = "Coloração:";
             // 
@@ -899,6 +907,62 @@
             this.lblIdentificacao.TabIndex = 32;
             this.lblIdentificacao.Text = "IDENTIFICAÇÃO";
             // 
+            // cbFIV
+            // 
+            this.cbFIV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbFIV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFIV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFIV.FormattingEnabled = true;
+            this.cbFIV.Items.AddRange(new object[] {
+            "Negativo",
+            "Positivo",
+            "Não Realizado",
+            "Não Informado"});
+            this.cbFIV.Location = new System.Drawing.Point(0, 64);
+            this.cbFIV.Name = "cbFIV";
+            this.cbFIV.Size = new System.Drawing.Size(212, 24);
+            this.cbFIV.TabIndex = 40;
+            // 
+            // lblFIV
+            // 
+            this.lblFIV.AutoSize = true;
+            this.lblFIV.BackColor = System.Drawing.Color.White;
+            this.lblFIV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblFIV.Location = new System.Drawing.Point(0, 41);
+            this.lblFIV.Name = "lblFIV";
+            this.lblFIV.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.lblFIV.Size = new System.Drawing.Size(56, 23);
+            this.lblFIV.TabIndex = 39;
+            this.lblFIV.Text = "Teste FIV:";
+            // 
+            // cbFELV
+            // 
+            this.cbFELV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbFELV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFELV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFELV.FormattingEnabled = true;
+            this.cbFELV.Items.AddRange(new object[] {
+            "Negativo",
+            "Positivo",
+            "Não Realizado",
+            "Não Informado"});
+            this.cbFELV.Location = new System.Drawing.Point(0, 111);
+            this.cbFELV.Name = "cbFELV";
+            this.cbFELV.Size = new System.Drawing.Size(212, 24);
+            this.cbFELV.TabIndex = 42;
+            // 
+            // lblFELV
+            // 
+            this.lblFELV.AutoSize = true;
+            this.lblFELV.BackColor = System.Drawing.Color.White;
+            this.lblFELV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblFELV.Location = new System.Drawing.Point(0, 88);
+            this.lblFELV.Name = "lblFELV";
+            this.lblFELV.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.lblFELV.Size = new System.Drawing.Size(66, 23);
+            this.lblFELV.TabIndex = 41;
+            this.lblFELV.Text = "Teste FELV:";
+            // 
             // ucCadastroGato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -908,7 +972,7 @@
             this.Controls.Add(this.lblTituloCadastroGato);
             this.Name = "ucCadastroGato";
             this.Padding = new System.Windows.Forms.Padding(20, 70, 20, 10);
-            this.Size = new System.Drawing.Size(710, 1832);
+            this.Size = new System.Drawing.Size(710, 1681);
             this.Load += new System.EventHandler(this.ucCadastroGato_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1009,5 +1073,9 @@
         private System.Windows.Forms.Label lblCheckVacinas;
         private System.Windows.Forms.CheckedListBox clbVacinas;
         private System.Windows.Forms.Label lblEspaco3;
+        private System.Windows.Forms.ComboBox cbFIV;
+        private System.Windows.Forms.Label lblFIV;
+        private System.Windows.Forms.ComboBox cbFELV;
+        private System.Windows.Forms.Label lblFELV;
     }
 }
