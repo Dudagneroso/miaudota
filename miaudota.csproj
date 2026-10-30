@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dados\RepositorioTutoresFake.cs" />
+    <Compile Include="Models\Ocorrencia.cs" />
     <Compile Include="Telas\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +86,12 @@
     </Compile>
     <Compile Include="Telas\ucCartaoGato.Designer.cs">
       <DependentUpon>ucCartaoGato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\ucCartaoOcorrencia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\ucCartaoOcorrencia.Designer.cs">
+      <DependentUpon>ucCartaoOcorrencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\ucConsulta.cs">
       <SubType>UserControl</SubType>
@@ -129,6 +136,7 @@
     <Compile Include="Telas\ucOcorrencia.Designer.cs">
       <DependentUpon>ucOcorrencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dados\TiposOcorrencia.cs" />
     <EmbeddedResource Include="Telas\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\ucCartaoGato.resx">
       <DependentUpon>ucCartaoGato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ucCartaoOcorrencia.resx">
+      <DependentUpon>ucCartaoOcorrencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\ucConsulta.resx">
       <DependentUpon>ucConsulta.cs</DependentUpon>

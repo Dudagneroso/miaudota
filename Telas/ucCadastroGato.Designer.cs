@@ -59,6 +59,10 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlStatus = new System.Windows.Forms.Panel();
+            this.cbFELV = new System.Windows.Forms.ComboBox();
+            this.lblFELV = new System.Windows.Forms.Label();
+            this.cbFIV = new System.Windows.Forms.ComboBox();
+            this.lblFIV = new System.Windows.Forms.Label();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.lblSatus = new System.Windows.Forms.Label();
             this.gbVacinas = new System.Windows.Forms.GroupBox();
@@ -91,10 +95,6 @@
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
             this.lblIdentificacao = new System.Windows.Forms.Label();
-            this.cbFIV = new System.Windows.Forms.ComboBox();
-            this.lblFIV = new System.Windows.Forms.Label();
-            this.cbFELV = new System.Windows.Forms.ComboBox();
-            this.lblFELV = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlMapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wvMapa)).BeginInit();
@@ -503,7 +503,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 149F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(650, 149);
             this.tableLayoutPanel2.TabIndex = 45;
             // 
@@ -520,6 +520,62 @@
             this.pnlStatus.Name = "pnlStatus";
             this.pnlStatus.Size = new System.Drawing.Size(212, 143);
             this.pnlStatus.TabIndex = 16;
+            // 
+            // cbFELV
+            // 
+            this.cbFELV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbFELV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFELV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFELV.FormattingEnabled = true;
+            this.cbFELV.Items.AddRange(new object[] {
+            "Negativo",
+            "Positivo",
+            "Não Realizado",
+            "Não Informado"});
+            this.cbFELV.Location = new System.Drawing.Point(0, 111);
+            this.cbFELV.Name = "cbFELV";
+            this.cbFELV.Size = new System.Drawing.Size(212, 24);
+            this.cbFELV.TabIndex = 42;
+            // 
+            // lblFELV
+            // 
+            this.lblFELV.AutoSize = true;
+            this.lblFELV.BackColor = System.Drawing.Color.White;
+            this.lblFELV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblFELV.Location = new System.Drawing.Point(0, 88);
+            this.lblFELV.Name = "lblFELV";
+            this.lblFELV.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.lblFELV.Size = new System.Drawing.Size(66, 23);
+            this.lblFELV.TabIndex = 41;
+            this.lblFELV.Text = "Teste FELV:";
+            // 
+            // cbFIV
+            // 
+            this.cbFIV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbFIV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFIV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFIV.FormattingEnabled = true;
+            this.cbFIV.Items.AddRange(new object[] {
+            "Negativo",
+            "Positivo",
+            "Não Realizado",
+            "Não Informado"});
+            this.cbFIV.Location = new System.Drawing.Point(0, 64);
+            this.cbFIV.Name = "cbFIV";
+            this.cbFIV.Size = new System.Drawing.Size(212, 24);
+            this.cbFIV.TabIndex = 40;
+            // 
+            // lblFIV
+            // 
+            this.lblFIV.AutoSize = true;
+            this.lblFIV.BackColor = System.Drawing.Color.White;
+            this.lblFIV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblFIV.Location = new System.Drawing.Point(0, 41);
+            this.lblFIV.Name = "lblFIV";
+            this.lblFIV.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.lblFIV.Size = new System.Drawing.Size(56, 23);
+            this.lblFIV.TabIndex = 39;
+            this.lblFIV.Text = "Teste FIV:";
             // 
             // cbStatus
             // 
@@ -906,62 +962,6 @@
             this.lblIdentificacao.Size = new System.Drawing.Size(88, 33);
             this.lblIdentificacao.TabIndex = 32;
             this.lblIdentificacao.Text = "IDENTIFICAÇÃO";
-            // 
-            // cbFIV
-            // 
-            this.cbFIV.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbFIV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFIV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFIV.FormattingEnabled = true;
-            this.cbFIV.Items.AddRange(new object[] {
-            "Negativo",
-            "Positivo",
-            "Não Realizado",
-            "Não Informado"});
-            this.cbFIV.Location = new System.Drawing.Point(0, 64);
-            this.cbFIV.Name = "cbFIV";
-            this.cbFIV.Size = new System.Drawing.Size(212, 24);
-            this.cbFIV.TabIndex = 40;
-            // 
-            // lblFIV
-            // 
-            this.lblFIV.AutoSize = true;
-            this.lblFIV.BackColor = System.Drawing.Color.White;
-            this.lblFIV.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblFIV.Location = new System.Drawing.Point(0, 41);
-            this.lblFIV.Name = "lblFIV";
-            this.lblFIV.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.lblFIV.Size = new System.Drawing.Size(56, 23);
-            this.lblFIV.TabIndex = 39;
-            this.lblFIV.Text = "Teste FIV:";
-            // 
-            // cbFELV
-            // 
-            this.cbFELV.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbFELV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFELV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFELV.FormattingEnabled = true;
-            this.cbFELV.Items.AddRange(new object[] {
-            "Negativo",
-            "Positivo",
-            "Não Realizado",
-            "Não Informado"});
-            this.cbFELV.Location = new System.Drawing.Point(0, 111);
-            this.cbFELV.Name = "cbFELV";
-            this.cbFELV.Size = new System.Drawing.Size(212, 24);
-            this.cbFELV.TabIndex = 42;
-            // 
-            // lblFELV
-            // 
-            this.lblFELV.AutoSize = true;
-            this.lblFELV.BackColor = System.Drawing.Color.White;
-            this.lblFELV.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblFELV.Location = new System.Drawing.Point(0, 88);
-            this.lblFELV.Name = "lblFELV";
-            this.lblFELV.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.lblFELV.Size = new System.Drawing.Size(66, 23);
-            this.lblFELV.TabIndex = 41;
-            this.lblFELV.Text = "Teste FELV:";
             // 
             // ucCadastroGato
             // 

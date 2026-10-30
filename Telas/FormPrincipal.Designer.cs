@@ -135,6 +135,7 @@
             this.btnOcorrencia.Text = "🚨 Registrar Ocorrências";
             this.btnOcorrencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOcorrencia.UseVisualStyleBackColor = true;
+            this.btnOcorrencia.Click += new System.EventHandler(this.btnOcorrencia_Click);
             // 
             // btnCadastroLar
             // 
