@@ -85,6 +85,7 @@
             this.btnDashboards.Text = "📊 Dashboards";
             this.btnDashboards.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboards.UseVisualStyleBackColor = true;
+            this.btnDashboards.Click += new System.EventHandler(this.btnDashboards_Click);
             // 
             // btnConsultaTutor
             // 
