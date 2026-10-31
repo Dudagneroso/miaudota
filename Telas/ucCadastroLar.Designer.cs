@@ -1,4 +1,6 @@
-﻿namespace miaudota.Telas
+﻿using System;
+
+namespace miaudota.Telas
 {
     partial class ucCadastroLar
     {
@@ -31,6 +33,8 @@
             this.lblCadastarLar = new System.Windows.Forms.Label();
             this.lblDescricaoLar = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnSalvarTutor = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblObservacoes = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -66,8 +70,6 @@
             this.txbNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblResponsavel = new System.Windows.Forms.Label();
-            this.btnSalvarTutor = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,8 +135,40 @@
             this.panel1.Controls.Add(this.lblResponsavel);
             this.panel1.Location = new System.Drawing.Point(16, 78);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(589, 1029);
+            this.panel1.Size = new System.Drawing.Size(589, 907);
             this.panel1.TabIndex = 2;
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.White;
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(201)))), ((int)(((byte)(198)))));
+            this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(244)))), ((int)(((byte)(243)))));
+            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(150)))), ((int)(((byte)(148)))));
+            this.btnLimpar.Location = new System.Drawing.Point(226, 827);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(139, 30);
+            this.btnLimpar.TabIndex = 71;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            // 
+            // btnSalvarTutor
+            // 
+            this.btnSalvarTutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(201)))), ((int)(((byte)(200)))));
+            this.btnSalvarTutor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvarTutor.FlatAppearance.BorderSize = 0;
+            this.btnSalvarTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvarTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarTutor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSalvarTutor.Location = new System.Drawing.Point(371, 827);
+            this.btnSalvarTutor.Name = "btnSalvarTutor";
+            this.btnSalvarTutor.Size = new System.Drawing.Size(200, 30);
+            this.btnSalvarTutor.TabIndex = 70;
+            this.btnSalvarTutor.Text = "Salvar";
+            this.btnSalvarTutor.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -142,7 +176,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(535, 61);
+            this.textBox1.Size = new System.Drawing.Size(535, 96);
             this.textBox1.TabIndex = 69;
             // 
             // lblObservacoes
@@ -159,16 +193,17 @@
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.MistyRose;
             this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.RosyBrown;
             this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.IndianRed;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(413, 574);
+            this.dateTimePicker1.Location = new System.Drawing.Point(371, 573);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(142, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(182, 22);
             this.dateTimePicker1.TabIndex = 67;
             // 
             // lblInicio
             // 
             this.lblInicio.AutoSize = true;
-            this.lblInicio.Location = new System.Drawing.Point(410, 557);
+            this.lblInicio.Location = new System.Drawing.Point(368, 557);
             this.lblInicio.Name = "lblInicio";
             this.lblInicio.Size = new System.Drawing.Size(91, 13);
             this.lblInicio.TabIndex = 66;
@@ -176,20 +211,22 @@
             // 
             // cbDisponibilidade
             // 
+            this.cbDisponibilidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDisponibilidade.FormattingEnabled = true;
             this.cbDisponibilidade.Items.AddRange(new object[] {
             "Imediata ",
             "Em até 7 dias ",
             "Em até 30 dias"});
-            this.cbDisponibilidade.Location = new System.Drawing.Point(233, 573);
+            this.cbDisponibilidade.Location = new System.Drawing.Point(195, 573);
             this.cbDisponibilidade.Name = "cbDisponibilidade";
-            this.cbDisponibilidade.Size = new System.Drawing.Size(142, 21);
+            this.cbDisponibilidade.Size = new System.Drawing.Size(170, 24);
             this.cbDisponibilidade.TabIndex = 65;
+            
             // 
             // lblDisponibilidade
             // 
             this.lblDisponibilidade.AutoSize = true;
-            this.lblDisponibilidade.Location = new System.Drawing.Point(230, 557);
+            this.lblDisponibilidade.Location = new System.Drawing.Point(197, 557);
             this.lblDisponibilidade.Name = "lblDisponibilidade";
             this.lblDisponibilidade.Size = new System.Drawing.Size(81, 13);
             this.lblDisponibilidade.TabIndex = 64;
@@ -197,6 +234,7 @@
             // 
             // cbOutrosAnimais
             // 
+            this.cbOutrosAnimais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbOutrosAnimais.FormattingEnabled = true;
             this.cbOutrosAnimais.Items.AddRange(new object[] {
             "Não",
@@ -205,7 +243,7 @@
             "Sim - cães"});
             this.cbOutrosAnimais.Location = new System.Drawing.Point(19, 573);
             this.cbOutrosAnimais.Name = "cbOutrosAnimais";
-            this.cbOutrosAnimais.Size = new System.Drawing.Size(142, 21);
+            this.cbOutrosAnimais.Size = new System.Drawing.Size(170, 24);
             this.cbOutrosAnimais.TabIndex = 63;
             // 
             // lblOutrosAnimais
@@ -219,21 +257,22 @@
             // 
             // cbCapacidade
             // 
+            this.cbCapacidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCapacidade.FormattingEnabled = true;
             this.cbCapacidade.Items.AddRange(new object[] {
             "1 gato",
             "2 gatos",
             "3 gatos ",
             "4 ou mais gatos"});
-            this.cbCapacidade.Location = new System.Drawing.Point(311, 509);
+            this.cbCapacidade.Location = new System.Drawing.Point(287, 509);
             this.cbCapacidade.Name = "cbCapacidade";
-            this.cbCapacidade.Size = new System.Drawing.Size(244, 21);
+            this.cbCapacidade.Size = new System.Drawing.Size(268, 24);
             this.cbCapacidade.TabIndex = 61;
             // 
             // lblCapacidade
             // 
             this.lblCapacidade.AutoSize = true;
-            this.lblCapacidade.Location = new System.Drawing.Point(308, 493);
+            this.lblCapacidade.Location = new System.Drawing.Point(284, 493);
             this.lblCapacidade.Name = "lblCapacidade";
             this.lblCapacidade.Size = new System.Drawing.Size(67, 13);
             this.lblCapacidade.TabIndex = 60;
@@ -241,6 +280,7 @@
             // 
             // cbMoradia
             // 
+            this.cbMoradia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMoradia.FormattingEnabled = true;
             this.cbMoradia.Items.AddRange(new object[] {
             "Casa com quintal telado",
@@ -249,7 +289,7 @@
             "Sítio / Chácara"});
             this.cbMoradia.Location = new System.Drawing.Point(19, 509);
             this.cbMoradia.Name = "cbMoradia";
-            this.cbMoradia.Size = new System.Drawing.Size(244, 21);
+            this.cbMoradia.Size = new System.Drawing.Size(262, 24);
             this.cbMoradia.TabIndex = 59;
             // 
             // lblTipoMoradia
@@ -392,8 +432,9 @@
             // txbEmail
             // 
             this.txbEmail.Location = new System.Drawing.Point(18, 219);
+            this.txbEmail.Multiline = true;
             this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(553, 20);
+            this.txbEmail.Size = new System.Drawing.Size(537, 25);
             this.txbEmail.TabIndex = 9;
             // 
             // lblEmail
@@ -407,9 +448,10 @@
             // 
             // txbNumeroTelefone
             // 
-            this.txbNumeroTelefone.Location = new System.Drawing.Point(18, 167);
+            this.txbNumeroTelefone.Location = new System.Drawing.Point(17, 167);
+            this.txbNumeroTelefone.Multiline = true;
             this.txbNumeroTelefone.Name = "txbNumeroTelefone";
-            this.txbNumeroTelefone.Size = new System.Drawing.Size(553, 20);
+            this.txbNumeroTelefone.Size = new System.Drawing.Size(538, 25);
             this.txbNumeroTelefone.TabIndex = 7;
             // 
             // lblTelefone
@@ -424,8 +466,9 @@
             // txbCpf
             // 
             this.txbCpf.Location = new System.Drawing.Point(18, 111);
+            this.txbCpf.Multiline = true;
             this.txbCpf.Name = "txbCpf";
-            this.txbCpf.Size = new System.Drawing.Size(553, 20);
+            this.txbCpf.Size = new System.Drawing.Size(537, 25);
             this.txbCpf.TabIndex = 5;
             // 
             // lblCpf
@@ -440,8 +483,9 @@
             // txbNome
             // 
             this.txbNome.Location = new System.Drawing.Point(18, 61);
+            this.txbNome.Multiline = true;
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(553, 20);
+            this.txbNome.Size = new System.Drawing.Size(537, 25);
             this.txbNome.TabIndex = 2;
             // 
             // lblNome
@@ -463,38 +507,6 @@
             this.lblResponsavel.TabIndex = 0;
             this.lblResponsavel.Text = "RESPONSÁVEL PELO LAR";
             // 
-            // btnSalvarTutor
-            // 
-            this.btnSalvarTutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(201)))), ((int)(((byte)(200)))));
-            this.btnSalvarTutor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvarTutor.FlatAppearance.BorderSize = 0;
-            this.btnSalvarTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvarTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarTutor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalvarTutor.Location = new System.Drawing.Point(371, 827);
-            this.btnSalvarTutor.Name = "btnSalvarTutor";
-            this.btnSalvarTutor.Size = new System.Drawing.Size(200, 30);
-            this.btnSalvarTutor.TabIndex = 70;
-            this.btnSalvarTutor.Text = "Salvar";
-            this.btnSalvarTutor.UseVisualStyleBackColor = false;
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.Color.White;
-            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(201)))), ((int)(((byte)(198)))));
-            this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(244)))), ((int)(((byte)(243)))));
-            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(150)))), ((int)(((byte)(148)))));
-            this.btnLimpar.Location = new System.Drawing.Point(226, 827);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(139, 30);
-            this.btnLimpar.TabIndex = 71;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            // 
             // ucCadastroLar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,13 +516,15 @@
             this.Controls.Add(this.lblDescricaoLar);
             this.Controls.Add(this.lblCadastarLar);
             this.Name = "ucCadastroLar";
-            this.Size = new System.Drawing.Size(622, 1132);
+            this.Size = new System.Drawing.Size(622, 1000);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
+       
 
         #endregion
 

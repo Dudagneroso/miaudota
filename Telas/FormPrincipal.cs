@@ -75,7 +75,7 @@ namespace miaudota
         }
 
         private void btnCadastroLar_Click(object sender, EventArgs e)
-        {
+        { 
             AbrirTela(new ucCadastroLar());
         }
     }
