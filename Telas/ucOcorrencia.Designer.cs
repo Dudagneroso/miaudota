@@ -298,8 +298,9 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(359, 30);
+            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(184, 20);
+            this.textBox2.Size = new System.Drawing.Size(184, 25);
             this.textBox2.TabIndex = 42;
             // 
             // lblResponsavel
@@ -314,8 +315,9 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(154, 30);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 20);
+            this.textBox1.Size = new System.Drawing.Size(199, 25);
             this.textBox1.TabIndex = 40;
             // 
             // lblLocal
@@ -329,10 +331,11 @@
             // 
             // dtpDataOcorrencia
             // 
+            this.dtpDataOcorrencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataOcorrencia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataOcorrencia.Location = new System.Drawing.Point(15, 30);
             this.dtpDataOcorrencia.Name = "dtpDataOcorrencia";
-            this.dtpDataOcorrencia.Size = new System.Drawing.Size(133, 20);
+            this.dtpDataOcorrencia.Size = new System.Drawing.Size(133, 24);
             this.dtpDataOcorrencia.TabIndex = 38;
             // 
             // lblData

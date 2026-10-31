@@ -16,6 +16,8 @@ namespace miaudota
     public partial class ucCadastroGato : UserControl
     {
         string caminhoFotoSelecionada = string.Empty;
+        string nomeGato = string.Empty;
+
         public ucCadastroGato()
         {
             InitializeComponent();
@@ -68,5 +70,17 @@ namespace miaudota
         {
             pnlVacinasTomadas.Visible = rbVacinado.Checked || rbNaoVacinado.Checked;
         }
+
+
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            // 1. validar: se faltar algo, Mensagem.Aviso(...) e return
+            // 2. montar o objeto com os dados da tela
+            // 3. RepositorioGatosFake.Adicionar(gato);
+            // 4. Mensagem.Sucesso("Gato cadastrado com sucesso!");
+            // 5. limpar o formulário
+        }
+
     }
 }

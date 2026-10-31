@@ -55,7 +55,7 @@
             this.lblCheckVacinas = new System.Windows.Forms.Label();
             this.tlpBotoes = new System.Windows.Forms.TableLayoutPanel();
             this.pnlBotoes = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlStatus = new System.Windows.Forms.Panel();
@@ -449,7 +449,7 @@
             // 
             // pnlBotoes
             // 
-            this.pnlBotoes.Controls.Add(this.button1);
+            this.pnlBotoes.Controls.Add(this.btnSalvar);
             this.pnlBotoes.Controls.Add(this.btnLimpar);
             this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBotoes.Location = new System.Drawing.Point(230, 3);
@@ -457,20 +457,21 @@
             this.pnlBotoes.Size = new System.Drawing.Size(417, 34);
             this.pnlBotoes.TabIndex = 0;
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(201)))), ((int)(((byte)(200)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(148, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 30);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(201)))), ((int)(((byte)(200)))));
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSalvar.Location = new System.Drawing.Point(148, 3);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(200, 30);
+            this.btnSalvar.TabIndex = 61;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
             // 
@@ -1050,7 +1051,7 @@
         private System.Windows.Forms.RadioButton rbVacinado;
         private System.Windows.Forms.TableLayoutPanel tlpBotoes;
         private System.Windows.Forms.Panel pnlBotoes;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.DateTimePicker dtpDataEntrada;
         private System.Windows.Forms.Label lblDataEntrada;
