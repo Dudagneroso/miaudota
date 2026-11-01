@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlMapa = new System.Windows.Forms.Panel();
+            this.pnlBotoes = new System.Windows.Forms.Panel();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.pnlLocal = new System.Windows.Forms.Panel();
             this.wvMapa = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.lblLocalResgate = new System.Windows.Forms.Label();
@@ -85,10 +88,8 @@
             this.lblPerfil = new System.Windows.Forms.Label();
             this.lblDescricaoPerfil = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.pnlBotoes = new System.Windows.Forms.Panel();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.pnlMapa.SuspendLayout();
+            this.pnlBotoes.SuspendLayout();
             this.pnlLocal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wvMapa)).BeginInit();
             this.tlpFotodoGato.SuspendLayout();
@@ -103,7 +104,6 @@
             this.pnlPeso.SuspendLayout();
             this.pnlPelagem.SuspendLayout();
             this.gbSexo.SuspendLayout();
-            this.pnlBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMapa
@@ -141,6 +141,50 @@
             this.pnlMapa.Padding = new System.Windows.Forms.Padding(15);
             this.pnlMapa.Size = new System.Drawing.Size(650, 1762);
             this.pnlMapa.TabIndex = 0;
+            // 
+            // pnlBotoes
+            // 
+            this.pnlBotoes.Controls.Add(this.btnSalvar);
+            this.pnlBotoes.Controls.Add(this.btnLimpar);
+            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBotoes.Location = new System.Drawing.Point(15, 1463);
+            this.pnlBotoes.Name = "pnlBotoes";
+            this.pnlBotoes.Size = new System.Drawing.Size(620, 43);
+            this.pnlBotoes.TabIndex = 43;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(201)))), ((int)(((byte)(200)))));
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSalvar.Location = new System.Drawing.Point(404, 10);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(200, 30);
+            this.btnSalvar.TabIndex = 63;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpar.BackColor = System.Drawing.Color.White;
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(201)))), ((int)(((byte)(198)))));
+            this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(244)))), ((int)(((byte)(243)))));
+            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(150)))), ((int)(((byte)(148)))));
+            this.btnLimpar.Location = new System.Drawing.Point(259, 10);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(139, 30);
+            this.btnLimpar.TabIndex = 62;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = false;
             // 
             // pnlLocal
             // 
@@ -784,50 +828,6 @@
             this.btnExcluir.Text = "🗑️ Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
             // 
-            // pnlBotoes
-            // 
-            this.pnlBotoes.Controls.Add(this.btnSalvar);
-            this.pnlBotoes.Controls.Add(this.btnLimpar);
-            this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBotoes.Location = new System.Drawing.Point(15, 1463);
-            this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(620, 43);
-            this.pnlBotoes.TabIndex = 43;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(201)))), ((int)(((byte)(200)))));
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalvar.Location = new System.Drawing.Point(404, 10);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(200, 30);
-            this.btnSalvar.TabIndex = 63;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpar.BackColor = System.Drawing.Color.White;
-            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(201)))), ((int)(((byte)(198)))));
-            this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(244)))), ((int)(((byte)(243)))));
-            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(250)))), ((int)(((byte)(249)))));
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(150)))), ((int)(((byte)(148)))));
-            this.btnLimpar.Location = new System.Drawing.Point(259, 10);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(139, 30);
-            this.btnLimpar.TabIndex = 62;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            // 
             // ucEdicaoGato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -843,6 +843,7 @@
             this.Load += new System.EventHandler(this.ucEdicaoGato_Load);
             this.pnlMapa.ResumeLayout(false);
             this.pnlMapa.PerformLayout();
+            this.pnlBotoes.ResumeLayout(false);
             this.pnlLocal.ResumeLayout(false);
             this.pnlLocal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wvMapa)).EndInit();
@@ -866,7 +867,6 @@
             this.pnlPelagem.PerformLayout();
             this.gbSexo.ResumeLayout(false);
             this.gbSexo.PerformLayout();
-            this.pnlBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

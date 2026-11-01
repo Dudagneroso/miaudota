@@ -86,10 +86,9 @@ namespace miaudota.Telas
             // 
             // lblDescricaoLar
             // 
-            this.lblDescricaoLar.AutoSize = true;
             this.lblDescricaoLar.Location = new System.Drawing.Point(22, 38);
             this.lblDescricaoLar.Name = "lblDescricaoLar";
-            this.lblDescricaoLar.Size = new System.Drawing.Size(295, 13);
+            this.lblDescricaoLar.Size = new System.Drawing.Size(323, 13);
             this.lblDescricaoLar.TabIndex = 1;
             this.lblDescricaoLar.Text = "Registre uma família parceira para acolhimento temporário‍ 🏠";
             // 
@@ -221,7 +220,6 @@ namespace miaudota.Telas
             this.cbDisponibilidade.Name = "cbDisponibilidade";
             this.cbDisponibilidade.Size = new System.Drawing.Size(170, 24);
             this.cbDisponibilidade.TabIndex = 65;
-            
             // 
             // lblDisponibilidade
             // 
