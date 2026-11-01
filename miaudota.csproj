@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dados\RepositorioTutoresFake.cs" />
+    <Compile Include="Funcoes\Idade.cs" />
     <Compile Include="Models\Ocorrencia.cs" />
     <Compile Include="Telas\FormLogin.cs">
       <SubType>Form</SubType>
@@ -215,6 +216,7 @@
     <Content Include="sem-foto.png" />
     <None Include="Resources\logoSemFundo2.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Web.WebView2.1.0.4314.35\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.4314.35\build\Microsoft.Web.WebView2.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
