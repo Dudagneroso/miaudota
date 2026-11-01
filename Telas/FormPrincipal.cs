@@ -73,5 +73,20 @@ namespace miaudota
             }
             pnlPerfilContainer.Visible = true;
         }
+
+        private void btnOcorrencia_Click(object sender, EventArgs e)
+        {
+            AbrirTela(new ucOcorrencia());
+        }
+
+        private void btnDashboards_Click(object sender, EventArgs e)
+        {
+            AbrirTela(new ucDashboard());
+        }
+
+        private void btnCadastroLar_Click(object sender, EventArgs e)
+        {
+            AbrirTela(new ucCadastroLar());
+        }
     }
 }
