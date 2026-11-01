@@ -73,10 +73,5 @@ namespace miaudota
             }
             pnlPerfilContainer.Visible = true;
         }
-
-        private void btnCadastroLar_Click(object sender, EventArgs e)
-        { 
-            AbrirTela(new ucCadastroLar());
-        }
     }
 }
