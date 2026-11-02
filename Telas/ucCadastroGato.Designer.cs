@@ -55,8 +55,8 @@
             this.lblCheckVacinas = new System.Windows.Forms.Label();
             this.tlpBotoes = new System.Windows.Forms.TableLayoutPanel();
             this.pnlBotoes = new System.Windows.Forms.Panel();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlStatus = new System.Windows.Forms.Panel();
             this.cbFELV = new System.Windows.Forms.ComboBox();
@@ -440,38 +440,22 @@
             this.tlpBotoes.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tlpBotoes.Controls.Add(this.pnlBotoes, 1, 0);
             this.tlpBotoes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tlpBotoes.Location = new System.Drawing.Point(10, 1551);
+            this.tlpBotoes.Location = new System.Drawing.Point(10, 1554);
             this.tlpBotoes.Name = "tlpBotoes";
             this.tlpBotoes.RowCount = 1;
             this.tlpBotoes.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBotoes.Size = new System.Drawing.Size(650, 40);
+            this.tlpBotoes.Size = new System.Drawing.Size(650, 37);
             this.tlpBotoes.TabIndex = 60;
             // 
             // pnlBotoes
             // 
-            this.pnlBotoes.Controls.Add(this.btnSalvar);
             this.pnlBotoes.Controls.Add(this.btnLimpar);
+            this.pnlBotoes.Controls.Add(this.btnSalvar);
             this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBotoes.Location = new System.Drawing.Point(230, 3);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(417, 34);
+            this.pnlBotoes.Size = new System.Drawing.Size(417, 31);
             this.pnlBotoes.TabIndex = 0;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(201)))), ((int)(((byte)(200)))));
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalvar.Location = new System.Drawing.Point(148, 3);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(200, 30);
-            this.btnSalvar.TabIndex = 61;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
             // 
@@ -483,13 +467,29 @@
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(150)))), ((int)(((byte)(148)))));
-            this.btnLimpar.Location = new System.Drawing.Point(3, 3);
+            this.btnLimpar.Location = new System.Drawing.Point(3, 0);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(139, 30);
-            this.btnLimpar.TabIndex = 26;
+            this.btnLimpar.TabIndex = 62;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(201)))), ((int)(((byte)(200)))));
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSalvar.Location = new System.Drawing.Point(148, 0);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(200, 30);
+            this.btnSalvar.TabIndex = 61;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -1053,7 +1053,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpBotoes;
         private System.Windows.Forms.Panel pnlBotoes;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.DateTimePicker dtpDataEntrada;
         private System.Windows.Forms.Label lblDataEntrada;
         private System.Windows.Forms.TextBox txtObservacao;
@@ -1079,5 +1078,6 @@
         private System.Windows.Forms.Label lblFIV;
         private System.Windows.Forms.ComboBox cbFELV;
         private System.Windows.Forms.Label lblFELV;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }

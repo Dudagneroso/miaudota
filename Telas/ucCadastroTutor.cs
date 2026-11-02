@@ -24,5 +24,57 @@ namespace miaudota.Telas
         {
             lblGatoSelecionado.Text = $"Gato selecionado: {dgvGatos.CurrentRow?.Cells["Nome"].Value} | Microchip: {dgvGatos.CurrentRow?.Cells["NumeroMicrochip"].Value}";
         }
+        private void LimparFormulario()
+        {
+            txtNome.Clear();
+            txtCPF.Clear();
+            dtpDataNascimento.Value = DateTime.Now;
+            txtEmail.Clear();
+            txtCep.Clear();
+            txtCidade.Clear();
+            txtEstado.Clear();
+            txtLogradouro.Clear();
+            txtBairro.Clear();
+            txtNumero.Clear();
+            cbTipoMoradia.SelectedIndex = -1;
+            cbPets.SelectedIndex = -1;
+
+        }
+
+        private void btnSalvarTutor_Click(object sender, EventArgs e)
+        {
+            // 1. montar o objeto Tutor com os dados da tela
+            Tutor tutor = new Tutor
+            {
+                Nome = txtNome.Text,
+                CPF = txtCPF.Text,
+                Telefone = txtTelefone.Text,
+                DataNascimento = dtpDataNascimento.Value,
+                Email = txtEmail.Text,
+                CEP = txtCep.Text,
+                Cidade = txtCidade.Text,
+                Estado = txtEstado.Text,
+                Logradouro = txtLogradouro.Text,
+                Bairro = txtBairro.Text,
+                Numero = int.Parse(txtNumero.Text),
+                TipoResidencia = cbTipoMoradia.SelectedItem?.ToString(),
+                OutrosAnimais = cbPets.SelectedItem?.ToString(),
+                Gatos = new List<Gato> { dgvGatos.CurrentRow?.DataBoundItem as Gato }
+            };
+
+            // 2. guardar no repositório de tutores
+            RepositorioTutoresFake.Adicionar(tutor);
+
+            // 3. Mensagem de Sucesso
+            MessageBox.Show("Tutor cadastrado com sucesso!");
+
+            // 4. limpar o formulário
+            LimparFormulario();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparFormulario();
+        }
     }
 }

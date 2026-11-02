@@ -34,6 +34,17 @@ namespace miaudota.Telas
             }
         }
 
-        
+        private void LimparFormulario()
+        {
+            dtpDataOcorrencia.Value = DateTime.Now;
+            txtLocal.Clear();
+            txtResponsavel.Clear();
+            txtMotivo.Clear();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparFormulario();
+        }
     }
 }

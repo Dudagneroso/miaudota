@@ -45,12 +45,12 @@
             this.pnlDetalhesOcorrência = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnSalvarTutor = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnSalvarOcorrencia = new System.Windows.Forms.Button();
+            this.txtMotivo = new System.Windows.Forms.TextBox();
             this.lblMotivo = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtResponsavel = new System.Windows.Forms.TextBox();
             this.lblResponsavel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLocal = new System.Windows.Forms.TextBox();
             this.lblLocal = new System.Windows.Forms.Label();
             this.dtpDataOcorrencia = new System.Windows.Forms.DateTimePicker();
             this.lblData = new System.Windows.Forms.Label();
@@ -230,12 +230,12 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnLimpar);
-            this.panel2.Controls.Add(this.btnSalvarTutor);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.btnSalvarOcorrencia);
+            this.panel2.Controls.Add(this.txtMotivo);
             this.panel2.Controls.Add(this.lblMotivo);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtResponsavel);
             this.panel2.Controls.Add(this.lblResponsavel);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtLocal);
             this.panel2.Controls.Add(this.lblLocal);
             this.panel2.Controls.Add(this.dtpDataOcorrencia);
             this.panel2.Controls.Add(this.lblData);
@@ -261,30 +261,31 @@
             this.btnLimpar.TabIndex = 46;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // btnSalvarTutor
+            // btnSalvarOcorrencia
             // 
-            this.btnSalvarTutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(201)))), ((int)(((byte)(200)))));
-            this.btnSalvarTutor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvarTutor.FlatAppearance.BorderSize = 0;
-            this.btnSalvarTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvarTutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarTutor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalvarTutor.Location = new System.Drawing.Point(343, 173);
-            this.btnSalvarTutor.Name = "btnSalvarTutor";
-            this.btnSalvarTutor.Size = new System.Drawing.Size(200, 30);
-            this.btnSalvarTutor.TabIndex = 45;
-            this.btnSalvarTutor.Text = "Salvar";
-            this.btnSalvarTutor.UseVisualStyleBackColor = false;
+            this.btnSalvarOcorrencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(201)))), ((int)(((byte)(200)))));
+            this.btnSalvarOcorrencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvarOcorrencia.FlatAppearance.BorderSize = 0;
+            this.btnSalvarOcorrencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvarOcorrencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarOcorrencia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSalvarOcorrencia.Location = new System.Drawing.Point(343, 173);
+            this.btnSalvarOcorrencia.Name = "btnSalvarOcorrencia";
+            this.btnSalvarOcorrencia.Size = new System.Drawing.Size(200, 30);
+            this.btnSalvarOcorrencia.TabIndex = 45;
+            this.btnSalvarOcorrencia.Text = "Salvar";
+            this.btnSalvarOcorrencia.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // txtMotivo
             // 
-            this.textBox3.Location = new System.Drawing.Point(15, 85);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(528, 64);
-            this.textBox3.TabIndex = 44;
+            this.txtMotivo.Location = new System.Drawing.Point(15, 85);
+            this.txtMotivo.Multiline = true;
+            this.txtMotivo.Name = "txtMotivo";
+            this.txtMotivo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMotivo.Size = new System.Drawing.Size(528, 64);
+            this.txtMotivo.TabIndex = 44;
             // 
             // lblMotivo
             // 
@@ -295,13 +296,13 @@
             this.lblMotivo.TabIndex = 43;
             this.lblMotivo.Text = "Motivo da Devolução:";
             // 
-            // textBox2
+            // txtResponsavel
             // 
-            this.textBox2.Location = new System.Drawing.Point(359, 30);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(184, 25);
-            this.textBox2.TabIndex = 42;
+            this.txtResponsavel.Location = new System.Drawing.Point(359, 30);
+            this.txtResponsavel.Multiline = true;
+            this.txtResponsavel.Name = "txtResponsavel";
+            this.txtResponsavel.Size = new System.Drawing.Size(184, 25);
+            this.txtResponsavel.TabIndex = 42;
             // 
             // lblResponsavel
             // 
@@ -312,13 +313,13 @@
             this.lblResponsavel.TabIndex = 41;
             this.lblResponsavel.Text = "Responsável pelo resgistro:";
             // 
-            // textBox1
+            // txtLocal
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 30);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 25);
-            this.textBox1.TabIndex = 40;
+            this.txtLocal.Location = new System.Drawing.Point(154, 30);
+            this.txtLocal.Multiline = true;
+            this.txtLocal.Name = "txtLocal";
+            this.txtLocal.Size = new System.Drawing.Size(199, 25);
+            this.txtLocal.TabIndex = 40;
             // 
             // lblLocal
             // 
@@ -404,14 +405,14 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DateTimePicker dtpDataOcorrencia;
         private System.Windows.Forms.Label lblData;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLocal;
         private System.Windows.Forms.Label lblLocal;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtResponsavel;
         private System.Windows.Forms.Label lblResponsavel;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMotivo;
         private System.Windows.Forms.Label lblMotivo;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Button btnSalvarTutor;
+        private System.Windows.Forms.Button btnSalvarOcorrencia;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblIdadeMicrochip;
         private System.Windows.Forms.PictureBox pbFoto;
