@@ -34,6 +34,15 @@ namespace miaudota.Telas
             }
         }
 
+        public void mostrarGato(Gato gato)
+        {
+            Idade idade = Idade.Calcular(gato, DateTime.Today);
+
+            lblNome.Text = gato.Nome;
+            lblIdadeMicrochip.Text = $"{idade} . {gato.NumeroMicrochip}";
+            lblStatus.Text = gato.Status;
+        }
+
         private void LimparFormulario()
         {
             dtpDataOcorrencia.Value = DateTime.Now;
@@ -45,6 +54,36 @@ namespace miaudota.Telas
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparFormulario();
+        }
+
+        private void txtMicrochip_TextChanged(object sender, EventArgs e)
+        {
+            Gato gato = RepositorioGatosFake.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
+
+            // Verifica se o campo do microchip não está vazio ou apenas com espaços
+            bool temMicrochip = !string.IsNullOrWhiteSpace(txtMicrochip.Text);
+
+            // Torna os campos visíveis
+            lblNome.Visible = temMicrochip;
+            lblIdadeMicrochip.Visible = temMicrochip;
+            lblStatus.Visible = temMicrochip;
+
+            if (gato != null)
+            {
+                mostrarGato(gato);
+
+            }
+
+            // Muda a cor do status para vermelho se o gato não estiver disponível, caso contrário, mantém a cor padrão
+            if (gato != null && gato.Status != "Disponível")
+            {
+                lblStatus.BackColor = Color.FromArgb(255, 192, 192); // Cor de fundo vermelha
+            }
+            else
+            {
+                lblStatus.BackColor = Color.FromArgb(192, 255, 192); // Cor de fundo verde
+            }
+
         }
     }
 }
