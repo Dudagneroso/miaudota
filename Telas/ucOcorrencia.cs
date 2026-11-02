@@ -45,6 +45,7 @@ namespace miaudota.Telas
 
         private void LimparFormulario()
         {
+            txtMicrochip.Clear();
             dtpDataOcorrencia.Value = DateTime.Now;
             txtLocal.Clear();
             txtResponsavel.Clear();

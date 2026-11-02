@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnDashboards = new System.Windows.Forms.Button();
             this.btnConsultaTutor = new System.Windows.Forms.Button();
@@ -302,6 +303,7 @@
             this.ClientSize = new System.Drawing.Size(840, 770);
             this.Controls.Add(this.pnlConteudo);
             this.Controls.Add(this.pnlMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPrincipal";
             this.Text = "Miaudota";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
