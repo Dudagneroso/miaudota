@@ -20,10 +20,6 @@ namespace miaudota.Telas
             InitializeComponent();
         }
 
-        private void txtLarTemporario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         // Armazenar a latitude e longitude selecionadas
         double? latitudeSelecionada;
         double? longitudeSelecionada;
@@ -37,6 +33,8 @@ namespace miaudota.Telas
             wvMapa.CoreWebView2.WebMessageReceived += RegistrarLocal;
             // navegar para a página
             wvMapa.CoreWebView2.Navigate("https://miaudota.local/mapa.html");
+
+            rbDados.Checked = true;
         }
 
         private void RegistrarLocal(object sender, CoreWebView2WebMessageReceivedEventArgs e)
@@ -63,9 +61,14 @@ namespace miaudota.Telas
             clbVacinas.Visible = rbVacinado.Checked || rbNaoVacinado.Checked;
         }
 
-        private void tlpBotoes_Paint(object sender, PaintEventArgs e)
+        private void rbOcorrencias_CheckedChanged(object sender, EventArgs e)
         {
+            pnlOcorrencias.Visible = rbOcorrencias.Checked;
+        }
 
+        private void rbDados_CheckedChanged(object sender, EventArgs e)
+        {
+            pnlDados.Visible = rbDados.Checked;
         }
     }
 }
