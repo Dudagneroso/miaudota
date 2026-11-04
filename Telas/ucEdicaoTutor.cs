@@ -12,6 +12,7 @@ namespace miaudota.Telas
 {
     public partial class ucEdicaoTutor : UserControl
     {
+        private Tutor tutorAtual;
         public ucEdicaoTutor()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace miaudota.Telas
             txtNumero.Text = tutor.Numero.ToString();
             cbTipoMoradia.Text = tutor.TipoResidencia;
             cbPets.Text = tutor.OutrosAnimais;
-
+            tutorAtual = tutor;
 
             foreach (var gato in tutor.Gatos)
             {
@@ -66,6 +67,25 @@ namespace miaudota.Telas
                 lblNomeGato.Text = "Gato não encontrado";
                 gatoParaVincular = null;
 
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+                "Tem certeza que deseja excluir este tutor?",
+                "Confirmação",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (resultado == DialogResult.Yes)
+            {
+                RepositorioTutoresFake.Excluir(tutorAtual);
+
+                MessageBox.Show("Tutor excluído com sucesso!");
+
+                ((FormPrincipal)this.ParentForm).AbrirTela(new ucConsultaTutor());
             }
         }
     }

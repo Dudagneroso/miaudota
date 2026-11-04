@@ -20,6 +20,13 @@ namespace miaudota.Telas
             InitializeComponent();
         }
 
+        public void CarregarGato(Gato gato)
+        {
+            txtMicrochip.Text = gato.NumeroMicrochip;
+            txtNome.Text = gato.Nome;
+            CarregarOcorrencias(gato);
+        }
+
         // Armazenar a latitude e longitude selecionadas
         double? latitudeSelecionada;
         double? longitudeSelecionada;
@@ -35,6 +42,7 @@ namespace miaudota.Telas
             wvMapa.CoreWebView2.Navigate("https://miaudota.local/mapa.html");
 
             rbDados.Checked = true;
+
         }
 
         private void RegistrarLocal(object sender, CoreWebView2WebMessageReceivedEventArgs e)
@@ -71,9 +79,44 @@ namespace miaudota.Telas
             pnlDados.Visible = rbDados.Checked;
         }
 
+        private void AtualizarIndicadores(List<OcorrenciaGato> lista)
+        {
+            lblQtd.Text = lista.Count.ToString();
+
+            //Verificar se existem ocorrências
+            if (lista.Count > 0)
+            {
+                OcorrenciaGato ultima = lista[0];
+
+                lblTipoUltimaOcorrencia.Text = ultima.Tipo;
+
+                lblData.Text = ultima.Data.ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                lblTipoUltimaOcorrencia.Text = "N/A";
+                lblData.Text = "--/--/----";
+            }
+        }
+
         private void CarregarOcorrencias(Gato gato)
         {
             List<OcorrenciaGato> lista = RepositorioOcorrencia.ObterPorGato(gato.NumeroMicrochip);
+
+            flpOcorrencias.Controls.Clear();
+            AtualizarIndicadores(lista);
+
+            foreach (OcorrenciaGato o in lista)
+            {
+                ucItemOcorrencia item = new ucItemOcorrencia();
+                item.CarregarDados(o);
+                item.Width = flpOcorrencias.ClientSize.Width
+                     - flpOcorrencias.Padding.Horizontal
+                     - item.Margin.Horizontal - 5;
+                item.Height = 135;
+                item.Margin = new Padding(0, 0, 0, 10);
+                flpOcorrencias.Controls.Add(item);
+            }
         }
     }
 }

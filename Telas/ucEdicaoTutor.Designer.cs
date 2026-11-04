@@ -29,6 +29,24 @@
         private void InitializeComponent()
         {
             this.pnlCadastroTutor = new System.Windows.Forms.Panel();
+            this.cbPets = new System.Windows.Forms.ComboBox();
+            this.lblPets = new System.Windows.Forms.Label();
+            this.cbTipoMoradia = new System.Windows.Forms.ComboBox();
+            this.lblTipoMoradia = new System.Windows.Forms.Label();
+            this.lblPerfilAdocao = new System.Windows.Forms.Label();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.lblNumero = new System.Windows.Forms.Label();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.lblBairro = new System.Windows.Forms.Label();
+            this.txtLogradouro = new System.Windows.Forms.TextBox();
+            this.lblLogradouro = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.lblCidade = new System.Windows.Forms.Label();
+            this.txtCep = new System.Windows.Forms.TextBox();
+            this.lblCep = new System.Windows.Forms.Label();
+            this.lblEnderecoTutor = new System.Windows.Forms.Label();
             this.lblGatosAdotados = new System.Windows.Forms.Label();
             this.pnlNovoGato = new System.Windows.Forms.Panel();
             this.lblNomeGato = new System.Windows.Forms.Label();
@@ -52,24 +70,6 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.lblTituloEdicaoTutor = new System.Windows.Forms.Label();
-            this.lblEnderecoTutor = new System.Windows.Forms.Label();
-            this.txtCep = new System.Windows.Forms.TextBox();
-            this.lblCep = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
-            this.lblEstado = new System.Windows.Forms.Label();
-            this.txtCidade = new System.Windows.Forms.TextBox();
-            this.lblCidade = new System.Windows.Forms.Label();
-            this.txtBairro = new System.Windows.Forms.TextBox();
-            this.lblBairro = new System.Windows.Forms.Label();
-            this.txtLogradouro = new System.Windows.Forms.TextBox();
-            this.lblLogradouro = new System.Windows.Forms.Label();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.lblNumero = new System.Windows.Forms.Label();
-            this.cbPets = new System.Windows.Forms.ComboBox();
-            this.lblPets = new System.Windows.Forms.Label();
-            this.cbTipoMoradia = new System.Windows.Forms.ComboBox();
-            this.lblTipoMoradia = new System.Windows.Forms.Label();
-            this.lblPerfilAdocao = new System.Windows.Forms.Label();
             this.pnlCadastroTutor.SuspendLayout();
             this.pnlNovoGato.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +118,182 @@
             this.pnlCadastroTutor.Name = "pnlCadastroTutor";
             this.pnlCadastroTutor.Size = new System.Drawing.Size(583, 1144);
             this.pnlCadastroTutor.TabIndex = 31;
+            // 
+            // cbPets
+            // 
+            this.cbPets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPets.FormattingEnabled = true;
+            this.cbPets.Items.AddRange(new object[] {
+            "Não",
+            "Sim - gato(s)",
+            "Sim - cachorro(s)",
+            "Sim - outros"});
+            this.cbPets.Location = new System.Drawing.Point(322, 600);
+            this.cbPets.Name = "cbPets";
+            this.cbPets.Size = new System.Drawing.Size(235, 24);
+            this.cbPets.TabIndex = 67;
+            // 
+            // lblPets
+            // 
+            this.lblPets.AutoSize = true;
+            this.lblPets.Location = new System.Drawing.Point(319, 584);
+            this.lblPets.Name = "lblPets";
+            this.lblPets.Size = new System.Drawing.Size(90, 13);
+            this.lblPets.TabIndex = 66;
+            this.lblPets.Text = "Tem outros Pets?";
+            // 
+            // cbTipoMoradia
+            // 
+            this.cbTipoMoradia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoMoradia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoMoradia.FormattingEnabled = true;
+            this.cbTipoMoradia.Items.AddRange(new object[] {
+            "Apartamento",
+            "Casa com quintal",
+            "Casa sem quintal",
+            "Sítio / Chácara"});
+            this.cbTipoMoradia.Location = new System.Drawing.Point(20, 600);
+            this.cbTipoMoradia.Name = "cbTipoMoradia";
+            this.cbTipoMoradia.Size = new System.Drawing.Size(296, 24);
+            this.cbTipoMoradia.TabIndex = 65;
+            // 
+            // lblTipoMoradia
+            // 
+            this.lblTipoMoradia.AutoSize = true;
+            this.lblTipoMoradia.Location = new System.Drawing.Point(18, 584);
+            this.lblTipoMoradia.Name = "lblTipoMoradia";
+            this.lblTipoMoradia.Size = new System.Drawing.Size(87, 13);
+            this.lblTipoMoradia.TabIndex = 64;
+            this.lblTipoMoradia.Text = "Tipo de Moradia:";
+            // 
+            // lblPerfilAdocao
+            // 
+            this.lblPerfilAdocao.AutoSize = true;
+            this.lblPerfilAdocao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
+            this.lblPerfilAdocao.Location = new System.Drawing.Point(18, 556);
+            this.lblPerfilAdocao.Name = "lblPerfilAdocao";
+            this.lblPerfilAdocao.Size = new System.Drawing.Size(110, 13);
+            this.lblPerfilAdocao.TabIndex = 63;
+            this.lblPerfilAdocao.Text = "PERFIL DE ADOÇÃO";
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(391, 516);
+            this.txtNumero.Multiline = true;
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(168, 25);
+            this.txtNumero.TabIndex = 62;
+            // 
+            // lblNumero
+            // 
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblNumero.Location = new System.Drawing.Point(388, 500);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(47, 13);
+            this.lblNumero.TabIndex = 61;
+            this.lblNumero.Text = "Numero:";
+            // 
+            // txtBairro
+            // 
+            this.txtBairro.Location = new System.Drawing.Point(21, 516);
+            this.txtBairro.Multiline = true;
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(364, 25);
+            this.txtBairro.TabIndex = 60;
+            // 
+            // lblBairro
+            // 
+            this.lblBairro.AutoSize = true;
+            this.lblBairro.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblBairro.Location = new System.Drawing.Point(18, 500);
+            this.lblBairro.Name = "lblBairro";
+            this.lblBairro.Size = new System.Drawing.Size(37, 13);
+            this.lblBairro.TabIndex = 59;
+            this.lblBairro.Text = "Bairro:";
+            // 
+            // txtLogradouro
+            // 
+            this.txtLogradouro.Location = new System.Drawing.Point(21, 465);
+            this.txtLogradouro.Multiline = true;
+            this.txtLogradouro.Name = "txtLogradouro";
+            this.txtLogradouro.Size = new System.Drawing.Size(538, 25);
+            this.txtLogradouro.TabIndex = 58;
+            // 
+            // lblLogradouro
+            // 
+            this.lblLogradouro.AutoSize = true;
+            this.lblLogradouro.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblLogradouro.Location = new System.Drawing.Point(18, 449);
+            this.lblLogradouro.Name = "lblLogradouro";
+            this.lblLogradouro.Size = new System.Drawing.Size(64, 13);
+            this.lblLogradouro.TabIndex = 57;
+            this.lblLogradouro.Text = "Logradouro:";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(391, 412);
+            this.txtEstado.Multiline = true;
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(168, 25);
+            this.txtEstado.TabIndex = 56;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblEstado.Location = new System.Drawing.Point(388, 396);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(43, 13);
+            this.lblEstado.TabIndex = 55;
+            this.lblEstado.Text = "Estado:";
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Location = new System.Drawing.Point(204, 412);
+            this.txtCidade.Multiline = true;
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(181, 25);
+            this.txtCidade.TabIndex = 54;
+            // 
+            // lblCidade
+            // 
+            this.lblCidade.AutoSize = true;
+            this.lblCidade.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblCidade.Location = new System.Drawing.Point(201, 396);
+            this.lblCidade.Name = "lblCidade";
+            this.lblCidade.Size = new System.Drawing.Size(43, 13);
+            this.lblCidade.TabIndex = 53;
+            this.lblCidade.Text = "Cidade:";
+            // 
+            // txtCep
+            // 
+            this.txtCep.Location = new System.Drawing.Point(20, 412);
+            this.txtCep.Multiline = true;
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(178, 25);
+            this.txtCep.TabIndex = 52;
+            // 
+            // lblCep
+            // 
+            this.lblCep.AutoSize = true;
+            this.lblCep.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblCep.Location = new System.Drawing.Point(17, 396);
+            this.lblCep.Name = "lblCep";
+            this.lblCep.Size = new System.Drawing.Size(31, 13);
+            this.lblCep.TabIndex = 51;
+            this.lblCep.Text = "CEP:";
+            // 
+            // lblEnderecoTutor
+            // 
+            this.lblEnderecoTutor.AutoSize = true;
+            this.lblEnderecoTutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
+            this.lblEnderecoTutor.Location = new System.Drawing.Point(15, 365);
+            this.lblEnderecoTutor.Name = "lblEnderecoTutor";
+            this.lblEnderecoTutor.Size = new System.Drawing.Size(67, 13);
+            this.lblEnderecoTutor.TabIndex = 50;
+            this.lblEnderecoTutor.Text = "ENDEREÇO";
             // 
             // lblGatosAdotados
             // 
@@ -211,6 +387,7 @@
             this.btnExcluir.TabIndex = 44;
             this.btnExcluir.Text = "🗑️ Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // lblEmailTutor
             // 
@@ -367,182 +544,6 @@
             this.lblTituloEdicaoTutor.Size = new System.Drawing.Size(136, 20);
             this.lblTituloEdicaoTutor.TabIndex = 32;
             this.lblTituloEdicaoTutor.Text = "Edição de Tutor";
-            // 
-            // lblEnderecoTutor
-            // 
-            this.lblEnderecoTutor.AutoSize = true;
-            this.lblEnderecoTutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
-            this.lblEnderecoTutor.Location = new System.Drawing.Point(15, 365);
-            this.lblEnderecoTutor.Name = "lblEnderecoTutor";
-            this.lblEnderecoTutor.Size = new System.Drawing.Size(67, 13);
-            this.lblEnderecoTutor.TabIndex = 50;
-            this.lblEnderecoTutor.Text = "ENDEREÇO";
-            // 
-            // txtCep
-            // 
-            this.txtCep.Location = new System.Drawing.Point(20, 412);
-            this.txtCep.Multiline = true;
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(178, 25);
-            this.txtCep.TabIndex = 52;
-            // 
-            // lblCep
-            // 
-            this.lblCep.AutoSize = true;
-            this.lblCep.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCep.Location = new System.Drawing.Point(17, 396);
-            this.lblCep.Name = "lblCep";
-            this.lblCep.Size = new System.Drawing.Size(31, 13);
-            this.lblCep.TabIndex = 51;
-            this.lblCep.Text = "CEP:";
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(391, 412);
-            this.txtEstado.Multiline = true;
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(168, 25);
-            this.txtEstado.TabIndex = 56;
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblEstado.Location = new System.Drawing.Point(388, 396);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(43, 13);
-            this.lblEstado.TabIndex = 55;
-            this.lblEstado.Text = "Estado:";
-            // 
-            // txtCidade
-            // 
-            this.txtCidade.Location = new System.Drawing.Point(204, 412);
-            this.txtCidade.Multiline = true;
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(181, 25);
-            this.txtCidade.TabIndex = 54;
-            // 
-            // lblCidade
-            // 
-            this.lblCidade.AutoSize = true;
-            this.lblCidade.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCidade.Location = new System.Drawing.Point(201, 396);
-            this.lblCidade.Name = "lblCidade";
-            this.lblCidade.Size = new System.Drawing.Size(43, 13);
-            this.lblCidade.TabIndex = 53;
-            this.lblCidade.Text = "Cidade:";
-            // 
-            // txtBairro
-            // 
-            this.txtBairro.Location = new System.Drawing.Point(21, 516);
-            this.txtBairro.Multiline = true;
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(364, 25);
-            this.txtBairro.TabIndex = 60;
-            // 
-            // lblBairro
-            // 
-            this.lblBairro.AutoSize = true;
-            this.lblBairro.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblBairro.Location = new System.Drawing.Point(18, 500);
-            this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(37, 13);
-            this.lblBairro.TabIndex = 59;
-            this.lblBairro.Text = "Bairro:";
-            // 
-            // txtLogradouro
-            // 
-            this.txtLogradouro.Location = new System.Drawing.Point(21, 465);
-            this.txtLogradouro.Multiline = true;
-            this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(538, 25);
-            this.txtLogradouro.TabIndex = 58;
-            // 
-            // lblLogradouro
-            // 
-            this.lblLogradouro.AutoSize = true;
-            this.lblLogradouro.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblLogradouro.Location = new System.Drawing.Point(18, 449);
-            this.lblLogradouro.Name = "lblLogradouro";
-            this.lblLogradouro.Size = new System.Drawing.Size(64, 13);
-            this.lblLogradouro.TabIndex = 57;
-            this.lblLogradouro.Text = "Logradouro:";
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(391, 516);
-            this.txtNumero.Multiline = true;
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(168, 25);
-            this.txtNumero.TabIndex = 62;
-            // 
-            // lblNumero
-            // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNumero.Location = new System.Drawing.Point(388, 500);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(47, 13);
-            this.lblNumero.TabIndex = 61;
-            this.lblNumero.Text = "Numero:";
-            // 
-            // cbPets
-            // 
-            this.cbPets.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPets.FormattingEnabled = true;
-            this.cbPets.Items.AddRange(new object[] {
-            "Não",
-            "Sim - gato(s)",
-            "Sim - cachorro(s)",
-            "Sim - outros"});
-            this.cbPets.Location = new System.Drawing.Point(322, 600);
-            this.cbPets.Name = "cbPets";
-            this.cbPets.Size = new System.Drawing.Size(235, 24);
-            this.cbPets.TabIndex = 67;
-            // 
-            // lblPets
-            // 
-            this.lblPets.AutoSize = true;
-            this.lblPets.Location = new System.Drawing.Point(319, 584);
-            this.lblPets.Name = "lblPets";
-            this.lblPets.Size = new System.Drawing.Size(90, 13);
-            this.lblPets.TabIndex = 66;
-            this.lblPets.Text = "Tem outros Pets?";
-            // 
-            // cbTipoMoradia
-            // 
-            this.cbTipoMoradia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoMoradia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipoMoradia.FormattingEnabled = true;
-            this.cbTipoMoradia.Items.AddRange(new object[] {
-            "Apartamento",
-            "Casa com quintal",
-            "Casa sem quintal",
-            "Sítio / Chácara"});
-            this.cbTipoMoradia.Location = new System.Drawing.Point(20, 600);
-            this.cbTipoMoradia.Name = "cbTipoMoradia";
-            this.cbTipoMoradia.Size = new System.Drawing.Size(296, 24);
-            this.cbTipoMoradia.TabIndex = 65;
-            // 
-            // lblTipoMoradia
-            // 
-            this.lblTipoMoradia.AutoSize = true;
-            this.lblTipoMoradia.Location = new System.Drawing.Point(18, 584);
-            this.lblTipoMoradia.Name = "lblTipoMoradia";
-            this.lblTipoMoradia.Size = new System.Drawing.Size(87, 13);
-            this.lblTipoMoradia.TabIndex = 64;
-            this.lblTipoMoradia.Text = "Tipo de Moradia:";
-            // 
-            // lblPerfilAdocao
-            // 
-            this.lblPerfilAdocao.AutoSize = true;
-            this.lblPerfilAdocao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
-            this.lblPerfilAdocao.Location = new System.Drawing.Point(18, 556);
-            this.lblPerfilAdocao.Name = "lblPerfilAdocao";
-            this.lblPerfilAdocao.Size = new System.Drawing.Size(110, 13);
-            this.lblPerfilAdocao.TabIndex = 63;
-            this.lblPerfilAdocao.Text = "PERFIL DE ADOÇÃO";
             // 
             // ucEdicaoTutor
             // 

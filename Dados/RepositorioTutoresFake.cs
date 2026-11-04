@@ -42,6 +42,12 @@ namespace miaudota
         {
             tutores.Add(tutor);
         }
+
+        public static void Excluir(Tutor tutor)
+        {
+            tutores.Remove(tutor);
+        }
+
     }
               
 }

@@ -37,7 +37,20 @@
             this.rbDados = new System.Windows.Forms.RadioButton();
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.pnlOcorrencias = new System.Windows.Forms.Panel();
+            this.pnlOcorrenciasConteudo = new System.Windows.Forms.Panel();
             this.tlpCardsInfos = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlBordaDataUltimoRegistro = new System.Windows.Forms.Panel();
+            this.pnlDataUltimoRegistro = new System.Windows.Forms.Panel();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblDataUltimoRegistro = new System.Windows.Forms.Label();
+            this.pnlBordaUltimaOcorrencia = new System.Windows.Forms.Panel();
+            this.pnlUltimaOcorrencia = new System.Windows.Forms.Panel();
+            this.lblTipoUltimaOcorrencia = new System.Windows.Forms.Label();
+            this.lblUltimaOcorrencia = new System.Windows.Forms.Label();
+            this.pnlBordaTotalOcorrencias = new System.Windows.Forms.Panel();
+            this.pnlTotalOcorrencias = new System.Windows.Forms.Panel();
+            this.lblQtd = new System.Windows.Forms.Label();
+            this.lblTotalOcorrencias = new System.Windows.Forms.Label();
             this.pnlDados = new System.Windows.Forms.Panel();
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -95,24 +108,21 @@
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
             this.lblIdentificacao = new System.Windows.Forms.Label();
-            this.pnlBordaTotalOcorrencias = new System.Windows.Forms.Panel();
-            this.pnlBordaUltimaOcorrencia = new System.Windows.Forms.Panel();
-            this.pnlBordaDataUltimoRegistro = new System.Windows.Forms.Panel();
-            this.pnlTotalOcorrencias = new System.Windows.Forms.Panel();
-            this.pnlUltimaOcorrencia = new System.Windows.Forms.Panel();
-            this.pnlDataUltimoRegistro = new System.Windows.Forms.Panel();
-            this.lblTotalOcorrencias = new System.Windows.Forms.Label();
-            this.lblQtd = new System.Windows.Forms.Label();
-            this.lblTipoUltimaOcorrencia = new System.Windows.Forms.Label();
-            this.lblUltimaOcorrencia = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
-            this.lblDataUltimoRegistro = new System.Windows.Forms.Label();
-            this.pnlOcorrenciasConteudo = new System.Windows.Forms.Panel();
+            this.lblHistorico = new System.Windows.Forms.Label();
+            this.lblSubtituloHistorico = new System.Windows.Forms.Label();
+            this.flpOcorrencias = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlAbas.SuspendLayout();
             this.pnlSwitch.SuspendLayout();
             this.pnlConteudo.SuspendLayout();
             this.pnlOcorrencias.SuspendLayout();
+            this.pnlOcorrenciasConteudo.SuspendLayout();
             this.tlpCardsInfos.SuspendLayout();
+            this.pnlBordaDataUltimoRegistro.SuspendLayout();
+            this.pnlDataUltimoRegistro.SuspendLayout();
+            this.pnlBordaUltimaOcorrencia.SuspendLayout();
+            this.pnlUltimaOcorrencia.SuspendLayout();
+            this.pnlBordaTotalOcorrencias.SuspendLayout();
+            this.pnlTotalOcorrencias.SuspendLayout();
             this.pnlDados.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.pnlLocal.SuspendLayout();
@@ -129,12 +139,6 @@
             this.pnlPeso.SuspendLayout();
             this.pnlPelagem.SuspendLayout();
             this.gbSexo.SuspendLayout();
-            this.pnlBordaTotalOcorrencias.SuspendLayout();
-            this.pnlBordaUltimaOcorrencia.SuspendLayout();
-            this.pnlBordaDataUltimoRegistro.SuspendLayout();
-            this.pnlTotalOcorrencias.SuspendLayout();
-            this.pnlUltimaOcorrencia.SuspendLayout();
-            this.pnlDataUltimoRegistro.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPerfil
@@ -250,6 +254,19 @@
             this.pnlOcorrencias.TabIndex = 2;
             this.pnlOcorrencias.Visible = false;
             // 
+            // pnlOcorrenciasConteudo
+            // 
+            this.pnlOcorrenciasConteudo.BackColor = System.Drawing.Color.White;
+            this.pnlOcorrenciasConteudo.Controls.Add(this.flpOcorrencias);
+            this.pnlOcorrenciasConteudo.Controls.Add(this.lblSubtituloHistorico);
+            this.pnlOcorrenciasConteudo.Controls.Add(this.lblHistorico);
+            this.pnlOcorrenciasConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOcorrenciasConteudo.Location = new System.Drawing.Point(0, 98);
+            this.pnlOcorrenciasConteudo.Name = "pnlOcorrenciasConteudo";
+            this.pnlOcorrenciasConteudo.Padding = new System.Windows.Forms.Padding(10);
+            this.pnlOcorrenciasConteudo.Size = new System.Drawing.Size(650, 1627);
+            this.pnlOcorrenciasConteudo.TabIndex = 1;
+            // 
             // tlpCardsInfos
             // 
             this.tlpCardsInfos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
@@ -266,9 +283,147 @@
             this.tlpCardsInfos.Padding = new System.Windows.Forms.Padding(5, 5, 5, 8);
             this.tlpCardsInfos.RowCount = 1;
             this.tlpCardsInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpCardsInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.tlpCardsInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tlpCardsInfos.Size = new System.Drawing.Size(650, 98);
             this.tlpCardsInfos.TabIndex = 0;
+            // 
+            // pnlBordaDataUltimoRegistro
+            // 
+            this.pnlBordaDataUltimoRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
+            this.pnlBordaDataUltimoRegistro.Controls.Add(this.pnlDataUltimoRegistro);
+            this.pnlBordaDataUltimoRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBordaDataUltimoRegistro.Location = new System.Drawing.Point(434, 8);
+            this.pnlBordaDataUltimoRegistro.Name = "pnlBordaDataUltimoRegistro";
+            this.pnlBordaDataUltimoRegistro.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlBordaDataUltimoRegistro.Size = new System.Drawing.Size(208, 79);
+            this.pnlBordaDataUltimoRegistro.TabIndex = 2;
+            // 
+            // pnlDataUltimoRegistro
+            // 
+            this.pnlDataUltimoRegistro.BackColor = System.Drawing.Color.White;
+            this.pnlDataUltimoRegistro.Controls.Add(this.lblData);
+            this.pnlDataUltimoRegistro.Controls.Add(this.lblDataUltimoRegistro);
+            this.pnlDataUltimoRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDataUltimoRegistro.Location = new System.Drawing.Point(1, 1);
+            this.pnlDataUltimoRegistro.Name = "pnlDataUltimoRegistro";
+            this.pnlDataUltimoRegistro.Padding = new System.Windows.Forms.Padding(8, 10, 0, 0);
+            this.pnlDataUltimoRegistro.Size = new System.Drawing.Size(206, 77);
+            this.pnlDataUltimoRegistro.TabIndex = 1;
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblData.Location = new System.Drawing.Point(14, 39);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(74, 17);
+            this.lblData.TabIndex = 3;
+            this.lblData.Text = "20/09/2026";
+            // 
+            // lblDataUltimoRegistro
+            // 
+            this.lblDataUltimoRegistro.AutoSize = true;
+            this.lblDataUltimoRegistro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDataUltimoRegistro.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataUltimoRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblDataUltimoRegistro.Location = new System.Drawing.Point(8, 10);
+            this.lblDataUltimoRegistro.Name = "lblDataUltimoRegistro";
+            this.lblDataUltimoRegistro.Size = new System.Drawing.Size(127, 13);
+            this.lblDataUltimoRegistro.TabIndex = 2;
+            this.lblDataUltimoRegistro.Text = "Data do último registro";
+            // 
+            // pnlBordaUltimaOcorrencia
+            // 
+            this.pnlBordaUltimaOcorrencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
+            this.pnlBordaUltimaOcorrencia.Controls.Add(this.pnlUltimaOcorrencia);
+            this.pnlBordaUltimaOcorrencia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBordaUltimaOcorrencia.Location = new System.Drawing.Point(221, 8);
+            this.pnlBordaUltimaOcorrencia.Name = "pnlBordaUltimaOcorrencia";
+            this.pnlBordaUltimaOcorrencia.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlBordaUltimaOcorrencia.Size = new System.Drawing.Size(207, 79);
+            this.pnlBordaUltimaOcorrencia.TabIndex = 1;
+            // 
+            // pnlUltimaOcorrencia
+            // 
+            this.pnlUltimaOcorrencia.BackColor = System.Drawing.Color.White;
+            this.pnlUltimaOcorrencia.Controls.Add(this.lblTipoUltimaOcorrencia);
+            this.pnlUltimaOcorrencia.Controls.Add(this.lblUltimaOcorrencia);
+            this.pnlUltimaOcorrencia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlUltimaOcorrencia.Location = new System.Drawing.Point(1, 1);
+            this.pnlUltimaOcorrencia.Name = "pnlUltimaOcorrencia";
+            this.pnlUltimaOcorrencia.Padding = new System.Windows.Forms.Padding(8, 10, 0, 0);
+            this.pnlUltimaOcorrencia.Size = new System.Drawing.Size(205, 77);
+            this.pnlUltimaOcorrencia.TabIndex = 1;
+            // 
+            // lblTipoUltimaOcorrencia
+            // 
+            this.lblTipoUltimaOcorrencia.AutoSize = true;
+            this.lblTipoUltimaOcorrencia.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoUltimaOcorrencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblTipoUltimaOcorrencia.Location = new System.Drawing.Point(8, 39);
+            this.lblTipoUltimaOcorrencia.Name = "lblTipoUltimaOcorrencia";
+            this.lblTipoUltimaOcorrencia.Size = new System.Drawing.Size(95, 17);
+            this.lblTipoUltimaOcorrencia.TabIndex = 3;
+            this.lblTipoUltimaOcorrencia.Text = "Retorno ao lar";
+            // 
+            // lblUltimaOcorrencia
+            // 
+            this.lblUltimaOcorrencia.AutoSize = true;
+            this.lblUltimaOcorrencia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblUltimaOcorrencia.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUltimaOcorrencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblUltimaOcorrencia.Location = new System.Drawing.Point(8, 10);
+            this.lblUltimaOcorrencia.Name = "lblUltimaOcorrencia";
+            this.lblUltimaOcorrencia.Size = new System.Drawing.Size(97, 13);
+            this.lblUltimaOcorrencia.TabIndex = 2;
+            this.lblUltimaOcorrencia.Text = "Última ocorrência";
+            // 
+            // pnlBordaTotalOcorrencias
+            // 
+            this.pnlBordaTotalOcorrencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
+            this.pnlBordaTotalOcorrencias.Controls.Add(this.pnlTotalOcorrencias);
+            this.pnlBordaTotalOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBordaTotalOcorrencias.Location = new System.Drawing.Point(8, 8);
+            this.pnlBordaTotalOcorrencias.Name = "pnlBordaTotalOcorrencias";
+            this.pnlBordaTotalOcorrencias.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlBordaTotalOcorrencias.Size = new System.Drawing.Size(207, 79);
+            this.pnlBordaTotalOcorrencias.TabIndex = 0;
+            // 
+            // pnlTotalOcorrencias
+            // 
+            this.pnlTotalOcorrencias.BackColor = System.Drawing.Color.White;
+            this.pnlTotalOcorrencias.Controls.Add(this.lblQtd);
+            this.pnlTotalOcorrencias.Controls.Add(this.lblTotalOcorrencias);
+            this.pnlTotalOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTotalOcorrencias.Location = new System.Drawing.Point(1, 1);
+            this.pnlTotalOcorrencias.Name = "pnlTotalOcorrencias";
+            this.pnlTotalOcorrencias.Padding = new System.Windows.Forms.Padding(8, 10, 0, 0);
+            this.pnlTotalOcorrencias.Size = new System.Drawing.Size(205, 77);
+            this.pnlTotalOcorrencias.TabIndex = 0;
+            // 
+            // lblQtd
+            // 
+            this.lblQtd.AutoSize = true;
+            this.lblQtd.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblQtd.Location = new System.Drawing.Point(11, 34);
+            this.lblQtd.Name = "lblQtd";
+            this.lblQtd.Size = new System.Drawing.Size(25, 30);
+            this.lblQtd.TabIndex = 1;
+            this.lblQtd.Text = "2";
+            // 
+            // lblTotalOcorrencias
+            // 
+            this.lblTotalOcorrencias.AutoSize = true;
+            this.lblTotalOcorrencias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTotalOcorrencias.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalOcorrencias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblTotalOcorrencias.Location = new System.Drawing.Point(8, 10);
+            this.lblTotalOcorrencias.Name = "lblTotalOcorrencias";
+            this.lblTotalOcorrencias.Size = new System.Drawing.Size(109, 13);
+            this.lblTotalOcorrencias.TabIndex = 0;
+            this.lblTotalOcorrencias.Text = "Total de ocorrências";
             // 
             // pnlDados
             // 
@@ -969,152 +1124,42 @@
             this.lblIdentificacao.TabIndex = 0;
             this.lblIdentificacao.Text = "IDENTIFICAÇÃO";
             // 
-            // pnlBordaTotalOcorrencias
+            // lblHistorico
             // 
-            this.pnlBordaTotalOcorrencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
-            this.pnlBordaTotalOcorrencias.Controls.Add(this.pnlTotalOcorrencias);
-            this.pnlBordaTotalOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBordaTotalOcorrencias.Location = new System.Drawing.Point(8, 8);
-            this.pnlBordaTotalOcorrencias.Name = "pnlBordaTotalOcorrencias";
-            this.pnlBordaTotalOcorrencias.Padding = new System.Windows.Forms.Padding(1);
-            this.pnlBordaTotalOcorrencias.Size = new System.Drawing.Size(207, 79);
-            this.pnlBordaTotalOcorrencias.TabIndex = 0;
+            this.lblHistorico.AutoSize = true;
+            this.lblHistorico.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblHistorico.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblHistorico.Location = new System.Drawing.Point(10, 10);
+            this.lblHistorico.Name = "lblHistorico";
+            this.lblHistorico.Size = new System.Drawing.Size(177, 20);
+            this.lblHistorico.TabIndex = 0;
+            this.lblHistorico.Text = "Histórico de ocorrências";
             // 
-            // pnlBordaUltimaOcorrencia
+            // lblSubtituloHistorico
             // 
-            this.pnlBordaUltimaOcorrencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
-            this.pnlBordaUltimaOcorrencia.Controls.Add(this.pnlUltimaOcorrencia);
-            this.pnlBordaUltimaOcorrencia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBordaUltimaOcorrencia.Location = new System.Drawing.Point(221, 8);
-            this.pnlBordaUltimaOcorrencia.Name = "pnlBordaUltimaOcorrencia";
-            this.pnlBordaUltimaOcorrencia.Padding = new System.Windows.Forms.Padding(1);
-            this.pnlBordaUltimaOcorrencia.Size = new System.Drawing.Size(207, 79);
-            this.pnlBordaUltimaOcorrencia.TabIndex = 1;
+            this.lblSubtituloHistorico.AutoSize = true;
+            this.lblSubtituloHistorico.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSubtituloHistorico.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtituloHistorico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblSubtituloHistorico.Location = new System.Drawing.Point(10, 30);
+            this.lblSubtituloHistorico.Name = "lblSubtituloHistorico";
+            this.lblSubtituloHistorico.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lblSubtituloHistorico.Size = new System.Drawing.Size(302, 21);
+            this.lblSubtituloHistorico.TabIndex = 1;
+            this.lblSubtituloHistorico.Text = "Registros ordenados do mais recente para o mais antigo";
             // 
-            // pnlBordaDataUltimoRegistro
+            // flpOcorrencias
             // 
-            this.pnlBordaDataUltimoRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
-            this.pnlBordaDataUltimoRegistro.Controls.Add(this.pnlDataUltimoRegistro);
-            this.pnlBordaDataUltimoRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBordaDataUltimoRegistro.Location = new System.Drawing.Point(434, 8);
-            this.pnlBordaDataUltimoRegistro.Name = "pnlBordaDataUltimoRegistro";
-            this.pnlBordaDataUltimoRegistro.Padding = new System.Windows.Forms.Padding(1);
-            this.pnlBordaDataUltimoRegistro.Size = new System.Drawing.Size(208, 79);
-            this.pnlBordaDataUltimoRegistro.TabIndex = 2;
-            // 
-            // pnlTotalOcorrencias
-            // 
-            this.pnlTotalOcorrencias.BackColor = System.Drawing.Color.White;
-            this.pnlTotalOcorrencias.Controls.Add(this.lblQtd);
-            this.pnlTotalOcorrencias.Controls.Add(this.lblTotalOcorrencias);
-            this.pnlTotalOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTotalOcorrencias.Location = new System.Drawing.Point(1, 1);
-            this.pnlTotalOcorrencias.Name = "pnlTotalOcorrencias";
-            this.pnlTotalOcorrencias.Padding = new System.Windows.Forms.Padding(8, 10, 0, 0);
-            this.pnlTotalOcorrencias.Size = new System.Drawing.Size(205, 77);
-            this.pnlTotalOcorrencias.TabIndex = 0;
-            // 
-            // pnlUltimaOcorrencia
-            // 
-            this.pnlUltimaOcorrencia.BackColor = System.Drawing.Color.White;
-            this.pnlUltimaOcorrencia.Controls.Add(this.lblTipoUltimaOcorrencia);
-            this.pnlUltimaOcorrencia.Controls.Add(this.lblUltimaOcorrencia);
-            this.pnlUltimaOcorrencia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlUltimaOcorrencia.Location = new System.Drawing.Point(1, 1);
-            this.pnlUltimaOcorrencia.Name = "pnlUltimaOcorrencia";
-            this.pnlUltimaOcorrencia.Padding = new System.Windows.Forms.Padding(8, 10, 0, 0);
-            this.pnlUltimaOcorrencia.Size = new System.Drawing.Size(205, 77);
-            this.pnlUltimaOcorrencia.TabIndex = 1;
-            // 
-            // pnlDataUltimoRegistro
-            // 
-            this.pnlDataUltimoRegistro.BackColor = System.Drawing.Color.White;
-            this.pnlDataUltimoRegistro.Controls.Add(this.lblData);
-            this.pnlDataUltimoRegistro.Controls.Add(this.lblDataUltimoRegistro);
-            this.pnlDataUltimoRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDataUltimoRegistro.Location = new System.Drawing.Point(1, 1);
-            this.pnlDataUltimoRegistro.Name = "pnlDataUltimoRegistro";
-            this.pnlDataUltimoRegistro.Padding = new System.Windows.Forms.Padding(8, 10, 0, 0);
-            this.pnlDataUltimoRegistro.Size = new System.Drawing.Size(206, 77);
-            this.pnlDataUltimoRegistro.TabIndex = 1;
-            // 
-            // lblTotalOcorrencias
-            // 
-            this.lblTotalOcorrencias.AutoSize = true;
-            this.lblTotalOcorrencias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTotalOcorrencias.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalOcorrencias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.lblTotalOcorrencias.Location = new System.Drawing.Point(8, 10);
-            this.lblTotalOcorrencias.Name = "lblTotalOcorrencias";
-            this.lblTotalOcorrencias.Size = new System.Drawing.Size(109, 13);
-            this.lblTotalOcorrencias.TabIndex = 0;
-            this.lblTotalOcorrencias.Text = "Total de ocorrências";
-            // 
-            // lblQtd
-            // 
-            this.lblQtd.AutoSize = true;
-            this.lblQtd.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
-            this.lblQtd.Location = new System.Drawing.Point(11, 34);
-            this.lblQtd.Name = "lblQtd";
-            this.lblQtd.Size = new System.Drawing.Size(25, 30);
-            this.lblQtd.TabIndex = 1;
-            this.lblQtd.Text = "2";
-            // 
-            // lblTipoUltimaOcorrencia
-            // 
-            this.lblTipoUltimaOcorrencia.AutoSize = true;
-            this.lblTipoUltimaOcorrencia.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoUltimaOcorrencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
-            this.lblTipoUltimaOcorrencia.Location = new System.Drawing.Point(8, 39);
-            this.lblTipoUltimaOcorrencia.Name = "lblTipoUltimaOcorrencia";
-            this.lblTipoUltimaOcorrencia.Size = new System.Drawing.Size(95, 17);
-            this.lblTipoUltimaOcorrencia.TabIndex = 3;
-            this.lblTipoUltimaOcorrencia.Text = "Retorno ao lar";
-            // 
-            // lblUltimaOcorrencia
-            // 
-            this.lblUltimaOcorrencia.AutoSize = true;
-            this.lblUltimaOcorrencia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblUltimaOcorrencia.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUltimaOcorrencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.lblUltimaOcorrencia.Location = new System.Drawing.Point(8, 10);
-            this.lblUltimaOcorrencia.Name = "lblUltimaOcorrencia";
-            this.lblUltimaOcorrencia.Size = new System.Drawing.Size(97, 13);
-            this.lblUltimaOcorrencia.TabIndex = 2;
-            this.lblUltimaOcorrencia.Text = "Última ocorrência";
-            // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
-            this.lblData.Location = new System.Drawing.Point(14, 39);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(74, 17);
-            this.lblData.TabIndex = 3;
-            this.lblData.Text = "20/09/2026";
-            // 
-            // lblDataUltimoRegistro
-            // 
-            this.lblDataUltimoRegistro.AutoSize = true;
-            this.lblDataUltimoRegistro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDataUltimoRegistro.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataUltimoRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.lblDataUltimoRegistro.Location = new System.Drawing.Point(8, 10);
-            this.lblDataUltimoRegistro.Name = "lblDataUltimoRegistro";
-            this.lblDataUltimoRegistro.Size = new System.Drawing.Size(127, 13);
-            this.lblDataUltimoRegistro.TabIndex = 2;
-            this.lblDataUltimoRegistro.Text = "Data do último registro";
-            // 
-            // pnlOcorrenciasConteudo
-            // 
-            this.pnlOcorrenciasConteudo.BackColor = System.Drawing.Color.White;
-            this.pnlOcorrenciasConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOcorrenciasConteudo.Location = new System.Drawing.Point(0, 98);
-            this.pnlOcorrenciasConteudo.Name = "pnlOcorrenciasConteudo";
-            this.pnlOcorrenciasConteudo.Size = new System.Drawing.Size(650, 1627);
-            this.pnlOcorrenciasConteudo.TabIndex = 1;
+            this.flpOcorrencias.AutoScroll = true;
+            this.flpOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpOcorrencias.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpOcorrencias.Location = new System.Drawing.Point(10, 51);
+            this.flpOcorrencias.Margin = new System.Windows.Forms.Padding(0);
+            this.flpOcorrencias.Name = "flpOcorrencias";
+            this.flpOcorrencias.Size = new System.Drawing.Size(630, 1566);
+            this.flpOcorrencias.TabIndex = 2;
+            this.flpOcorrencias.WrapContents = false;
             // 
             // ucEdicaoGato
             // 
@@ -1135,7 +1180,18 @@
             this.pnlSwitch.PerformLayout();
             this.pnlConteudo.ResumeLayout(false);
             this.pnlOcorrencias.ResumeLayout(false);
+            this.pnlOcorrenciasConteudo.ResumeLayout(false);
+            this.pnlOcorrenciasConteudo.PerformLayout();
             this.tlpCardsInfos.ResumeLayout(false);
+            this.pnlBordaDataUltimoRegistro.ResumeLayout(false);
+            this.pnlDataUltimoRegistro.ResumeLayout(false);
+            this.pnlDataUltimoRegistro.PerformLayout();
+            this.pnlBordaUltimaOcorrencia.ResumeLayout(false);
+            this.pnlUltimaOcorrencia.ResumeLayout(false);
+            this.pnlUltimaOcorrencia.PerformLayout();
+            this.pnlBordaTotalOcorrencias.ResumeLayout(false);
+            this.pnlTotalOcorrencias.ResumeLayout(false);
+            this.pnlTotalOcorrencias.PerformLayout();
             this.pnlDados.ResumeLayout(false);
             this.pnlDados.PerformLayout();
             this.pnlBotoes.ResumeLayout(false);
@@ -1162,15 +1218,6 @@
             this.pnlPelagem.PerformLayout();
             this.gbSexo.ResumeLayout(false);
             this.gbSexo.PerformLayout();
-            this.pnlBordaTotalOcorrencias.ResumeLayout(false);
-            this.pnlBordaUltimaOcorrencia.ResumeLayout(false);
-            this.pnlBordaDataUltimoRegistro.ResumeLayout(false);
-            this.pnlTotalOcorrencias.ResumeLayout(false);
-            this.pnlTotalOcorrencias.PerformLayout();
-            this.pnlUltimaOcorrencia.ResumeLayout(false);
-            this.pnlUltimaOcorrencia.PerformLayout();
-            this.pnlDataUltimoRegistro.ResumeLayout(false);
-            this.pnlDataUltimoRegistro.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1257,5 +1304,8 @@
         private System.Windows.Forms.Label lblTipoUltimaOcorrencia;
         private System.Windows.Forms.Label lblUltimaOcorrencia;
         private System.Windows.Forms.Panel pnlOcorrenciasConteudo;
+        private System.Windows.Forms.Label lblHistorico;
+        private System.Windows.Forms.Label lblSubtituloHistorico;
+        private System.Windows.Forms.FlowLayoutPanel flpOcorrencias;
     }
 }

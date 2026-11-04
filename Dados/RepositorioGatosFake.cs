@@ -8,11 +8,6 @@ namespace miaudota
 {
     internal class RepositorioGatosFake
     {
-        /* public static List<Gato> ObterTodos()
-                
-                //new Gato { Nome = "Amora", NumeroMicrochip = "009", Idade = 1, Sexo = "Fêmea", Pelagem = "Rajada", DataCadastro = DateTime.Now, DataChegadaOng =
-    
-        */
 
         private static readonly List<Gato> gatos = new List<Gato>
         {

@@ -28,6 +28,8 @@ namespace miaudota.Telas
                 FormPrincipal principal = (FormPrincipal)this.ParentForm;
                 principal.AbrirTela(tela);
                 principal.MostrarPerfilGato(gatoSelecionado);
+                tela.CarregarGato(gatoSelecionado);
+                
             }
         }
     }

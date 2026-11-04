@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace miaudota
 {
-    internal class OcorrenciaGato
+    public class OcorrenciaGato
     {
         public string NumeroMicrochip { get; set; }
         public string Tipo { get; set; }

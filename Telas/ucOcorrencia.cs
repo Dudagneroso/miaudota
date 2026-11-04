@@ -43,6 +43,14 @@ namespace miaudota.Telas
             lblNome.Text = gato.Nome;
             lblIdadeMicrochip.Text = $"{idade} . {gato.NumeroMicrochip}";
             lblStatus.Text = gato.Status;
+            if (string.IsNullOrEmpty(gato.CaminhoFoto))
+            {
+                pbFoto.Image = Properties.Resources.sem_foto;
+            }
+            else
+            {
+                pbFoto.Image = Image.FromFile(gato.CaminhoFoto);
+            }
         }
 
         private void LimparFormulario()
@@ -70,6 +78,7 @@ namespace miaudota.Telas
             lblNome.Visible = temMicrochip;
             lblIdadeMicrochip.Visible = temMicrochip;
             lblStatus.Visible = temMicrochip;
+            pbFoto.Visible = temMicrochip;
 
             if (gato != null)
             {

@@ -149,6 +149,12 @@
     <Compile Include="Telas\ucEdicaoTutor.Designer.cs">
       <DependentUpon>ucEdicaoTutor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\ucItemOcorrencia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\ucItemOcorrencia.Designer.cs">
+      <DependentUpon>ucItemOcorrencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\ucOcorrencia.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\ucEdicaoTutor.resx">
       <DependentUpon>ucEdicaoTutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\ucItemOcorrencia.resx">
+      <DependentUpon>ucItemOcorrencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\ucOcorrencia.resx">
       <DependentUpon>ucOcorrencia.cs</DependentUpon>
