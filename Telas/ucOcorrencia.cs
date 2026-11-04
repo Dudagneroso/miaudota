@@ -34,6 +34,8 @@ namespace miaudota.Telas
             }
         }
 
+        
+
         public void mostrarGato(Gato gato)
         {
             Idade idade = Idade.Calcular(gato, DateTime.Today);

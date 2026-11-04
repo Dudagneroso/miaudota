@@ -65,6 +65,7 @@
     <Compile Include="Funcoes\Idade.cs" />
     <Compile Include="Models\Ocorrencia.cs" />
     <Compile Include="Dados\RepositorioOcorrencia.cs" />
+    <Compile Include="Models\OcorrenciaGato.cs" />
     <Compile Include="Telas\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>

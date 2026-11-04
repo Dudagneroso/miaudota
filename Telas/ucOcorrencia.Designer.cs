@@ -32,6 +32,12 @@
             this.lblTituloRegistroOcorrencia = new System.Windows.Forms.Label();
             this.pnlSelecaoGato = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tlpInfos = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlDados = new System.Windows.Forms.Panel();
+            this.lblIdadeMicrochip = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.pnlStatus = new System.Windows.Forms.Panel();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
@@ -52,21 +58,15 @@
             this.dtpDataOcorrencia = new System.Windows.Forms.DateTimePicker();
             this.lblData = new System.Windows.Forms.Label();
             this.lblDetalhes = new System.Windows.Forms.Label();
-            this.tlpInfos = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlDados = new System.Windows.Forms.Panel();
-            this.lblIdadeMicrochip = new System.Windows.Forms.Label();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.pnlStatus = new System.Windows.Forms.Panel();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.pnlSelecaoGato.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tlpInfos.SuspendLayout();
+            this.pnlDados.SuspendLayout();
+            this.pnlStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             this.pnlTipoOcorrência.SuspendLayout();
             this.pnlDetalhesOcorrência.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.tlpInfos.SuspendLayout();
-            this.pnlDados.SuspendLayout();
-            this.pnlStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCadastroTutor
@@ -111,6 +111,81 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(6);
             this.panel1.Size = new System.Drawing.Size(321, 85);
             this.panel1.TabIndex = 37;
+            // 
+            // tlpInfos
+            // 
+            this.tlpInfos.ColumnCount = 2;
+            this.tlpInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tlpInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpInfos.Controls.Add(this.pnlDados, 0, 0);
+            this.tlpInfos.Controls.Add(this.pnlStatus, 1, 0);
+            this.tlpInfos.Location = new System.Drawing.Point(112, 6);
+            this.tlpInfos.Name = "tlpInfos";
+            this.tlpInfos.RowCount = 1;
+            this.tlpInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpInfos.Size = new System.Drawing.Size(200, 71);
+            this.tlpInfos.TabIndex = 5;
+            // 
+            // pnlDados
+            // 
+            this.pnlDados.Controls.Add(this.lblIdadeMicrochip);
+            this.pnlDados.Controls.Add(this.lblNome);
+            this.pnlDados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDados.Location = new System.Drawing.Point(3, 3);
+            this.pnlDados.Name = "pnlDados";
+            this.pnlDados.Size = new System.Drawing.Size(114, 65);
+            this.pnlDados.TabIndex = 0;
+            // 
+            // lblIdadeMicrochip
+            // 
+            this.lblIdadeMicrochip.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblIdadeMicrochip.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdadeMicrochip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(90)))), ((int)(((byte)(100)))));
+            this.lblIdadeMicrochip.Location = new System.Drawing.Point(0, 27);
+            this.lblIdadeMicrochip.Name = "lblIdadeMicrochip";
+            this.lblIdadeMicrochip.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.lblIdadeMicrochip.Size = new System.Drawing.Size(114, 34);
+            this.lblIdadeMicrochip.TabIndex = 4;
+            this.lblIdadeMicrochip.Text = "x anos . 12345";
+            this.lblIdadeMicrochip.Visible = false;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblNome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(90)))), ((int)(((byte)(100)))));
+            this.lblNome.Location = new System.Drawing.Point(0, 0);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblNome.Size = new System.Drawing.Size(43, 27);
+            this.lblNome.TabIndex = 3;
+            this.lblNome.Text = "Nome";
+            this.lblNome.Visible = false;
+            // 
+            // pnlStatus
+            // 
+            this.pnlStatus.Controls.Add(this.lblStatus);
+            this.pnlStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlStatus.Location = new System.Drawing.Point(123, 3);
+            this.pnlStatus.Name = "pnlStatus";
+            this.pnlStatus.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
+            this.pnlStatus.Size = new System.Drawing.Size(74, 65);
+            this.pnlStatus.TabIndex = 1;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblStatus.Location = new System.Drawing.Point(0, 20);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(74, 25);
+            this.lblStatus.TabIndex = 6;
+            this.lblStatus.Text = "Disponível";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatus.Visible = false;
             // 
             // pbFoto
             // 
@@ -331,81 +406,6 @@
             this.lblDetalhes.TabIndex = 34;
             this.lblDetalhes.Text = "3. DETALHES DA OCORRÊNCIA";
             // 
-            // tlpInfos
-            // 
-            this.tlpInfos.ColumnCount = 2;
-            this.tlpInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpInfos.Controls.Add(this.pnlDados, 0, 0);
-            this.tlpInfos.Controls.Add(this.pnlStatus, 1, 0);
-            this.tlpInfos.Location = new System.Drawing.Point(112, 6);
-            this.tlpInfos.Name = "tlpInfos";
-            this.tlpInfos.RowCount = 1;
-            this.tlpInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpInfos.Size = new System.Drawing.Size(200, 71);
-            this.tlpInfos.TabIndex = 5;
-            // 
-            // pnlDados
-            // 
-            this.pnlDados.Controls.Add(this.lblIdadeMicrochip);
-            this.pnlDados.Controls.Add(this.lblNome);
-            this.pnlDados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDados.Location = new System.Drawing.Point(3, 3);
-            this.pnlDados.Name = "pnlDados";
-            this.pnlDados.Size = new System.Drawing.Size(114, 65);
-            this.pnlDados.TabIndex = 0;
-            // 
-            // lblIdadeMicrochip
-            // 
-            this.lblIdadeMicrochip.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblIdadeMicrochip.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdadeMicrochip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(90)))), ((int)(((byte)(100)))));
-            this.lblIdadeMicrochip.Location = new System.Drawing.Point(0, 27);
-            this.lblIdadeMicrochip.Name = "lblIdadeMicrochip";
-            this.lblIdadeMicrochip.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.lblIdadeMicrochip.Size = new System.Drawing.Size(114, 34);
-            this.lblIdadeMicrochip.TabIndex = 4;
-            this.lblIdadeMicrochip.Text = "x anos . 12345";
-            this.lblIdadeMicrochip.Visible = false;
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblNome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(90)))), ((int)(((byte)(100)))));
-            this.lblNome.Location = new System.Drawing.Point(0, 0);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblNome.Size = new System.Drawing.Size(43, 27);
-            this.lblNome.TabIndex = 3;
-            this.lblNome.Text = "Nome";
-            this.lblNome.Visible = false;
-            // 
-            // pnlStatus
-            // 
-            this.pnlStatus.Controls.Add(this.lblStatus);
-            this.pnlStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlStatus.Location = new System.Drawing.Point(123, 3);
-            this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.pnlStatus.Size = new System.Drawing.Size(74, 65);
-            this.pnlStatus.TabIndex = 1;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblStatus.Location = new System.Drawing.Point(0, 20);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(74, 25);
-            this.lblStatus.TabIndex = 6;
-            this.lblStatus.Text = "Disponível";
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblStatus.Visible = false;
-            // 
             // ucOcorrencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,6 +421,10 @@
             this.pnlSelecaoGato.ResumeLayout(false);
             this.pnlSelecaoGato.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.tlpInfos.ResumeLayout(false);
+            this.pnlDados.ResumeLayout(false);
+            this.pnlDados.PerformLayout();
+            this.pnlStatus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             this.pnlTipoOcorrência.ResumeLayout(false);
             this.pnlTipoOcorrência.PerformLayout();
@@ -428,10 +432,6 @@
             this.pnlDetalhesOcorrência.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tlpInfos.ResumeLayout(false);
-            this.pnlDados.ResumeLayout(false);
-            this.pnlDados.PerformLayout();
-            this.pnlStatus.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -32,7 +32,12 @@
             this.lblDescricaoPerfil = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.pnlAbas = new System.Windows.Forms.Panel();
+            this.pnlSwitch = new System.Windows.Forms.Panel();
+            this.rbOcorrencias = new System.Windows.Forms.RadioButton();
+            this.rbDados = new System.Windows.Forms.RadioButton();
             this.pnlConteudo = new System.Windows.Forms.Panel();
+            this.pnlOcorrencias = new System.Windows.Forms.Panel();
+            this.tlpCardsInfos = new System.Windows.Forms.TableLayoutPanel();
             this.pnlDados = new System.Windows.Forms.Panel();
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -90,13 +95,24 @@
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
             this.lblIdentificacao = new System.Windows.Forms.Label();
-            this.pnlOcorrencias = new System.Windows.Forms.Panel();
-            this.pnlSwitch = new System.Windows.Forms.Panel();
-            this.rbDados = new System.Windows.Forms.RadioButton();
-            this.rbOcorrencias = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlBordaTotalOcorrencias = new System.Windows.Forms.Panel();
+            this.pnlBordaUltimaOcorrencia = new System.Windows.Forms.Panel();
+            this.pnlBordaDataUltimoRegistro = new System.Windows.Forms.Panel();
+            this.pnlTotalOcorrencias = new System.Windows.Forms.Panel();
+            this.pnlUltimaOcorrencia = new System.Windows.Forms.Panel();
+            this.pnlDataUltimoRegistro = new System.Windows.Forms.Panel();
+            this.lblTotalOcorrencias = new System.Windows.Forms.Label();
+            this.lblQtd = new System.Windows.Forms.Label();
+            this.lblTipoUltimaOcorrencia = new System.Windows.Forms.Label();
+            this.lblUltimaOcorrencia = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblDataUltimoRegistro = new System.Windows.Forms.Label();
+            this.pnlOcorrenciasConteudo = new System.Windows.Forms.Panel();
             this.pnlAbas.SuspendLayout();
+            this.pnlSwitch.SuspendLayout();
             this.pnlConteudo.SuspendLayout();
+            this.pnlOcorrencias.SuspendLayout();
+            this.tlpCardsInfos.SuspendLayout();
             this.pnlDados.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.pnlLocal.SuspendLayout();
@@ -113,8 +129,12 @@
             this.pnlPeso.SuspendLayout();
             this.pnlPelagem.SuspendLayout();
             this.gbSexo.SuspendLayout();
-            this.pnlOcorrencias.SuspendLayout();
-            this.pnlSwitch.SuspendLayout();
+            this.pnlBordaTotalOcorrencias.SuspendLayout();
+            this.pnlBordaUltimaOcorrencia.SuspendLayout();
+            this.pnlBordaDataUltimoRegistro.SuspendLayout();
+            this.pnlTotalOcorrencias.SuspendLayout();
+            this.pnlUltimaOcorrencia.SuspendLayout();
+            this.pnlDataUltimoRegistro.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPerfil
@@ -158,6 +178,56 @@
             this.pnlAbas.Size = new System.Drawing.Size(650, 63);
             this.pnlAbas.TabIndex = 4;
             // 
+            // pnlSwitch
+            // 
+            this.pnlSwitch.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlSwitch.Controls.Add(this.rbOcorrencias);
+            this.pnlSwitch.Controls.Add(this.rbDados);
+            this.pnlSwitch.Location = new System.Drawing.Point(18, 3);
+            this.pnlSwitch.Name = "pnlSwitch";
+            this.pnlSwitch.Size = new System.Drawing.Size(215, 42);
+            this.pnlSwitch.TabIndex = 2;
+            // 
+            // rbOcorrencias
+            // 
+            this.rbOcorrencias.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbOcorrencias.AutoSize = true;
+            this.rbOcorrencias.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbOcorrencias.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rbOcorrencias.FlatAppearance.BorderSize = 0;
+            this.rbOcorrencias.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(232)))), ((int)(((byte)(252)))));
+            this.rbOcorrencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbOcorrencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOcorrencias.Location = new System.Drawing.Point(125, 0);
+            this.rbOcorrencias.Name = "rbOcorrencias";
+            this.rbOcorrencias.Size = new System.Drawing.Size(90, 42);
+            this.rbOcorrencias.TabIndex = 2;
+            this.rbOcorrencias.TabStop = true;
+            this.rbOcorrencias.Text = "Ocorrências";
+            this.rbOcorrencias.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbOcorrencias.UseVisualStyleBackColor = false;
+            this.rbOcorrencias.CheckedChanged += new System.EventHandler(this.rbOcorrencias_CheckedChanged);
+            // 
+            // rbDados
+            // 
+            this.rbDados.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbDados.AutoSize = true;
+            this.rbDados.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbDados.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbDados.FlatAppearance.BorderSize = 0;
+            this.rbDados.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
+            this.rbDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDados.Location = new System.Drawing.Point(0, 0);
+            this.rbDados.Name = "rbDados";
+            this.rbDados.Size = new System.Drawing.Size(124, 42);
+            this.rbDados.TabIndex = 1;
+            this.rbDados.TabStop = true;
+            this.rbDados.Text = "Dados cadastrais";
+            this.rbDados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbDados.UseVisualStyleBackColor = false;
+            this.rbDados.CheckedChanged += new System.EventHandler(this.rbDados_CheckedChanged);
+            // 
             // pnlConteudo
             // 
             this.pnlConteudo.Controls.Add(this.pnlOcorrencias);
@@ -167,6 +237,38 @@
             this.pnlConteudo.Name = "pnlConteudo";
             this.pnlConteudo.Size = new System.Drawing.Size(650, 1725);
             this.pnlConteudo.TabIndex = 5;
+            // 
+            // pnlOcorrencias
+            // 
+            this.pnlOcorrencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.pnlOcorrencias.Controls.Add(this.pnlOcorrenciasConteudo);
+            this.pnlOcorrencias.Controls.Add(this.tlpCardsInfos);
+            this.pnlOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOcorrencias.Location = new System.Drawing.Point(0, 0);
+            this.pnlOcorrencias.Name = "pnlOcorrencias";
+            this.pnlOcorrencias.Size = new System.Drawing.Size(650, 1725);
+            this.pnlOcorrencias.TabIndex = 2;
+            this.pnlOcorrencias.Visible = false;
+            // 
+            // tlpCardsInfos
+            // 
+            this.tlpCardsInfos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.tlpCardsInfos.ColumnCount = 3;
+            this.tlpCardsInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpCardsInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpCardsInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpCardsInfos.Controls.Add(this.pnlBordaDataUltimoRegistro, 2, 0);
+            this.tlpCardsInfos.Controls.Add(this.pnlBordaUltimaOcorrencia, 1, 0);
+            this.tlpCardsInfos.Controls.Add(this.pnlBordaTotalOcorrencias, 0, 0);
+            this.tlpCardsInfos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlpCardsInfos.Location = new System.Drawing.Point(0, 0);
+            this.tlpCardsInfos.Name = "tlpCardsInfos";
+            this.tlpCardsInfos.Padding = new System.Windows.Forms.Padding(5, 5, 5, 8);
+            this.tlpCardsInfos.RowCount = 1;
+            this.tlpCardsInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpCardsInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.tlpCardsInfos.Size = new System.Drawing.Size(650, 98);
+            this.tlpCardsInfos.TabIndex = 0;
             // 
             // pnlDados
             // 
@@ -867,82 +969,152 @@
             this.lblIdentificacao.TabIndex = 0;
             this.lblIdentificacao.Text = "IDENTIFICAÇÃO";
             // 
-            // pnlOcorrencias
+            // pnlBordaTotalOcorrencias
             // 
-            this.pnlOcorrencias.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlOcorrencias.Controls.Add(this.tableLayoutPanel1);
-            this.pnlOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOcorrencias.Location = new System.Drawing.Point(0, 0);
-            this.pnlOcorrencias.Name = "pnlOcorrencias";
-            this.pnlOcorrencias.Size = new System.Drawing.Size(650, 1725);
-            this.pnlOcorrencias.TabIndex = 2;
-            this.pnlOcorrencias.Visible = false;
+            this.pnlBordaTotalOcorrencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
+            this.pnlBordaTotalOcorrencias.Controls.Add(this.pnlTotalOcorrencias);
+            this.pnlBordaTotalOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBordaTotalOcorrencias.Location = new System.Drawing.Point(8, 8);
+            this.pnlBordaTotalOcorrencias.Name = "pnlBordaTotalOcorrencias";
+            this.pnlBordaTotalOcorrencias.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlBordaTotalOcorrencias.Size = new System.Drawing.Size(207, 79);
+            this.pnlBordaTotalOcorrencias.TabIndex = 0;
             // 
-            // pnlSwitch
+            // pnlBordaUltimaOcorrencia
             // 
-            this.pnlSwitch.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlSwitch.Controls.Add(this.rbOcorrencias);
-            this.pnlSwitch.Controls.Add(this.rbDados);
-            this.pnlSwitch.Location = new System.Drawing.Point(18, 3);
-            this.pnlSwitch.Name = "pnlSwitch";
-            this.pnlSwitch.Size = new System.Drawing.Size(215, 42);
-            this.pnlSwitch.TabIndex = 2;
+            this.pnlBordaUltimaOcorrencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
+            this.pnlBordaUltimaOcorrencia.Controls.Add(this.pnlUltimaOcorrencia);
+            this.pnlBordaUltimaOcorrencia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBordaUltimaOcorrencia.Location = new System.Drawing.Point(221, 8);
+            this.pnlBordaUltimaOcorrencia.Name = "pnlBordaUltimaOcorrencia";
+            this.pnlBordaUltimaOcorrencia.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlBordaUltimaOcorrencia.Size = new System.Drawing.Size(207, 79);
+            this.pnlBordaUltimaOcorrencia.TabIndex = 1;
             // 
-            // rbDados
+            // pnlBordaDataUltimoRegistro
             // 
-            this.rbDados.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbDados.AutoSize = true;
-            this.rbDados.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbDados.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rbDados.FlatAppearance.BorderSize = 0;
-            this.rbDados.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
-            this.rbDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDados.Location = new System.Drawing.Point(0, 0);
-            this.rbDados.Name = "rbDados";
-            this.rbDados.Size = new System.Drawing.Size(124, 42);
-            this.rbDados.TabIndex = 1;
-            this.rbDados.TabStop = true;
-            this.rbDados.Text = "Dados cadastrais";
-            this.rbDados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rbDados.UseVisualStyleBackColor = false;
-            this.rbDados.CheckedChanged += new System.EventHandler(this.rbDados_CheckedChanged);
+            this.pnlBordaDataUltimoRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
+            this.pnlBordaDataUltimoRegistro.Controls.Add(this.pnlDataUltimoRegistro);
+            this.pnlBordaDataUltimoRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBordaDataUltimoRegistro.Location = new System.Drawing.Point(434, 8);
+            this.pnlBordaDataUltimoRegistro.Name = "pnlBordaDataUltimoRegistro";
+            this.pnlBordaDataUltimoRegistro.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlBordaDataUltimoRegistro.Size = new System.Drawing.Size(208, 79);
+            this.pnlBordaDataUltimoRegistro.TabIndex = 2;
             // 
-            // rbOcorrencias
+            // pnlTotalOcorrencias
             // 
-            this.rbOcorrencias.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOcorrencias.AutoSize = true;
-            this.rbOcorrencias.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbOcorrencias.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rbOcorrencias.FlatAppearance.BorderSize = 0;
-            this.rbOcorrencias.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(232)))), ((int)(((byte)(252)))));
-            this.rbOcorrencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbOcorrencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbOcorrencias.Location = new System.Drawing.Point(125, 0);
-            this.rbOcorrencias.Name = "rbOcorrencias";
-            this.rbOcorrencias.Size = new System.Drawing.Size(90, 42);
-            this.rbOcorrencias.TabIndex = 2;
-            this.rbOcorrencias.TabStop = true;
-            this.rbOcorrencias.Text = "Ocorrências";
-            this.rbOcorrencias.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rbOcorrencias.UseVisualStyleBackColor = false;
-            this.rbOcorrencias.CheckedChanged += new System.EventHandler(this.rbOcorrencias_CheckedChanged);
+            this.pnlTotalOcorrencias.BackColor = System.Drawing.Color.White;
+            this.pnlTotalOcorrencias.Controls.Add(this.lblQtd);
+            this.pnlTotalOcorrencias.Controls.Add(this.lblTotalOcorrencias);
+            this.pnlTotalOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTotalOcorrencias.Location = new System.Drawing.Point(1, 1);
+            this.pnlTotalOcorrencias.Name = "pnlTotalOcorrencias";
+            this.pnlTotalOcorrencias.Padding = new System.Windows.Forms.Padding(8, 10, 0, 0);
+            this.pnlTotalOcorrencias.Size = new System.Drawing.Size(205, 77);
+            this.pnlTotalOcorrencias.TabIndex = 0;
             // 
-            // tableLayoutPanel1
+            // pnlUltimaOcorrencia
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(650, 114);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.pnlUltimaOcorrencia.BackColor = System.Drawing.Color.White;
+            this.pnlUltimaOcorrencia.Controls.Add(this.lblTipoUltimaOcorrencia);
+            this.pnlUltimaOcorrencia.Controls.Add(this.lblUltimaOcorrencia);
+            this.pnlUltimaOcorrencia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlUltimaOcorrencia.Location = new System.Drawing.Point(1, 1);
+            this.pnlUltimaOcorrencia.Name = "pnlUltimaOcorrencia";
+            this.pnlUltimaOcorrencia.Padding = new System.Windows.Forms.Padding(8, 10, 0, 0);
+            this.pnlUltimaOcorrencia.Size = new System.Drawing.Size(205, 77);
+            this.pnlUltimaOcorrencia.TabIndex = 1;
+            // 
+            // pnlDataUltimoRegistro
+            // 
+            this.pnlDataUltimoRegistro.BackColor = System.Drawing.Color.White;
+            this.pnlDataUltimoRegistro.Controls.Add(this.lblData);
+            this.pnlDataUltimoRegistro.Controls.Add(this.lblDataUltimoRegistro);
+            this.pnlDataUltimoRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDataUltimoRegistro.Location = new System.Drawing.Point(1, 1);
+            this.pnlDataUltimoRegistro.Name = "pnlDataUltimoRegistro";
+            this.pnlDataUltimoRegistro.Padding = new System.Windows.Forms.Padding(8, 10, 0, 0);
+            this.pnlDataUltimoRegistro.Size = new System.Drawing.Size(206, 77);
+            this.pnlDataUltimoRegistro.TabIndex = 1;
+            // 
+            // lblTotalOcorrencias
+            // 
+            this.lblTotalOcorrencias.AutoSize = true;
+            this.lblTotalOcorrencias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTotalOcorrencias.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalOcorrencias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblTotalOcorrencias.Location = new System.Drawing.Point(8, 10);
+            this.lblTotalOcorrencias.Name = "lblTotalOcorrencias";
+            this.lblTotalOcorrencias.Size = new System.Drawing.Size(109, 13);
+            this.lblTotalOcorrencias.TabIndex = 0;
+            this.lblTotalOcorrencias.Text = "Total de ocorrências";
+            // 
+            // lblQtd
+            // 
+            this.lblQtd.AutoSize = true;
+            this.lblQtd.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblQtd.Location = new System.Drawing.Point(11, 34);
+            this.lblQtd.Name = "lblQtd";
+            this.lblQtd.Size = new System.Drawing.Size(25, 30);
+            this.lblQtd.TabIndex = 1;
+            this.lblQtd.Text = "2";
+            // 
+            // lblTipoUltimaOcorrencia
+            // 
+            this.lblTipoUltimaOcorrencia.AutoSize = true;
+            this.lblTipoUltimaOcorrencia.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoUltimaOcorrencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblTipoUltimaOcorrencia.Location = new System.Drawing.Point(8, 39);
+            this.lblTipoUltimaOcorrencia.Name = "lblTipoUltimaOcorrencia";
+            this.lblTipoUltimaOcorrencia.Size = new System.Drawing.Size(95, 17);
+            this.lblTipoUltimaOcorrencia.TabIndex = 3;
+            this.lblTipoUltimaOcorrencia.Text = "Retorno ao lar";
+            // 
+            // lblUltimaOcorrencia
+            // 
+            this.lblUltimaOcorrencia.AutoSize = true;
+            this.lblUltimaOcorrencia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblUltimaOcorrencia.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUltimaOcorrencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblUltimaOcorrencia.Location = new System.Drawing.Point(8, 10);
+            this.lblUltimaOcorrencia.Name = "lblUltimaOcorrencia";
+            this.lblUltimaOcorrencia.Size = new System.Drawing.Size(97, 13);
+            this.lblUltimaOcorrencia.TabIndex = 2;
+            this.lblUltimaOcorrencia.Text = "Última ocorrência";
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblData.Location = new System.Drawing.Point(14, 39);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(74, 17);
+            this.lblData.TabIndex = 3;
+            this.lblData.Text = "20/09/2026";
+            // 
+            // lblDataUltimoRegistro
+            // 
+            this.lblDataUltimoRegistro.AutoSize = true;
+            this.lblDataUltimoRegistro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDataUltimoRegistro.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataUltimoRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblDataUltimoRegistro.Location = new System.Drawing.Point(8, 10);
+            this.lblDataUltimoRegistro.Name = "lblDataUltimoRegistro";
+            this.lblDataUltimoRegistro.Size = new System.Drawing.Size(127, 13);
+            this.lblDataUltimoRegistro.TabIndex = 2;
+            this.lblDataUltimoRegistro.Text = "Data do último registro";
+            // 
+            // pnlOcorrenciasConteudo
+            // 
+            this.pnlOcorrenciasConteudo.BackColor = System.Drawing.Color.White;
+            this.pnlOcorrenciasConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOcorrenciasConteudo.Location = new System.Drawing.Point(0, 98);
+            this.pnlOcorrenciasConteudo.Name = "pnlOcorrenciasConteudo";
+            this.pnlOcorrenciasConteudo.Size = new System.Drawing.Size(650, 1627);
+            this.pnlOcorrenciasConteudo.TabIndex = 1;
             // 
             // ucEdicaoGato
             // 
@@ -959,7 +1131,11 @@
             this.Size = new System.Drawing.Size(710, 1873);
             this.Load += new System.EventHandler(this.ucEdicaoGato_Load);
             this.pnlAbas.ResumeLayout(false);
+            this.pnlSwitch.ResumeLayout(false);
+            this.pnlSwitch.PerformLayout();
             this.pnlConteudo.ResumeLayout(false);
+            this.pnlOcorrencias.ResumeLayout(false);
+            this.tlpCardsInfos.ResumeLayout(false);
             this.pnlDados.ResumeLayout(false);
             this.pnlDados.PerformLayout();
             this.pnlBotoes.ResumeLayout(false);
@@ -986,9 +1162,15 @@
             this.pnlPelagem.PerformLayout();
             this.gbSexo.ResumeLayout(false);
             this.gbSexo.PerformLayout();
-            this.pnlOcorrencias.ResumeLayout(false);
-            this.pnlSwitch.ResumeLayout(false);
-            this.pnlSwitch.PerformLayout();
+            this.pnlBordaTotalOcorrencias.ResumeLayout(false);
+            this.pnlBordaUltimaOcorrencia.ResumeLayout(false);
+            this.pnlBordaDataUltimoRegistro.ResumeLayout(false);
+            this.pnlTotalOcorrencias.ResumeLayout(false);
+            this.pnlTotalOcorrencias.PerformLayout();
+            this.pnlUltimaOcorrencia.ResumeLayout(false);
+            this.pnlUltimaOcorrencia.PerformLayout();
+            this.pnlDataUltimoRegistro.ResumeLayout(false);
+            this.pnlDataUltimoRegistro.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1061,6 +1243,19 @@
         private System.Windows.Forms.Panel pnlSwitch;
         private System.Windows.Forms.RadioButton rbOcorrencias;
         private System.Windows.Forms.RadioButton rbDados;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tlpCardsInfos;
+        private System.Windows.Forms.Panel pnlBordaDataUltimoRegistro;
+        private System.Windows.Forms.Panel pnlBordaUltimaOcorrencia;
+        private System.Windows.Forms.Panel pnlBordaTotalOcorrencias;
+        private System.Windows.Forms.Panel pnlDataUltimoRegistro;
+        private System.Windows.Forms.Panel pnlUltimaOcorrencia;
+        private System.Windows.Forms.Panel pnlTotalOcorrencias;
+        private System.Windows.Forms.Label lblTotalOcorrencias;
+        private System.Windows.Forms.Label lblQtd;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Label lblDataUltimoRegistro;
+        private System.Windows.Forms.Label lblTipoUltimaOcorrencia;
+        private System.Windows.Forms.Label lblUltimaOcorrencia;
+        private System.Windows.Forms.Panel pnlOcorrenciasConteudo;
     }
 }

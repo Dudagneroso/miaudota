@@ -70,5 +70,10 @@ namespace miaudota.Telas
         {
             pnlDados.Visible = rbDados.Checked;
         }
+
+        private void CarregarOcorrencias(Gato gato)
+        {
+            List<OcorrenciaGato> lista = RepositorioOcorrencia.ObterPorGato(gato.NumeroMicrochip);
+        }
     }
 }
