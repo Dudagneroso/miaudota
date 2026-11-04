@@ -59,8 +59,10 @@ namespace miaudota
 
         public void MostrarPerfilGato(Gato gato)
         {
+            Idade idade = Idade.Calcular(gato, DateTime.Today);
+
             lblNomeGato.Text = gato.Nome;
-            lblIdadeGato.Text = gato.Idade.ToString() + " anos";
+            lblIdadeGato.Text = idade.ToString();
             lblMicrochipGato.Text = gato.NumeroMicrochip;
             lblDisponibilidadeGato.Text = gato.Status;
             if (string.IsNullOrEmpty(gato.CaminhoFoto))
@@ -82,6 +84,11 @@ namespace miaudota
         private void btnDashboards_Click(object sender, EventArgs e)
         {
             AbrirTela(new ucDashboard());
+        }
+
+        private void btnCadastroLar_Click(object sender, EventArgs e)
+        {
+            AbrirTela(new ucCadastroLar());
         }
     }
 }

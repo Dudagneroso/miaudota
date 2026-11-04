@@ -71,16 +71,75 @@ namespace miaudota
             pnlVacinasTomadas.Visible = rbVacinado.Checked || rbNaoVacinado.Checked;
         }
 
-
-
+        private void LimparFormulario()
+        {
+            txtNome.Clear();
+            txtMicrochip.Clear();
+            dtpDataNascimento.Value = DateTime.Now;
+            rbMacho.Checked = false;
+            rbFemea.Checked = false;
+            cbPelagem.SelectedIndex = -1;
+            cbColoracao.SelectedIndex = -1;
+            txtPeso.Clear();
+            txtLarTemporario.Clear();
+            rbCastrado.Checked = false;
+            rbNaoCastrado.Checked = false;
+            rbVacinado.Checked = false;
+            rbNaoVacinado.Checked = false;
+            cbStatus.SelectedIndex = -1;
+            cbFIV.SelectedIndex = -1;
+            cbFELV.SelectedIndex = -1;
+            txtDeficiencias.Clear();
+            txtObservacao.Clear();
+            dtpDataEntrada.Value = DateTime.Now;
+            caminhoFotoSelecionada = string.Empty;
+            rbSimLocal.Checked = false;
+            rbNaoLocal.Checked = false;
+            latitudeSelecionada = null;
+            longitudeSelecionada = null;
+        }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            // 1. validar: se faltar algo, Mensagem.Aviso(...) e return
-            // 2. montar o objeto com os dados da tela
-            // 3. RepositorioGatosFake.Adicionar(gato);
-            // 4. Mensagem.Sucesso("Gato cadastrado com sucesso!");
-            // 5. limpar o formulário
+            // 1. montar o objeto Gato com os dados da tela
+            Gato gato = new Gato
+            {
+                NumeroMicrochip = txtMicrochip.Text,
+                Nome = txtNome.Text,
+                DataNascimento = dtpDataNascimento.Value,
+                Sexo = rbMacho.Checked ? "Macho" : "Fêmea",
+                Pelagem = cbPelagem.Text,
+                Coloracao = cbColoracao.Text,
+                Peso = float.TryParse(txtPeso.Text, out float peso) ? peso : 0,
+                LarTemporario = txtLarTemporario.Text,
+                Castrado = rbCastrado.Checked ? "Sim" : "Não",
+                VacinasEmDia = rbVacinado.Checked ? "Sim" : "Não",
+                Vacinas = clbVacinas.CheckedItems.Cast<string>().ToList(),
+                Status = cbStatus.SelectedItem?.ToString(),
+                TesteFIV = cbFIV.Text,
+                TesteFelv = cbFELV.Text,
+                Doencas = txtDeficiencias.Text,
+                Observacoes = txtObservacao.Text,
+                DataChegadaOng = dtpDataEntrada.Value,
+                CaminhoFoto = caminhoFotoSelecionada,
+                LocalResgate = rbSimLocal.Checked ? "Sim" : "Não",
+                Latitude = latitudeSelecionada,
+                Longitude = longitudeSelecionada,
+                DataCadastro = DateTime.Now
+            };
+            
+            // 2. guardar no repositório e gatos
+            RepositorioGatosFake.Adicionar(gato);
+
+            // 3. Mensagem de Sucesso
+            MessageBox.Show("Gato cadastrado com sucesso!");
+
+            // 4. limpar o formulário
+            LimparFormulario();
         }
 
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparFormulario();
+        }
     }
 }

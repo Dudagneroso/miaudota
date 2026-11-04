@@ -20,10 +20,12 @@ namespace miaudota
 
         public void CarregarDados(Gato gato)
         {
+            Idade idade = Idade.Calcular(gato, DateTime.Today);
+
             lblNome.Text = gato.Nome;
-            lblIdade.Text = $"🎂 Idade: {gato.Idade}";
+            lblIdade.Text = $"🎂 Idade: {idade}";
             lblSexo.Text = $"🐾 Sexo: {gato.Sexo}";
-            lblPelagem.Text = $"🚿 Pelagem: {gato.Pelagem}";
+            lblPelagem.Text = $"🚿 Pelagem: {gato.Coloracao}";
             lblMicrochip.Text = $"💉 Microchip: {gato.NumeroMicrochip}";
             string caminho = gato.CaminhoFoto;
 

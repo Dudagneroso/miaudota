@@ -26,7 +26,14 @@ namespace miaudota.Telas
             dtpDataNascimento.Value = tutor.DataNascimento;
             txtEmail.Text = tutor.Email;
             txtTelefone.Text = tutor.Telefone;
-            txtEndereco.Text = tutor.Endereco;
+            txtCep.Text = tutor.CEP;
+            txtCidade.Text = tutor.Cidade;
+            txtEstado.Text = tutor.Estado;
+            txtLogradouro.Text = tutor.Logradouro;
+            txtBairro.Text = tutor.Bairro;
+            txtNumero.Text = tutor.Numero.ToString();
+            cbTipoMoradia.Text = tutor.TipoResidencia;
+            cbPets.Text = tutor.OutrosAnimais;
 
 
             foreach (var gato in tutor.Gatos)
