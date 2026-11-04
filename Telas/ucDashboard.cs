@@ -16,5 +16,11 @@ namespace miaudota.Telas
         {
             InitializeComponent();
         }
+
+        private void AtualizarIndicadores(List<Gato> gatos)
+        {
+            lblNumGatos.Text = gatos.Count.ToString();
+
+        }
     }
 }

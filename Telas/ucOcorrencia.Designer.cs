@@ -324,6 +324,7 @@
             this.btnSalvarOcorrencia.TabIndex = 45;
             this.btnSalvarOcorrencia.Text = "Salvar";
             this.btnSalvarOcorrencia.UseVisualStyleBackColor = false;
+            this.btnSalvarOcorrencia.Click += new System.EventHandler(this.btnSalvarOcorrencia_Click);
             // 
             // txtMotivo
             // 

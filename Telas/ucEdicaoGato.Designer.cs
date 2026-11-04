@@ -38,6 +38,9 @@
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.pnlOcorrencias = new System.Windows.Forms.Panel();
             this.pnlOcorrenciasConteudo = new System.Windows.Forms.Panel();
+            this.flpOcorrencias = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblSubtituloHistorico = new System.Windows.Forms.Label();
+            this.lblHistorico = new System.Windows.Forms.Label();
             this.tlpCardsInfos = new System.Windows.Forms.TableLayoutPanel();
             this.pnlBordaDataUltimoRegistro = new System.Windows.Forms.Panel();
             this.pnlDataUltimoRegistro = new System.Windows.Forms.Panel();
@@ -108,9 +111,6 @@
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
             this.lblIdentificacao = new System.Windows.Forms.Label();
-            this.lblHistorico = new System.Windows.Forms.Label();
-            this.lblSubtituloHistorico = new System.Windows.Forms.Label();
-            this.flpOcorrencias = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlAbas.SuspendLayout();
             this.pnlSwitch.SuspendLayout();
             this.pnlConteudo.SuspendLayout();
@@ -266,6 +266,43 @@
             this.pnlOcorrenciasConteudo.Padding = new System.Windows.Forms.Padding(10);
             this.pnlOcorrenciasConteudo.Size = new System.Drawing.Size(650, 1627);
             this.pnlOcorrenciasConteudo.TabIndex = 1;
+            // 
+            // flpOcorrencias
+            // 
+            this.flpOcorrencias.AutoScroll = true;
+            this.flpOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpOcorrencias.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpOcorrencias.Location = new System.Drawing.Point(10, 51);
+            this.flpOcorrencias.Margin = new System.Windows.Forms.Padding(0);
+            this.flpOcorrencias.Name = "flpOcorrencias";
+            this.flpOcorrencias.Size = new System.Drawing.Size(630, 1566);
+            this.flpOcorrencias.TabIndex = 2;
+            this.flpOcorrencias.WrapContents = false;
+            // 
+            // lblSubtituloHistorico
+            // 
+            this.lblSubtituloHistorico.AutoSize = true;
+            this.lblSubtituloHistorico.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSubtituloHistorico.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtituloHistorico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblSubtituloHistorico.Location = new System.Drawing.Point(10, 30);
+            this.lblSubtituloHistorico.Name = "lblSubtituloHistorico";
+            this.lblSubtituloHistorico.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lblSubtituloHistorico.Size = new System.Drawing.Size(302, 21);
+            this.lblSubtituloHistorico.TabIndex = 1;
+            this.lblSubtituloHistorico.Text = "Registros ordenados do mais recente para o mais antigo";
+            // 
+            // lblHistorico
+            // 
+            this.lblHistorico.AutoSize = true;
+            this.lblHistorico.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblHistorico.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblHistorico.Location = new System.Drawing.Point(10, 10);
+            this.lblHistorico.Name = "lblHistorico";
+            this.lblHistorico.Size = new System.Drawing.Size(177, 20);
+            this.lblHistorico.TabIndex = 0;
+            this.lblHistorico.Text = "Histórico de ocorrências";
             // 
             // tlpCardsInfos
             // 
@@ -1123,43 +1160,6 @@
             this.lblIdentificacao.Size = new System.Drawing.Size(88, 28);
             this.lblIdentificacao.TabIndex = 0;
             this.lblIdentificacao.Text = "IDENTIFICAÇÃO";
-            // 
-            // lblHistorico
-            // 
-            this.lblHistorico.AutoSize = true;
-            this.lblHistorico.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblHistorico.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistorico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
-            this.lblHistorico.Location = new System.Drawing.Point(10, 10);
-            this.lblHistorico.Name = "lblHistorico";
-            this.lblHistorico.Size = new System.Drawing.Size(177, 20);
-            this.lblHistorico.TabIndex = 0;
-            this.lblHistorico.Text = "Histórico de ocorrências";
-            // 
-            // lblSubtituloHistorico
-            // 
-            this.lblSubtituloHistorico.AutoSize = true;
-            this.lblSubtituloHistorico.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblSubtituloHistorico.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtituloHistorico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.lblSubtituloHistorico.Location = new System.Drawing.Point(10, 30);
-            this.lblSubtituloHistorico.Name = "lblSubtituloHistorico";
-            this.lblSubtituloHistorico.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.lblSubtituloHistorico.Size = new System.Drawing.Size(302, 21);
-            this.lblSubtituloHistorico.TabIndex = 1;
-            this.lblSubtituloHistorico.Text = "Registros ordenados do mais recente para o mais antigo";
-            // 
-            // flpOcorrencias
-            // 
-            this.flpOcorrencias.AutoScroll = true;
-            this.flpOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpOcorrencias.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpOcorrencias.Location = new System.Drawing.Point(10, 51);
-            this.flpOcorrencias.Margin = new System.Windows.Forms.Padding(0);
-            this.flpOcorrencias.Name = "flpOcorrencias";
-            this.flpOcorrencias.Size = new System.Drawing.Size(630, 1566);
-            this.flpOcorrencias.TabIndex = 2;
-            this.flpOcorrencias.WrapContents = false;
             // 
             // ucEdicaoGato
             // 

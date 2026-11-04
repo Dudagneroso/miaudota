@@ -53,6 +53,14 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint14 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 4D);
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint15 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 8D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint16 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 5D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint17 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -63,14 +71,6 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint22 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 3D);
             System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint15 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 8D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint16 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 5D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint17 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.lblDashboardSubtitulo = new System.Windows.Forms.Label();
             this.lblTituloDashboard = new System.Windows.Forms.Label();
             this.pnlIndicadoresIniciais = new System.Windows.Forms.Panel();
@@ -79,26 +79,26 @@
             this.chartStatus = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tlpDadosGerais = new System.Windows.Forms.TableLayoutPanel();
             this.pnlTempoMedio = new System.Windows.Forms.Panel();
-            this.lblTempoMedio = new System.Windows.Forms.Label();
-            this.pnlLaresTemporarios = new System.Windows.Forms.Panel();
-            this.lblLares = new System.Windows.Forms.Label();
-            this.pnlAdocoes = new System.Windows.Forms.Panel();
-            this.lblAdocoes = new System.Windows.Forms.Label();
-            this.pnlTotalGatos = new System.Windows.Forms.Panel();
-            this.lblQtdGatos = new System.Windows.Forms.Label();
-            this.lblNumGatos = new System.Windows.Forms.Label();
-            this.lblQtdGatoPeriodo = new System.Windows.Forms.Label();
-            this.lblQtdAdocaoPeriodo = new System.Windows.Forms.Label();
-            this.lblQtdAdocoes = new System.Windows.Forms.Label();
-            this.lblQtdLarDisponivel = new System.Windows.Forms.Label();
-            this.lblQtdLar = new System.Windows.Forms.Label();
             this.lblQtdTempoPeriodo = new System.Windows.Forms.Label();
             this.lblTempoOng = new System.Windows.Forms.Label();
+            this.lblTempoMedio = new System.Windows.Forms.Label();
+            this.pnlLaresTemporarios = new System.Windows.Forms.Panel();
+            this.lblQtdLarDisponivel = new System.Windows.Forms.Label();
+            this.lblQtdLar = new System.Windows.Forms.Label();
+            this.lblLares = new System.Windows.Forms.Label();
+            this.pnlAdocoes = new System.Windows.Forms.Panel();
+            this.lblQtdAdocaoPeriodo = new System.Windows.Forms.Label();
+            this.lblQtdAdocoes = new System.Windows.Forms.Label();
+            this.lblAdocoes = new System.Windows.Forms.Label();
+            this.pnlTotalGatos = new System.Windows.Forms.Panel();
+            this.lblQtdGatoPeriodo = new System.Windows.Forms.Label();
+            this.lblNumGatos = new System.Windows.Forms.Label();
+            this.lblQtdGatos = new System.Windows.Forms.Label();
             this.lblPerfilAdocoes = new System.Windows.Forms.Label();
             this.lblSubtituloPerfilAdocoes = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlIndicadoresIniciais.SuspendLayout();
             this.tlpGraficos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartEntradasAdocoes)).BeginInit();
@@ -109,8 +109,8 @@
             this.pnlAdocoes.SuspendLayout();
             this.pnlTotalGatos.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDashboardSubtitulo
@@ -304,7 +304,7 @@
             this.tlpDadosGerais.Padding = new System.Windows.Forms.Padding(1);
             this.tlpDadosGerais.RowCount = 1;
             this.tlpDadosGerais.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDadosGerais.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpDadosGerais.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tlpDadosGerais.Size = new System.Drawing.Size(589, 122);
             this.tlpDadosGerais.TabIndex = 29;
             // 
@@ -320,6 +320,26 @@
             this.pnlTempoMedio.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.pnlTempoMedio.Size = new System.Drawing.Size(143, 114);
             this.pnlTempoMedio.TabIndex = 3;
+            // 
+            // lblQtdTempoPeriodo
+            // 
+            this.lblQtdTempoPeriodo.AutoSize = true;
+            this.lblQtdTempoPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            this.lblQtdTempoPeriodo.Location = new System.Drawing.Point(14, 80);
+            this.lblQtdTempoPeriodo.Name = "lblQtdTempoPeriodo";
+            this.lblQtdTempoPeriodo.Size = new System.Drawing.Size(69, 13);
+            this.lblQtdTempoPeriodo.TabIndex = 4;
+            this.lblQtdTempoPeriodo.Text = "-9 no periodo";
+            // 
+            // lblTempoOng
+            // 
+            this.lblTempoOng.AutoSize = true;
+            this.lblTempoOng.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTempoOng.Location = new System.Drawing.Point(12, 44);
+            this.lblTempoOng.Name = "lblTempoOng";
+            this.lblTempoOng.Size = new System.Drawing.Size(74, 25);
+            this.lblTempoOng.TabIndex = 3;
+            this.lblTempoOng.Text = "74 dias";
             // 
             // lblTempoMedio
             // 
@@ -346,6 +366,26 @@
             this.pnlLaresTemporarios.Size = new System.Drawing.Size(140, 114);
             this.pnlLaresTemporarios.TabIndex = 2;
             // 
+            // lblQtdLarDisponivel
+            // 
+            this.lblQtdLarDisponivel.AutoSize = true;
+            this.lblQtdLarDisponivel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            this.lblQtdLarDisponivel.Location = new System.Drawing.Point(10, 80);
+            this.lblQtdLarDisponivel.Name = "lblQtdLarDisponivel";
+            this.lblQtdLarDisponivel.Size = new System.Drawing.Size(102, 13);
+            this.lblQtdLarDisponivel.TabIndex = 4;
+            this.lblQtdLarDisponivel.Text = "4 vagas disponíveis";
+            // 
+            // lblQtdLar
+            // 
+            this.lblQtdLar.AutoSize = true;
+            this.lblQtdLar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdLar.Location = new System.Drawing.Point(8, 44);
+            this.lblQtdLar.Name = "lblQtdLar";
+            this.lblQtdLar.Size = new System.Drawing.Size(23, 25);
+            this.lblQtdLar.TabIndex = 3;
+            this.lblQtdLar.Text = "8";
+            // 
             // lblLares
             // 
             this.lblLares.AutoSize = true;
@@ -370,6 +410,26 @@
             this.pnlAdocoes.Padding = new System.Windows.Forms.Padding(2, 10, 0, 0);
             this.pnlAdocoes.Size = new System.Drawing.Size(140, 114);
             this.pnlAdocoes.TabIndex = 1;
+            // 
+            // lblQtdAdocaoPeriodo
+            // 
+            this.lblQtdAdocaoPeriodo.AutoSize = true;
+            this.lblQtdAdocaoPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            this.lblQtdAdocaoPeriodo.Location = new System.Drawing.Point(16, 80);
+            this.lblQtdAdocaoPeriodo.Name = "lblQtdAdocaoPeriodo";
+            this.lblQtdAdocaoPeriodo.Size = new System.Drawing.Size(70, 13);
+            this.lblQtdAdocaoPeriodo.TabIndex = 4;
+            this.lblQtdAdocaoPeriodo.Text = "+3 neste mês";
+            // 
+            // lblQtdAdocoes
+            // 
+            this.lblQtdAdocoes.AutoSize = true;
+            this.lblQtdAdocoes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdAdocoes.Location = new System.Drawing.Point(14, 44);
+            this.lblQtdAdocoes.Name = "lblQtdAdocoes";
+            this.lblQtdAdocoes.Size = new System.Drawing.Size(34, 25);
+            this.lblQtdAdocoes.TabIndex = 3;
+            this.lblQtdAdocoes.Text = "14";
             // 
             // lblAdocoes
             // 
@@ -396,17 +456,15 @@
             this.pnlTotalGatos.Size = new System.Drawing.Size(140, 114);
             this.pnlTotalGatos.TabIndex = 0;
             // 
-            // lblQtdGatos
+            // lblQtdGatoPeriodo
             // 
-            this.lblQtdGatos.AutoSize = true;
-            this.lblQtdGatos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblQtdGatos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtdGatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
-            this.lblQtdGatos.Location = new System.Drawing.Point(5, 10);
-            this.lblQtdGatos.Name = "lblQtdGatos";
-            this.lblQtdGatos.Size = new System.Drawing.Size(94, 15);
-            this.lblQtdGatos.TabIndex = 0;
-            this.lblQtdGatos.Text = "GATOS NA ONG";
+            this.lblQtdGatoPeriodo.AutoSize = true;
+            this.lblQtdGatoPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            this.lblQtdGatoPeriodo.Location = new System.Drawing.Point(9, 80);
+            this.lblQtdGatoPeriodo.Name = "lblQtdGatoPeriodo";
+            this.lblQtdGatoPeriodo.Size = new System.Drawing.Size(70, 13);
+            this.lblQtdGatoPeriodo.TabIndex = 2;
+            this.lblQtdGatoPeriodo.Text = "+3 neste mês";
             // 
             // lblNumGatos
             // 
@@ -418,75 +476,17 @@
             this.lblNumGatos.TabIndex = 1;
             this.lblNumGatos.Text = "12";
             // 
-            // lblQtdGatoPeriodo
+            // lblQtdGatos
             // 
-            this.lblQtdGatoPeriodo.AutoSize = true;
-            this.lblQtdGatoPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
-            this.lblQtdGatoPeriodo.Location = new System.Drawing.Point(9, 80);
-            this.lblQtdGatoPeriodo.Name = "lblQtdGatoPeriodo";
-            this.lblQtdGatoPeriodo.Size = new System.Drawing.Size(70, 13);
-            this.lblQtdGatoPeriodo.TabIndex = 2;
-            this.lblQtdGatoPeriodo.Text = "+3 neste mês";
-            // 
-            // lblQtdAdocaoPeriodo
-            // 
-            this.lblQtdAdocaoPeriodo.AutoSize = true;
-            this.lblQtdAdocaoPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
-            this.lblQtdAdocaoPeriodo.Location = new System.Drawing.Point(16, 80);
-            this.lblQtdAdocaoPeriodo.Name = "lblQtdAdocaoPeriodo";
-            this.lblQtdAdocaoPeriodo.Size = new System.Drawing.Size(70, 13);
-            this.lblQtdAdocaoPeriodo.TabIndex = 4;
-            this.lblQtdAdocaoPeriodo.Text = "+3 neste mês";
-            // 
-            // lblQtdAdocoes
-            // 
-            this.lblQtdAdocoes.AutoSize = true;
-            this.lblQtdAdocoes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtdAdocoes.Location = new System.Drawing.Point(14, 44);
-            this.lblQtdAdocoes.Name = "lblQtdAdocoes";
-            this.lblQtdAdocoes.Size = new System.Drawing.Size(34, 25);
-            this.lblQtdAdocoes.TabIndex = 3;
-            this.lblQtdAdocoes.Text = "14";
-            // 
-            // lblQtdLarDisponivel
-            // 
-            this.lblQtdLarDisponivel.AutoSize = true;
-            this.lblQtdLarDisponivel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
-            this.lblQtdLarDisponivel.Location = new System.Drawing.Point(10, 80);
-            this.lblQtdLarDisponivel.Name = "lblQtdLarDisponivel";
-            this.lblQtdLarDisponivel.Size = new System.Drawing.Size(102, 13);
-            this.lblQtdLarDisponivel.TabIndex = 4;
-            this.lblQtdLarDisponivel.Text = "4 vagas disponíveis";
-            // 
-            // lblQtdLar
-            // 
-            this.lblQtdLar.AutoSize = true;
-            this.lblQtdLar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtdLar.Location = new System.Drawing.Point(8, 44);
-            this.lblQtdLar.Name = "lblQtdLar";
-            this.lblQtdLar.Size = new System.Drawing.Size(23, 25);
-            this.lblQtdLar.TabIndex = 3;
-            this.lblQtdLar.Text = "8";
-            // 
-            // lblQtdTempoPeriodo
-            // 
-            this.lblQtdTempoPeriodo.AutoSize = true;
-            this.lblQtdTempoPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
-            this.lblQtdTempoPeriodo.Location = new System.Drawing.Point(14, 80);
-            this.lblQtdTempoPeriodo.Name = "lblQtdTempoPeriodo";
-            this.lblQtdTempoPeriodo.Size = new System.Drawing.Size(69, 13);
-            this.lblQtdTempoPeriodo.TabIndex = 4;
-            this.lblQtdTempoPeriodo.Text = "-9 no periodo";
-            // 
-            // lblTempoOng
-            // 
-            this.lblTempoOng.AutoSize = true;
-            this.lblTempoOng.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTempoOng.Location = new System.Drawing.Point(12, 44);
-            this.lblTempoOng.Name = "lblTempoOng";
-            this.lblTempoOng.Size = new System.Drawing.Size(74, 25);
-            this.lblTempoOng.TabIndex = 3;
-            this.lblTempoOng.Text = "74 dias";
+            this.lblQtdGatos.AutoSize = true;
+            this.lblQtdGatos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblQtdGatos.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdGatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            this.lblQtdGatos.Location = new System.Drawing.Point(5, 10);
+            this.lblQtdGatos.Name = "lblQtdGatos";
+            this.lblQtdGatos.Size = new System.Drawing.Size(94, 15);
+            this.lblQtdGatos.TabIndex = 0;
+            this.lblQtdGatos.Text = "GATOS NA ONG";
             // 
             // lblPerfilAdocoes
             // 
@@ -525,6 +525,68 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(589, 252);
             this.tableLayoutPanel1.TabIndex = 33;
+            // 
+            // chart2
+            // 
+            this.chart2.BorderlineWidth = 0;
+            chartArea3.AxisX.IsLabelAutoFit = false;
+            chartArea3.AxisX.IsReversed = true;
+            chartArea3.AxisX.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            chartArea3.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(238)))));
+            chartArea3.AxisX.MajorGrid.Enabled = false;
+            chartArea3.AxisX.MajorTickMark.Enabled = false;
+            chartArea3.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
+            chartArea3.AxisY.MajorGrid.Enabled = false;
+            chartArea3.AxisY.Minimum = 0D;
+            chartArea3.BackColor = System.Drawing.Color.White;
+            chartArea3.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea3);
+            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.Alignment = System.Drawing.StringAlignment.Far;
+            legend3.BackColor = System.Drawing.Color.Transparent;
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "Legend1";
+            this.chart2.Legends.Add(legend3);
+            this.chart2.Location = new System.Drawing.Point(355, 18);
+            this.chart2.Name = "chart2";
+            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(139)))), ((int)(((byte)(224)))));
+            series4.CustomProperties = "PointWidth=0.4";
+            series4.IsValueShownAsLabel = true;
+            series4.Label = "#VAL adoções";
+            series4.Legend = "Legend1";
+            series4.Name = "Entradas";
+            dataPoint15.AxisLabel = "Adultos . 1 a 7 anos";
+            dataPoint15.Color = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(139)))), ((int)(((byte)(224)))));
+            dataPoint16.AxisLabel = "Filhotes . até 1 ano";
+            dataPoint16.Color = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(139)))), ((int)(((byte)(224)))));
+            dataPoint17.AxisLabel = "Idosos . acima de 7 anos";
+            dataPoint17.Color = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(139)))), ((int)(((byte)(224)))));
+            series4.Points.Add(dataPoint15);
+            series4.Points.Add(dataPoint16);
+            series4.Points.Add(dataPoint17);
+            this.chart2.Series.Add(series4);
+            this.chart2.Size = new System.Drawing.Size(226, 226);
+            this.chart2.TabIndex = 1;
+            this.chart2.Text = "chart2";
+            title5.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title5.IsDockedInsideChartArea = false;
+            title5.Name = "AdocoesIdade";
+            title5.Text = "Adoções por idade";
+            title6.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            title6.IsDockedInsideChartArea = false;
+            title6.Name = "Quantidade";
+            title6.Text = "Quantidade de gatos adotadps por faixa etária";
+            this.chart2.Titles.Add(title5);
+            this.chart2.Titles.Add(title6);
             // 
             // chart1
             // 
@@ -589,68 +651,6 @@
             this.chart1.Titles.Add(title7);
             this.chart1.Titles.Add(title8);
             // 
-            // chart2
-            // 
-            this.chart2.BorderlineWidth = 0;
-            chartArea3.AxisX.IsLabelAutoFit = false;
-            chartArea3.AxisX.IsReversed = true;
-            chartArea3.AxisX.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea3.AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
-            chartArea3.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(238)))));
-            chartArea3.AxisX.MajorGrid.Enabled = false;
-            chartArea3.AxisX.MajorTickMark.Enabled = false;
-            chartArea3.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.False;
-            chartArea3.AxisY.MajorGrid.Enabled = false;
-            chartArea3.AxisY.Minimum = 0D;
-            chartArea3.BackColor = System.Drawing.Color.White;
-            chartArea3.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea3);
-            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Alignment = System.Drawing.StringAlignment.Far;
-            legend3.BackColor = System.Drawing.Color.Transparent;
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend3.IsTextAutoFit = false;
-            legend3.Name = "Legend1";
-            this.chart2.Legends.Add(legend3);
-            this.chart2.Location = new System.Drawing.Point(355, 18);
-            this.chart2.Name = "chart2";
-            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(139)))), ((int)(((byte)(224)))));
-            series4.CustomProperties = "PointWidth=0.4";
-            series4.IsValueShownAsLabel = true;
-            series4.Label = "#VAL adoções";
-            series4.Legend = "Legend1";
-            series4.Name = "Entradas";
-            dataPoint15.AxisLabel = "Adultos . 1 a 7 anos";
-            dataPoint15.Color = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(139)))), ((int)(((byte)(224)))));
-            dataPoint16.AxisLabel = "Filhotes . até 1 ano";
-            dataPoint16.Color = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(139)))), ((int)(((byte)(224)))));
-            dataPoint17.AxisLabel = "Idosos . acima de 7 anos";
-            dataPoint17.Color = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(139)))), ((int)(((byte)(224)))));
-            series4.Points.Add(dataPoint15);
-            series4.Points.Add(dataPoint16);
-            series4.Points.Add(dataPoint17);
-            this.chart2.Series.Add(series4);
-            this.chart2.Size = new System.Drawing.Size(226, 226);
-            this.chart2.TabIndex = 1;
-            this.chart2.Text = "chart2";
-            title5.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title5.IsDockedInsideChartArea = false;
-            title5.Name = "AdocoesIdade";
-            title5.Text = "Adoções por idade";
-            title6.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
-            title6.IsDockedInsideChartArea = false;
-            title6.Name = "Quantidade";
-            title6.Text = "Quantidade de gatos adotadps por faixa etária";
-            this.chart2.Titles.Add(title5);
-            this.chart2.Titles.Add(title6);
-            // 
             // ucDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -679,8 +679,8 @@
             this.pnlTotalGatos.ResumeLayout(false);
             this.pnlTotalGatos.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

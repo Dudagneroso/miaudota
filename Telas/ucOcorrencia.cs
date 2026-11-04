@@ -97,5 +97,23 @@ namespace miaudota.Telas
             }
 
         }
+
+        private void btnSalvarOcorrencia_Click(object sender, EventArgs e)
+        {
+            OcorrenciaGato ocorrencia = new OcorrenciaGato
+            {
+                NumeroMicrochip = txtMicrochip.Text,
+                Data = dtpDataOcorrencia.Value,
+                Local = txtLocal.Text,
+                Responsavel = txtResponsavel.Text,
+                Descricao = txtMotivo.Text
+            };
+
+            RepositorioOcorrencia.Adicionar(ocorrencia);
+
+            MessageBox.Show("Ocorrência registrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            LimparFormulario();
+        }
     }
 }
