@@ -425,6 +425,7 @@
             this.btnSalvarTutor.TabIndex = 41;
             this.btnSalvarTutor.Text = "Salvar";
             this.btnSalvarTutor.UseVisualStyleBackColor = false;
+            this.btnSalvarTutor.Click += new System.EventHandler(this.btnSalvarTutor_Click);
             // 
             // txtTelefone
             // 

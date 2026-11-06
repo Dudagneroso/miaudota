@@ -56,9 +56,16 @@ namespace miaudota
             // separar com .Split(';')
             string[] partes = informacoes.Split(';');
 
-            // guardar nas variáveis latitudeSelecionada e longitudeSelecionada
-            latitudeSelecionada = double.Parse(partes[0], CultureInfo.InvariantCulture);
-            longitudeSelecionada = double.Parse(partes[1], CultureInfo.InvariantCulture);
+            // verificar se tem duas partes e se são números
+            if (partes.Length == 2 && double.TryParse(partes[0], NumberStyles.Float,
+            CultureInfo.InvariantCulture, out double latitude) &&
+            double.TryParse(partes[1], NumberStyles.Float,
+            CultureInfo.InvariantCulture, out double longitude))
+            {
+                // guardar nas variáveis latitudeSelecionada e longitudeSelecionada
+                latitudeSelecionada = double.Parse(partes[0], CultureInfo.InvariantCulture);
+                longitudeSelecionada = double.Parse(partes[1], CultureInfo.InvariantCulture);
+            }
         }
 
         private void rbSimLocal_CheckedChanged(object sender, EventArgs e)
@@ -100,6 +107,13 @@ namespace miaudota
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            // validar se o local de resgate foi selecionado
+            if (rbSimLocal.Checked && (!latitudeSelecionada.HasValue || !longitudeSelecionada.HasValue))
+            {
+                MessageBox.Show("Por favor, selecione o local de resgate no mapa.");
+                return;
+            }
+
             // 1. montar o objeto Gato com os dados da tela
             Gato gato = new Gato
             {

@@ -88,5 +88,32 @@ namespace miaudota.Telas
                 ((FormPrincipal)this.ParentForm).AbrirTela(new ucConsultaTutor());
             }
         }
+
+        private void btnSalvarTutor_Click(object sender, EventArgs e)
+        {
+            // 1. montar o objeto Tutor com os dados da tela
+            Tutor tutor = new Tutor
+            {
+                Nome = txtNome.Text,
+                CPF = txtCPF.Text,
+                Telefone = txtTelefone.Text,
+                DataNascimento = dtpDataNascimento.Value,
+                Email = txtEmail.Text,
+                CEP = txtCep.Text,
+                Cidade = txtCidade.Text,
+                Estado = txtEstado.Text,
+                Logradouro = txtLogradouro.Text,
+                Bairro = txtBairro.Text,
+                Numero = int.Parse(txtNumero.Text),
+                TipoResidencia = cbTipoMoradia.SelectedItem?.ToString(),
+                OutrosAnimais = cbPets.SelectedItem?.ToString(),
+            };
+
+            // 2. guardar no repositório de tutores
+            RepositorioTutoresFake.Atualizar(tutor);
+
+            // 3. Mensagem de Sucesso
+            MessageBox.Show("Os dados do tutor foram atualizados com sucesso!");
+        }
     }
 }

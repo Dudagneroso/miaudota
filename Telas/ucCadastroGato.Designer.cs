@@ -587,7 +587,8 @@
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Items.AddRange(new object[] {
             "Disponível",
-            "Adotado"});
+            "Adotado",
+            "Em processo"});
             this.cbStatus.Location = new System.Drawing.Point(0, 18);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(212, 23);

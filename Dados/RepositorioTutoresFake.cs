@@ -48,6 +48,26 @@ namespace miaudota
             tutores.Remove(tutor);
         }
 
+        public static void Atualizar(Tutor tutor)
+        {
+            var tutorExistente = tutores.FirstOrDefault(t => t.CPF == tutor.CPF);
+            if (tutorExistente != null)
+            {
+                tutorExistente.Nome = tutor.Nome;
+                tutorExistente.DataNascimento = tutor.DataNascimento;
+                tutorExistente.Email = tutor.Email;
+                tutorExistente.Telefone = tutor.Telefone;
+                tutorExistente.CEP = tutor.CEP;
+                tutorExistente.Cidade = tutor.Cidade;
+                tutorExistente.Estado = tutor.Estado;
+                tutorExistente.Logradouro = tutor.Logradouro;
+                tutorExistente.Bairro = tutor.Bairro;
+                tutorExistente.Numero = tutor.Numero;
+                tutorExistente.TipoResidencia = tutor.TipoResidencia;
+                tutorExistente.OutrosAnimais = tutor.OutrosAnimais;
+                
+            }
+        }
     }
               
 }
