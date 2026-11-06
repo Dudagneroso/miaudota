@@ -20,37 +20,111 @@ namespace miaudota.Telas
         public ucDashboard()
         {
             InitializeComponent();
-            AtualizarIndicadoresGatos(RepositorioGatosFake.ObterTodos());
-            AtualizarGraficos();
+            AtualizarIndicadoresGatos();
         }
 
-
-
-        private void AtualizarIndicadoresGatos(List<Gato> gatos)
+        private DateTime? ObterPeriodo()
         {
-            lblNumGatos.Text = gatos.Count.ToString();
+            DateTime hoje = DateTime.Today;
 
-            if (gatos.Count > 0)
+            if (rbMes.Checked)
             {
-                int numGatosAdotados = gatos.Count(g => g.Status == "Adotado");
-                lblQtdAdocoes.Text = numGatosAdotados.ToString();
+                return new DateTime(hoje.Year, hoje.Month, 1);
+            }
+            else if (rb6Meses.Checked)
+            {
+                return hoje.Month <= 6
+                    ? new DateTime(hoje.Year, 1, 1)
+                    : new DateTime(hoje.Year, 7, 1);
+            }
+            else if (rbAno.Checked)
+            {
+                return new DateTime(hoje.Year, 1, 1);
+            }
 
-                double mediaDias = gatos
-                    .Where(g => g.Status == "Adotado" && g.Data_Adocao != null && g.DataChegadaOng != null)
+            return null;
+        }
+
+        private DateTime? ObterFimPeriodo()
+        {
+            DateTime? inicio = ObterPeriodo();
+
+            if (inicio == null)
+                return null;
+
+            if (rbMes.Checked)
+                return inicio.Value.AddMonths(1);
+
+            if (rb6Meses.Checked)
+                return inicio.Value.AddMonths(6);
+
+            if (rbAno.Checked)
+                return inicio.Value.AddYears(1);
+
+            return null;
+        }
+
+        private void AtualizarIndicadoresGatos()
+        {
+            List<Gato> todosGatos = RepositorioGatosFake.ObterTodos();
+
+            DateTime? inicio = ObterPeriodo();
+            DateTime? fim = ObterFimPeriodo();
+
+            // Gatos recebidos no período
+            List<Gato> gatosEntrada = todosGatos
+                .Where(g => inicio == null ||
+                    (g.DataChegadaOng >= inicio.Value &&
+                     g.DataChegadaOng < fim.Value))
+                .ToList();
+
+            // Gatos adotados no período
+            List<Gato> gatosAdotados = todosGatos
+                .Where(g => g.Status == "Adotado" &&
+                    (inicio == null ||
+                     (g.Data_Adocao >= inicio.Value &&
+                      g.Data_Adocao < fim.Value)))
+                .ToList();
+
+            // Atualizar indicadores
+            lblNumGatos.Text = gatosEntrada.Count.ToString();
+            lblQtdAdocoes.Text = gatosAdotados.Count.ToString();
+
+            var gatosComDatas = gatosAdotados
+                .Where(g => g.Data_Adocao != null &&
+                            g.DataChegadaOng != null)
+                .ToList();
+
+            if (gatosComDatas.Count > 0)
+            {
+                double mediaDias = gatosComDatas
                     .Average(g => (g.Data_Adocao - g.DataChegadaOng).TotalDays);
-                lblTempoOng.Text = $"{mediaDias.ToString("F0")} dias";
 
+                lblTempoOng.Text = $"{mediaDias:F0} dias";
             }
             else
             {
-                lblQtdAdocoes.Text = "0";
+                lblTempoOng.Text = "0 dias";
             }
+
+            // Atualizar indicadores de período
+            string periodo = rbMes.Checked ? "neste mês" :
+                             rb6Meses.Checked ? "neste semestre" :
+                             rbAno.Checked ? "neste ano" : "no total";
+
+            lblQtdGatoPeriodo.Text =
+                $"+{gatosEntrada.Count} {periodo}";
+
+            lblQtdAdocaoPeriodo.Text =
+                $"+{gatosAdotados.Count} {periodo}";
+
+            // Atualizar todos os gráficos
+            AtualizarGraficos(todosGatos, gatosAdotados);
 
         }
 
-        private void AtualizarGraficos()
+        private void AtualizarGraficos(List<Gato> gatos, List<Gato> gatosAdotados)
         {
-            List<Gato> gatos = RepositorioGatosFake.ObterTodos();
 
             //Contar gatos por status
             int disponiveis = gatos.Count(g => g.Status == "Disponível");
@@ -75,7 +149,7 @@ namespace miaudota.Telas
             int bicolor = 0;
             int siamese = 0;
 
-            foreach (Gato gato in gatos.Where(g => g.Status == "Adotado"))
+            foreach (Gato gato in gatosAdotados)
             {
                 //calcular idade do gato no momento da adoção
                 int idade = gato.Data_Adocao.Year - gato.DataNascimento.Year;
@@ -139,31 +213,33 @@ namespace miaudota.Telas
                     }
                 }
 
-                //atualizar grafico de status
-                chartStatus.Series[0].Points[0].YValues[0] = disponiveis;
-                chartStatus.Series[0].Points[1].YValues[0] = emProcesso;
-                chartStatus.Series[0].Points[2].YValues[0] = adotados;
-                chartStatus.Series[0].Points[3].YValues[0] = larTemporario;
-
-                //atualizar grafico de idade
-                chartIdade.Series[0].Points[0].YValues[0] = adultos;
-                chartIdade.Series[0].Points[1].YValues[0] = filhotes;
-                chartIdade.Series[0].Points[2].YValues[0] = idosos;
-
-                //atualizar grafico de pelagem
-                chartPelagem.Series[0].Points[0].YValues[0] = preta;
-                chartPelagem.Series[0].Points[1].YValues[0] = branca;
-                chartPelagem.Series[0].Points[2].YValues[0] = laranja;
-                chartPelagem.Series[0].Points[3].YValues[0] = cinza;
-                chartPelagem.Series[0].Points[4].YValues[0] = marrom;
-                chartPelagem.Series[0].Points[5].YValues[0] = tigrada;
-                chartPelagem.Series[0].Points[6].YValues[0] = tricolor;
-                chartPelagem.Series[0].Points[7].YValues[0] = frajola;
-                chartPelagem.Series[0].Points[8].YValues[0] = bicolor;
-                chartPelagem.Series[0].Points[9].YValues[0] = siamese;
-
             }
 
+            //atualizar grafico de status
+            chartStatus.Series[0].Points[0].YValues[0] = disponiveis;
+            chartStatus.Series[0].Points[1].YValues[0] = emProcesso;
+            chartStatus.Series[0].Points[2].YValues[0] = adotados;
+            chartStatus.Series[0].Points[3].YValues[0] = larTemporario;
+
+            //atualizar grafico de idade
+            chartIdade.Series[0].Points[0].YValues[0] = adultos;
+            chartIdade.Series[0].Points[1].YValues[0] = filhotes;
+            chartIdade.Series[0].Points[2].YValues[0] = idosos;
+
+            //atualizar grafico de pelagem
+            chartPelagem.Series[0].Points[0].YValues[0] = preta;
+            chartPelagem.Series[0].Points[1].YValues[0] = branca;
+            chartPelagem.Series[0].Points[2].YValues[0] = laranja;
+            chartPelagem.Series[0].Points[3].YValues[0] = cinza;
+            chartPelagem.Series[0].Points[4].YValues[0] = marrom;
+            chartPelagem.Series[0].Points[5].YValues[0] = tigrada;
+            chartPelagem.Series[0].Points[6].YValues[0] = tricolor;
+            chartPelagem.Series[0].Points[7].YValues[0] = frajola;
+            chartPelagem.Series[0].Points[8].YValues[0] = bicolor;
+            chartPelagem.Series[0].Points[9].YValues[0] = siamese;
+
+            chartIdade.Refresh();
+            chartPelagem.Refresh();
 
         }
 
@@ -222,6 +298,24 @@ namespace miaudota.Telas
                 "https://miaudota.local/mapa-calor.html"
             );
         
+        }
+
+        private void rbMes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbMes.Checked)
+                AtualizarIndicadoresGatos();
+        }
+
+        private void rb6Meses_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb6Meses.Checked)
+                AtualizarIndicadoresGatos();
+        }
+
+        private void rbAno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbAno.Checked)
+                AtualizarIndicadoresGatos();
         }
     }
 }

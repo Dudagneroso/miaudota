@@ -64,7 +64,7 @@ namespace miaudota
             lblNomeGato.Text = gato.Nome;
             lblIdadeGato.Text = idade.ToString();
             lblMicrochipGato.Text = gato.NumeroMicrochip;
-            lblDisponibilidadeGato.Text = gato.Status;
+            lblStatusGato.Text = gato.Status;
             if (string.IsNullOrEmpty(gato.CaminhoFoto))
             {
                 pbFotoGato.Image = Properties.Resources.sem_foto;
@@ -73,6 +73,17 @@ namespace miaudota
             {
                 pbFotoGato.Image = Image.FromFile(gato.CaminhoFoto);
             }
+
+            // Muda a cor do status para vermelho se o gato não estiver disponível, caso contrário, mantém a cor padrão
+            if (gato != null && gato.Status != "Disponível")
+            {
+                lblStatusGato.BackColor = Color.FromArgb(255, 192, 192); // Cor de fundo vermelha
+            }
+            else
+            {
+                lblStatusGato.BackColor = Color.FromArgb(192, 255, 192); // Cor de fundo verde
+            }
+
             pnlPerfilContainer.Visible = true;
         }
 

@@ -39,7 +39,7 @@
             this.btnCadastroGato = new System.Windows.Forms.Button();
             this.pnlPerfilContainer = new System.Windows.Forms.Panel();
             this.pnlPerfil = new System.Windows.Forms.Panel();
-            this.lblDisponibilidadeGato = new System.Windows.Forms.Label();
+            this.lblStatusGato = new System.Windows.Forms.Label();
             this.lblMicrochipGato = new System.Windows.Forms.Label();
             this.lblIdadeGato = new System.Windows.Forms.Label();
             this.lblNomeGato = new System.Windows.Forms.Label();
@@ -204,7 +204,7 @@
             // pnlPerfil
             // 
             this.pnlPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
-            this.pnlPerfil.Controls.Add(this.lblDisponibilidadeGato);
+            this.pnlPerfil.Controls.Add(this.lblStatusGato);
             this.pnlPerfil.Controls.Add(this.lblMicrochipGato);
             this.pnlPerfil.Controls.Add(this.lblIdadeGato);
             this.pnlPerfil.Controls.Add(this.lblNomeGato);
@@ -217,17 +217,17 @@
             this.pnlPerfil.Size = new System.Drawing.Size(176, 213);
             this.pnlPerfil.TabIndex = 9;
             // 
-            // lblDisponibilidadeGato
+            // lblStatusGato
             // 
-            this.lblDisponibilidadeGato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lblDisponibilidadeGato.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDisponibilidadeGato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisponibilidadeGato.Location = new System.Drawing.Point(0, 189);
-            this.lblDisponibilidadeGato.Name = "lblDisponibilidadeGato";
-            this.lblDisponibilidadeGato.Size = new System.Drawing.Size(176, 20);
-            this.lblDisponibilidadeGato.TabIndex = 4;
-            this.lblDisponibilidadeGato.Text = "Disponibilidade";
-            this.lblDisponibilidadeGato.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatusGato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblStatusGato.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblStatusGato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusGato.Location = new System.Drawing.Point(0, 189);
+            this.lblStatusGato.Name = "lblStatusGato";
+            this.lblStatusGato.Size = new System.Drawing.Size(176, 20);
+            this.lblStatusGato.TabIndex = 4;
+            this.lblStatusGato.Text = "Disponibilidade";
+            this.lblStatusGato.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMicrochipGato
             // 
@@ -326,7 +326,7 @@
         private System.Windows.Forms.Button btnCadastroTutor;
         private System.Windows.Forms.Button btnCadastroGato;
         private System.Windows.Forms.Panel pnlPerfil;
-        private System.Windows.Forms.Label lblDisponibilidadeGato;
+        private System.Windows.Forms.Label lblStatusGato;
         private System.Windows.Forms.Label lblMicrochipGato;
         private System.Windows.Forms.Label lblIdadeGato;
         private System.Windows.Forms.Label lblNomeGato;

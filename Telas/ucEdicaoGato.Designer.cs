@@ -823,9 +823,10 @@
             // 
             this.gbVacina.Controls.Add(this.rbNaoVacinado);
             this.gbVacina.Controls.Add(this.rbVacinado);
+            this.gbVacina.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbVacina.Location = new System.Drawing.Point(209, 3);
             this.gbVacina.Name = "gbVacina";
-            this.gbVacina.Size = new System.Drawing.Size(170, 82);
+            this.gbVacina.Size = new System.Drawing.Size(200, 82);
             this.gbVacina.TabIndex = 1;
             this.gbVacina.TabStop = false;
             this.gbVacina.Text = "Possui vacinas em dia?";
