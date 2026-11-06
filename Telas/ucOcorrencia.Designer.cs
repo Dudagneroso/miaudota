@@ -342,7 +342,7 @@
             this.lblMotivo.Name = "lblMotivo";
             this.lblMotivo.Size = new System.Drawing.Size(112, 13);
             this.lblMotivo.TabIndex = 43;
-            this.lblMotivo.Text = "Motivo da Devolução:";
+            this.lblMotivo.Text = "Motivo da Ocorrência:";
             // 
             // txtResponsavel
             // 

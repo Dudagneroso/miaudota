@@ -30,6 +30,7 @@ namespace miaudota
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
         public DateTime DataCadastro { get; set; }
+        public DateTime Data_Adocao { get; set; }
         
 
     }

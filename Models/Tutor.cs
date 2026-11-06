@@ -22,5 +22,6 @@ namespace miaudota
         public string TipoResidencia { get; set; }
         public string OutrosAnimais { get; set; }
         public List<Gato> Gatos { get; set; } = new List<Gato>();
+        public DateTime DataAdocao { get; set; }
     }
 }

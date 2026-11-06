@@ -30,6 +30,7 @@ namespace miaudota.Telas
         {
             txtNome.Clear();
             txtCPF.Clear();
+            txtTelefone.Clear();
             dtpDataNascimento.Value = DateTime.Now;
             txtEmail.Clear();
             txtCep.Clear();
@@ -45,6 +46,11 @@ namespace miaudota.Telas
 
         private void btnSalvarTutor_Click(object sender, EventArgs e)
         {
+            //Atualizar infos do gato
+            Gato gatoSelecionado = dgvGatos.CurrentRow?.DataBoundItem as Gato;
+            gatoSelecionado.Data_Adocao = DateTime.Now;
+            gatoSelecionado.Status =  "Adotado";
+
             // 1. montar o objeto Tutor com os dados da tela
             Tutor tutor = new Tutor
             {
@@ -61,7 +67,8 @@ namespace miaudota.Telas
                 Numero = int.Parse(txtNumero.Text),
                 TipoResidencia = cbTipoMoradia.SelectedItem?.ToString(),
                 OutrosAnimais = cbPets.SelectedItem?.ToString(),
-                Gatos = new List<Gato> { dgvGatos.CurrentRow?.DataBoundItem as Gato }
+                Gatos = new List<Gato> { gatoSelecionado },
+                DataAdocao = DateTime.Now
             };
 
             // 2. guardar no repositório de tutores

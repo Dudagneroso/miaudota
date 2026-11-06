@@ -99,6 +99,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pnlFiltros = new System.Windows.Forms.Panel();
+            this.rbMes = new System.Windows.Forms.RadioButton();
+            this.rb6Meses = new System.Windows.Forms.RadioButton();
+            this.rbAno = new System.Windows.Forms.RadioButton();
             this.pnlIndicadoresIniciais.SuspendLayout();
             this.tlpGraficos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartEntradasAdocoes)).BeginInit();
@@ -111,6 +115,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.pnlFiltros.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDashboardSubtitulo
@@ -651,11 +656,70 @@
             this.chart1.Titles.Add(title7);
             this.chart1.Titles.Add(title8);
             // 
+            // pnlFiltros
+            // 
+            this.pnlFiltros.Controls.Add(this.rbAno);
+            this.pnlFiltros.Controls.Add(this.rb6Meses);
+            this.pnlFiltros.Controls.Add(this.rbMes);
+            this.pnlFiltros.Location = new System.Drawing.Point(413, 9);
+            this.pnlFiltros.Name = "pnlFiltros";
+            this.pnlFiltros.Size = new System.Drawing.Size(196, 54);
+            this.pnlFiltros.TabIndex = 34;
+            // 
+            // rbMes
+            // 
+            this.rbMes.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbMes.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbMes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
+            this.rbMes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(106)))), ((int)(((byte)(142)))));
+            this.rbMes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbMes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            this.rbMes.Location = new System.Drawing.Point(4, 12);
+            this.rbMes.Name = "rbMes";
+            this.rbMes.Size = new System.Drawing.Size(60, 30);
+            this.rbMes.TabIndex = 0;
+            this.rbMes.TabStop = true;
+            this.rbMes.Text = "Este mês";
+            this.rbMes.UseVisualStyleBackColor = false;
+            // 
+            // rb6Meses
+            // 
+            this.rb6Meses.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rb6Meses.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rb6Meses.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
+            this.rb6Meses.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(106)))), ((int)(((byte)(142)))));
+            this.rb6Meses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rb6Meses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            this.rb6Meses.Location = new System.Drawing.Point(70, 12);
+            this.rb6Meses.Name = "rb6Meses";
+            this.rb6Meses.Size = new System.Drawing.Size(56, 30);
+            this.rb6Meses.TabIndex = 1;
+            this.rb6Meses.TabStop = true;
+            this.rb6Meses.Text = "6 meses";
+            this.rb6Meses.UseVisualStyleBackColor = false;
+            // 
+            // rbAno
+            // 
+            this.rbAno.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbAno.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbAno.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
+            this.rbAno.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(106)))), ((int)(((byte)(142)))));
+            this.rbAno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbAno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(150)))));
+            this.rbAno.Location = new System.Drawing.Point(132, 12);
+            this.rbAno.Name = "rbAno";
+            this.rbAno.Size = new System.Drawing.Size(60, 30);
+            this.rbAno.TabIndex = 2;
+            this.rbAno.TabStop = true;
+            this.rbAno.Text = "Este ano";
+            this.rbAno.UseVisualStyleBackColor = false;
+            // 
             // ucDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.Controls.Add(this.pnlFiltros);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblSubtituloPerfilAdocoes);
             this.Controls.Add(this.lblPerfilAdocoes);
@@ -681,6 +745,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.pnlFiltros.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -716,5 +781,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.Panel pnlFiltros;
+        private System.Windows.Forms.RadioButton rbAno;
+        private System.Windows.Forms.RadioButton rb6Meses;
+        private System.Windows.Forms.RadioButton rbMes;
     }
 }

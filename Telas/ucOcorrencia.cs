@@ -12,6 +12,7 @@ namespace miaudota.Telas
 {
     public partial class ucOcorrencia : UserControl
     {
+        private Ocorrencia tipoSelecionado;
         public ucOcorrencia()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace miaudota.Telas
                 cartao.CarregarDados(tipo);
                 cartao.Dock = DockStyle.Fill;
                 cartao.Margin = new Padding(6);
+                cartao.CartaoClicado += SelecionarCartao;
                 //cartao.Selecionado += SelecionarCartao;
 
                 //coluna = indice % 3, linha = indice / 3
@@ -34,7 +36,26 @@ namespace miaudota.Telas
             }
         }
 
-        
+        private void SelecionarCartao(object sender, EventArgs e)
+        {
+            ucCartaoOcorrencia clicado = (ucCartaoOcorrencia)sender;
+
+            foreach (ucCartaoOcorrencia c in tlpTipos.Controls.OfType<ucCartaoOcorrencia>())
+            {
+                c.Selecionado = false;
+            }
+
+            clicado.Selecionado = true;
+            tipoSelecionado = clicado.Ocorrencia;
+            // guardar o tipo escolhido em uma variável de classe
+            OcorrenciaGato ocorrencia = new OcorrenciaGato
+            {
+                Tipo = clicado.Ocorrencia.Nome
+            };
+
+        }
+
+
 
         public void mostrarGato(Gato gato)
         {
@@ -103,6 +124,7 @@ namespace miaudota.Telas
             OcorrenciaGato ocorrencia = new OcorrenciaGato
             {
                 NumeroMicrochip = txtMicrochip.Text,
+                Tipo = tipoSelecionado.Nome,
                 Data = dtpDataOcorrencia.Value,
                 Local = txtLocal.Text,
                 Responsavel = txtResponsavel.Text,
