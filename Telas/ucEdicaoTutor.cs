@@ -37,13 +37,20 @@ namespace miaudota.Telas
             cbPets.Text = tutor.OutrosAnimais;
             tutorAtual = tutor;
 
-            foreach (var gato in tutor.Gatos)
+            AtualizarGatosAdotados();
+        }
+
+        private void AtualizarGatosAdotados()
+        {
+            flpGatos.Controls.Clear();
+            foreach (var gato in tutorAtual.Gatos)
             {
                 ucCartaoGato cartao = new ucCartaoGato();
 
                 cartao.CarregarDados(gato);
                 flpGatos.Controls.Add(cartao);
             }
+        
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,22 +59,33 @@ namespace miaudota.Telas
         }
 
         Gato gatoParaVincular = null;
+
         private void txtMicrochip_TextChanged(object sender, EventArgs e)
         {
+            gatoParaVincular = null;
+
+            if (string.IsNullOrWhiteSpace(txtMicrochip.Text))
+            {
+                lblNomeGato.Text = "";
+                return;
+            }
+
             Gato gato = RepositorioGatosFake.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
 
-            if (gato != null)
-            {
-                lblNomeGato.Text = "Nome: " + gato.Nome;
-                gatoParaVincular = gato;
-
-            }
-            else
+            if (gato == null)
             {
                 lblNomeGato.Text = "Gato não encontrado";
-                gatoParaVincular = null;
-
+                return;
             }
+
+            if (gato.Status != "Disponível")
+            {
+                lblNomeGato.Text = "Este gato não está disponível";
+                return;
+            }
+
+            lblNomeGato.Text = "Nome: " + gato.Nome;
+            gatoParaVincular = gato;
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -92,25 +110,35 @@ namespace miaudota.Telas
         private void btnSalvarTutor_Click(object sender, EventArgs e)
         {
             // 1. montar o objeto Tutor com os dados da tela
-            Tutor tutor = new Tutor
+            tutorAtual.Nome = txtNome.Text;
+            tutorAtual.CPF = txtCPF.Text;
+            tutorAtual.Telefone = txtTelefone.Text;
+            tutorAtual.DataNascimento = dtpDataNascimento.Value;
+            tutorAtual.Email = txtEmail.Text;
+            tutorAtual.CEP = txtCep.Text;
+            tutorAtual.Cidade = txtCidade.Text;
+            tutorAtual.Estado = txtEstado.Text;
+            tutorAtual.Logradouro = txtLogradouro.Text;
+            tutorAtual.Bairro = txtBairro.Text;
+            tutorAtual.Numero = int.Parse(txtNumero.Text);
+            tutorAtual.TipoResidencia = cbTipoMoradia.SelectedItem?.ToString();
+            tutorAtual.OutrosAnimais = cbPets.SelectedItem?.ToString();
+
+            if (gatoParaVincular != null)
             {
-                Nome = txtNome.Text,
-                CPF = txtCPF.Text,
-                Telefone = txtTelefone.Text,
-                DataNascimento = dtpDataNascimento.Value,
-                Email = txtEmail.Text,
-                CEP = txtCep.Text,
-                Cidade = txtCidade.Text,
-                Estado = txtEstado.Text,
-                Logradouro = txtLogradouro.Text,
-                Bairro = txtBairro.Text,
-                Numero = int.Parse(txtNumero.Text),
-                TipoResidencia = cbTipoMoradia.SelectedItem?.ToString(),
-                OutrosAnimais = cbPets.SelectedItem?.ToString(),
-            };
+                tutorAtual.Gatos.Add(gatoParaVincular);
+                gatoParaVincular.Status = "Adotado";
+                tutorAtual.DataAdocao = DateTime.Today;
+
+                AtualizarGatosAdotados();
+
+                pnlNovoGato.Visible = false;
+                txtMicrochip.Clear();
+                lblNomeGato.Text = "";
+            }
 
             // 2. guardar no repositório de tutores
-            RepositorioTutoresFake.Atualizar(tutor);
+            RepositorioTutoresFake.Atualizar(tutorAtual);
 
             // 3. Mensagem de Sucesso
             MessageBox.Show("Os dados do tutor foram atualizados com sucesso!");
