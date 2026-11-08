@@ -8,11 +8,64 @@ namespace miaudota
 {
     public class OcorrenciaGato
     {
-        public string NumeroMicrochip { get; set; }
-        public string Tipo { get; set; }
-        public DateTime Data { get; set; }
-        public string Local { get; set; }
-        public string Responsavel { get; set; }
-        public string Descricao { get; set; }
+        private string numeroMicrochip;
+        private string tipo;
+        private DateTime data;
+        private string local;
+        private string responsavel;
+        private string descricao;
+
+        public OcorrenciaGato()
+        {
+        }
+
+        public OcorrenciaGato(string numeroMicrochip, string tipo, DateTime data, string local, string responsavel, string descricao)
+        {
+            this.numeroMicrochip = numeroMicrochip;
+            this.tipo = tipo;
+            this.data = data;
+            this.local = local;
+            this.responsavel = responsavel;
+            this.descricao = descricao;
+        }
+
+        public string NumeroMicrochip
+        {
+            get { return numeroMicrochip; }
+            set { numeroMicrochip = value; }
+        }
+        public string Tipo
+        {
+            get { return tipo; }
+            set { tipo = value; }
+        }
+        public DateTime Data
+        {
+            get { return data; }
+            set 
+            {
+                if (value > DateTime.Today)
+                {
+                    throw new ArgumentException("A data da ocorrência não pode ser futura.");
+                }
+                data = value; 
+            }
+        }
+        public string Local
+        {
+            get { return local; }
+            set { local = value; }
+        }
+        public string Responsavel
+        {
+            get { return responsavel; }
+            set { responsavel = value; }
+        }
+        public string Descricao
+        {
+            get { return descricao; }
+            set { descricao = value; }
+        }
+
     }
 }

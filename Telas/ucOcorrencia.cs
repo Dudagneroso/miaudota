@@ -121,21 +121,39 @@ namespace miaudota.Telas
 
         private void btnSalvarOcorrencia_Click(object sender, EventArgs e)
         {
-            OcorrenciaGato ocorrencia = new OcorrenciaGato
+            Gato gato = RepositorioGatosFake.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
+
+            try
             {
-                NumeroMicrochip = txtMicrochip.Text,
-                Tipo = tipoSelecionado.Nome,
-                Data = dtpDataOcorrencia.Value,
-                Local = txtLocal.Text,
-                Responsavel = txtResponsavel.Text,
-                Descricao = txtMotivo.Text
-            };
 
-            RepositorioOcorrencia.Adicionar(ocorrencia);
 
-            MessageBox.Show("Ocorrência registrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                OcorrenciaGato ocorrencia = new OcorrenciaGato
+                {
+                    NumeroMicrochip = txtMicrochip.Text,
+                    Tipo = tipoSelecionado.Nome,
+                    Data = dtpDataOcorrencia.Value,
+                    Local = txtLocal.Text,
+                    Responsavel = txtResponsavel.Text,
+                    Descricao = txtMotivo.Text
+                };
 
-            LimparFormulario();
+                if (tipoSelecionado.Nome == "Devolução")
+                {
+                    gato.Status = "Disponível";
+                }
+
+                RepositorioOcorrencia.Adicionar(ocorrencia);
+
+                MessageBox.Show("Ocorrência registrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimparFormulario();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Dado inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            
         }
     }
 }

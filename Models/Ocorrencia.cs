@@ -8,9 +8,36 @@ namespace miaudota
 {
     public class Ocorrencia
     {
-            public string Sigla { get; set; }
-            public string Nome { get; set; }
-            public string Descricao { get; set; }
+        private string sigla;
+        private string nome;
+        private string descricao;
 
+        public Ocorrencia()
+        {
+        }
+
+        public Ocorrencia(string sigla, string nome, string descricao)
+        {
+            this.sigla = sigla;
+            this.nome = nome;
+            this.descricao = descricao;
+        }
+
+        public string Sigla
+        {
+            get { return sigla; }
+            set { sigla = value; }
+        }
+        public string Nome
+        {
+            get { return nome; }
+            set { nome = value; }
+        }
+
+        public string Descricao
+        {
+            get { return descricao; }
+            set { descricao = value; }
+        }
     }
 }
