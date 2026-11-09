@@ -120,7 +120,88 @@ namespace miaudota.Telas
 
             // Atualizar todos os gráficos
             AtualizarGraficos(todosGatos, gatosAdotados);
+            AtualizarGraficoEntradasAdocoes();
 
+        }
+
+        private void AtualizarGraficoEntradasAdocoes()
+        {
+            List<Gato> todosGatos = RepositorioGatosFake.ObterTodos();
+
+            DateTime hoje = DateTime.Today;
+
+            
+            DateTime inicio;
+            DateTime fim;
+
+            if (rbMes.Checked)
+            {
+                inicio = new DateTime(hoje.Year, hoje.Month, 1);
+                fim = inicio.AddMonths(1);
+            }
+            else if (rb6Meses.Checked)
+            {
+                inicio = ObterPeriodo().Value;
+                fim = inicio.AddMonths(6);
+            }
+            else
+            {
+                //Ano atual, inclusive quando nenhum filtro estiver selecionado
+                inicio = new DateTime(hoje.Year, 1, 1);
+                fim = inicio.AddYears(1);
+            }
+
+            //Limpar os pontos anteriores
+            chartEntradasAdocoes.Series[0].Points.Clear();
+            chartEntradasAdocoes.Series[1].Points.Clear();
+
+            //Percorrer os meses do período
+            for (DateTime mes = new DateTime(inicio.Year, inicio.Month, 1); mes < fim; mes = mes.AddMonths(1))
+            {
+                DateTime inicioMes = mes;
+                DateTime fimMes = mes.AddMonths(1);
+
+                //Contar entradas no mês
+                int entradas = todosGatos.Count(g => g.DataChegadaOng >= inicioMes && g.DataChegadaOng < fimMes);
+
+                //Contar addoções no mês
+                int adocoes = todosGatos.Count(g => g.Status == "Adotado" && g.Data_Adocao > DateTime.MinValue && g.Data_Adocao >= inicioMes && g.Data_Adocao < fimMes);
+
+                string nomeMes = mes.ToString("MMM", new CultureInfo("pt-BR"));
+
+                //Adicionar valores aos gráficos
+                chartEntradasAdocoes.Series[0].Points.AddXY(nomeMes, entradas);
+
+                chartEntradasAdocoes.Series[1].Points.AddXY(nomeMes, adocoes);
+            }
+
+            //Alterar subtitulo
+            if (rbMes.Checked)
+            {
+                chartEntradasAdocoes.Titles["Movimentacao"].Text =
+                    "Movimentação neste mês";
+            }
+            else if (rb6Meses.Checked)
+            {
+                chartEntradasAdocoes.Titles["Movimentacao"].Text =
+                    "Movimentação nos últimos 6 meses";
+            }
+            else
+            {
+                chartEntradasAdocoes.Titles["Movimentacao"].Text =
+                    "Movimentação neste ano";
+            }
+
+            // Mostrar todos os meses no eixo horizontal
+            chartEntradasAdocoes.ChartAreas[0].AxisX.Interval = 1;
+
+            // Evitar que o gráfico oculte automaticamente os rótulos
+            chartEntradasAdocoes.ChartAreas[0].AxisX.IsLabelAutoFit = false;
+
+            // Manter os nomes dos meses na horizontal
+            chartEntradasAdocoes.ChartAreas[0].AxisX.LabelStyle.Angle = 0;
+
+            chartEntradasAdocoes.Refresh();
         }
 
         private void AtualizarGraficos(List<Gato> gatos, List<Gato> gatosAdotados)
