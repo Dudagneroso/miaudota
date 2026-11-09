@@ -30,5 +30,10 @@ namespace miaudota
                 indice++;
             }
         }
+
+        private void ucConsulta_Load(object sender, EventArgs e)
+        {
+            cbxFiltro.SelectedIndex = 0;
+        }
     }
 }

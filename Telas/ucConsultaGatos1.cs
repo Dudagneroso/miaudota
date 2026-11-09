@@ -32,5 +32,10 @@ namespace miaudota.Telas
                 
             }
         }
+
+        private void ucConsultaGatos1_Load(object sender, EventArgs e)
+        {
+            cbFiltroGatos.SelectedIndex = 0;
+        }
     }
 }

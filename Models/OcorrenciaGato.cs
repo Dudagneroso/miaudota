@@ -32,19 +32,29 @@ namespace miaudota
         public string NumeroMicrochip
         {
             get { return numeroMicrochip; }
-            set { numeroMicrochip = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Digite o número do microchip.");
+                }
+                numeroMicrochip = value; 
+            }
         }
         public string Tipo
         {
             get { return tipo; }
-            set { tipo = value; }
+            set 
+            {
+                tipo = value; 
+            }
         }
         public DateTime Data
         {
             get { return data; }
             set 
             {
-                if (value > DateTime.Today)
+                if (value > DateTime.Now)
                 {
                     throw new ArgumentException("A data da ocorrência não pode ser futura.");
                 }

@@ -46,6 +46,8 @@ namespace miaudota
             wvMapa.CoreWebView2.WebMessageReceived += RegistrarLocal;
             // navegar para a página
             wvMapa.CoreWebView2.Navigate("https://miaudota.local/mapa.html");
+
+            cbStatus.SelectedIndex = 0;
         }
 
         private void RegistrarLocal(object sender, CoreWebView2WebMessageReceivedEventArgs e)
@@ -107,48 +109,55 @@ namespace miaudota
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            // validar se o local de resgate foi selecionado
-            if (rbSimLocal.Checked && (!latitudeSelecionada.HasValue || !longitudeSelecionada.HasValue))
+            try
             {
-                MessageBox.Show("Por favor, selecione o local de resgate no mapa.");
-                return;
+                // validar se o local de resgate foi selecionado
+                if (rbSimLocal.Checked && (!latitudeSelecionada.HasValue || !longitudeSelecionada.HasValue))
+                {
+                    MessageBox.Show("Por favor, selecione o local de resgate no mapa.");
+                    return;
+                }
+
+                // 1. montar o objeto Gato com os dados da tela
+                Gato gato = new Gato
+                {
+                    NumeroMicrochip = txtMicrochip.Text,
+                    Nome = txtNome.Text,
+                    DataNascimento = dtpDataNascimento.Value,
+                    Sexo = rbMacho.Checked ? "Macho" : "Fêmea",
+                    Pelagem = cbPelagem.Text,
+                    Coloracao = cbColoracao.Text,
+                    Peso = float.TryParse(txtPeso.Text, out float peso) ? peso : 0,
+                    LarTemporario = txtLarTemporario.Text,
+                    Castrado = rbCastrado.Checked ? "Sim" : "Não",
+                    VacinasEmDia = rbVacinado.Checked ? "Sim" : "Não",
+                    Vacinas = clbVacinas.CheckedItems.Cast<string>().ToList(),
+                    Status = cbStatus.SelectedItem?.ToString(),
+                    TesteFIV = cbFIV.Text,
+                    TesteFelv = cbFELV.Text,
+                    Doencas = txtDeficiencias.Text,
+                    Observacoes = txtObservacao.Text,
+                    DataChegadaOng = dtpDataEntrada.Value,
+                    CaminhoFoto = caminhoFotoSelecionada,
+                    LocalResgate = rbSimLocal.Checked ? "Sim" : "Não",
+                    Latitude = latitudeSelecionada,
+                    Longitude = longitudeSelecionada,
+                    DataCadastro = DateTime.Now
+                };
+
+                // 2. guardar no repositório e gatos
+                RepositorioGatosFake.Adicionar(gato);
+
+                // 3. Mensagem de Sucesso
+                MessageBox.Show("Gato cadastrado com sucesso!");
+
+                // 4. limpar o formulário
+                LimparFormulario();
             }
-
-            // 1. montar o objeto Gato com os dados da tela
-            Gato gato = new Gato
+            catch (ArgumentException ex)
             {
-                NumeroMicrochip = txtMicrochip.Text,
-                Nome = txtNome.Text,
-                DataNascimento = dtpDataNascimento.Value,
-                Sexo = rbMacho.Checked ? "Macho" : "Fêmea",
-                Pelagem = cbPelagem.Text,
-                Coloracao = cbColoracao.Text,
-                Peso = float.TryParse(txtPeso.Text, out float peso) ? peso : 0,
-                LarTemporario = txtLarTemporario.Text,
-                Castrado = rbCastrado.Checked ? "Sim" : "Não",
-                VacinasEmDia = rbVacinado.Checked ? "Sim" : "Não",
-                Vacinas = clbVacinas.CheckedItems.Cast<string>().ToList(),
-                Status = cbStatus.SelectedItem?.ToString(),
-                TesteFIV = cbFIV.Text,
-                TesteFelv = cbFELV.Text,
-                Doencas = txtDeficiencias.Text,
-                Observacoes = txtObservacao.Text,
-                DataChegadaOng = dtpDataEntrada.Value,
-                CaminhoFoto = caminhoFotoSelecionada,
-                LocalResgate = rbSimLocal.Checked ? "Sim" : "Não",
-                Latitude = latitudeSelecionada,
-                Longitude = longitudeSelecionada,
-                DataCadastro = DateTime.Now
-            };
-            
-            // 2. guardar no repositório e gatos
-            RepositorioGatosFake.Adicionar(gato);
-
-            // 3. Mensagem de Sucesso
-            MessageBox.Show("Gato cadastrado com sucesso!");
-
-            // 4. limpar o formulário
-            LimparFormulario();
+                MessageBox.Show(ex.Message, "Dado inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)

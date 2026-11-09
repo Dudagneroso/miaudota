@@ -30,21 +30,8 @@
         {
             this.lblCadastroTutor = new System.Windows.Forms.Label();
             this.lblTituloRegistroOcorrencia = new System.Windows.Forms.Label();
+            this.tlpConteudo = new System.Windows.Forms.TableLayoutPanel();
             this.pnlSelecaoGato = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tlpInfos = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlDados = new System.Windows.Forms.Panel();
-            this.lblIdadeMicrochip = new System.Windows.Forms.Label();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.pnlStatus = new System.Windows.Forms.Panel();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.pbFoto = new System.Windows.Forms.PictureBox();
-            this.txtMicrochip = new System.Windows.Forms.TextBox();
-            this.lblMicrochip = new System.Windows.Forms.Label();
-            this.lblSelecao = new System.Windows.Forms.Label();
-            this.pnlTipoOcorrência = new System.Windows.Forms.Panel();
-            this.tlpTipos = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTipo = new System.Windows.Forms.Label();
             this.pnlDetalhesOcorrência = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -58,221 +45,102 @@
             this.dtpDataOcorrencia = new System.Windows.Forms.DateTimePicker();
             this.lblData = new System.Windows.Forms.Label();
             this.lblDetalhes = new System.Windows.Forms.Label();
+            this.pnlMargemTipo = new System.Windows.Forms.Panel();
+            this.pnlTipoOcorrência = new System.Windows.Forms.Panel();
+            this.tlpTipos = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.tlpSelecao = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlCampo = new System.Windows.Forms.Panel();
+            this.txtMicrochip = new System.Windows.Forms.TextBox();
+            this.lblMicrochip = new System.Windows.Forms.Label();
+            this.lblSelecao = new System.Windows.Forms.Label();
+            this.pnlConteudoCard = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tlpInfos = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlDados = new System.Windows.Forms.Panel();
+            this.lblIdadeMicrochip = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.pnlStatus = new System.Windows.Forms.Panel();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.pbFoto = new System.Windows.Forms.PictureBox();
+            this.tlpConteudo.SuspendLayout();
             this.pnlSelecaoGato.SuspendLayout();
+            this.pnlDetalhesOcorrência.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.pnlMargemTipo.SuspendLayout();
+            this.pnlTipoOcorrência.SuspendLayout();
+            this.tlpSelecao.SuspendLayout();
+            this.pnlCampo.SuspendLayout();
+            this.pnlConteudoCard.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tlpInfos.SuspendLayout();
             this.pnlDados.SuspendLayout();
             this.pnlStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
-            this.pnlTipoOcorrência.SuspendLayout();
-            this.pnlDetalhesOcorrência.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCadastroTutor
             // 
-            this.lblCadastroTutor.Location = new System.Drawing.Point(24, 50);
+            this.lblCadastroTutor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblCadastroTutor.Location = new System.Drawing.Point(25, 48);
             this.lblCadastroTutor.Name = "lblCadastroTutor";
-            this.lblCadastroTutor.Size = new System.Drawing.Size(399, 13);
+            this.lblCadastroTutor.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.lblCadastroTutor.Size = new System.Drawing.Size(590, 31);
             this.lblCadastroTutor.TabIndex = 31;
             this.lblCadastroTutor.Text = "Mantenha o histórico e a situação de cada gato sempre atualizados";
             // 
             // lblTituloRegistroOcorrencia
             // 
             this.lblTituloRegistroOcorrencia.AutoSize = true;
+            this.lblTituloRegistroOcorrencia.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTituloRegistroOcorrencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloRegistroOcorrencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTituloRegistroOcorrencia.Location = new System.Drawing.Point(23, 21);
+            this.lblTituloRegistroOcorrencia.Location = new System.Drawing.Point(25, 20);
             this.lblTituloRegistroOcorrencia.Name = "lblTituloRegistroOcorrencia";
-            this.lblTituloRegistroOcorrencia.Size = new System.Drawing.Size(175, 20);
+            this.lblTituloRegistroOcorrencia.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.lblTituloRegistroOcorrencia.Size = new System.Drawing.Size(175, 28);
             this.lblTituloRegistroOcorrencia.TabIndex = 30;
             this.lblTituloRegistroOcorrencia.Text = "Registrar Ocorrência";
+            // 
+            // tlpConteudo
+            // 
+            this.tlpConteudo.AutoScroll = true;
+            this.tlpConteudo.ColumnCount = 1;
+            this.tlpConteudo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpConteudo.Controls.Add(this.pnlDetalhesOcorrência, 0, 2);
+            this.tlpConteudo.Controls.Add(this.pnlSelecaoGato, 0, 0);
+            this.tlpConteudo.Controls.Add(this.pnlMargemTipo, 0, 1);
+            this.tlpConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpConteudo.Location = new System.Drawing.Point(25, 79);
+            this.tlpConteudo.Name = "tlpConteudo";
+            this.tlpConteudo.RowCount = 3;
+            this.tlpConteudo.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpConteudo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpConteudo.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpConteudo.Size = new System.Drawing.Size(590, 693);
+            this.tlpConteudo.TabIndex = 35;
             // 
             // pnlSelecaoGato
             // 
             this.pnlSelecaoGato.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlSelecaoGato.Controls.Add(this.panel1);
-            this.pnlSelecaoGato.Controls.Add(this.txtMicrochip);
-            this.pnlSelecaoGato.Controls.Add(this.lblMicrochip);
-            this.pnlSelecaoGato.Controls.Add(this.lblSelecao);
-            this.pnlSelecaoGato.Location = new System.Drawing.Point(27, 82);
+            this.pnlSelecaoGato.Controls.Add(this.tlpSelecao);
+            this.pnlSelecaoGato.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSelecaoGato.Location = new System.Drawing.Point(3, 3);
             this.pnlSelecaoGato.Name = "pnlSelecaoGato";
-            this.pnlSelecaoGato.Size = new System.Drawing.Size(587, 116);
-            this.pnlSelecaoGato.TabIndex = 32;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.tlpInfos);
-            this.panel1.Controls.Add(this.pbFoto);
-            this.panel1.Location = new System.Drawing.Point(243, 14);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(6);
-            this.panel1.Size = new System.Drawing.Size(321, 85);
-            this.panel1.TabIndex = 37;
-            // 
-            // tlpInfos
-            // 
-            this.tlpInfos.ColumnCount = 2;
-            this.tlpInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tlpInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tlpInfos.Controls.Add(this.pnlDados, 0, 0);
-            this.tlpInfos.Controls.Add(this.pnlStatus, 1, 0);
-            this.tlpInfos.Location = new System.Drawing.Point(112, 6);
-            this.tlpInfos.Name = "tlpInfos";
-            this.tlpInfos.RowCount = 1;
-            this.tlpInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpInfos.Size = new System.Drawing.Size(200, 71);
-            this.tlpInfos.TabIndex = 5;
-            // 
-            // pnlDados
-            // 
-            this.pnlDados.Controls.Add(this.lblIdadeMicrochip);
-            this.pnlDados.Controls.Add(this.lblNome);
-            this.pnlDados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDados.Location = new System.Drawing.Point(3, 3);
-            this.pnlDados.Name = "pnlDados";
-            this.pnlDados.Size = new System.Drawing.Size(114, 65);
-            this.pnlDados.TabIndex = 0;
-            // 
-            // lblIdadeMicrochip
-            // 
-            this.lblIdadeMicrochip.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblIdadeMicrochip.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdadeMicrochip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(90)))), ((int)(((byte)(100)))));
-            this.lblIdadeMicrochip.Location = new System.Drawing.Point(0, 27);
-            this.lblIdadeMicrochip.Name = "lblIdadeMicrochip";
-            this.lblIdadeMicrochip.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.lblIdadeMicrochip.Size = new System.Drawing.Size(114, 34);
-            this.lblIdadeMicrochip.TabIndex = 4;
-            this.lblIdadeMicrochip.Text = "x anos . 12345";
-            this.lblIdadeMicrochip.Visible = false;
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblNome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(90)))), ((int)(((byte)(100)))));
-            this.lblNome.Location = new System.Drawing.Point(0, 0);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.lblNome.Size = new System.Drawing.Size(43, 27);
-            this.lblNome.TabIndex = 3;
-            this.lblNome.Text = "Nome";
-            this.lblNome.Visible = false;
-            // 
-            // pnlStatus
-            // 
-            this.pnlStatus.Controls.Add(this.lblStatus);
-            this.pnlStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlStatus.Location = new System.Drawing.Point(123, 3);
-            this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.pnlStatus.Size = new System.Drawing.Size(74, 65);
-            this.pnlStatus.TabIndex = 1;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblStatus.Location = new System.Drawing.Point(0, 20);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(74, 25);
-            this.lblStatus.TabIndex = 6;
-            this.lblStatus.Text = "Disponível";
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblStatus.Visible = false;
-            // 
-            // pbFoto
-            // 
-            this.pbFoto.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pbFoto.Location = new System.Drawing.Point(6, 6);
-            this.pbFoto.Name = "pbFoto";
-            this.pbFoto.Size = new System.Drawing.Size(100, 71);
-            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbFoto.TabIndex = 1;
-            this.pbFoto.TabStop = false;
-            this.pbFoto.Visible = false;
-            // 
-            // txtMicrochip
-            // 
-            this.txtMicrochip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
-            this.txtMicrochip.Location = new System.Drawing.Point(19, 57);
-            this.txtMicrochip.Multiline = true;
-            this.txtMicrochip.Name = "txtMicrochip";
-            this.txtMicrochip.Size = new System.Drawing.Size(203, 25);
-            this.txtMicrochip.TabIndex = 36;
-            this.txtMicrochip.TextChanged += new System.EventHandler(this.txtMicrochip_TextChanged);
-            // 
-            // lblMicrochip
-            // 
-            this.lblMicrochip.AutoSize = true;
-            this.lblMicrochip.BackColor = System.Drawing.Color.White;
-            this.lblMicrochip.Location = new System.Drawing.Point(19, 39);
-            this.lblMicrochip.Name = "lblMicrochip";
-            this.lblMicrochip.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lblMicrochip.Size = new System.Drawing.Size(110, 18);
-            this.lblMicrochip.TabIndex = 35;
-            this.lblMicrochip.Text = "Número do microchip:";
-            // 
-            // lblSelecao
-            // 
-            this.lblSelecao.AutoSize = true;
-            this.lblSelecao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
-            this.lblSelecao.Location = new System.Drawing.Point(19, 14);
-            this.lblSelecao.Name = "lblSelecao";
-            this.lblSelecao.Size = new System.Drawing.Size(123, 13);
-            this.lblSelecao.TabIndex = 34;
-            this.lblSelecao.Text = "1. SELECIONE O GATO";
-            // 
-            // pnlTipoOcorrência
-            // 
-            this.pnlTipoOcorrência.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlTipoOcorrência.Controls.Add(this.tlpTipos);
-            this.pnlTipoOcorrência.Controls.Add(this.lblTipo);
-            this.pnlTipoOcorrência.Location = new System.Drawing.Point(27, 217);
-            this.pnlTipoOcorrência.Name = "pnlTipoOcorrência";
-            this.pnlTipoOcorrência.Size = new System.Drawing.Size(587, 270);
-            this.pnlTipoOcorrência.TabIndex = 33;
-            // 
-            // tlpTipos
-            // 
-            this.tlpTipos.ColumnCount = 3;
-            this.tlpTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpTipos.Location = new System.Drawing.Point(22, 29);
-            this.tlpTipos.Name = "tlpTipos";
-            this.tlpTipos.RowCount = 2;
-            this.tlpTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTipos.Size = new System.Drawing.Size(542, 221);
-            this.tlpTipos.TabIndex = 35;
-            // 
-            // lblTipo
-            // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
-            this.lblTipo.Location = new System.Drawing.Point(19, 13);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(136, 13);
-            this.lblTipo.TabIndex = 34;
-            this.lblTipo.Text = "2. TIPO DE OCORRÊNCIA";
+            this.pnlSelecaoGato.Size = new System.Drawing.Size(584, 116);
+            this.pnlSelecaoGato.TabIndex = 33;
             // 
             // pnlDetalhesOcorrência
             // 
             this.pnlDetalhesOcorrência.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pnlDetalhesOcorrência.Controls.Add(this.panel2);
             this.pnlDetalhesOcorrência.Controls.Add(this.lblDetalhes);
-            this.pnlDetalhesOcorrência.Location = new System.Drawing.Point(27, 506);
+            this.pnlDetalhesOcorrência.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlDetalhesOcorrência.Location = new System.Drawing.Point(3, 424);
             this.pnlDetalhesOcorrência.Name = "pnlDetalhesOcorrência";
             this.pnlDetalhesOcorrência.Padding = new System.Windows.Forms.Padding(15);
-            this.pnlDetalhesOcorrência.Size = new System.Drawing.Size(587, 273);
-            this.pnlDetalhesOcorrência.TabIndex = 34;
+            this.pnlDetalhesOcorrência.Size = new System.Drawing.Size(584, 266);
+            this.pnlDetalhesOcorrência.TabIndex = 35;
             // 
             // panel2
             // 
@@ -289,7 +157,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(15, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(557, 220);
+            this.panel2.Size = new System.Drawing.Size(554, 213);
             this.panel2.TabIndex = 35;
             // 
             // btnLimpar
@@ -408,32 +276,256 @@
             this.lblDetalhes.TabIndex = 34;
             this.lblDetalhes.Text = "3. DETALHES DA OCORRÊNCIA";
             // 
+            // pnlMargemTipo
+            // 
+            this.pnlMargemTipo.Controls.Add(this.pnlTipoOcorrência);
+            this.pnlMargemTipo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMargemTipo.Location = new System.Drawing.Point(3, 125);
+            this.pnlMargemTipo.Name = "pnlMargemTipo";
+            this.pnlMargemTipo.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
+            this.pnlMargemTipo.Size = new System.Drawing.Size(584, 293);
+            this.pnlMargemTipo.TabIndex = 36;
+            // 
+            // pnlTipoOcorrência
+            // 
+            this.pnlTipoOcorrência.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlTipoOcorrência.Controls.Add(this.tlpTipos);
+            this.pnlTipoOcorrência.Controls.Add(this.lblTipo);
+            this.pnlTipoOcorrência.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTipoOcorrência.Location = new System.Drawing.Point(0, 12);
+            this.pnlTipoOcorrência.Name = "pnlTipoOcorrência";
+            this.pnlTipoOcorrência.Padding = new System.Windows.Forms.Padding(15);
+            this.pnlTipoOcorrência.Size = new System.Drawing.Size(584, 269);
+            this.pnlTipoOcorrência.TabIndex = 35;
+            // 
+            // tlpTipos
+            // 
+            this.tlpTipos.ColumnCount = 3;
+            this.tlpTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpTipos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTipos.Location = new System.Drawing.Point(15, 38);
+            this.tlpTipos.Name = "tlpTipos";
+            this.tlpTipos.RowCount = 2;
+            this.tlpTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTipos.Size = new System.Drawing.Size(554, 216);
+            this.tlpTipos.TabIndex = 35;
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
+            this.lblTipo.Location = new System.Drawing.Point(15, 15);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.lblTipo.Size = new System.Drawing.Size(136, 23);
+            this.lblTipo.TabIndex = 34;
+            this.lblTipo.Text = "2. TIPO DE OCORRÊNCIA";
+            // 
+            // tlpSelecao
+            // 
+            this.tlpSelecao.ColumnCount = 2;
+            this.tlpSelecao.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.13014F));
+            this.tlpSelecao.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.86986F));
+            this.tlpSelecao.Controls.Add(this.pnlCampo, 0, 0);
+            this.tlpSelecao.Controls.Add(this.pnlConteudoCard, 1, 0);
+            this.tlpSelecao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpSelecao.Location = new System.Drawing.Point(0, 0);
+            this.tlpSelecao.Name = "tlpSelecao";
+            this.tlpSelecao.RowCount = 1;
+            this.tlpSelecao.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpSelecao.Size = new System.Drawing.Size(584, 116);
+            this.tlpSelecao.TabIndex = 38;
+            // 
+            // pnlCampo
+            // 
+            this.pnlCampo.Controls.Add(this.txtMicrochip);
+            this.pnlCampo.Controls.Add(this.lblMicrochip);
+            this.pnlCampo.Controls.Add(this.lblSelecao);
+            this.pnlCampo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCampo.Location = new System.Drawing.Point(3, 3);
+            this.pnlCampo.Name = "pnlCampo";
+            this.pnlCampo.Padding = new System.Windows.Forms.Padding(15, 15, 8, 0);
+            this.pnlCampo.Size = new System.Drawing.Size(205, 110);
+            this.pnlCampo.TabIndex = 40;
+            // 
+            // txtMicrochip
+            // 
+            this.txtMicrochip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.txtMicrochip.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtMicrochip.Location = new System.Drawing.Point(15, 56);
+            this.txtMicrochip.Multiline = true;
+            this.txtMicrochip.Name = "txtMicrochip";
+            this.txtMicrochip.Size = new System.Drawing.Size(182, 25);
+            this.txtMicrochip.TabIndex = 39;
+            this.txtMicrochip.TextChanged += new System.EventHandler(this.txtMicrochip_TextChanged);
+            // 
+            // lblMicrochip
+            // 
+            this.lblMicrochip.AutoSize = true;
+            this.lblMicrochip.BackColor = System.Drawing.Color.White;
+            this.lblMicrochip.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblMicrochip.Location = new System.Drawing.Point(15, 38);
+            this.lblMicrochip.Name = "lblMicrochip";
+            this.lblMicrochip.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lblMicrochip.Size = new System.Drawing.Size(110, 18);
+            this.lblMicrochip.TabIndex = 38;
+            this.lblMicrochip.Text = "Número do microchip:";
+            // 
+            // lblSelecao
+            // 
+            this.lblSelecao.AutoSize = true;
+            this.lblSelecao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSelecao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
+            this.lblSelecao.Location = new System.Drawing.Point(15, 15);
+            this.lblSelecao.Name = "lblSelecao";
+            this.lblSelecao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.lblSelecao.Size = new System.Drawing.Size(123, 23);
+            this.lblSelecao.TabIndex = 37;
+            this.lblSelecao.Text = "1. SELECIONE O GATO";
+            // 
+            // pnlConteudoCard
+            // 
+            this.pnlConteudoCard.Controls.Add(this.panel1);
+            this.pnlConteudoCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlConteudoCard.Location = new System.Drawing.Point(214, 3);
+            this.pnlConteudoCard.Name = "pnlConteudoCard";
+            this.pnlConteudoCard.Padding = new System.Windows.Forms.Padding(10, 15, 15, 15);
+            this.pnlConteudoCard.Size = new System.Drawing.Size(367, 110);
+            this.pnlConteudoCard.TabIndex = 41;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.tlpInfos);
+            this.panel1.Controls.Add(this.pbFoto);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(10, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(6);
+            this.panel1.Size = new System.Drawing.Size(342, 80);
+            this.panel1.TabIndex = 42;
+            // 
+            // tlpInfos
+            // 
+            this.tlpInfos.ColumnCount = 2;
+            this.tlpInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tlpInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tlpInfos.Controls.Add(this.pnlDados, 0, 0);
+            this.tlpInfos.Controls.Add(this.pnlStatus, 1, 0);
+            this.tlpInfos.Location = new System.Drawing.Point(112, 6);
+            this.tlpInfos.Name = "tlpInfos";
+            this.tlpInfos.RowCount = 1;
+            this.tlpInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpInfos.Size = new System.Drawing.Size(221, 71);
+            this.tlpInfos.TabIndex = 5;
+            // 
+            // pnlDados
+            // 
+            this.pnlDados.Controls.Add(this.lblIdadeMicrochip);
+            this.pnlDados.Controls.Add(this.lblNome);
+            this.pnlDados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDados.Location = new System.Drawing.Point(3, 3);
+            this.pnlDados.Name = "pnlDados";
+            this.pnlDados.Size = new System.Drawing.Size(126, 65);
+            this.pnlDados.TabIndex = 0;
+            // 
+            // lblIdadeMicrochip
+            // 
+            this.lblIdadeMicrochip.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblIdadeMicrochip.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdadeMicrochip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(90)))), ((int)(((byte)(100)))));
+            this.lblIdadeMicrochip.Location = new System.Drawing.Point(0, 27);
+            this.lblIdadeMicrochip.Name = "lblIdadeMicrochip";
+            this.lblIdadeMicrochip.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.lblIdadeMicrochip.Size = new System.Drawing.Size(126, 34);
+            this.lblIdadeMicrochip.TabIndex = 4;
+            this.lblIdadeMicrochip.Text = "x anos . 12345";
+            this.lblIdadeMicrochip.Visible = false;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblNome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(90)))), ((int)(((byte)(100)))));
+            this.lblNome.Location = new System.Drawing.Point(0, 0);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.lblNome.Size = new System.Drawing.Size(43, 27);
+            this.lblNome.TabIndex = 3;
+            this.lblNome.Text = "Nome";
+            this.lblNome.Visible = false;
+            // 
+            // pnlStatus
+            // 
+            this.pnlStatus.Controls.Add(this.lblStatus);
+            this.pnlStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlStatus.Location = new System.Drawing.Point(135, 3);
+            this.pnlStatus.Name = "pnlStatus";
+            this.pnlStatus.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
+            this.pnlStatus.Size = new System.Drawing.Size(83, 65);
+            this.pnlStatus.TabIndex = 1;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblStatus.Location = new System.Drawing.Point(0, 20);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(83, 25);
+            this.lblStatus.TabIndex = 6;
+            this.lblStatus.Text = "Disponível";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatus.Visible = false;
+            // 
+            // pbFoto
+            // 
+            this.pbFoto.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbFoto.Location = new System.Drawing.Point(6, 6);
+            this.pbFoto.Name = "pbFoto";
+            this.pbFoto.Size = new System.Drawing.Size(100, 66);
+            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFoto.TabIndex = 1;
+            this.pbFoto.TabStop = false;
+            this.pbFoto.Visible = false;
+            // 
             // ucOcorrencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.Controls.Add(this.pnlDetalhesOcorrência);
-            this.Controls.Add(this.pnlTipoOcorrência);
-            this.Controls.Add(this.pnlSelecaoGato);
+            this.Controls.Add(this.tlpConteudo);
             this.Controls.Add(this.lblCadastroTutor);
             this.Controls.Add(this.lblTituloRegistroOcorrencia);
             this.Name = "ucOcorrencia";
-            this.Size = new System.Drawing.Size(640, 804);
+            this.Padding = new System.Windows.Forms.Padding(25, 20, 25, 20);
+            this.Size = new System.Drawing.Size(640, 792);
+            this.tlpConteudo.ResumeLayout(false);
             this.pnlSelecaoGato.ResumeLayout(false);
-            this.pnlSelecaoGato.PerformLayout();
+            this.pnlDetalhesOcorrência.ResumeLayout(false);
+            this.pnlDetalhesOcorrência.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.pnlMargemTipo.ResumeLayout(false);
+            this.pnlTipoOcorrência.ResumeLayout(false);
+            this.pnlTipoOcorrência.PerformLayout();
+            this.tlpSelecao.ResumeLayout(false);
+            this.pnlCampo.ResumeLayout(false);
+            this.pnlCampo.PerformLayout();
+            this.pnlConteudoCard.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tlpInfos.ResumeLayout(false);
             this.pnlDados.ResumeLayout(false);
             this.pnlDados.PerformLayout();
             this.pnlStatus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
-            this.pnlTipoOcorrência.ResumeLayout(false);
-            this.pnlTipoOcorrência.PerformLayout();
-            this.pnlDetalhesOcorrência.ResumeLayout(false);
-            this.pnlDetalhesOcorrência.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,33 +535,38 @@
 
         private System.Windows.Forms.Label lblCadastroTutor;
         private System.Windows.Forms.Label lblTituloRegistroOcorrencia;
-        private System.Windows.Forms.Panel pnlSelecaoGato;
-        private System.Windows.Forms.Panel pnlTipoOcorrência;
+        private System.Windows.Forms.TableLayoutPanel tlpConteudo;
         private System.Windows.Forms.Panel pnlDetalhesOcorrência;
-        private System.Windows.Forms.Label lblSelecao;
-        private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.Label lblDetalhes;
-        private System.Windows.Forms.TextBox txtMicrochip;
-        private System.Windows.Forms.Label lblMicrochip;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel tlpTipos;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dtpDataOcorrencia;
-        private System.Windows.Forms.Label lblData;
-        private System.Windows.Forms.TextBox txtLocal;
-        private System.Windows.Forms.Label lblLocal;
-        private System.Windows.Forms.TextBox txtResponsavel;
-        private System.Windows.Forms.Label lblResponsavel;
-        private System.Windows.Forms.TextBox txtMotivo;
-        private System.Windows.Forms.Label lblMotivo;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvarOcorrencia;
-        private System.Windows.Forms.PictureBox pbFoto;
+        private System.Windows.Forms.TextBox txtMotivo;
+        private System.Windows.Forms.Label lblMotivo;
+        private System.Windows.Forms.TextBox txtResponsavel;
+        private System.Windows.Forms.Label lblResponsavel;
+        private System.Windows.Forms.TextBox txtLocal;
+        private System.Windows.Forms.Label lblLocal;
+        private System.Windows.Forms.DateTimePicker dtpDataOcorrencia;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Label lblDetalhes;
+        private System.Windows.Forms.Panel pnlSelecaoGato;
+        private System.Windows.Forms.Panel pnlMargemTipo;
+        private System.Windows.Forms.Panel pnlTipoOcorrência;
+        private System.Windows.Forms.TableLayoutPanel tlpTipos;
+        private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.TableLayoutPanel tlpSelecao;
+        private System.Windows.Forms.Panel pnlCampo;
+        private System.Windows.Forms.TextBox txtMicrochip;
+        private System.Windows.Forms.Label lblMicrochip;
+        private System.Windows.Forms.Label lblSelecao;
+        private System.Windows.Forms.Panel pnlConteudoCard;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tlpInfos;
         private System.Windows.Forms.Panel pnlDados;
         private System.Windows.Forms.Label lblIdadeMicrochip;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Panel pnlStatus;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.PictureBox pbFoto;
     }
 }
