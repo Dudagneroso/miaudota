@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace miaudota
 {
-    internal class RepositorioTutoresFake
+    internal class RepositorioTutores
     {
         /*public static List<Tutor> ObterTodos()
         {
@@ -21,8 +22,10 @@ namespace miaudota
         }*/
         private static readonly List<Gato> gatos;
         private static readonly List<Tutor> tutores;
+        private static List<Tutor> pendentesInserir = new List<Tutor>();
+        private const int LIMITE = 5;
 
-        static RepositorioTutoresFake()
+        static RepositorioTutores()
         {
             gatos = RepositorioGatosFake.ObterTodos();
             tutores = new List<Tutor>
@@ -33,14 +36,36 @@ namespace miaudota
             };
         }
 
+
         public static List<Tutor> ObterTodos()
         {
+            /*
+            if (tutores == null)
+            {
+                tutores = LerDoBanco();
+            }
+            */
             return tutores;
         }
+
 
         public static void Adicionar(Tutor tutor)
         {
             tutores.Add(tutor);
+            pendentesInserir.Add(tutor);
+
+            if (pendentesInserir.Count >= LIMITE)
+            {
+                Sincronizar();
+            }
+        }
+
+        public static void Sincronizar()
+        {
+            foreach (Tutor t in pendentesInserir.ToList())
+            {
+                pendentesInserir.Remove(t);
+            }
         }
 
         public static void Excluir(Tutor tutor)

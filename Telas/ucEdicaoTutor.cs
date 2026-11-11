@@ -99,7 +99,7 @@ namespace miaudota.Telas
 
             if (resultado == DialogResult.Yes)
             {
-                RepositorioTutoresFake.Excluir(tutorAtual);
+                RepositorioTutores.Excluir(tutorAtual);
 
                 MessageBox.Show("Tutor excluído com sucesso!");
 
@@ -138,7 +138,7 @@ namespace miaudota.Telas
             }
 
             // 2. guardar no repositório de tutores
-            RepositorioTutoresFake.Atualizar(tutorAtual);
+            RepositorioTutores.Atualizar(tutorAtual);
 
             // 3. Mensagem de Sucesso
             MessageBox.Show("Os dados do tutor foram atualizados com sucesso!");

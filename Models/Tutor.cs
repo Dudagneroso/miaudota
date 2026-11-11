@@ -128,29 +128,62 @@ namespace miaudota
         public string Cidade
         {
             get { return cidade; }
-            set { cidade = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Preencha a cidade.");
+                }
+                cidade = value; 
+            }
         }
         public string Estado
         {
             get { return estado; }
-            set { estado = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Preencha o estado.");
+                }
+                estado = value; 
+            }
         }
         public string Logradouro
         {
             get { return logradouro; }
-            set { logradouro = value; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Preencha o logradouro.");
+                }
+                logradouro = value;
+            }
         }
         public string Bairro
         {
             get { return bairro; }
-            set { bairro = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Preencha o bairro.");
+                }
+                bairro = value; 
+            }
         }
         public int Numero
         {
             get { return numero; }
             set 
             {
-                if(value < 0)
+                if (string.IsNullOrWhiteSpace(value.ToString()))
+                {
+                    throw new ArgumentException("Preencha o número da residência.");
+                }
+
+                if (value < 0)
                 {
                     throw new ArgumentException("O número da residência não pode ser negativo.");
                 }

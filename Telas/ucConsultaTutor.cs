@@ -15,7 +15,7 @@ namespace miaudota.Telas
         public ucConsultaTutor()
         {
             InitializeComponent();
-            dgvTutores.DataSource = RepositorioTutoresFake.ObterTodos();
+            dgvTutores.DataSource = RepositorioTutores.ObterTodos();
             dgvTutores.RowTemplate.Height = 60;
         }
 

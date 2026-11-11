@@ -39,15 +39,25 @@ namespace miaudota
 
         private async void ucCadastroGato_Load(object sender, EventArgs e)
         {
-            await wvMapa.EnsureCoreWebView2Async();
-            // mapear a pasta Mapa para um endereço virtual
-            wvMapa.CoreWebView2.SetVirtualHostNameToFolderMapping("miaudota.local", Path.Combine(Application.StartupPath, "Mapa"), CoreWebView2HostResourceAccessKind.Allow);
-            // assinar o evento WebMessageReceived
-            wvMapa.CoreWebView2.WebMessageReceived += RegistrarLocal;
-            // navegar para a página
-            wvMapa.CoreWebView2.Navigate("https://miaudota.local/mapa.html");
+            try
+            {
 
-            cbStatus.SelectedIndex = 0;
+                CarregarLaresTemporarios();
+
+                await wvMapa.EnsureCoreWebView2Async();
+                // mapear a pasta Mapa para um endereço virtual
+                wvMapa.CoreWebView2.SetVirtualHostNameToFolderMapping("miaudota.local", Path.Combine(Application.StartupPath, "Mapa"), CoreWebView2HostResourceAccessKind.Allow);
+                // assinar o evento WebMessageReceived
+                wvMapa.CoreWebView2.WebMessageReceived += RegistrarLocal;
+                // navegar para a página
+                wvMapa.CoreWebView2.Navigate("https://miaudota.local/mapa.html");
+
+                cbStatus.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inicializar a tela: " + ex.Message);
+            }
         }
 
         private void RegistrarLocal(object sender, CoreWebView2WebMessageReceivedEventArgs e)
@@ -79,6 +89,21 @@ namespace miaudota
         {
             pnlVacinasTomadas.Visible = rbVacinado.Checked || rbNaoVacinado.Checked;
         }
+        private void CarregarLaresTemporarios()
+        {
+            try
+            {
+                cbLarTemporario.DataSource = RepositorioLaresTemporarios.ObterTodos();
+                cbLarTemporario.DisplayMember = "TextoExibicao";
+                cbLarTemporario.ValueMember = "Id";
+
+                cbLarTemporario.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar os lares temporários: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void LimparFormulario()
         {
@@ -90,7 +115,7 @@ namespace miaudota
             cbPelagem.SelectedIndex = -1;
             cbColoracao.SelectedIndex = -1;
             txtPeso.Clear();
-            txtLarTemporario.Clear();
+            cbLarTemporario.SelectedIndex = -1;
             rbCastrado.Checked = false;
             rbNaoCastrado.Checked = false;
             rbVacinado.Checked = false;
@@ -128,7 +153,7 @@ namespace miaudota
                     Pelagem = cbPelagem.Text,
                     Coloracao = cbColoracao.Text,
                     Peso = float.TryParse(txtPeso.Text, out float peso) ? peso : 0,
-                    LarTemporario = txtLarTemporario.Text,
+                    IdLarTemporario = cbLarTemporario.SelectedValue == null? (int?)null : Convert.ToInt32(cbLarTemporario.SelectedValue),
                     Castrado = rbCastrado.Checked ? "Sim" : "Não",
                     VacinasEmDia = rbVacinado.Checked ? "Sim" : "Não",
                     Vacinas = clbVacinas.CheckedItems.Cast<string>().ToList(),
@@ -146,7 +171,7 @@ namespace miaudota
                 };
 
                 // 2. guardar no repositório e gatos
-                RepositorioGatosFake.Adicionar(gato);
+                RepositorioGatos.Adicionar(gato);
 
                 // 3. Mensagem de Sucesso
                 MessageBox.Show("Gato cadastrado com sucesso!");

@@ -72,7 +72,7 @@ namespace miaudota.Telas
                 tutor.AdotarGato(gatoSelecionado);
 
                 // 2. guardar no repositório de tutores
-                RepositorioTutoresFake.Adicionar(tutor);
+                RepositorioTutores.Adicionar(tutor);
 
                 // 3. Mensagem de Sucesso
                 MessageBox.Show("Tutor cadastrado com sucesso!");

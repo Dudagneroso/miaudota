@@ -241,5 +241,8 @@ namespace miaudota
             set { dataAdocao = value; }
         }
 
+        public int? IdLarTemporario { get; set; }
+
+
     }
 }
