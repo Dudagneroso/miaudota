@@ -70,7 +70,7 @@ namespace miaudota.Telas
                 return;
             }
 
-            Gato gato = RepositorioGatosFake.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
+            Gato gato = RepositorioGatos.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
 
             if (gato == null)
             {

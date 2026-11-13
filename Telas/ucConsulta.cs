@@ -15,9 +15,13 @@ namespace miaudota
         public ucConsulta()
         {
             InitializeComponent();
+        }
 
-            List<Gato> listaDeGatos = RepositorioGatosFake.ObterTodos();
-            
+        private void ucConsulta_Load(object sender, EventArgs e)
+        {
+            cbxFiltro.SelectedIndex = 0;
+            List<Gato> listaDeGatos = RepositorioGatos.ObterTodos();
+
             int indice = 0;
 
             foreach (Gato gatoAtual in listaDeGatos)
@@ -29,11 +33,6 @@ namespace miaudota
                 tlpGatos.Controls.Add(cartao, indice % 3, indice / 3);
                 indice++;
             }
-        }
-
-        private void ucConsulta_Load(object sender, EventArgs e)
-        {
-            cbxFiltro.SelectedIndex = 0;
         }
     }
 }

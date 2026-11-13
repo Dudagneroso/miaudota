@@ -130,7 +130,6 @@
     <Compile Include="Models\Gato.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Dados\RepositorioGatosFake.cs" />
     <Compile Include="Telas\ucCadastroLar.cs">
       <SubType>UserControl</SubType>
     </Compile>

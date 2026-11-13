@@ -15,8 +15,6 @@ namespace miaudota.Telas
         public ucConsultaGatos1()
         {
             InitializeComponent();
-            dgvGatos.DataSource = RepositorioGatosFake.ObterTodos();
-            dgvGatos.RowTemplate.Height = 60;
         }
 
         private void dgvGatos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -36,6 +34,8 @@ namespace miaudota.Telas
         private void ucConsultaGatos1_Load(object sender, EventArgs e)
         {
             cbFiltroGatos.SelectedIndex = 0;
+            dgvGatos.DataSource = RepositorioGatos.ObterTodos();
+            dgvGatos.RowTemplate.Height = 60;
         }
     }
 }

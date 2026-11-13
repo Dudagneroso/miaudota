@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +18,26 @@ namespace miaudota.Telas
         public ucCadastroTutor()
         {
             InitializeComponent();
-
-            dgvGatos.DataSource = RepositorioGatosFake.ObterTodos();
+            Load += ucCadastroTutor_Load;
+            //dgvGatos.DataSource = RepositorioGatosFake.ObterTodos();
         }
 
+        private void CarregarGatos()
+        {
+            try
+            {
+                dgvGatos.DataSource = RepositorioGatos.ObterDisponiveis();
+
+                if (dgvGatos.Columns["Id"] != null)
+                {
+                    dgvGatos.Columns["Id"].Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar os gatos: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void dgvGatos_SelectionChanged(object sender, EventArgs e)
         {
@@ -72,13 +89,22 @@ namespace miaudota.Telas
                 tutor.AdotarGato(gatoSelecionado);
 
                 // 2. guardar no repositório de tutores
-                RepositorioTutores.Adicionar(tutor);
+                RepositorioTutores.Adicionar(tutor, gatoSelecionado);
 
                 // 3. Mensagem de Sucesso
                 MessageBox.Show("Tutor cadastrado com sucesso!");
 
                 // 4. limpar o formulário
                 LimparFormulario();
+                CarregarGatos();
+            }
+            catch (MySqlException ex) when (ex.Number == 1062)
+            {
+                MessageBox.Show("Já existe um tutor cadastrado com esse CPF.", "CPF duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Erro no banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (FormatException)
             {
@@ -99,5 +125,9 @@ namespace miaudota.Telas
             LimparFormulario();
         }
 
+        private void ucCadastroTutor_Load(object sender, EventArgs e)
+        {
+            CarregarGatos();
+        }
     }
 }

@@ -211,6 +211,7 @@ namespace miaudota
             set { dataAdocao = value; }
         }
 
+        public int Id { get; set; }
         public void AdotarGato(Gato gato)
         {
             if (gato == null)

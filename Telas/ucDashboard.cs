@@ -66,7 +66,7 @@ namespace miaudota.Telas
 
         private void AtualizarIndicadoresGatos()
         {
-            List<Gato> todosGatos = RepositorioGatosFake.ObterTodos();
+            List<Gato> todosGatos = RepositorioGatos.ObterTodos();
 
             DateTime? inicio = ObterPeriodo();
             DateTime? fim = ObterFimPeriodo();
@@ -126,7 +126,7 @@ namespace miaudota.Telas
 
         private void AtualizarGraficoEntradasAdocoes()
         {
-            List<Gato> todosGatos = RepositorioGatosFake.ObterTodos();
+            List<Gato> todosGatos = RepositorioGatos.ObterTodos();
 
             DateTime hoje = DateTime.Today;
 
@@ -327,7 +327,7 @@ namespace miaudota.Telas
         private async Task AtualizarMapaCalor()
         {
             // Buscar gatos cadastrados
-            List<Gato> gatos = RepositorioGatosFake.ObterTodos();
+            List<Gato> gatos = RepositorioGatos.ObterTodos();
 
             // Selecionar somente gatos com local de resgate
             var gatosComLocal = gatos

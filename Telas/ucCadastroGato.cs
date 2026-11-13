@@ -15,7 +15,7 @@ namespace miaudota
 {
     public partial class ucCadastroGato : UserControl
     {
-        string caminhoFotoSelecionada = string.Empty;
+        byte[] imagemSelecionada = null;
         string nomeGato = string.Empty;
 
         public ucCadastroGato()
@@ -28,8 +28,14 @@ namespace miaudota
         {
             if (ofdFoto.ShowDialog() == DialogResult.OK)
             {
-                pbFotoGato.Image = Image.FromFile(ofdFoto.FileName);
-                caminhoFotoSelecionada = ofdFoto.FileName;
+                imagemSelecionada = File.ReadAllBytes(ofdFoto.FileName);
+
+                using (MemoryStream ms = new MemoryStream(imagemSelecionada))
+                using (Image imagemTemporaria = Image.FromStream(ms))
+                {
+                    pbFotoGato.Image?.Dispose();
+                    pbFotoGato.Image = new Bitmap(imagemTemporaria);
+                }
             }
         }
 
@@ -120,13 +126,19 @@ namespace miaudota
             rbNaoCastrado.Checked = false;
             rbVacinado.Checked = false;
             rbNaoVacinado.Checked = false;
+            for (int i = 0; i < clbVacinas.Items.Count; i++)
+            {
+                clbVacinas.SetItemChecked(i, false);
+            }
             cbStatus.SelectedIndex = -1;
             cbFIV.SelectedIndex = -1;
             cbFELV.SelectedIndex = -1;
             txtDeficiencias.Clear();
             txtObservacao.Clear();
             dtpDataEntrada.Value = DateTime.Now;
-            caminhoFotoSelecionada = string.Empty;
+            imagemSelecionada = null;
+            pbFotoGato.Image?.Dispose();
+            pbFotoGato.Image = null;
             rbSimLocal.Checked = false;
             rbNaoLocal.Checked = false;
             latitudeSelecionada = null;
@@ -134,6 +146,8 @@ namespace miaudota
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            int pendentesAntes = RepositorioGatos.QuantidadePendente();
+
             try
             {
                 // validar se o local de resgate foi selecionado
@@ -163,7 +177,7 @@ namespace miaudota
                     Doencas = txtDeficiencias.Text,
                     Observacoes = txtObservacao.Text,
                     DataChegadaOng = dtpDataEntrada.Value,
-                    CaminhoFoto = caminhoFotoSelecionada,
+                    Foto = imagemSelecionada,
                     LocalResgate = rbSimLocal.Checked ? "Sim" : "Não",
                     Latitude = latitudeSelecionada,
                     Longitude = longitudeSelecionada,

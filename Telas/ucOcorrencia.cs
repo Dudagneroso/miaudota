@@ -90,7 +90,7 @@ namespace miaudota.Telas
 
         private void txtMicrochip_TextChanged(object sender, EventArgs e)
         {
-            Gato gato = RepositorioGatosFake.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
+            Gato gato = RepositorioGatos.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
 
             // Verifica se o campo do microchip não está vazio ou apenas com espaços
             bool temMicrochip = !string.IsNullOrWhiteSpace(txtMicrochip.Text);
@@ -121,7 +121,7 @@ namespace miaudota.Telas
 
         private void btnSalvarOcorrencia_Click(object sender, EventArgs e)
         {
-            Gato gato = RepositorioGatosFake.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
+            Gato gato = RepositorioGatos.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
 
             try
             {
