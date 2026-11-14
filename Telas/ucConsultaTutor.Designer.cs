@@ -113,8 +113,8 @@
             // 
             // pnlConteudo
             // 
-            this.pnlConteudo.Controls.Add(this.lblQtdTutores);
             this.pnlConteudo.Controls.Add(this.dgvTutores);
+            this.pnlConteudo.Controls.Add(this.lblQtdTutores);
             this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlConteudo.Location = new System.Drawing.Point(0, 111);
             this.pnlConteudo.Name = "pnlConteudo";
@@ -125,6 +125,7 @@
             // lblQtdTutores
             // 
             this.lblQtdTutores.AutoSize = true;
+            this.lblQtdTutores.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblQtdTutores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQtdTutores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(160)))), ((int)(((byte)(180)))));
             this.lblQtdTutores.Location = new System.Drawing.Point(20, 655);
@@ -166,6 +167,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(141)))), ((int)(((byte)(159)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTutores.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTutores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTutores.EnableHeadersVisualStyles = false;
             this.dgvTutores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(236)))));
             this.dgvTutores.Location = new System.Drawing.Point(20, 20);
@@ -173,7 +175,7 @@
             this.dgvTutores.ReadOnly = true;
             this.dgvTutores.RowHeadersVisible = false;
             this.dgvTutores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTutores.Size = new System.Drawing.Size(597, 628);
+            this.dgvTutores.Size = new System.Drawing.Size(597, 635);
             this.dgvTutores.TabIndex = 0;
             this.dgvTutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTutores_CellClick);
             // 
@@ -185,6 +187,7 @@
             this.Controls.Add(this.pnlFiltros);
             this.Name = "ucConsultaTutor";
             this.Size = new System.Drawing.Size(637, 799);
+            this.Load += new System.EventHandler(this.ucConsultaTutor_Load);
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
             this.pnlConteudo.ResumeLayout(false);
