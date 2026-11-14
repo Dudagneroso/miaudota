@@ -34,6 +34,7 @@ namespace miaudota.Telas
         {
             try
             {
+                lblQtdTutores.Text = $"{RepositorioTutores.ObterTodos().Count.ToString()} tutor(es)";
                 dgvTutores.RowTemplate.Height = 60;
                 dgvTutores.DataError += dgvTutores_DataError;
                 dgvTutores.DataSource = RepositorioTutores.ObterTodos();

@@ -102,5 +102,10 @@ namespace miaudota
             AbrirTela(new ucCadastroLar());
         }
 
-      }
+        private void llblSair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DialogResult resposta = MessageBox.Show("Deseja realmente sair e voltar para a tela de login?", "Confirmar Saída", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+        }
+    }
 }
