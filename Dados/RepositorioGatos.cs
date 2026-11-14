@@ -476,7 +476,7 @@ namespace miaudota
             return lista;
         }
 
-        private static void SincronizarComAviso()
+        internal static void SincronizarComAviso()
         {
             try
             {

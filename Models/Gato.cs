@@ -241,9 +241,14 @@ namespace miaudota
             set { dataAdocao = value; }
         }
 
-        public int? IdLarTemporario { get; set; }
-        public byte[] Foto { get; set; }
-        public int Id { get; set; }
+        public int? IdLarTemporario 
+        { get; set; }
+
+        public byte[] Foto 
+        { get; set; }
+
+        public int Id 
+        { get; set; }
 
 
     }

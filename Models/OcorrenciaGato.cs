@@ -69,7 +69,14 @@ namespace miaudota
         public string Responsavel
         {
             get { return responsavel; }
-            set { responsavel = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Digite o nome do responsável.");
+                }
+                responsavel = value; 
+            }
         }
         public string Descricao
         {

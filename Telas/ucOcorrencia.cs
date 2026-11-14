@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -152,8 +153,16 @@ namespace miaudota.Telas
             {
                 MessageBox.Show(ex.Message, "Dado inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Ocorrência não registrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Erro no banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            
+
         }
     }
 }
