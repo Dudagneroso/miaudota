@@ -69,6 +69,7 @@
             this.cbxFiltro.Name = "cbxFiltro";
             this.cbxFiltro.Size = new System.Drawing.Size(173, 26);
             this.cbxFiltro.TabIndex = 1;
+            this.cbxFiltro.SelectedIndexChanged += new System.EventHandler(this.cbxFiltro_SelectedIndexChanged);
             // 
             // lblBemVindo
             // 

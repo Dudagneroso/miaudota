@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,18 @@ namespace miaudota.Telas
         public ucEdicaoTutor()
         {
             InitializeComponent();
+        }
+
+        private void RecarregarGatosDoBanco()
+        {
+            tutorAtual.Gatos.Clear();
+
+            foreach (Gato adotado in RepositorioGatos.ObterAdotadosPorTutor(tutorAtual.Id))
+            {
+                tutorAtual.Gatos.Add(adotado);
+            }
+
+            AtualizarGatosAdotados();
         }
 
         public void CarregarTutor(Tutor tutor)
@@ -37,7 +50,7 @@ namespace miaudota.Telas
             cbPets.Text = tutor.OutrosAnimais;
             tutorAtual = tutor;
 
-            AtualizarGatosAdotados();
+            RecarregarGatosDoBanco();
         }
 
         private void AtualizarGatosAdotados()
@@ -62,6 +75,8 @@ namespace miaudota.Telas
 
         private void txtMicrochip_TextChanged(object sender, EventArgs e)
         {
+            Gato gato = RepositorioGatos.ObterPorMicrochip(txtMicrochip.Text.Trim());
+
             gatoParaVincular = null;
 
             if (string.IsNullOrWhiteSpace(txtMicrochip.Text))
@@ -70,7 +85,6 @@ namespace miaudota.Telas
                 return;
             }
 
-            Gato gato = RepositorioGatos.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
 
             if (gato == null)
             {
@@ -109,39 +123,62 @@ namespace miaudota.Telas
 
         private void btnSalvarTutor_Click(object sender, EventArgs e)
         {
-            // 1. montar o objeto Tutor com os dados da tela
-            tutorAtual.Nome = txtNome.Text;
-            tutorAtual.CPF = txtCPF.Text;
-            tutorAtual.Telefone = txtTelefone.Text;
-            tutorAtual.DataNascimento = dtpDataNascimento.Value;
-            tutorAtual.Email = txtEmail.Text;
-            tutorAtual.CEP = txtCep.Text;
-            tutorAtual.Cidade = txtCidade.Text;
-            tutorAtual.Estado = txtEstado.Text;
-            tutorAtual.Logradouro = txtLogradouro.Text;
-            tutorAtual.Bairro = txtBairro.Text;
-            tutorAtual.Numero = int.Parse(txtNumero.Text);
-            tutorAtual.TipoResidencia = cbTipoMoradia.SelectedItem?.ToString();
-            tutorAtual.OutrosAnimais = cbPets.SelectedItem?.ToString();
-
-            if (gatoParaVincular != null)
+            try
             {
-                tutorAtual.Gatos.Add(gatoParaVincular);
-                gatoParaVincular.Status = "Adotado";
-                tutorAtual.DataAdocao = DateTime.Today;
+                // 1. atualizar o objeto com os dados da tela
+                tutorAtual.Nome = txtNome.Text;
+                tutorAtual.CPF = txtCPF.Text;
+                tutorAtual.Telefone = txtTelefone.Text;
+                tutorAtual.DataNascimento = dtpDataNascimento.Value;
+                tutorAtual.Email = txtEmail.Text;
+                tutorAtual.CEP = txtCep.Text;
+                tutorAtual.Cidade = txtCidade.Text;
+                tutorAtual.Estado = txtEstado.Text;
+                tutorAtual.Logradouro = txtLogradouro.Text;
+                tutorAtual.Bairro = txtBairro.Text;
+                tutorAtual.Numero = int.Parse(txtNumero.Text);
+                tutorAtual.TipoResidencia = cbTipoMoradia.Text;
+                tutorAtual.OutrosAnimais = cbPets.Text;
 
-                AtualizarGatosAdotados();
+                // 2. gravar os dados do tutor no banco
+                RepositorioTutores.Atualizar(tutorAtual);
 
-                pnlNovoGato.Visible = false;
-                txtMicrochip.Clear();
-                lblNomeGato.Text = "";
+                // 3. gravar a adoção, se houver gato para vincular
+                if (gatoParaVincular != null)
+                {
+                    RepositorioTutores.AdotarGato(tutorAtual, gatoParaVincular);
+                    tutorAtual.DataAdocao = DateTime.Today;
+                    gatoParaVincular = null;
+
+                    RecarregarGatosDoBanco();
+
+                    pnlNovoGato.Visible = false;
+                    txtMicrochip.Clear();
+                    lblNomeGato.Text = "";
+                }
+
+                MessageBox.Show("Os dados do tutor foram atualizados com sucesso!");
             }
-
-            // 2. guardar no repositório de tutores
-            RepositorioTutores.Atualizar(tutorAtual);
-
-            // 3. Mensagem de Sucesso
-            MessageBox.Show("Os dados do tutor foram atualizados com sucesso!");
+            catch (FormatException)
+            {
+                MessageBox.Show("Número inválido. Por favor, insira um número válido.", "Erro de Formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Adoção não permitida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Dado inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (MySqlException ex) when (ex.Number == 1062)
+            {
+                MessageBox.Show("Já existe um tutor cadastrado com esse CPF.", "CPF duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Erro no banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

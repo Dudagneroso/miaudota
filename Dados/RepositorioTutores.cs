@@ -210,6 +210,58 @@ namespace miaudota
             }
         }
 
+        public static void AdotarGato(Tutor tutor, Gato gato)
+        {
+            if (tutor == null) throw new ArgumentNullException(nameof(tutor));
+            if (gato == null) throw new ArgumentNullException(nameof(gato));
+
+            using (MySqlConnection conexao = Conexao.Obter())
+            {
+                conexao.Open();
+
+                using (MySqlTransaction transacao = conexao.BeginTransaction())
+                {
+                    try
+                    {
+                        string sqlStatus = @"
+                    UPDATE gato
+                    SET id_status = (SELECT id_status FROM status_gato WHERE descricao = 'Adotado')
+                    WHERE id_gato = @idGato
+                      AND id_status = (SELECT id_status FROM status_gato WHERE descricao = 'Disponível');";
+
+                        using (MySqlCommand comando = new MySqlCommand(sqlStatus, conexao, transacao))
+                        {
+                            comando.Parameters.AddWithValue("@idGato", gato.Id);
+
+                            if (comando.ExecuteNonQuery() == 0)
+                            {
+                                throw new InvalidOperationException(
+                                    "Este gato não está mais disponível para adoção.");
+                            }
+                        }
+
+                        string sqlAdocao = @"
+                    INSERT INTO adocao (id_gato, id_tutor, data_adocao)
+                    VALUES (@idGato, @idTutor, CURDATE());";
+
+                        using (MySqlCommand comando = new MySqlCommand(sqlAdocao, conexao, transacao))
+                        {
+                            comando.Parameters.AddWithValue("@idGato", gato.Id);
+                            comando.Parameters.AddWithValue("@idTutor", tutor.Id);
+                            comando.ExecuteNonQuery();
+                        }
+
+                        transacao.Commit();
+                    }
+                    catch
+                    {
+                        transacao.Rollback();
+                        throw;
+                    }
+                }
+            }
+        }
+
         public static void Excluir(Tutor tutor)
         {
             using (MySqlConnection conexao = Conexao.Obter())

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace miaudota
 {
@@ -416,6 +417,113 @@ namespace miaudota
             }
 
             return lista;
+        }
+
+        public static List<Gato> ObterAdotadosPorTutor(int idTutor)
+        {
+            List<Gato> lista = new List<Gato>();
+
+            string sql = @"
+                SELECT g.id_gato, g.microchip, g.nome, g.data_nascimento, g.sexo,
+                       p.descricao AS pelagem, c.descricao AS coloracao,
+                       g.peso_kg, g.foto_binario, a.data_adocao
+                FROM adocao a
+                INNER JOIN gato g ON a.id_gato = g.id_gato
+                INNER JOIN pelagem p ON g.id_pelagem = p.id_pelagem
+                INNER JOIN coloracao c ON g.id_coloracao = c.id_coloracao
+                WHERE a.id_tutor = @idTutor AND a.ativa = TRUE
+                ORDER BY a.data_adocao DESC;";
+
+            using (MySqlConnection conexao = Conexao.Obter())
+            {
+                conexao.Open();
+
+                using (MySqlCommand comando = new MySqlCommand(sql, conexao))
+                {
+                    comando.Parameters.AddWithValue("@idTutor", idTutor);
+
+                    using (MySqlDataReader leitor = comando.ExecuteReader())
+                    {
+                        while (leitor.Read())
+                        {
+                            Gato gato = new Gato();
+                            gato.Id = Convert.ToInt32(leitor["id_gato"]);
+
+                            if (leitor["microchip"] != DBNull.Value)
+                                gato.NumeroMicrochip = Convert.ToString(leitor["microchip"]);
+
+                            gato.Nome = Convert.ToString(leitor["nome"]);
+
+                            if (leitor["data_nascimento"] != DBNull.Value)
+                                gato.DataNascimento = Convert.ToDateTime(leitor["data_nascimento"]);
+
+                            gato.Sexo = Convert.ToString(leitor["sexo"]);
+                            gato.Pelagem = Convert.ToString(leitor["pelagem"]);
+                            gato.Coloracao = Convert.ToString(leitor["coloracao"]);
+
+                            if (leitor["peso_kg"] != DBNull.Value)
+                                gato.Peso = Convert.ToSingle(leitor["peso_kg"]);
+
+                            gato.Foto = leitor["foto_binario"] as byte[];
+                            gato.Data_Adocao = Convert.ToDateTime(leitor["data_adocao"]);
+
+                            lista.Add(gato);
+                        }
+                    }
+                }
+            }
+
+            return lista;
+        }
+
+        private static void SincronizarComAviso()
+        {
+            try
+            {
+                Sincronizar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Cadastro de gatos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public static Gato ObterPorMicrochip(string microchip)
+        {
+            SincronizarComAviso();
+
+            string sql = @"
+                SELECT g.id_gato, g.microchip, g.nome, g.sexo, s.descricao AS status
+                FROM gato g
+                INNER JOIN status_gato s ON g.id_status = s.id_status
+                WHERE g.microchip = @microchip
+                LIMIT 1;";
+
+            using (MySqlConnection conexao = Conexao.Obter())
+            {
+                conexao.Open();
+
+                using (MySqlCommand comando = new MySqlCommand(sql, conexao))
+                {
+                    comando.Parameters.AddWithValue("@microchip", microchip);
+
+                    using (MySqlDataReader leitor = comando.ExecuteReader())
+                    {
+                        if (!leitor.Read())
+                        {
+                            return null;
+                        }
+
+                        Gato gato = new Gato();
+                        gato.Id = Convert.ToInt32(leitor["id_gato"]);
+                        gato.NumeroMicrochip = Convert.ToString(leitor["microchip"]);
+                        gato.Nome = Convert.ToString(leitor["nome"]);
+                        gato.Sexo = Convert.ToString(leitor["sexo"]);
+                        gato.Status = Convert.ToString(leitor["status"]);
+                        return gato;
+                    }
+                }
+            }
         }
 
         public static void Atualizar(Gato gato)
