@@ -4,11 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace miaudota
 {
     internal class RepositorioOcorrencia
     {
+        private static List<OcorrenciaGato> cache = new List<OcorrenciaGato>();
+        private static readonly object bloqueio = new object();
+        private const int LIMITE_CACHE = 5;
 
         public static void Adicionar(OcorrenciaGato ocorrencia)
         {
@@ -17,66 +21,132 @@ namespace miaudota
                 throw new ArgumentNullException(nameof(ocorrencia));
             }
 
-            // garante que um gato recém cadastrado (ainda no cache) já esteja no banco
+            bool sincronizar;
+
+            lock (bloqueio)
+            {
+                cache.Add(ocorrencia);
+                sincronizar = cache.Count >= LIMITE_CACHE;
+            }
+
+            if (sincronizar)
+            {
+                SincronizarComAviso();
+            }
+        }
+
+        public static void Sincronizar()
+        {
+            List<OcorrenciaGato> lote;
+
+            lock (bloqueio)
+            {
+                if (cache.Count == 0)
+                    return;
+
+                lote = cache.ToList();
+            }
+
+            // gatos pendentes no cache precisam estar no banco antes das ocorrências deles
             RepositorioGatos.SincronizarComAviso();
+
+            List<string> erros = new List<string>();
 
             using (MySqlConnection conexao = Conexao.Obter())
             {
                 conexao.Open();
 
-                //gato pelo microchip
-                int idGato;
-                using (MySqlCommand comando = new MySqlCommand(
-                    "SELECT id_gato FROM gato WHERE microchip = @microchip LIMIT 1;", conexao))
+                foreach (OcorrenciaGato ocorrencia in lote)
                 {
-                    comando.Parameters.AddWithValue("@microchip", ocorrencia.NumeroMicrochip);
-
-                    object resultado = comando.ExecuteScalar();
-
-                    if (resultado == null || resultado == DBNull.Value)
+                    try
                     {
-                        throw new InvalidOperationException(
-                            "Não existe gato cadastrado com esse microchip.");
+                        InserirOcorrencia(conexao, ocorrencia);
+                    }
+                    catch (Exception ex)
+                    {
+                        erros.Add(ocorrencia.NumeroMicrochip + " (" + ocorrencia.Tipo + "): " + ex.Message);
                     }
 
-                    idGato = Convert.ToInt32(resultado);
+                    // sai do cache com sucesso ou erro, para não travar as próximas sincronizações
+                    lock (bloqueio)
+                    {
+                        cache.Remove(ocorrencia);
+                    }
                 }
+            }
 
-                //tipo pelo nome (Devolução, Internação, etc)
-                int idTipo = RepositorioGatos.ObterId(
-                    conexao, null,
-                    "SELECT id_tipo_ocorrencia FROM tipo_ocorrencia WHERE nome = @descricao",
-                    ocorrencia.Tipo);
+            if (erros.Count > 0)
+            {
+                throw new InvalidOperationException(
+                    "Algumas ocorrências não puderam ser salvas:\n" + string.Join("\n", erros));
+            }
+        }
 
-                string sql = @"
-                    INSERT INTO ocorrencia
-                    (id_gato, id_tipo_ocorrencia, data_ocorrencia, local, responsavel_registro, motivo)
-                    VALUES
-                    (@idaGato, @idTipo, @data, @local, @responsavel, @motivo);";
+        internal static void SincronizarComAviso()
+        {
+            try
+            {
+                Sincronizar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ocorrências", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
-                using (MySqlCommand comando = new MySqlCommand(sql, conexao))
+        private static void InserirOcorrencia(MySqlConnection conexao, OcorrenciaGato ocorrencia)
+        {
+            int idGato;
+            using (MySqlCommand comando = new MySqlCommand(
+                "SELECT id_gato FROM gato WHERE microchip = @microchip LIMIT 1;", conexao))
+            {
+                comando.Parameters.AddWithValue("@microchip", ocorrencia.NumeroMicrochip);
+
+                object resultado = comando.ExecuteScalar();
+
+                if (resultado == null || resultado == DBNull.Value)
                 {
-                    comando.Parameters.AddWithValue("@idGato", idGato);
-                    comando.Parameters.AddWithValue("@idTipo", idTipo);
-                    comando.Parameters.AddWithValue("@data", ocorrencia.Data.Date);
-
-                    comando.Parameters.AddWithValue("@local",
-                        string.IsNullOrWhiteSpace(ocorrencia.Local)
-                        ? (object)DBNull.Value : ocorrencia.Local.Trim());
-
-                    comando.Parameters.AddWithValue("@responsavel", ocorrencia.Responsavel.Trim());
-
-                    comando.Parameters.AddWithValue("@motivo",
-                        string.IsNullOrWhiteSpace(ocorrencia.Descricao)
-                        ? (object)DBNull.Value : ocorrencia.Descricao.Trim());
-
-                    comando.ExecuteNonQuery();
+                    throw new InvalidOperationException("Não existe gato cadastrado com esse microchip.");
                 }
+
+                idGato = Convert.ToInt32(resultado);
+            }
+
+            int idTipo = RepositorioGatos.ObterId(
+                conexao, null,
+                "SELECT id_tipo_ocorrencia FROM tipo_ocorrencia WHERE nome = @descricao",
+                ocorrencia.Tipo);
+
+            string sql = @"
+        INSERT INTO ocorrencia
+        (id_gato, id_tipo_ocorrencia, data_ocorrencia, local,
+         responsavel_registro, motivo)
+        VALUES
+        (@idGato, @idTipo, @data, @local, @responsavel, @motivo);";
+
+            using (MySqlCommand comando = new MySqlCommand(sql, conexao))
+            {
+                comando.Parameters.AddWithValue("@idGato", idGato);
+                comando.Parameters.AddWithValue("@idTipo", idTipo);
+                comando.Parameters.AddWithValue("@data", ocorrencia.Data.Date);
+
+                comando.Parameters.AddWithValue("@local",
+                    string.IsNullOrWhiteSpace(ocorrencia.Local)
+                    ? (object)DBNull.Value : ocorrencia.Local.Trim());
+
+                comando.Parameters.AddWithValue("@responsavel", ocorrencia.Responsavel.Trim());
+
+                comando.Parameters.AddWithValue("@motivo",
+                    string.IsNullOrWhiteSpace(ocorrencia.Descricao)
+                    ? (object)DBNull.Value : ocorrencia.Descricao.Trim());
+
+                comando.ExecuteNonQuery();
             }
         }
 
         public static List<OcorrenciaGato> ObterPorGato(string microchip)
         {
+            SincronizarComAviso();
             List<OcorrenciaGato> lista = new List<OcorrenciaGato>();
 
             string sql = @"

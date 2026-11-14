@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlUsuario = new System.Windows.Forms.Panel();
+            this.pnlConteudoUsuario = new System.Windows.Forms.Panel();
+            this.llblSair = new System.Windows.Forms.LinkLabel();
+            this.lblNomeOng = new System.Windows.Forms.Label();
+            this.lblNomeUsuario = new System.Windows.Forms.Label();
             this.btnDashboards = new System.Windows.Forms.Button();
             this.btnConsultaTutor = new System.Windows.Forms.Button();
             this.btnConsulta = new System.Windows.Forms.Button();
@@ -46,18 +51,13 @@
             this.pbFotoGato = new System.Windows.Forms.PictureBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnlConteudo = new System.Windows.Forms.Panel();
-            this.pnlUsuario = new System.Windows.Forms.Panel();
-            this.pnlConteudoUsuario = new System.Windows.Forms.Panel();
-            this.lblNomeUsuario = new System.Windows.Forms.Label();
-            this.lblNomeOng = new System.Windows.Forms.Label();
-            this.llblSair = new System.Windows.Forms.LinkLabel();
             this.pnlMenu.SuspendLayout();
+            this.pnlUsuario.SuspendLayout();
+            this.pnlConteudoUsuario.SuspendLayout();
             this.pnlPerfilContainer.SuspendLayout();
             this.pnlPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoGato)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            this.pnlUsuario.SuspendLayout();
-            this.pnlConteudoUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -78,6 +78,65 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(200, 810);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // pnlUsuario
+            // 
+            this.pnlUsuario.Controls.Add(this.pnlConteudoUsuario);
+            this.pnlUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlUsuario.Location = new System.Drawing.Point(0, 753);
+            this.pnlUsuario.Name = "pnlUsuario";
+            this.pnlUsuario.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlUsuario.Size = new System.Drawing.Size(200, 57);
+            this.pnlUsuario.TabIndex = 26;
+            // 
+            // pnlConteudoUsuario
+            // 
+            this.pnlConteudoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.pnlConteudoUsuario.Controls.Add(this.llblSair);
+            this.pnlConteudoUsuario.Controls.Add(this.lblNomeOng);
+            this.pnlConteudoUsuario.Controls.Add(this.lblNomeUsuario);
+            this.pnlConteudoUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlConteudoUsuario.Location = new System.Drawing.Point(5, 5);
+            this.pnlConteudoUsuario.Name = "pnlConteudoUsuario";
+            this.pnlConteudoUsuario.Padding = new System.Windows.Forms.Padding(7);
+            this.pnlConteudoUsuario.Size = new System.Drawing.Size(190, 47);
+            this.pnlConteudoUsuario.TabIndex = 0;
+            // 
+            // llblSair
+            // 
+            this.llblSair.AutoSize = true;
+            this.llblSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.llblSair.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(90)))), ((int)(((byte)(125)))));
+            this.llblSair.Location = new System.Drawing.Point(140, 9);
+            this.llblSair.Name = "llblSair";
+            this.llblSair.Size = new System.Drawing.Size(40, 13);
+            this.llblSair.TabIndex = 2;
+            this.llblSair.TabStop = true;
+            this.llblSair.Text = "Sair ➡️";
+            this.llblSair.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblSair_LinkClicked);
+            // 
+            // lblNomeOng
+            // 
+            this.lblNomeOng.AutoSize = true;
+            this.lblNomeOng.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblNomeOng.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblNomeOng.Location = new System.Drawing.Point(7, 22);
+            this.lblNomeOng.Name = "lblNomeOng";
+            this.lblNomeOng.Size = new System.Drawing.Size(107, 13);
+            this.lblNomeOng.TabIndex = 1;
+            this.lblNomeOng.Text = "Projeto Mundo Felino";
+            // 
+            // lblNomeUsuario
+            // 
+            this.lblNomeUsuario.AutoSize = true;
+            this.lblNomeUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblNomeUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(92)))), ((int)(((byte)(116)))));
+            this.lblNomeUsuario.Location = new System.Drawing.Point(7, 7);
+            this.lblNomeUsuario.Name = "lblNomeUsuario";
+            this.lblNomeUsuario.Size = new System.Drawing.Size(43, 15);
+            this.lblNomeUsuario.TabIndex = 0;
+            this.lblNomeUsuario.Text = "Admin";
             // 
             // btnDashboards
             // 
@@ -305,65 +364,6 @@
             this.pnlConteudo.Size = new System.Drawing.Size(640, 810);
             this.pnlConteudo.TabIndex = 1;
             // 
-            // pnlUsuario
-            // 
-            this.pnlUsuario.Controls.Add(this.pnlConteudoUsuario);
-            this.pnlUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlUsuario.Location = new System.Drawing.Point(0, 753);
-            this.pnlUsuario.Name = "pnlUsuario";
-            this.pnlUsuario.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlUsuario.Size = new System.Drawing.Size(200, 57);
-            this.pnlUsuario.TabIndex = 26;
-            // 
-            // pnlConteudoUsuario
-            // 
-            this.pnlConteudoUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
-            this.pnlConteudoUsuario.Controls.Add(this.llblSair);
-            this.pnlConteudoUsuario.Controls.Add(this.lblNomeOng);
-            this.pnlConteudoUsuario.Controls.Add(this.lblNomeUsuario);
-            this.pnlConteudoUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlConteudoUsuario.Location = new System.Drawing.Point(5, 5);
-            this.pnlConteudoUsuario.Name = "pnlConteudoUsuario";
-            this.pnlConteudoUsuario.Padding = new System.Windows.Forms.Padding(7);
-            this.pnlConteudoUsuario.Size = new System.Drawing.Size(190, 47);
-            this.pnlConteudoUsuario.TabIndex = 0;
-            // 
-            // lblNomeUsuario
-            // 
-            this.lblNomeUsuario.AutoSize = true;
-            this.lblNomeUsuario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblNomeUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(92)))), ((int)(((byte)(116)))));
-            this.lblNomeUsuario.Location = new System.Drawing.Point(7, 7);
-            this.lblNomeUsuario.Name = "lblNomeUsuario";
-            this.lblNomeUsuario.Size = new System.Drawing.Size(43, 15);
-            this.lblNomeUsuario.TabIndex = 0;
-            this.lblNomeUsuario.Text = "Admin";
-            // 
-            // lblNomeOng
-            // 
-            this.lblNomeOng.AutoSize = true;
-            this.lblNomeOng.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblNomeOng.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.lblNomeOng.Location = new System.Drawing.Point(7, 22);
-            this.lblNomeOng.Name = "lblNomeOng";
-            this.lblNomeOng.Size = new System.Drawing.Size(107, 13);
-            this.lblNomeOng.TabIndex = 1;
-            this.lblNomeOng.Text = "Projeto Mundo Felino";
-            // 
-            // llblSair
-            // 
-            this.llblSair.AutoSize = true;
-            this.llblSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.llblSair.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(90)))), ((int)(((byte)(125)))));
-            this.llblSair.Location = new System.Drawing.Point(140, 9);
-            this.llblSair.Name = "llblSair";
-            this.llblSair.Size = new System.Drawing.Size(40, 13);
-            this.llblSair.TabIndex = 2;
-            this.llblSair.TabStop = true;
-            this.llblSair.Text = "Sair ➡️";
-            this.llblSair.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblSair_LinkClicked);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,13 +376,13 @@
             this.Text = "Miaudota";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.pnlMenu.ResumeLayout(false);
+            this.pnlUsuario.ResumeLayout(false);
+            this.pnlConteudoUsuario.ResumeLayout(false);
+            this.pnlConteudoUsuario.PerformLayout();
             this.pnlPerfilContainer.ResumeLayout(false);
             this.pnlPerfil.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoGato)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            this.pnlUsuario.ResumeLayout(false);
-            this.pnlConteudoUsuario.ResumeLayout(false);
-            this.pnlConteudoUsuario.PerformLayout();
             this.ResumeLayout(false);
 
         }

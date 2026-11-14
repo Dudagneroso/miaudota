@@ -1,13 +1,14 @@
-﻿using System;
+﻿using miaudota.Telas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using miaudota.Telas;
 
 namespace miaudota
 {
@@ -16,6 +17,7 @@ namespace miaudota
         public FormPrincipal()
         {
             InitializeComponent();
+            FormClosing += FormPrincipal_FormClosing;
         }
 
         public void AbrirTela(UserControl tela)
@@ -65,13 +67,25 @@ namespace miaudota
             lblIdadeGato.Text = idade.ToString();
             lblMicrochipGato.Text = gato.NumeroMicrochip;
             lblStatusGato.Text = gato.Status;
-            if (string.IsNullOrEmpty(gato.CaminhoFoto))
+            Image fotoAnterior = pbFotoGato.Image;
+
+            if (gato.Foto != null && gato.Foto.Length > 0)
             {
-                pbFotoGato.Image = Properties.Resources.sem_foto;
+                using (MemoryStream ms = new MemoryStream(gato.Foto))
+                using (Image img = Image.FromStream(ms))
+                {
+                    pbFotoGato.Image = new Bitmap(img);
+                }
             }
             else
             {
-                pbFotoGato.Image = Image.FromFile(gato.CaminhoFoto);
+                pbFotoGato.Image = Properties.Resources.sem_foto;
+            }
+
+            // libera a foto anterior, menos a imagem padrão dos recursos
+            if (fotoAnterior != null && fotoAnterior != Properties.Resources.sem_foto)
+            {
+                fotoAnterior.Dispose();
             }
 
             // Muda a cor do status para vermelho se o gato não estiver disponível, caso contrário, mantém a cor padrão
@@ -102,9 +116,51 @@ namespace miaudota
             AbrirTela(new ucCadastroLar());
         }
 
+        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            List<string> erros = new List<string>();
+
+            try
+            {
+                RepositorioGatos.Sincronizar();
+            }
+            catch (Exception ex)
+            {
+                erros.Add(ex.Message);
+            }
+
+            try
+            {
+                RepositorioOcorrencia.Sincronizar();
+            }
+            catch (Exception ex)
+            {
+                erros.Add(ex.Message);
+            }
+
+            if (erros.Count > 0)
+            {
+                DialogResult resposta = MessageBox.Show(
+                    string.Join("\n\n", erros) + "\n\nSair mesmo assim?",
+                    "Cadastros pendentes",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (resposta == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
         private void llblSair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DialogResult resposta = MessageBox.Show("Deseja realmente sair e voltar para a tela de login?", "Confirmar Saída", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resposta == DialogResult.Yes)
+            {
+                Close();
+            }
 
         }
     }
