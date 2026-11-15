@@ -271,10 +271,21 @@ namespace miaudota
             List<Gato> lista = new List<Gato>();
 
             string sql = @"
-                SELECT g.id_gato, g.microchip, g.nome, g.sexo
+                SELECT g.id_gato, g.microchip, g.nome, g.data_nascimento, g.sexo,
+                       p.descricao AS pelagem, c.descricao AS coloracao,
+                       g.peso_kg, g.id_lar_temporario, lt.nome_completo AS lar,
+                       g.castrado, g.vacinas_em_dia, sg.descricao AS status,
+                       fiv.descricao AS teste_fiv, felv.descricao AS teste_felv,
+                       g.doenca_deficiencia, g.observacoes, g.data_entrada,
+                       g.foto_binario
                 FROM gato g
-                INNER JOIN status_gato s ON g.id_status = s.id_status
-                WHERE s.descricao = 'Disponível'
+                INNER JOIN pelagem p ON g.id_pelagem = p.id_pelagem
+                INNER JOIN coloracao c ON g.id_coloracao = c.id_coloracao
+                INNER JOIN status_gato sg ON g.id_status = sg.id_status
+                INNER JOIN resultado_teste fiv ON g.id_teste_fiv = fiv.id_resultado
+                INNER JOIN resultado_teste felv ON g.id_teste_felv = felv.id_resultado
+                LEFT JOIN lar_temporario lt ON g.id_lar_temporario = lt.id_lar_temporario
+                WHERE sg.descricao = 'Disponível'
                 ORDER BY g.nome";
 
             using (MySqlConnection conexao = Conexao.Obter())
@@ -296,7 +307,37 @@ namespace miaudota
                         }
 
                         gato.Nome = Convert.ToString(leitor["nome"]);
+                        if (leitor["data_nascimento"] != DBNull.Value)
+                            gato.DataNascimento = Convert.ToDateTime(leitor["data_nascimento"]);
+
                         gato.Sexo = Convert.ToString(leitor["sexo"]);
+                        gato.Pelagem = Convert.ToString(leitor["pelagem"]);
+                        gato.Coloracao = Convert.ToString(leitor["coloracao"]);
+
+                        if (leitor["peso_kg"] != DBNull.Value)
+                            gato.Peso = Convert.ToSingle(leitor["peso_kg"]);
+
+                        if (leitor["id_lar_temporario"] != DBNull.Value)
+                        {
+                            gato.IdLarTemporario = Convert.ToInt32(leitor["id_lar_temporario"]);
+                            gato.LarTemporario = Convert.ToString(leitor["lar"]);
+                        }
+
+                        gato.Castrado = Convert.ToBoolean(leitor["castrado"]) ? "Sim" : "Não";
+                        gato.VacinasEmDia = Convert.ToBoolean(leitor["vacinas_em_dia"]) ? "Sim" : "Não";
+                        gato.Status = Convert.ToString(leitor["status"]);
+                        gato.TesteFIV = Convert.ToString(leitor["teste_fiv"]);
+                        gato.TesteFelv = Convert.ToString(leitor["teste_felv"]);
+
+                        if (leitor["doenca_deficiencia"] != DBNull.Value)
+                            gato.Doencas = Convert.ToString(leitor["doenca_deficiencia"]);
+
+                        if (leitor["observacoes"] != DBNull.Value)
+                            gato.Observacoes = Convert.ToString(leitor["observacoes"]);
+
+                        gato.DataChegadaOng = Convert.ToDateTime(leitor["data_entrada"]);
+                        gato.Foto = leitor["foto_binario"] as byte[];
+
                         lista.Add(gato);
                     }
                 }
