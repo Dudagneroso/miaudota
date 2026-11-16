@@ -37,10 +37,12 @@ namespace miaudota.Telas
         {
             try
             {
+                todosGatos = RepositorioGatos.ObterTodos();
+
                 dgvGatos.RowTemplate.Height = 60;
                 dgvGatos.DataError += dgvGatos_DataError;
 
-                todosGatos = RepositorioGatos.ObterTodos();
+                lblGatosEncontrados.Text = $"{todosGatos.Count.ToString()} gato(s) encontrado(s)";
 
                 cbFiltroGatos.SelectedIndex = 0;
                 AplicarFiltro();
@@ -54,7 +56,7 @@ namespace miaudota.Telas
         private void ConfigurarColunas()
         {
             // colunas que não devem aparecer
-            string[] ocultas = { "Id", "IdLarTemporario", "Latitude", "Longitude", "CaminhoFoto" };
+            string[] ocultas = { "Id", "IdLarTemporario", "Latitude", "Longitude", "CaminhoFoto", "LocalResgate" };
 
             foreach (string nome in ocultas)
             {
@@ -141,6 +143,17 @@ namespace miaudota.Telas
         private void cbFiltroGatos_SelectedIndexChanged(object sender, EventArgs e)
         {
             AplicarFiltro();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            cbFiltroGatos.SelectedIndex = 0;
+            IEnumerable<Gato> pesquisa = todosGatos;
+            pesquisa = todosGatos.Where(g => g.Nome.Contains(txtPesquisar.Text) || g.NumeroMicrochip.Contains(txtPesquisar.Text));
+            List<Gato> gatosPesquisados = pesquisa.ToList();
+            dgvGatos.DataSource = gatosPesquisados;
+            ConfigurarColunas();
+            lblGatosEncontrados.Text = $"{gatosPesquisados.Count.ToString()} gato(s) encontrado(s)";
         }
     }
 }

@@ -49,7 +49,6 @@
             this.lblObservacao = new System.Windows.Forms.Label();
             this.txtDeficiencias = new System.Windows.Forms.TextBox();
             this.lblDeficiencias = new System.Windows.Forms.Label();
-            this.lblEspaco = new System.Windows.Forms.Label();
             this.pnlVacinasTomadas = new System.Windows.Forms.Panel();
             this.clbVacinas = new System.Windows.Forms.CheckedListBox();
             this.lblCheckVacinas = new System.Windows.Forms.Label();
@@ -95,6 +94,7 @@
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
             this.lblIdentificacao = new System.Windows.Forms.Label();
+            this.lblEspaco = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlMapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wvMapa)).BeginInit();
@@ -143,6 +143,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblEspaco);
             this.panel1.Controls.Add(this.pnlMapa);
             this.panel1.Controls.Add(this.tlpFotoLocal);
             this.panel1.Controls.Add(this.dtpDataEntrada);
@@ -151,7 +152,6 @@
             this.panel1.Controls.Add(this.lblObservacao);
             this.panel1.Controls.Add(this.txtDeficiencias);
             this.panel1.Controls.Add(this.lblDeficiencias);
-            this.panel1.Controls.Add(this.lblEspaco);
             this.panel1.Controls.Add(this.pnlVacinasTomadas);
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.lblEspaco3);
@@ -180,7 +180,7 @@
             this.pnlMapa.Controls.Add(this.wvMapa);
             this.pnlMapa.Controls.Add(this.lblLocalResgate);
             this.pnlMapa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMapa.Location = new System.Drawing.Point(10, 1176);
+            this.pnlMapa.Location = new System.Drawing.Point(10, 1158);
             this.pnlMapa.Name = "pnlMapa";
             this.pnlMapa.Padding = new System.Windows.Forms.Padding(7, 10, 7, 5);
             this.pnlMapa.Size = new System.Drawing.Size(650, 370);
@@ -219,7 +219,7 @@
             this.tlpFotoLocal.Controls.Add(this.gbCadastrarLocal, 1, 0);
             this.tlpFotoLocal.Controls.Add(this.pnlFoto, 0, 0);
             this.tlpFotoLocal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpFotoLocal.Location = new System.Drawing.Point(10, 953);
+            this.tlpFotoLocal.Location = new System.Drawing.Point(10, 935);
             this.tlpFotoLocal.Name = "tlpFotoLocal";
             this.tlpFotoLocal.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.tlpFotoLocal.RowCount = 1;
@@ -319,7 +319,7 @@
             this.dtpDataEntrada.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtpDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataEntrada.Location = new System.Drawing.Point(10, 933);
+            this.dtpDataEntrada.Location = new System.Drawing.Point(10, 915);
             this.dtpDataEntrada.Name = "dtpDataEntrada";
             this.dtpDataEntrada.Size = new System.Drawing.Size(650, 20);
             this.dtpDataEntrada.TabIndex = 97;
@@ -329,7 +329,7 @@
             this.lblDataEntrada.AutoSize = true;
             this.lblDataEntrada.BackColor = System.Drawing.Color.White;
             this.lblDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDataEntrada.Location = new System.Drawing.Point(10, 905);
+            this.lblDataEntrada.Location = new System.Drawing.Point(10, 887);
             this.lblDataEntrada.Name = "lblDataEntrada";
             this.lblDataEntrada.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.lblDataEntrada.Size = new System.Drawing.Size(88, 28);
@@ -339,7 +339,7 @@
             // txtObservacao
             // 
             this.txtObservacao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtObservacao.Location = new System.Drawing.Point(10, 826);
+            this.txtObservacao.Location = new System.Drawing.Point(10, 808);
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -351,7 +351,7 @@
             this.lblObservacao.AutoSize = true;
             this.lblObservacao.BackColor = System.Drawing.Color.White;
             this.lblObservacao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblObservacao.Location = new System.Drawing.Point(10, 798);
+            this.lblObservacao.Location = new System.Drawing.Point(10, 780);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.lblObservacao.Size = new System.Drawing.Size(73, 28);
@@ -361,7 +361,7 @@
             // txtDeficiencias
             // 
             this.txtDeficiencias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtDeficiencias.Location = new System.Drawing.Point(10, 773);
+            this.txtDeficiencias.Location = new System.Drawing.Point(10, 755);
             this.txtDeficiencias.Multiline = true;
             this.txtDeficiencias.Name = "txtDeficiencias";
             this.txtDeficiencias.Size = new System.Drawing.Size(650, 25);
@@ -372,22 +372,12 @@
             this.lblDeficiencias.AutoSize = true;
             this.lblDeficiencias.BackColor = System.Drawing.Color.White;
             this.lblDeficiencias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDeficiencias.Location = new System.Drawing.Point(10, 745);
+            this.lblDeficiencias.Location = new System.Drawing.Point(10, 727);
             this.lblDeficiencias.Name = "lblDeficiencias";
             this.lblDeficiencias.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.lblDeficiencias.Size = new System.Drawing.Size(189, 28);
             this.lblDeficiencias.TabIndex = 92;
             this.lblDeficiencias.Text = "Possui alguma doença ou deficiência?";
-            // 
-            // lblEspaco
-            // 
-            this.lblEspaco.AutoSize = true;
-            this.lblEspaco.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblEspaco.Location = new System.Drawing.Point(10, 727);
-            this.lblEspaco.Name = "lblEspaco";
-            this.lblEspaco.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lblEspaco.Size = new System.Drawing.Size(0, 18);
-            this.lblEspaco.TabIndex = 91;
             // 
             // pnlVacinasTomadas
             // 
@@ -530,7 +520,8 @@
             this.cbStatus.Items.AddRange(new object[] {
             "Disponível",
             "Adotado",
-            "Em processo"});
+            "Em processo",
+            "Internado"});
             this.cbStatus.Location = new System.Drawing.Point(0, 18);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(212, 23);
@@ -967,6 +958,16 @@
             this.lblIdentificacao.TabIndex = 32;
             this.lblIdentificacao.Text = "IDENTIFICAÇÃO";
             // 
+            // lblEspaco
+            // 
+            this.lblEspaco.AutoSize = true;
+            this.lblEspaco.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblEspaco.Location = new System.Drawing.Point(10, 1528);
+            this.lblEspaco.Name = "lblEspaco";
+            this.lblEspaco.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lblEspaco.Size = new System.Drawing.Size(0, 18);
+            this.lblEspaco.TabIndex = 100;
+            // 
             // ucCadastroGato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1062,7 +1063,6 @@
         private System.Windows.Forms.Label lblObservacao;
         private System.Windows.Forms.TextBox txtDeficiencias;
         private System.Windows.Forms.Label lblDeficiencias;
-        private System.Windows.Forms.Label lblEspaco;
         private System.Windows.Forms.Panel pnlVacinasTomadas;
         private System.Windows.Forms.CheckedListBox clbVacinas;
         private System.Windows.Forms.Label lblCheckVacinas;
@@ -1081,5 +1081,6 @@
         private System.Windows.Forms.RadioButton rbNaoCastrado;
         private System.Windows.Forms.RadioButton rbCastrado;
         private System.Windows.Forms.Label lblEspaco3;
+        private System.Windows.Forms.Label lblEspaco;
     }
 }

@@ -211,7 +211,7 @@ namespace miaudota.Telas
             int disponiveis = gatos.Count(g => g.Status == "Disponível");
             int adotados = gatos.Count(g => g.Status == "Adotado");
             int emProcesso = gatos.Count(g => g.Status == "Em processo");
-            int larTemporario = gatos.Count(g => g.Status == "Lar temporário");
+            int internados = gatos.Count(g => g.Status == "Internado");
 
             // Adoções por idade
             int filhotes = 0;
@@ -300,7 +300,7 @@ namespace miaudota.Telas
             chartStatus.Series[0].Points[0].YValues[0] = disponiveis;
             chartStatus.Series[0].Points[1].YValues[0] = emProcesso;
             chartStatus.Series[0].Points[2].YValues[0] = adotados;
-            chartStatus.Series[0].Points[3].YValues[0] = larTemporario;
+            chartStatus.Series[0].Points[3].YValues[0] = internados;
 
             //atualizar grafico de idade
             chartIdade.Series[0].Points[0].YValues[0] = adultos;

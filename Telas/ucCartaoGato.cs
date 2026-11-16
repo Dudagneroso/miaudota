@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -27,16 +28,27 @@ namespace miaudota
             lblSexo.Text = $"🐾 Sexo: {gato.Sexo}";
             lblPelagem.Text = $"🚿 Pelagem: {gato.Coloracao}";
             lblMicrochip.Text = $"💉 Microchip: {gato.NumeroMicrochip}";
-            string caminho = gato.CaminhoFoto;
+            Image fotoAnterior = pbFoto.Image;
 
-            if (string.IsNullOrEmpty(caminho))
+            if (gato.Foto != null && gato.Foto.Length > 0)
             {
-                pbFoto.Image = Properties.Resources.sem_foto;
+                using (MemoryStream ms = new MemoryStream(gato.Foto))
+                using (Image img = Image.FromStream(ms))
+                {
+                    pbFoto.Image = new Bitmap(img);
+                }
             }
             else
             {
-                pbFoto.Image = Image.FromFile(caminho);
+                pbFoto.Image = Properties.Resources.sem_foto;
             }
+
+            // libera a foto anterior, menos a imagem padrão dos recursos
+            if (fotoAnterior != null && fotoAnterior != Properties.Resources.sem_foto)
+            {
+                fotoAnterior.Dispose();
+            }
+
         }
     }
 }

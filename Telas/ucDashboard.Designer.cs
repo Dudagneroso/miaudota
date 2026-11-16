@@ -273,7 +273,7 @@
             dataPoint12.Color = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(139)))), ((int)(((byte)(224)))));
             dataPoint13.AxisLabel = "Adotados";
             dataPoint13.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(120)))));
-            dataPoint14.AxisLabel = "Lar temporário";
+            dataPoint14.AxisLabel = "Internados";
             dataPoint14.Color = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(160)))));
             series3.Points.Add(dataPoint11);
             series3.Points.Add(dataPoint12);

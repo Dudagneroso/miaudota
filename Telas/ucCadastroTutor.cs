@@ -15,18 +15,18 @@ namespace miaudota.Telas
 {
     public partial class ucCadastroTutor : UserControl
     {
+        private List<Gato> gatosDisponiveis = RepositorioGatos.ObterDisponiveis();
         public ucCadastroTutor()
         {
             InitializeComponent();
             Load += ucCadastroTutor_Load;
-            //dgvGatos.DataSource = RepositorioGatosFake.ObterTodos();
         }
 
         private void CarregarGatos()
         {
             try
             {
-                dgvGatos.DataSource = RepositorioGatos.ObterDisponiveis();
+                dgvGatos.DataSource = gatosDisponiveis;
                 ConfigurarColunas();
 
                 if (dgvGatos.Columns["Id"] != null)
@@ -192,6 +192,14 @@ namespace miaudota.Telas
         private void ucCadastroTutor_Load(object sender, EventArgs e)
         {
             CarregarGatos();
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            IEnumerable<Gato> pesquisa = gatosDisponiveis;
+            pesquisa = gatosDisponiveis.Where(g => g.Nome.Contains(txtPesquisa.Text) || g.NumeroMicrochip.Contains(txtPesquisa.Text));
+            List<Gato> gatosPesquisados = pesquisa.ToList();
+            dgvGatos.DataSource = gatosPesquisados;
         }
     }
 }

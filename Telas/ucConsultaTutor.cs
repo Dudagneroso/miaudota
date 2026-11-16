@@ -12,6 +12,7 @@ namespace miaudota.Telas
 {
     public partial class ucConsultaTutor : UserControl
     {
+        private List<Tutor> todosTutores = new List<Tutor>();
         public ucConsultaTutor()
         {
             InitializeComponent();
@@ -34,10 +35,12 @@ namespace miaudota.Telas
         {
             try
             {
-                lblQtdTutores.Text = $"{RepositorioTutores.ObterTodos().Count.ToString()} tutor(es)";
+                todosTutores = RepositorioTutores.ObterTodos();
+                lblQtdTutores.Text = $"{todosTutores.Count.ToString()} tutor(es)";
                 dgvTutores.RowTemplate.Height = 60;
                 dgvTutores.DataError += dgvTutores_DataError;
-                dgvTutores.DataSource = RepositorioTutores.ObterTodos();
+                dgvTutores.DataSource = todosTutores;
+                
                 ConfigurarColunas();
             }
             catch (Exception ex)
@@ -106,6 +109,16 @@ namespace miaudota.Telas
         private void dgvTutores_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.ThrowException = false;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            IEnumerable<Tutor> pesquisa = todosTutores;
+            pesquisa = todosTutores.Where(t => t.Nome.Contains(txtPesquisar.Text));
+            List<Tutor> tutoresPesquisados = pesquisa.ToList();
+            dgvTutores.DataSource = tutoresPesquisados;
+            ConfigurarColunas();
+            lblQtdTutores.Text = $"{tutoresPesquisados.Count.ToString()} tutor(es)";
         }
     }
 }
