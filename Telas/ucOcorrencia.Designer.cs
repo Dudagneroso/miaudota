@@ -507,6 +507,7 @@
             this.Name = "ucOcorrencia";
             this.Padding = new System.Windows.Forms.Padding(25, 20, 25, 20);
             this.Size = new System.Drawing.Size(640, 792);
+            this.Load += new System.EventHandler(this.ucOcorrencia_Load);
             this.tlpConteudo.ResumeLayout(false);
             this.pnlDetalhesOcorrência.ResumeLayout(false);
             this.pnlDetalhesOcorrência.PerformLayout();

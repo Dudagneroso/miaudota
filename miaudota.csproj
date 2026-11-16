@@ -209,7 +209,6 @@
     <Compile Include="Telas\ucOcorrencia.Designer.cs">
       <DependentUpon>ucOcorrencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dados\TiposOcorrencia.cs" />
     <Compile Include="Models\ViaCepResposta.cs" />
     <EmbeddedResource Include="Telas\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

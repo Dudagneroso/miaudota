@@ -19,23 +19,7 @@ namespace miaudota.Telas
         {
             InitializeComponent();
 
-            List<Ocorrencia> tipos = TiposOcorrencia.ObterTodos();
-            int indice = 0;
-
-            foreach (Ocorrencia tipo in tipos)
-            {
-                ucCartaoOcorrencia cartao = new ucCartaoOcorrencia();
-                cartao.CarregarDados(tipo);
-                cartao.Dock = DockStyle.Fill;
-                cartao.Margin = new Padding(6);
-                cartao.CartaoClicado += SelecionarCartao;
-                //cartao.Selecionado += SelecionarCartao;
-
-                //coluna = indice % 3, linha = indice / 3
-                tlpTipos.Controls.Add(cartao, indice % 3, indice / 3);
-
-                indice++;
-            }
+            Load += ucOcorrencia_Load;
         }
 
         private void SelecionarCartao(object sender, EventArgs e)
@@ -176,6 +160,31 @@ namespace miaudota.Telas
             }
 
 
+        }
+
+        private void ucOcorrencia_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Ocorrencia> tipos = RepositorioOcorrencia.ObterTipos();
+                int indice = 0;
+
+                foreach (Ocorrencia tipo in tipos)
+                {
+                    ucCartaoOcorrencia cartao = new ucCartaoOcorrencia();
+                    cartao.CarregarDados(tipo);
+                    cartao.Dock = DockStyle.Fill;
+                    cartao.Margin = new Padding(6);
+                    cartao.CartaoClicado += SelecionarCartao;
+
+                    tlpTipos.Controls.Add(cartao, indice % 3, indice / 3);
+                    indice++;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar os tipos de ocorrência: " + ex.Message);
+            }
         }
     }
 }

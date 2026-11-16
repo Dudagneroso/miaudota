@@ -14,6 +14,32 @@ namespace miaudota
         private static readonly object bloqueio = new object();
         private const int LIMITE_CACHE = 5;
 
+        public static List<Ocorrencia> ObterTipos()
+        {
+            List<Ocorrencia> tipos = new List<Ocorrencia>();
+
+            using (MySqlConnection conexao = Conexao.Obter())
+            {
+                conexao.Open();
+
+                using (MySqlCommand comando = new MySqlCommand(
+                    "SELECT sigla, nome, descricao FROM tipo_ocorrencia ORDER BY id_tipo_ocorrencia;",
+                    conexao))
+                using (MySqlDataReader leitor = comando.ExecuteReader())
+                {
+                    while (leitor.Read())
+                    {
+                        Ocorrencia tipo = new Ocorrencia();
+                        tipo.Sigla = Convert.ToString(leitor["sigla"]);
+                        tipo.Nome = Convert.ToString(leitor["nome"]);
+                        tipo.Descricao = Convert.ToString(leitor["descricao"]);
+                        tipos.Add(tipo);
+                    }
+                }
+            }
+            return tipos;
+        }
+
         public static void Adicionar(OcorrenciaGato ocorrencia)
         {
             if (ocorrencia == null)
