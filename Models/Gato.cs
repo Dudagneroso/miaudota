@@ -278,19 +278,6 @@ namespace miaudota
             set { longitude = value; }
         }
 
-        public DateTime DataCadastro
-        {
-            get { return dataCadastro; }
-            set
-            {
-                if (value > DateTime.Now)
-                {
-                    throw new ArgumentException("A data de cadastro não pode ser futura.");
-                }
-                dataCadastro = value;
-            }
-        }
-
         public DateTime Data_Adocao
         {
             get { return dataAdocao; }

@@ -195,8 +195,7 @@ namespace miaudota
                     Foto = imagemSelecionada,
                     LocalResgate = rbSimLocal.Checked ? "Sim" : "Não",
                     Latitude = latitudeSelecionada,
-                    Longitude = longitudeSelecionada,
-                    DataCadastro = DateTime.Now
+                    Longitude = longitudeSelecionada
                 };
 
                 // 2. guardar no repositório e gatos

@@ -19,7 +19,7 @@ namespace miaudota.Telas
         {
             InitializeComponent();
 
-            Load += ucOcorrencia_Load;
+            //Load += ucOcorrencia_Load;
         }
 
         private void SelecionarCartao(object sender, EventArgs e)
