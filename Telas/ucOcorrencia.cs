@@ -135,11 +135,6 @@ namespace miaudota.Telas
                     Descricao = txtMotivo.Text
                 };
 
-                if (tipoSelecionado.Nome == "Devolução")
-                {
-                    gato.Status = "Disponível";
-                }
-
                 RepositorioOcorrencia.Adicionar(ocorrencia);
 
                 MessageBox.Show("Ocorrência registrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);

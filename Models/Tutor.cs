@@ -101,7 +101,12 @@ namespace miaudota
             get { return email; }
             set 
             {
-                if(value == null || !value.Contains("@"))
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("O email não pode ser vazio.");
+                }
+
+                if (value == null || !value.Contains("@"))
                 {
                     throw new ArgumentException("O email deve conter um '@'.");
                 }
@@ -193,12 +198,28 @@ namespace miaudota
         public string TipoResidencia
         {
             get { return tipoResidencia; }
-            set { tipoResidencia = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Selecione o tipo de moradia.");
+                }
+
+                tipoResidencia = value;
+            }
         }
         public string OutrosAnimais
         {
             get { return outrosAnimais; }
-            set { outrosAnimais = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Selecione se o tutor possui outros animais.");
+                }
+
+                outrosAnimais = value; 
+            }
         }
         public List<Gato> Gatos
         {

@@ -94,6 +94,21 @@ namespace miaudota
         private void rbVacinado_CheckedChanged(object sender, EventArgs e)
         {
             pnlVacinasTomadas.Visible = rbVacinado.Checked || rbNaoVacinado.Checked;
+
+            if (rbVacinado.Checked)
+            {
+                for (int i = 0; i < clbVacinas.Items.Count; i++)
+                {
+                    clbVacinas.SetItemChecked(i, true);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < clbVacinas.Items.Count; i++)
+                {
+                    clbVacinas.SetItemChecked(i, false);
+                }
+            }
         }
         private void CarregarLaresTemporarios()
         {
@@ -163,12 +178,12 @@ namespace miaudota
                     NumeroMicrochip = txtMicrochip.Text,
                     Nome = txtNome.Text,
                     DataNascimento = dtpDataNascimento.Value,
-                    Sexo = rbMacho.Checked ? "Macho" : "Fêmea",
+                    Sexo = rbMacho.Checked ? "Macho" : rbFemea.Checked ? "Fêmea" : null,
                     Pelagem = cbPelagem.Text,
                     Coloracao = cbColoracao.Text,
                     Peso = float.TryParse(txtPeso.Text, out float peso) ? peso : 0,
                     IdLarTemporario = cbLarTemporario.SelectedValue == null? (int?)null : Convert.ToInt32(cbLarTemporario.SelectedValue),
-                    Castrado = rbCastrado.Checked ? "Sim" : "Não",
+                    Castrado = rbCastrado.Checked ? "Sim" : rbNaoCastrado.Checked ? "Não" : null,
                     VacinasEmDia = rbVacinado.Checked ? "Sim" : "Não",
                     Vacinas = clbVacinas.CheckedItems.Cast<string>().ToList(),
                     Status = cbStatus.SelectedItem?.ToString(),

@@ -84,13 +84,18 @@ namespace miaudota
 
                 foreach (OcorrenciaGato ocorrencia in lote)
                 {
-                    try
+                    using (MySqlTransaction transacao = conexao.BeginTransaction())
                     {
-                        InserirOcorrencia(conexao, ocorrencia);
-                    }
-                    catch (Exception ex)
-                    {
-                        erros.Add(ocorrencia.NumeroMicrochip + " (" + ocorrencia.Tipo + "): " + ex.Message);
+                        try
+                        {
+                            InserirOcorrencia(conexao, transacao, ocorrencia);
+                            transacao.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            transacao.Rollback();
+                            erros.Add(ocorrencia.NumeroMicrochip + " (" + ocorrencia.Tipo + "): " + ex.Message);
+                        }
                     }
 
                     // sai do cache com sucesso ou erro, para não travar as próximas sincronizações
@@ -120,11 +125,12 @@ namespace miaudota
             }
         }
 
-        private static void InserirOcorrencia(MySqlConnection conexao, OcorrenciaGato ocorrencia)
+        private static void InserirOcorrencia(
+    MySqlConnection conexao, MySqlTransaction transacao, OcorrenciaGato ocorrencia)
         {
             int idGato;
             using (MySqlCommand comando = new MySqlCommand(
-                "SELECT id_gato FROM gato WHERE microchip = @microchip LIMIT 1;", conexao))
+                "SELECT id_gato FROM gato WHERE microchip = @microchip LIMIT 1;", conexao, transacao))
             {
                 comando.Parameters.AddWithValue("@microchip", ocorrencia.NumeroMicrochip);
 
@@ -139,7 +145,7 @@ namespace miaudota
             }
 
             int idTipo = RepositorioGatos.ObterId(
-                conexao, null,
+                conexao, transacao,
                 "SELECT id_tipo_ocorrencia FROM tipo_ocorrencia WHERE nome = @descricao",
                 ocorrencia.Tipo);
 
@@ -150,7 +156,7 @@ namespace miaudota
         VALUES
         (@idGato, @idTipo, @data, @local, @responsavel, @motivo);";
 
-            using (MySqlCommand comando = new MySqlCommand(sql, conexao))
+            using (MySqlCommand comando = new MySqlCommand(sql, conexao, transacao))
             {
                 comando.Parameters.AddWithValue("@idGato", idGato);
                 comando.Parameters.AddWithValue("@idTipo", idTipo);
@@ -168,7 +174,50 @@ namespace miaudota
 
                 comando.ExecuteNonQuery();
             }
+
+            AplicarRegraDoTipo(conexao, transacao, idGato, ocorrencia.Tipo);
         }
+
+        private static void AplicarRegraDoTipo(
+    MySqlConnection conexao, MySqlTransaction transacao, int idGato, string tipo)
+        {
+            if (string.Equals(tipo, "Devolução", StringComparison.OrdinalIgnoreCase))
+            {
+                // desfaz o vínculo com o tutor, mantendo o histórico
+                using (MySqlCommand comando = new MySqlCommand(
+                    "UPDATE adocao SET ativa = FALSE WHERE id_gato = @idGato AND ativa = TRUE;",
+                    conexao, transacao))
+                {
+                    comando.Parameters.AddWithValue("@idGato", idGato);
+                    comando.ExecuteNonQuery();
+                }
+
+                AtualizarStatus(conexao, transacao, idGato, "Disponível");
+            }
+            else if (string.Equals(tipo, "Internação", StringComparison.OrdinalIgnoreCase))
+            {
+                AtualizarStatus(conexao, transacao, idGato, "Internado");
+            }
+        }
+
+        private static void AtualizarStatus(
+            MySqlConnection conexao, MySqlTransaction transacao, int idGato, string status)
+        {
+            int idStatus = RepositorioGatos.ObterId(
+                conexao, transacao,
+                "SELECT id_status FROM status_gato WHERE descricao = @descricao",
+                status);
+
+            using (MySqlCommand comando = new MySqlCommand(
+                "UPDATE gato SET id_status = @idStatus WHERE id_gato = @idGato;",
+                conexao, transacao))
+            {
+                comando.Parameters.AddWithValue("@idStatus", idStatus);
+                comando.Parameters.AddWithValue("@idGato", idGato);
+                comando.ExecuteNonQuery();
+            }
+        }
+
 
         public static List<OcorrenciaGato> ObterPorGato(string microchip)
         {

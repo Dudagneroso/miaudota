@@ -755,6 +755,12 @@ namespace miaudota
             }
         }
 
+        internal static void SincronizarTudo()
+        {
+            SincronizarComAviso();
+            RepositorioOcorrencia.SincronizarComAviso();
+        }
+
         internal static int ObterId(
             MySqlConnection conexao,
             MySqlTransaction transacao,

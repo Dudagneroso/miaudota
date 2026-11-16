@@ -105,18 +105,39 @@ namespace miaudota
         public string Sexo
         {
             get { return sexo; }
-            set { sexo = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Marque o sexo.");
+                }
+                sexo = value; 
+            }
         }
 
         public string Pelagem
         {
             get { return pelagem; }
-            set { pelagem = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Selecione a pelagem.");
+                }
+                pelagem = value; 
+            }
         }
         public string Coloracao
         {
             get { return coloracao; }
-            set { coloracao = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Selecione a coloração.");
+                }
+                coloracao = value;
+            }
         }
 
         public float Peso
@@ -141,12 +162,26 @@ namespace miaudota
         public string Castrado
         {
             get { return castrado; }
-            set { castrado = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Selecione se o gato foi castrado.");
+                }
+                castrado = value;
+            }
         }
         public string VacinasEmDia
         {
             get { return vacinasEmDia; }
-            set { vacinasEmDia = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Selecione a situação das vacinas.");
+                }
+                vacinasEmDia = value; 
+            }
         }
 
         public List<string> Vacinas
@@ -158,19 +193,40 @@ namespace miaudota
         public string Status
         {
             get { return status; }
-            set { status = value; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Selecione o status.");
+                }
+                status = value;
+            }
         }
 
         public string TesteFIV
         {
             get { return testeFIV; }
-            set { testeFIV = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Selecione o resultado do teste FIV.");
+                }
+                testeFIV = value; 
+            }
         }
 
         public string TesteFelv
         {
             get { return testeFelv; }
-            set { testeFelv = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Selecione o resultado do teste FELV.");
+                }
+                testeFelv = value;
+            }
         }
 
         public string Doencas
