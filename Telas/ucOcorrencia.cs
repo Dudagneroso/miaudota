@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,13 +66,25 @@ namespace miaudota.Telas
             lblNome.Text = gato.Nome;
             lblIdadeMicrochip.Text = $"{idade} . {gato.NumeroMicrochip}";
             lblStatus.Text = gato.Status;
-            if (string.IsNullOrEmpty(gato.CaminhoFoto))
+            Image fotoAnterior = pbFoto.Image;
+
+            if (gato.Foto != null && gato.Foto.Length > 0)
             {
-                pbFoto.Image = Properties.Resources.sem_foto;
+                using (MemoryStream ms = new MemoryStream(gato.Foto))
+                using (Image img = Image.FromStream(ms))
+                {
+                    pbFoto.Image = new Bitmap(img);
+                }
             }
             else
             {
-                pbFoto.Image = Image.FromFile(gato.CaminhoFoto);
+                pbFoto.Image = Properties.Resources.sem_foto;
+            }
+
+            // libera a foto anterior, menos a imagem padrão dos recursos
+            if (fotoAnterior != null && fotoAnterior != Properties.Resources.sem_foto)
+            {
+                fotoAnterior.Dispose();
             }
         }
 

@@ -31,7 +31,6 @@
             this.lblCadastroTutor = new System.Windows.Forms.Label();
             this.lblTituloRegistroOcorrencia = new System.Windows.Forms.Label();
             this.tlpConteudo = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlSelecaoGato = new System.Windows.Forms.Panel();
             this.pnlDetalhesOcorrência = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -45,10 +44,7 @@
             this.dtpDataOcorrencia = new System.Windows.Forms.DateTimePicker();
             this.lblData = new System.Windows.Forms.Label();
             this.lblDetalhes = new System.Windows.Forms.Label();
-            this.pnlMargemTipo = new System.Windows.Forms.Panel();
-            this.pnlTipoOcorrência = new System.Windows.Forms.Panel();
-            this.tlpTipos = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTipo = new System.Windows.Forms.Label();
+            this.pnlSelecaoGato = new System.Windows.Forms.Panel();
             this.tlpSelecao = new System.Windows.Forms.TableLayoutPanel();
             this.pnlCampo = new System.Windows.Forms.Panel();
             this.txtMicrochip = new System.Windows.Forms.TextBox();
@@ -63,12 +59,14 @@
             this.pnlStatus = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.Label();
             this.pbFoto = new System.Windows.Forms.PictureBox();
+            this.pnlMargemTipo = new System.Windows.Forms.Panel();
+            this.pnlTipoOcorrência = new System.Windows.Forms.Panel();
+            this.tlpTipos = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.tlpConteudo.SuspendLayout();
-            this.pnlSelecaoGato.SuspendLayout();
             this.pnlDetalhesOcorrência.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.pnlMargemTipo.SuspendLayout();
-            this.pnlTipoOcorrência.SuspendLayout();
+            this.pnlSelecaoGato.SuspendLayout();
             this.tlpSelecao.SuspendLayout();
             this.pnlCampo.SuspendLayout();
             this.pnlConteudoCard.SuspendLayout();
@@ -77,6 +75,8 @@
             this.pnlDados.SuspendLayout();
             this.pnlStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
+            this.pnlMargemTipo.SuspendLayout();
+            this.pnlTipoOcorrência.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCadastroTutor
@@ -119,16 +119,6 @@
             this.tlpConteudo.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpConteudo.Size = new System.Drawing.Size(590, 693);
             this.tlpConteudo.TabIndex = 35;
-            // 
-            // pnlSelecaoGato
-            // 
-            this.pnlSelecaoGato.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlSelecaoGato.Controls.Add(this.tlpSelecao);
-            this.pnlSelecaoGato.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSelecaoGato.Location = new System.Drawing.Point(3, 3);
-            this.pnlSelecaoGato.Name = "pnlSelecaoGato";
-            this.pnlSelecaoGato.Size = new System.Drawing.Size(584, 116);
-            this.pnlSelecaoGato.TabIndex = 33;
             // 
             // pnlDetalhesOcorrência
             // 
@@ -276,54 +266,15 @@
             this.lblDetalhes.TabIndex = 34;
             this.lblDetalhes.Text = "3. DETALHES DA OCORRÊNCIA";
             // 
-            // pnlMargemTipo
+            // pnlSelecaoGato
             // 
-            this.pnlMargemTipo.Controls.Add(this.pnlTipoOcorrência);
-            this.pnlMargemTipo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMargemTipo.Location = new System.Drawing.Point(3, 125);
-            this.pnlMargemTipo.Name = "pnlMargemTipo";
-            this.pnlMargemTipo.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
-            this.pnlMargemTipo.Size = new System.Drawing.Size(584, 293);
-            this.pnlMargemTipo.TabIndex = 36;
-            // 
-            // pnlTipoOcorrência
-            // 
-            this.pnlTipoOcorrência.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlTipoOcorrência.Controls.Add(this.tlpTipos);
-            this.pnlTipoOcorrência.Controls.Add(this.lblTipo);
-            this.pnlTipoOcorrência.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTipoOcorrência.Location = new System.Drawing.Point(0, 12);
-            this.pnlTipoOcorrência.Name = "pnlTipoOcorrência";
-            this.pnlTipoOcorrência.Padding = new System.Windows.Forms.Padding(15);
-            this.pnlTipoOcorrência.Size = new System.Drawing.Size(584, 269);
-            this.pnlTipoOcorrência.TabIndex = 35;
-            // 
-            // tlpTipos
-            // 
-            this.tlpTipos.ColumnCount = 3;
-            this.tlpTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpTipos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTipos.Location = new System.Drawing.Point(15, 38);
-            this.tlpTipos.Name = "tlpTipos";
-            this.tlpTipos.RowCount = 2;
-            this.tlpTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpTipos.Size = new System.Drawing.Size(554, 216);
-            this.tlpTipos.TabIndex = 35;
-            // 
-            // lblTipo
-            // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
-            this.lblTipo.Location = new System.Drawing.Point(15, 15);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.lblTipo.Size = new System.Drawing.Size(136, 23);
-            this.lblTipo.TabIndex = 34;
-            this.lblTipo.Text = "2. TIPO DE OCORRÊNCIA";
+            this.pnlSelecaoGato.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlSelecaoGato.Controls.Add(this.tlpSelecao);
+            this.pnlSelecaoGato.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSelecaoGato.Location = new System.Drawing.Point(3, 3);
+            this.pnlSelecaoGato.Name = "pnlSelecaoGato";
+            this.pnlSelecaoGato.Size = new System.Drawing.Size(584, 116);
+            this.pnlSelecaoGato.TabIndex = 33;
             // 
             // tlpSelecao
             // 
@@ -496,6 +447,55 @@
             this.pbFoto.TabStop = false;
             this.pbFoto.Visible = false;
             // 
+            // pnlMargemTipo
+            // 
+            this.pnlMargemTipo.Controls.Add(this.pnlTipoOcorrência);
+            this.pnlMargemTipo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMargemTipo.Location = new System.Drawing.Point(3, 125);
+            this.pnlMargemTipo.Name = "pnlMargemTipo";
+            this.pnlMargemTipo.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
+            this.pnlMargemTipo.Size = new System.Drawing.Size(584, 293);
+            this.pnlMargemTipo.TabIndex = 36;
+            // 
+            // pnlTipoOcorrência
+            // 
+            this.pnlTipoOcorrência.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlTipoOcorrência.Controls.Add(this.tlpTipos);
+            this.pnlTipoOcorrência.Controls.Add(this.lblTipo);
+            this.pnlTipoOcorrência.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTipoOcorrência.Location = new System.Drawing.Point(0, 12);
+            this.pnlTipoOcorrência.Name = "pnlTipoOcorrência";
+            this.pnlTipoOcorrência.Padding = new System.Windows.Forms.Padding(15);
+            this.pnlTipoOcorrência.Size = new System.Drawing.Size(584, 269);
+            this.pnlTipoOcorrência.TabIndex = 35;
+            // 
+            // tlpTipos
+            // 
+            this.tlpTipos.ColumnCount = 3;
+            this.tlpTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpTipos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpTipos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTipos.Location = new System.Drawing.Point(15, 38);
+            this.tlpTipos.Name = "tlpTipos";
+            this.tlpTipos.RowCount = 2;
+            this.tlpTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTipos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpTipos.Size = new System.Drawing.Size(554, 216);
+            this.tlpTipos.TabIndex = 35;
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(130)))), ((int)(((byte)(210)))));
+            this.lblTipo.Location = new System.Drawing.Point(15, 15);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.lblTipo.Size = new System.Drawing.Size(136, 23);
+            this.lblTipo.TabIndex = 34;
+            this.lblTipo.Text = "2. TIPO DE OCORRÊNCIA";
+            // 
             // ucOcorrencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -508,14 +508,11 @@
             this.Padding = new System.Windows.Forms.Padding(25, 20, 25, 20);
             this.Size = new System.Drawing.Size(640, 792);
             this.tlpConteudo.ResumeLayout(false);
-            this.pnlSelecaoGato.ResumeLayout(false);
             this.pnlDetalhesOcorrência.ResumeLayout(false);
             this.pnlDetalhesOcorrência.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.pnlMargemTipo.ResumeLayout(false);
-            this.pnlTipoOcorrência.ResumeLayout(false);
-            this.pnlTipoOcorrência.PerformLayout();
+            this.pnlSelecaoGato.ResumeLayout(false);
             this.tlpSelecao.ResumeLayout(false);
             this.pnlCampo.ResumeLayout(false);
             this.pnlCampo.PerformLayout();
@@ -526,6 +523,9 @@
             this.pnlDados.PerformLayout();
             this.pnlStatus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
+            this.pnlMargemTipo.ResumeLayout(false);
+            this.pnlTipoOcorrência.ResumeLayout(false);
+            this.pnlTipoOcorrência.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
