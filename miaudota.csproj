@@ -110,6 +110,7 @@
     <Compile Include="Funcoes\Conexao.cs" />
     <Compile Include="Dados\RepositorioTutores.cs" />
     <Compile Include="Funcoes\Idade.cs" />
+    <Compile Include="Models\LarTemporario.cs" />
     <Compile Include="Models\Ocorrencia.cs" />
     <Compile Include="Dados\RepositorioOcorrencia.cs" />
     <Compile Include="Models\OcorrenciaGato.cs" />

@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -724,27 +725,25 @@ namespace miaudota
                 {
                     try
                     {
-                        using (MySqlCommand comando = new MySqlCommand(
-                            "DELETE FROM gato_vacina WHERE id_gato = @id;", conexao, transacao))
+                        string[] comandos =
                         {
-                            comando.Parameters.AddWithValue("@id", gato.Id);
-                            comando.ExecuteNonQuery();
-                        }
+                        "DELETE FROM gato_vacina WHERE id_gato = @id;",
+                        "DELETE FROM local_resgate WHERE id_gato = @id;",
+                        "DELETE FROM ocorrencia WHERE id_gato = @id;",
+                        "DELETE FROM adocao WHERE id_gato = @id;",
+                        "DELETE FROM gato WHERE id_gato = @id;"
+                        };
 
-                        using (MySqlCommand comando = new MySqlCommand(
-                            "DELETE FROM gato WHERE id_gato = @id;", conexao, transacao))
+                        foreach (string sql in comandos)
                         {
-                            comando.Parameters.AddWithValue("@id", gato.Id);
-                            comando.ExecuteNonQuery();
+                            using (MySqlCommand comando = new MySqlCommand(sql, conexao, transacao))
+                            {
+                                comando.Parameters.AddWithValue("@id", gato.Id);
+                                comando.ExecuteNonQuery();
+                            }
                         }
 
                         transacao.Commit();
-                    }
-                    catch (MySqlException ex) when (ex.Number == 1451)
-                    {
-                        transacao.Rollback();
-                        throw new InvalidOperationException(
-                            "Este gato possui adoção ou ocorrência registrada e não pode ser excluído.");
                     }
                     catch
                     {

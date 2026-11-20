@@ -35,9 +35,9 @@ namespace miaudota.Telas
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvarTutor = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtObservacoes = new System.Windows.Forms.TextBox();
             this.lblObservacoes = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpInicioDisponivel = new System.Windows.Forms.DateTimePicker();
             this.lblInicio = new System.Windows.Forms.Label();
             this.cbDisponibilidade = new System.Windows.Forms.ComboBox();
             this.lblDisponibilidade = new System.Windows.Forms.Label();
@@ -56,18 +56,18 @@ namespace miaudota.Telas
             this.lblEstado = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.lblCidade = new System.Windows.Forms.Label();
-            this.txtCep = new System.Windows.Forms.TextBox();
+            this.txtCEP = new System.Windows.Forms.TextBox();
             this.lblCep = new System.Windows.Forms.Label();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.lblLogradouro = new System.Windows.Forms.Label();
             this.lblEndereco = new System.Windows.Forms.Label();
-            this.txbEmail = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txbNumeroTelefone = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
-            this.txbCpf = new System.Windows.Forms.TextBox();
+            this.txtCPF = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
-            this.txbNome = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblResponsavel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -97,9 +97,9 @@ namespace miaudota.Telas
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btnLimpar);
             this.panel1.Controls.Add(this.btnSalvarTutor);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtObservacoes);
             this.panel1.Controls.Add(this.lblObservacoes);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtpInicioDisponivel);
             this.panel1.Controls.Add(this.lblInicio);
             this.panel1.Controls.Add(this.cbDisponibilidade);
             this.panel1.Controls.Add(this.lblDisponibilidade);
@@ -118,18 +118,18 @@ namespace miaudota.Telas
             this.panel1.Controls.Add(this.lblEstado);
             this.panel1.Controls.Add(this.txtCidade);
             this.panel1.Controls.Add(this.lblCidade);
-            this.panel1.Controls.Add(this.txtCep);
+            this.panel1.Controls.Add(this.txtCEP);
             this.panel1.Controls.Add(this.lblCep);
             this.panel1.Controls.Add(this.txtLogradouro);
             this.panel1.Controls.Add(this.lblLogradouro);
             this.panel1.Controls.Add(this.lblEndereco);
-            this.panel1.Controls.Add(this.txbEmail);
+            this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.lblEmail);
-            this.panel1.Controls.Add(this.txbNumeroTelefone);
+            this.panel1.Controls.Add(this.txtTelefone);
             this.panel1.Controls.Add(this.lblTelefone);
-            this.panel1.Controls.Add(this.txbCpf);
+            this.panel1.Controls.Add(this.txtCPF);
             this.panel1.Controls.Add(this.lblCpf);
-            this.panel1.Controls.Add(this.txbNome);
+            this.panel1.Controls.Add(this.txtNome);
             this.panel1.Controls.Add(this.lblNome);
             this.panel1.Controls.Add(this.lblResponsavel);
             this.panel1.Location = new System.Drawing.Point(16, 78);
@@ -153,6 +153,7 @@ namespace miaudota.Telas
             this.btnLimpar.TabIndex = 71;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnSalvarTutor
             // 
@@ -168,15 +169,16 @@ namespace miaudota.Telas
             this.btnSalvarTutor.TabIndex = 70;
             this.btnSalvarTutor.Text = "Salvar";
             this.btnSalvarTutor.UseVisualStyleBackColor = false;
+            this.btnSalvarTutor.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // textBox1
+            // txtObservacoes
             // 
-            this.textBox1.Location = new System.Drawing.Point(18, 649);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(535, 96);
-            this.textBox1.TabIndex = 69;
+            this.txtObservacoes.Location = new System.Drawing.Point(18, 649);
+            this.txtObservacoes.Multiline = true;
+            this.txtObservacoes.Name = "txtObservacoes";
+            this.txtObservacoes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtObservacoes.Size = new System.Drawing.Size(535, 96);
+            this.txtObservacoes.TabIndex = 69;
             // 
             // lblObservacoes
             // 
@@ -187,17 +189,17 @@ namespace miaudota.Telas
             this.lblObservacoes.TabIndex = 68;
             this.lblObservacoes.Text = "Observações Sobre Ambiente e Rotina:";
             // 
-            // dateTimePicker1
+            // dtpInicioDisponivel
             // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.MistyRose;
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.RosyBrown;
-            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.IndianRed;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(371, 573);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(182, 22);
-            this.dateTimePicker1.TabIndex = 67;
+            this.dtpInicioDisponivel.CalendarMonthBackground = System.Drawing.Color.MistyRose;
+            this.dtpInicioDisponivel.CalendarTitleBackColor = System.Drawing.Color.RosyBrown;
+            this.dtpInicioDisponivel.CalendarTrailingForeColor = System.Drawing.Color.IndianRed;
+            this.dtpInicioDisponivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicioDisponivel.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInicioDisponivel.Location = new System.Drawing.Point(371, 573);
+            this.dtpInicioDisponivel.Name = "dtpInicioDisponivel";
+            this.dtpInicioDisponivel.Size = new System.Drawing.Size(182, 22);
+            this.dtpInicioDisponivel.TabIndex = 67;
             // 
             // lblInicio
             // 
@@ -381,13 +383,13 @@ namespace miaudota.Telas
             this.lblCidade.TabIndex = 49;
             this.lblCidade.Text = "Cidade:";
             // 
-            // txtCep
+            // txtCEP
             // 
-            this.txtCep.Location = new System.Drawing.Point(18, 308);
-            this.txtCep.Multiline = true;
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(178, 25);
-            this.txtCep.TabIndex = 48;
+            this.txtCEP.Location = new System.Drawing.Point(18, 308);
+            this.txtCEP.Multiline = true;
+            this.txtCEP.Name = "txtCEP";
+            this.txtCEP.Size = new System.Drawing.Size(178, 25);
+            this.txtCEP.TabIndex = 48;
             // 
             // lblCep
             // 
@@ -427,13 +429,13 @@ namespace miaudota.Telas
             this.lblEndereco.TabIndex = 10;
             this.lblEndereco.Text = "ENDEREÇO";
             // 
-            // txbEmail
+            // txtEmail
             // 
-            this.txbEmail.Location = new System.Drawing.Point(18, 219);
-            this.txbEmail.Multiline = true;
-            this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(537, 25);
-            this.txbEmail.TabIndex = 9;
+            this.txtEmail.Location = new System.Drawing.Point(18, 219);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(537, 25);
+            this.txtEmail.TabIndex = 9;
             // 
             // lblEmail
             // 
@@ -444,13 +446,13 @@ namespace miaudota.Telas
             this.lblEmail.TabIndex = 8;
             this.lblEmail.Text = "Email:";
             // 
-            // txbNumeroTelefone
+            // txtTelefone
             // 
-            this.txbNumeroTelefone.Location = new System.Drawing.Point(17, 167);
-            this.txbNumeroTelefone.Multiline = true;
-            this.txbNumeroTelefone.Name = "txbNumeroTelefone";
-            this.txbNumeroTelefone.Size = new System.Drawing.Size(538, 25);
-            this.txbNumeroTelefone.TabIndex = 7;
+            this.txtTelefone.Location = new System.Drawing.Point(17, 167);
+            this.txtTelefone.Multiline = true;
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(538, 25);
+            this.txtTelefone.TabIndex = 7;
             // 
             // lblTelefone
             // 
@@ -461,13 +463,13 @@ namespace miaudota.Telas
             this.lblTelefone.TabIndex = 6;
             this.lblTelefone.Text = "Telefone:";
             // 
-            // txbCpf
+            // txtCPF
             // 
-            this.txbCpf.Location = new System.Drawing.Point(18, 111);
-            this.txbCpf.Multiline = true;
-            this.txbCpf.Name = "txbCpf";
-            this.txbCpf.Size = new System.Drawing.Size(537, 25);
-            this.txbCpf.TabIndex = 5;
+            this.txtCPF.Location = new System.Drawing.Point(18, 111);
+            this.txtCPF.Multiline = true;
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(537, 25);
+            this.txtCPF.TabIndex = 5;
             // 
             // lblCpf
             // 
@@ -478,13 +480,13 @@ namespace miaudota.Telas
             this.lblCpf.TabIndex = 4;
             this.lblCpf.Text = "CPF:";
             // 
-            // txbNome
+            // txtNome
             // 
-            this.txbNome.Location = new System.Drawing.Point(18, 61);
-            this.txbNome.Multiline = true;
-            this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(537, 25);
-            this.txbNome.TabIndex = 2;
+            this.txtNome.Location = new System.Drawing.Point(18, 61);
+            this.txtNome.Multiline = true;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(537, 25);
+            this.txtNome.TabIndex = 2;
             // 
             // lblNome
             // 
@@ -531,12 +533,12 @@ namespace miaudota.Telas
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblResponsavel;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.TextBox txbNome;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblCpf;
-        private System.Windows.Forms.TextBox txbCpf;
-        private System.Windows.Forms.TextBox txbNumeroTelefone;
+        private System.Windows.Forms.TextBox txtCPF;
+        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label lblTelefone;
-        private System.Windows.Forms.TextBox txbEmail;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.Label lblEstrutura;
@@ -548,7 +550,7 @@ namespace miaudota.Telas
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Label lblCidade;
-        private System.Windows.Forms.TextBox txtCep;
+        private System.Windows.Forms.TextBox txtCEP;
         private System.Windows.Forms.Label lblCep;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.Label lblLogradouro;
@@ -561,8 +563,8 @@ namespace miaudota.Telas
         private System.Windows.Forms.Label lblInicio;
         private System.Windows.Forms.ComboBox cbDisponibilidade;
         private System.Windows.Forms.Label lblDisponibilidade;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dtpInicioDisponivel;
+        private System.Windows.Forms.TextBox txtObservacoes;
         private System.Windows.Forms.Label lblObservacoes;
         private System.Windows.Forms.Button btnSalvarTutor;
         private System.Windows.Forms.Button btnLimpar;

@@ -32,6 +32,7 @@
             this.ofdFoto = new System.Windows.Forms.OpenFileDialog();
             this.lblCadastroSubtitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEspaco = new System.Windows.Forms.Label();
             this.pnlMapa = new System.Windows.Forms.Panel();
             this.wvMapa = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.lblLocalResgate = new System.Windows.Forms.Label();
@@ -94,7 +95,6 @@
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
             this.lblIdentificacao = new System.Windows.Forms.Label();
-            this.lblEspaco = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlMapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wvMapa)).BeginInit();
@@ -174,6 +174,16 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
             this.panel1.Size = new System.Drawing.Size(670, 1611);
             this.panel1.TabIndex = 25;
+            // 
+            // lblEspaco
+            // 
+            this.lblEspaco.AutoSize = true;
+            this.lblEspaco.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblEspaco.Location = new System.Drawing.Point(10, 1528);
+            this.lblEspaco.Name = "lblEspaco";
+            this.lblEspaco.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lblEspaco.Size = new System.Drawing.Size(0, 18);
+            this.lblEspaco.TabIndex = 100;
             // 
             // pnlMapa
             // 
@@ -957,16 +967,6 @@
             this.lblIdentificacao.Size = new System.Drawing.Size(88, 33);
             this.lblIdentificacao.TabIndex = 32;
             this.lblIdentificacao.Text = "IDENTIFICAÇÃO";
-            // 
-            // lblEspaco
-            // 
-            this.lblEspaco.AutoSize = true;
-            this.lblEspaco.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblEspaco.Location = new System.Drawing.Point(10, 1528);
-            this.lblEspaco.Name = "lblEspaco";
-            this.lblEspaco.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lblEspaco.Size = new System.Drawing.Size(0, 18);
-            this.lblEspaco.TabIndex = 100;
             // 
             // ucCadastroGato
             // 
