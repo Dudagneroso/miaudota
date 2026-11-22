@@ -38,8 +38,8 @@
             this.lblPesquisar = new System.Windows.Forms.Label();
             this.lblTituloConsultaTutor = new System.Windows.Forms.Label();
             this.pnlConteudo = new System.Windows.Forms.Panel();
-            this.lblQtdTutores = new System.Windows.Forms.Label();
             this.dgvTutores = new System.Windows.Forms.DataGridView();
+            this.lblQtdTutores = new System.Windows.Forms.Label();
             this.pnlFiltros.SuspendLayout();
             this.pnlConteudo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTutores)).BeginInit();
@@ -81,6 +81,7 @@
             this.btnBuscar.TabIndex = 24;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtPesquisar
             // 
@@ -113,25 +114,14 @@
             // 
             // pnlConteudo
             // 
-            this.pnlConteudo.Controls.Add(this.lblQtdTutores);
             this.pnlConteudo.Controls.Add(this.dgvTutores);
+            this.pnlConteudo.Controls.Add(this.lblQtdTutores);
             this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlConteudo.Location = new System.Drawing.Point(0, 111);
             this.pnlConteudo.Name = "pnlConteudo";
             this.pnlConteudo.Padding = new System.Windows.Forms.Padding(20);
             this.pnlConteudo.Size = new System.Drawing.Size(637, 688);
             this.pnlConteudo.TabIndex = 4;
-            // 
-            // lblQtdTutores
-            // 
-            this.lblQtdTutores.AutoSize = true;
-            this.lblQtdTutores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQtdTutores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(160)))), ((int)(((byte)(180)))));
-            this.lblQtdTutores.Location = new System.Drawing.Point(20, 655);
-            this.lblQtdTutores.Name = "lblQtdTutores";
-            this.lblQtdTutores.Size = new System.Drawing.Size(65, 13);
-            this.lblQtdTutores.TabIndex = 2;
-            this.lblQtdTutores.Text = "0 tutor(es)";
             // 
             // dgvTutores
             // 
@@ -166,6 +156,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(141)))), ((int)(((byte)(159)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTutores.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTutores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTutores.EnableHeadersVisualStyles = false;
             this.dgvTutores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(228)))), ((int)(((byte)(236)))));
             this.dgvTutores.Location = new System.Drawing.Point(20, 20);
@@ -173,9 +164,21 @@
             this.dgvTutores.ReadOnly = true;
             this.dgvTutores.RowHeadersVisible = false;
             this.dgvTutores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTutores.Size = new System.Drawing.Size(597, 628);
+            this.dgvTutores.Size = new System.Drawing.Size(597, 635);
             this.dgvTutores.TabIndex = 0;
             this.dgvTutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTutores_CellClick);
+            // 
+            // lblQtdTutores
+            // 
+            this.lblQtdTutores.AutoSize = true;
+            this.lblQtdTutores.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblQtdTutores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtdTutores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(160)))), ((int)(((byte)(180)))));
+            this.lblQtdTutores.Location = new System.Drawing.Point(20, 655);
+            this.lblQtdTutores.Name = "lblQtdTutores";
+            this.lblQtdTutores.Size = new System.Drawing.Size(65, 13);
+            this.lblQtdTutores.TabIndex = 2;
+            this.lblQtdTutores.Text = "0 tutor(es)";
             // 
             // ucConsultaTutor
             // 
@@ -185,6 +188,7 @@
             this.Controls.Add(this.pnlFiltros);
             this.Name = "ucConsultaTutor";
             this.Size = new System.Drawing.Size(637, 799);
+            this.Load += new System.EventHandler(this.ucConsultaTutor_Load);
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
             this.pnlConteudo.ResumeLayout(false);

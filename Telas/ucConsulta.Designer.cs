@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.lblFiltro = new System.Windows.Forms.Label();
             this.cbxFiltro = new System.Windows.Forms.ComboBox();
             this.lblBemVindo = new System.Windows.Forms.Label();
             this.tlpGatos = new System.Windows.Forms.TableLayoutPanel();
-            this.lblFiltro = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +47,15 @@
             this.pnlTop.Size = new System.Drawing.Size(640, 80);
             this.pnlTop.TabIndex = 1;
             // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(452, 12);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(45, 13);
+            this.lblFiltro.TabIndex = 2;
+            this.lblFiltro.Text = "Mostrar:";
+            // 
             // cbxFiltro
             // 
             this.cbxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -60,6 +69,7 @@
             this.cbxFiltro.Name = "cbxFiltro";
             this.cbxFiltro.Size = new System.Drawing.Size(173, 26);
             this.cbxFiltro.TabIndex = 1;
+            this.cbxFiltro.SelectedIndexChanged += new System.EventHandler(this.cbxFiltro_SelectedIndexChanged);
             // 
             // lblBemVindo
             // 
@@ -88,15 +98,6 @@
             this.tlpGatos.Size = new System.Drawing.Size(640, 604);
             this.tlpGatos.TabIndex = 2;
             // 
-            // lblFiltro
-            // 
-            this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(452, 12);
-            this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(45, 13);
-            this.lblFiltro.TabIndex = 2;
-            this.lblFiltro.Text = "Mostrar:";
-            // 
             // ucConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +106,7 @@
             this.Controls.Add(this.pnlTop);
             this.Name = "ucConsulta";
             this.Size = new System.Drawing.Size(640, 684);
+            this.Load += new System.EventHandler(this.ucConsulta_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.ResumeLayout(false);

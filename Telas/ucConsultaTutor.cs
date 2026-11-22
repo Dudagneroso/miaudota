@@ -12,11 +12,11 @@ namespace miaudota.Telas
 {
     public partial class ucConsultaTutor : UserControl
     {
+        private List<Tutor> todosTutores = new List<Tutor>();
         public ucConsultaTutor()
         {
             InitializeComponent();
-            dgvTutores.DataSource = RepositorioTutoresFake.ObterTodos();
-            dgvTutores.RowTemplate.Height = 60;
+            Load += ucConsultaTutor_Load;
         }
 
         private void dgvTutores_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -29,6 +29,96 @@ namespace miaudota.Telas
                 ((FormPrincipal)this.ParentForm).AbrirTela(tela);
 
             }
+        }
+
+        private void ucConsultaTutor_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                todosTutores = RepositorioTutores.ObterTodos();
+                lblQtdTutores.Text = $"{todosTutores.Count.ToString()} tutor(es)";
+                dgvTutores.RowTemplate.Height = 60;
+                dgvTutores.DataError += dgvTutores_DataError;
+                dgvTutores.DataSource = todosTutores;
+                
+                ConfigurarColunas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar os tutores: " + ex.Message);
+            }
+        }
+
+        private void ConfigurarColunas()
+        {
+            // colunas que não devem aparecer
+            string[] ocultas = { "Id", "Gatos", "DataAdocao" };
+
+            foreach (string nome in ocultas)
+            {
+                if (dgvTutores.Columns[nome] != null)
+                {
+                    dgvTutores.Columns[nome].Visible = false;
+                }
+            }
+
+            // cabeçalhos mais amigáveis
+            TrocarCabecalho("CPF", "CPF");
+            TrocarCabecalho("DataNascimento", "Nascimento");
+            TrocarCabecalho("CEP", "CEP");
+            TrocarCabecalho("TipoResidencia", "Moradia");
+            TrocarCabecalho("OutrosAnimais", "Outros pets");
+
+            // colunas dividem a largura disponível
+            dgvTutores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            foreach (DataGridViewColumn coluna in dgvTutores.Columns)
+            {
+                if (!coluna.Visible) continue;
+
+                coluna.MinimumWidth = 90;
+                coluna.FillWeight = 100;
+            }
+
+            // colunas de texto maiores ganham mais espaço
+            DefinirPeso("Nome", 160);
+            DefinirPeso("Email", 160);
+            DefinirPeso("Logradouro", 150);
+
+            // colunas curtas ficam mais estreitas
+            DefinirPeso("Numero", 60);
+            DefinirPeso("Estado", 60);
+        }
+
+        private void TrocarCabecalho(string coluna, string titulo)
+        {
+            if (dgvTutores.Columns[coluna] != null)
+            {
+                dgvTutores.Columns[coluna].HeaderText = titulo;
+            }
+        }
+
+        private void DefinirPeso(string coluna, float peso)
+        {
+            if (dgvTutores.Columns[coluna] != null)
+            {
+                dgvTutores.Columns[coluna].FillWeight = peso;
+            }
+        }
+
+        private void dgvTutores_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            IEnumerable<Tutor> pesquisa = todosTutores;
+            pesquisa = todosTutores.Where(t => t.Nome.Contains(txtPesquisar.Text));
+            List<Tutor> tutoresPesquisados = pesquisa.ToList();
+            dgvTutores.DataSource = tutoresPesquisados;
+            ConfigurarColunas();
+            lblQtdTutores.Text = $"{tutoresPesquisados.Count.ToString()} tutor(es)";
         }
     }
 }

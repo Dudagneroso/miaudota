@@ -15,7 +15,7 @@ namespace miaudota
 {
     public partial class ucCadastroGato : UserControl
     {
-        string caminhoFotoSelecionada = string.Empty;
+        byte[] imagemSelecionada = null;
         string nomeGato = string.Empty;
 
         public ucCadastroGato()
@@ -28,8 +28,14 @@ namespace miaudota
         {
             if (ofdFoto.ShowDialog() == DialogResult.OK)
             {
-                pbFotoGato.Image = Image.FromFile(ofdFoto.FileName);
-                caminhoFotoSelecionada = ofdFoto.FileName;
+                imagemSelecionada = File.ReadAllBytes(ofdFoto.FileName);
+
+                using (MemoryStream ms = new MemoryStream(imagemSelecionada))
+                using (Image imagemTemporaria = Image.FromStream(ms))
+                {
+                    pbFotoGato.Image?.Dispose();
+                    pbFotoGato.Image = new Bitmap(imagemTemporaria);
+                }
             }
         }
 
@@ -39,13 +45,25 @@ namespace miaudota
 
         private async void ucCadastroGato_Load(object sender, EventArgs e)
         {
-            await wvMapa.EnsureCoreWebView2Async();
-            // mapear a pasta Mapa para um endereço virtual
-            wvMapa.CoreWebView2.SetVirtualHostNameToFolderMapping("miaudota.local", Path.Combine(Application.StartupPath, "Mapa"), CoreWebView2HostResourceAccessKind.Allow);
-            // assinar o evento WebMessageReceived
-            wvMapa.CoreWebView2.WebMessageReceived += RegistrarLocal;
-            // navegar para a página
-            wvMapa.CoreWebView2.Navigate("https://miaudota.local/mapa.html");
+            try
+            {
+
+                CarregarLaresTemporarios();
+
+                await wvMapa.EnsureCoreWebView2Async();
+                // mapear a pasta Mapa para um endereço virtual
+                wvMapa.CoreWebView2.SetVirtualHostNameToFolderMapping("miaudota.local", Path.Combine(Application.StartupPath, "Mapa"), CoreWebView2HostResourceAccessKind.Allow);
+                // assinar o evento WebMessageReceived
+                wvMapa.CoreWebView2.WebMessageReceived += RegistrarLocal;
+                // navegar para a página
+                wvMapa.CoreWebView2.Navigate("https://miaudota.local/mapa.html");
+
+                cbStatus.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inicializar a tela: " + ex.Message);
+            }
         }
 
         private void RegistrarLocal(object sender, CoreWebView2WebMessageReceivedEventArgs e)
@@ -56,9 +74,16 @@ namespace miaudota
             // separar com .Split(';')
             string[] partes = informacoes.Split(';');
 
-            // guardar nas variáveis latitudeSelecionada e longitudeSelecionada
-            latitudeSelecionada = double.Parse(partes[0], CultureInfo.InvariantCulture);
-            longitudeSelecionada = double.Parse(partes[1], CultureInfo.InvariantCulture);
+            // verificar se tem duas partes e se são números
+            if (partes.Length == 2 && double.TryParse(partes[0], NumberStyles.Float,
+            CultureInfo.InvariantCulture, out double latitude) &&
+            double.TryParse(partes[1], NumberStyles.Float,
+            CultureInfo.InvariantCulture, out double longitude))
+            {
+                // guardar nas variáveis latitudeSelecionada e longitudeSelecionada
+                latitudeSelecionada = double.Parse(partes[0], CultureInfo.InvariantCulture);
+                longitudeSelecionada = double.Parse(partes[1], CultureInfo.InvariantCulture);
+            }
         }
 
         private void rbSimLocal_CheckedChanged(object sender, EventArgs e)
@@ -69,6 +94,36 @@ namespace miaudota
         private void rbVacinado_CheckedChanged(object sender, EventArgs e)
         {
             pnlVacinasTomadas.Visible = rbVacinado.Checked || rbNaoVacinado.Checked;
+
+            if (rbVacinado.Checked)
+            {
+                for (int i = 0; i < clbVacinas.Items.Count; i++)
+                {
+                    clbVacinas.SetItemChecked(i, true);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < clbVacinas.Items.Count; i++)
+                {
+                    clbVacinas.SetItemChecked(i, false);
+                }
+            }
+        }
+        private void CarregarLaresTemporarios()
+        {
+            try
+            {
+                cbLarTemporario.DataSource = RepositorioLaresTemporarios.ObterTodos();
+                cbLarTemporario.DisplayMember = "TextoExibicao";
+                cbLarTemporario.ValueMember = "Id";
+
+                cbLarTemporario.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar os lares temporários: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LimparFormulario()
@@ -81,18 +136,24 @@ namespace miaudota
             cbPelagem.SelectedIndex = -1;
             cbColoracao.SelectedIndex = -1;
             txtPeso.Clear();
-            txtLarTemporario.Clear();
+            cbLarTemporario.SelectedIndex = -1;
             rbCastrado.Checked = false;
             rbNaoCastrado.Checked = false;
             rbVacinado.Checked = false;
             rbNaoVacinado.Checked = false;
+            for (int i = 0; i < clbVacinas.Items.Count; i++)
+            {
+                clbVacinas.SetItemChecked(i, false);
+            }
             cbStatus.SelectedIndex = -1;
             cbFIV.SelectedIndex = -1;
             cbFELV.SelectedIndex = -1;
             txtDeficiencias.Clear();
             txtObservacao.Clear();
             dtpDataEntrada.Value = DateTime.Now;
-            caminhoFotoSelecionada = string.Empty;
+            imagemSelecionada = null;
+            pbFotoGato.Image?.Dispose();
+            pbFotoGato.Image = null;
             rbSimLocal.Checked = false;
             rbNaoLocal.Checked = false;
             latitudeSelecionada = null;
@@ -100,41 +161,56 @@ namespace miaudota
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            // 1. montar o objeto Gato com os dados da tela
-            Gato gato = new Gato
+            int pendentesAntes = RepositorioGatos.QuantidadePendente();
+
+            try
             {
-                NumeroMicrochip = txtMicrochip.Text,
-                Nome = txtNome.Text,
-                DataNascimento = dtpDataNascimento.Value,
-                Sexo = rbMacho.Checked ? "Macho" : "Fêmea",
-                Pelagem = cbPelagem.Text,
-                Coloracao = cbColoracao.Text,
-                Peso = float.TryParse(txtPeso.Text, out float peso) ? peso : 0,
-                LarTemporario = txtLarTemporario.Text,
-                Castrado = rbCastrado.Checked ? "Sim" : "Não",
-                VacinasEmDia = rbVacinado.Checked ? "Sim" : "Não",
-                Vacinas = clbVacinas.CheckedItems.Cast<string>().ToList(),
-                Status = cbStatus.SelectedItem?.ToString(),
-                TesteFIV = cbFIV.Text,
-                TesteFelv = cbFELV.Text,
-                Doencas = txtDeficiencias.Text,
-                Observacoes = txtObservacao.Text,
-                DataChegadaOng = dtpDataEntrada.Value,
-                CaminhoFoto = caminhoFotoSelecionada,
-                LocalResgate = rbSimLocal.Checked ? "Sim" : "Não",
-                Latitude = latitudeSelecionada,
-                Longitude = longitudeSelecionada,
-                DataCadastro = DateTime.Now
-            };
-            
-            // 2. guardar no repositório e gatos
-            RepositorioGatosFake.Adicionar(gato);
+                // validar se o local de resgate foi selecionado
+                if (rbSimLocal.Checked && (!latitudeSelecionada.HasValue || !longitudeSelecionada.HasValue))
+                {
+                    MessageBox.Show("Por favor, selecione o local de resgate no mapa.");
+                    return;
+                }
 
-            // 3. Mensagem de Sucesso
-            MessageBox.Show("Gato cadastrado com sucesso!");
+                // 1. montar o objeto Gato com os dados da tela
+                Gato gato = new Gato
+                {
+                    NumeroMicrochip = txtMicrochip.Text,
+                    Nome = txtNome.Text,
+                    DataNascimento = dtpDataNascimento.Value,
+                    Sexo = rbMacho.Checked ? "Macho" : rbFemea.Checked ? "Fêmea" : null,
+                    Pelagem = cbPelagem.Text,
+                    Coloracao = cbColoracao.Text,
+                    Peso = float.TryParse(txtPeso.Text, out float peso) ? peso : 0,
+                    IdLarTemporario = cbLarTemporario.SelectedValue == null? (int?)null : Convert.ToInt32(cbLarTemporario.SelectedValue),
+                    Castrado = rbCastrado.Checked ? "Sim" : rbNaoCastrado.Checked ? "Não" : null,
+                    VacinasEmDia = rbVacinado.Checked ? "Sim" : "Não",
+                    Vacinas = clbVacinas.CheckedItems.Cast<string>().ToList(),
+                    Status = cbStatus.SelectedItem?.ToString(),
+                    TesteFIV = cbFIV.Text,
+                    TesteFelv = cbFELV.Text,
+                    Doencas = txtDeficiencias.Text,
+                    Observacoes = txtObservacao.Text,
+                    DataChegadaOng = dtpDataEntrada.Value,
+                    Foto = imagemSelecionada,
+                    LocalResgate = rbSimLocal.Checked ? "Sim" : "Não",
+                    Latitude = latitudeSelecionada,
+                    Longitude = longitudeSelecionada
+                };
 
-            // 4. limpar o formulário
-            LimparFormulario();
+                // 2. guardar no repositório e gatos
+                RepositorioGatos.Adicionar(gato);
+
+                // 3. Mensagem de Sucesso
+                MessageBox.Show("Gato cadastrado com sucesso!");
+
+                // 4. limpar o formulário
+                LimparFormulario();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Dado inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)

@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Plugin de mapa de calor -->
+	<script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+
+    <style>
+        html, body, #mapa {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="mapa"></div>
+
+<script>
+
+    // Inicializar mapa
+    var mapa = L.map('mapa').setView([-22.9056, -47.0608], 11);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap'
+	}).addTo(mapa);
+
+	var camadaCalor = null;
+
+	// Receber os pontos enviados pelo C#
+	function atualizarMapa(pontos) {
+
+	// Remover camada anterior
+	if (camadaCalor) {
+	mapa.removeLayer(camadaCalor);
+	}
+
+	// Criar novo mapa de calor
+	camadaCalor = L.heatLayer(pontos, {
+	radius: 30,
+	blur: 25,
+	maxZoom: 17,
+	max: 1
+	}).addTo(mapa);
+
+	// Ajustar o zoom para os locais registrados
+	if (pontos.length > 0) {
+
+	var coordenadas = pontos.map(p => [p[0], p[1]]);
+
+	var limites = L.latLngBounds(coordenadas);
+
+	mapa.fitBounds(limites, {
+	padding: [30, 30],
+	maxZoom: 14
+	});
+	}
+	}
+
+	console.log("Leaflet:", typeof L);
+	console.log("Plugin Heat:", typeof L.heatLayer);
+
+
+</script>
+
+</body>
+</html>

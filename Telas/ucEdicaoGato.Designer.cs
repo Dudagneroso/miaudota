@@ -32,7 +32,28 @@
             this.lblDescricaoPerfil = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.pnlAbas = new System.Windows.Forms.Panel();
+            this.pnlSwitch = new System.Windows.Forms.Panel();
+            this.rbOcorrencias = new System.Windows.Forms.RadioButton();
+            this.rbDados = new System.Windows.Forms.RadioButton();
             this.pnlConteudo = new System.Windows.Forms.Panel();
+            this.pnlOcorrencias = new System.Windows.Forms.Panel();
+            this.pnlOcorrenciasConteudo = new System.Windows.Forms.Panel();
+            this.flpOcorrencias = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblSubtituloHistorico = new System.Windows.Forms.Label();
+            this.lblHistorico = new System.Windows.Forms.Label();
+            this.tlpCardsInfos = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlBordaDataUltimoRegistro = new System.Windows.Forms.Panel();
+            this.pnlDataUltimoRegistro = new System.Windows.Forms.Panel();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblDataUltimoRegistro = new System.Windows.Forms.Label();
+            this.pnlBordaUltimaOcorrencia = new System.Windows.Forms.Panel();
+            this.pnlUltimaOcorrencia = new System.Windows.Forms.Panel();
+            this.lblTipoUltimaOcorrencia = new System.Windows.Forms.Label();
+            this.lblUltimaOcorrencia = new System.Windows.Forms.Label();
+            this.pnlBordaTotalOcorrencias = new System.Windows.Forms.Panel();
+            this.pnlTotalOcorrencias = new System.Windows.Forms.Panel();
+            this.lblQtd = new System.Windows.Forms.Label();
+            this.lblTotalOcorrencias = new System.Windows.Forms.Label();
             this.pnlDados = new System.Windows.Forms.Panel();
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -45,9 +66,9 @@
             this.rbNaoLocal = new System.Windows.Forms.RadioButton();
             this.rbSimLocal = new System.Windows.Forms.RadioButton();
             this.pnlFoto = new System.Windows.Forms.Panel();
+            this.pbFotoGato = new System.Windows.Forms.PictureBox();
             this.lblFoto = new System.Windows.Forms.Label();
             this.btnEscolherFoto = new System.Windows.Forms.Button();
-            this.pbFotoGato = new System.Windows.Forms.PictureBox();
             this.dtpDataEntrada = new System.Windows.Forms.DateTimePicker();
             this.lblDataEntrada = new System.Windows.Forms.Label();
             this.txtObservacoes = new System.Windows.Forms.TextBox();
@@ -67,12 +88,12 @@
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblEspaco = new System.Windows.Forms.Label();
-            this.txtLarTemporario = new System.Windows.Forms.TextBox();
+            this.cbLarTemporario = new System.Windows.Forms.ComboBox();
             this.lblLarTemporario = new System.Windows.Forms.Label();
             this.lblSaudeStatus = new System.Windows.Forms.Label();
             this.pnlCaracteristicas = new System.Windows.Forms.Panel();
             this.pnlPeso = new System.Windows.Forms.Panel();
-            this.txbPeso = new System.Windows.Forms.TextBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
             this.lblPeso = new System.Windows.Forms.Label();
             this.pnlPelagem = new System.Windows.Forms.Panel();
             this.cbColoracao = new System.Windows.Forms.ComboBox();
@@ -90,13 +111,22 @@
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
             this.lblIdentificacao = new System.Windows.Forms.Label();
-            this.pnlOcorrencias = new System.Windows.Forms.Panel();
-            this.pnlSwitch = new System.Windows.Forms.Panel();
-            this.rbDados = new System.Windows.Forms.RadioButton();
-            this.rbOcorrencias = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbFELV = new System.Windows.Forms.ComboBox();
+            this.lblFELV = new System.Windows.Forms.Label();
+            this.cbFIV = new System.Windows.Forms.ComboBox();
+            this.lblFIV = new System.Windows.Forms.Label();
             this.pnlAbas.SuspendLayout();
+            this.pnlSwitch.SuspendLayout();
             this.pnlConteudo.SuspendLayout();
+            this.pnlOcorrencias.SuspendLayout();
+            this.pnlOcorrenciasConteudo.SuspendLayout();
+            this.tlpCardsInfos.SuspendLayout();
+            this.pnlBordaDataUltimoRegistro.SuspendLayout();
+            this.pnlDataUltimoRegistro.SuspendLayout();
+            this.pnlBordaUltimaOcorrencia.SuspendLayout();
+            this.pnlUltimaOcorrencia.SuspendLayout();
+            this.pnlBordaTotalOcorrencias.SuspendLayout();
+            this.pnlTotalOcorrencias.SuspendLayout();
             this.pnlDados.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.pnlLocal.SuspendLayout();
@@ -113,8 +143,6 @@
             this.pnlPeso.SuspendLayout();
             this.pnlPelagem.SuspendLayout();
             this.gbSexo.SuspendLayout();
-            this.pnlOcorrencias.SuspendLayout();
-            this.pnlSwitch.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPerfil
@@ -148,6 +176,7 @@
             this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "🗑️ Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // pnlAbas
             // 
@@ -158,6 +187,56 @@
             this.pnlAbas.Size = new System.Drawing.Size(650, 63);
             this.pnlAbas.TabIndex = 4;
             // 
+            // pnlSwitch
+            // 
+            this.pnlSwitch.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlSwitch.Controls.Add(this.rbOcorrencias);
+            this.pnlSwitch.Controls.Add(this.rbDados);
+            this.pnlSwitch.Location = new System.Drawing.Point(18, 3);
+            this.pnlSwitch.Name = "pnlSwitch";
+            this.pnlSwitch.Size = new System.Drawing.Size(215, 42);
+            this.pnlSwitch.TabIndex = 2;
+            // 
+            // rbOcorrencias
+            // 
+            this.rbOcorrencias.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbOcorrencias.AutoSize = true;
+            this.rbOcorrencias.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbOcorrencias.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rbOcorrencias.FlatAppearance.BorderSize = 0;
+            this.rbOcorrencias.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(232)))), ((int)(((byte)(252)))));
+            this.rbOcorrencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbOcorrencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOcorrencias.Location = new System.Drawing.Point(125, 0);
+            this.rbOcorrencias.Name = "rbOcorrencias";
+            this.rbOcorrencias.Size = new System.Drawing.Size(90, 42);
+            this.rbOcorrencias.TabIndex = 2;
+            this.rbOcorrencias.TabStop = true;
+            this.rbOcorrencias.Text = "Ocorrências";
+            this.rbOcorrencias.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbOcorrencias.UseVisualStyleBackColor = false;
+            this.rbOcorrencias.CheckedChanged += new System.EventHandler(this.rbOcorrencias_CheckedChanged);
+            // 
+            // rbDados
+            // 
+            this.rbDados.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbDados.AutoSize = true;
+            this.rbDados.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbDados.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbDados.FlatAppearance.BorderSize = 0;
+            this.rbDados.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
+            this.rbDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDados.Location = new System.Drawing.Point(0, 0);
+            this.rbDados.Name = "rbDados";
+            this.rbDados.Size = new System.Drawing.Size(124, 42);
+            this.rbDados.TabIndex = 1;
+            this.rbDados.TabStop = true;
+            this.rbDados.Text = "Dados cadastrais";
+            this.rbDados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbDados.UseVisualStyleBackColor = false;
+            this.rbDados.CheckedChanged += new System.EventHandler(this.rbDados_CheckedChanged);
+            // 
             // pnlConteudo
             // 
             this.pnlConteudo.Controls.Add(this.pnlOcorrencias);
@@ -165,8 +244,228 @@
             this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlConteudo.Location = new System.Drawing.Point(30, 133);
             this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(650, 1725);
+            this.pnlConteudo.Size = new System.Drawing.Size(650, 1759);
             this.pnlConteudo.TabIndex = 5;
+            // 
+            // pnlOcorrencias
+            // 
+            this.pnlOcorrencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.pnlOcorrencias.Controls.Add(this.pnlOcorrenciasConteudo);
+            this.pnlOcorrencias.Controls.Add(this.tlpCardsInfos);
+            this.pnlOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOcorrencias.Location = new System.Drawing.Point(0, 0);
+            this.pnlOcorrencias.Name = "pnlOcorrencias";
+            this.pnlOcorrencias.Size = new System.Drawing.Size(650, 1759);
+            this.pnlOcorrencias.TabIndex = 2;
+            this.pnlOcorrencias.Visible = false;
+            // 
+            // pnlOcorrenciasConteudo
+            // 
+            this.pnlOcorrenciasConteudo.BackColor = System.Drawing.Color.White;
+            this.pnlOcorrenciasConteudo.Controls.Add(this.flpOcorrencias);
+            this.pnlOcorrenciasConteudo.Controls.Add(this.lblSubtituloHistorico);
+            this.pnlOcorrenciasConteudo.Controls.Add(this.lblHistorico);
+            this.pnlOcorrenciasConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOcorrenciasConteudo.Location = new System.Drawing.Point(0, 98);
+            this.pnlOcorrenciasConteudo.Name = "pnlOcorrenciasConteudo";
+            this.pnlOcorrenciasConteudo.Padding = new System.Windows.Forms.Padding(10);
+            this.pnlOcorrenciasConteudo.Size = new System.Drawing.Size(650, 1661);
+            this.pnlOcorrenciasConteudo.TabIndex = 1;
+            // 
+            // flpOcorrencias
+            // 
+            this.flpOcorrencias.AutoScroll = true;
+            this.flpOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpOcorrencias.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpOcorrencias.Location = new System.Drawing.Point(10, 51);
+            this.flpOcorrencias.Margin = new System.Windows.Forms.Padding(0);
+            this.flpOcorrencias.Name = "flpOcorrencias";
+            this.flpOcorrencias.Size = new System.Drawing.Size(630, 1600);
+            this.flpOcorrencias.TabIndex = 2;
+            this.flpOcorrencias.WrapContents = false;
+            // 
+            // lblSubtituloHistorico
+            // 
+            this.lblSubtituloHistorico.AutoSize = true;
+            this.lblSubtituloHistorico.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblSubtituloHistorico.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtituloHistorico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblSubtituloHistorico.Location = new System.Drawing.Point(10, 30);
+            this.lblSubtituloHistorico.Name = "lblSubtituloHistorico";
+            this.lblSubtituloHistorico.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lblSubtituloHistorico.Size = new System.Drawing.Size(302, 21);
+            this.lblSubtituloHistorico.TabIndex = 1;
+            this.lblSubtituloHistorico.Text = "Registros ordenados do mais recente para o mais antigo";
+            // 
+            // lblHistorico
+            // 
+            this.lblHistorico.AutoSize = true;
+            this.lblHistorico.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblHistorico.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblHistorico.Location = new System.Drawing.Point(10, 10);
+            this.lblHistorico.Name = "lblHistorico";
+            this.lblHistorico.Size = new System.Drawing.Size(177, 20);
+            this.lblHistorico.TabIndex = 0;
+            this.lblHistorico.Text = "Histórico de ocorrências";
+            // 
+            // tlpCardsInfos
+            // 
+            this.tlpCardsInfos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(251)))));
+            this.tlpCardsInfos.ColumnCount = 3;
+            this.tlpCardsInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpCardsInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpCardsInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpCardsInfos.Controls.Add(this.pnlBordaDataUltimoRegistro, 2, 0);
+            this.tlpCardsInfos.Controls.Add(this.pnlBordaUltimaOcorrencia, 1, 0);
+            this.tlpCardsInfos.Controls.Add(this.pnlBordaTotalOcorrencias, 0, 0);
+            this.tlpCardsInfos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlpCardsInfos.Location = new System.Drawing.Point(0, 0);
+            this.tlpCardsInfos.Name = "tlpCardsInfos";
+            this.tlpCardsInfos.Padding = new System.Windows.Forms.Padding(5, 5, 5, 8);
+            this.tlpCardsInfos.RowCount = 1;
+            this.tlpCardsInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpCardsInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tlpCardsInfos.Size = new System.Drawing.Size(650, 98);
+            this.tlpCardsInfos.TabIndex = 0;
+            // 
+            // pnlBordaDataUltimoRegistro
+            // 
+            this.pnlBordaDataUltimoRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
+            this.pnlBordaDataUltimoRegistro.Controls.Add(this.pnlDataUltimoRegistro);
+            this.pnlBordaDataUltimoRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBordaDataUltimoRegistro.Location = new System.Drawing.Point(434, 8);
+            this.pnlBordaDataUltimoRegistro.Name = "pnlBordaDataUltimoRegistro";
+            this.pnlBordaDataUltimoRegistro.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlBordaDataUltimoRegistro.Size = new System.Drawing.Size(208, 79);
+            this.pnlBordaDataUltimoRegistro.TabIndex = 2;
+            // 
+            // pnlDataUltimoRegistro
+            // 
+            this.pnlDataUltimoRegistro.BackColor = System.Drawing.Color.White;
+            this.pnlDataUltimoRegistro.Controls.Add(this.lblData);
+            this.pnlDataUltimoRegistro.Controls.Add(this.lblDataUltimoRegistro);
+            this.pnlDataUltimoRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDataUltimoRegistro.Location = new System.Drawing.Point(1, 1);
+            this.pnlDataUltimoRegistro.Name = "pnlDataUltimoRegistro";
+            this.pnlDataUltimoRegistro.Padding = new System.Windows.Forms.Padding(8, 10, 0, 0);
+            this.pnlDataUltimoRegistro.Size = new System.Drawing.Size(206, 77);
+            this.pnlDataUltimoRegistro.TabIndex = 1;
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblData.Location = new System.Drawing.Point(14, 39);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(74, 17);
+            this.lblData.TabIndex = 3;
+            this.lblData.Text = "20/09/2026";
+            // 
+            // lblDataUltimoRegistro
+            // 
+            this.lblDataUltimoRegistro.AutoSize = true;
+            this.lblDataUltimoRegistro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDataUltimoRegistro.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataUltimoRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblDataUltimoRegistro.Location = new System.Drawing.Point(8, 10);
+            this.lblDataUltimoRegistro.Name = "lblDataUltimoRegistro";
+            this.lblDataUltimoRegistro.Size = new System.Drawing.Size(127, 13);
+            this.lblDataUltimoRegistro.TabIndex = 2;
+            this.lblDataUltimoRegistro.Text = "Data do último registro";
+            // 
+            // pnlBordaUltimaOcorrencia
+            // 
+            this.pnlBordaUltimaOcorrencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
+            this.pnlBordaUltimaOcorrencia.Controls.Add(this.pnlUltimaOcorrencia);
+            this.pnlBordaUltimaOcorrencia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBordaUltimaOcorrencia.Location = new System.Drawing.Point(221, 8);
+            this.pnlBordaUltimaOcorrencia.Name = "pnlBordaUltimaOcorrencia";
+            this.pnlBordaUltimaOcorrencia.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlBordaUltimaOcorrencia.Size = new System.Drawing.Size(207, 79);
+            this.pnlBordaUltimaOcorrencia.TabIndex = 1;
+            // 
+            // pnlUltimaOcorrencia
+            // 
+            this.pnlUltimaOcorrencia.BackColor = System.Drawing.Color.White;
+            this.pnlUltimaOcorrencia.Controls.Add(this.lblTipoUltimaOcorrencia);
+            this.pnlUltimaOcorrencia.Controls.Add(this.lblUltimaOcorrencia);
+            this.pnlUltimaOcorrencia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlUltimaOcorrencia.Location = new System.Drawing.Point(1, 1);
+            this.pnlUltimaOcorrencia.Name = "pnlUltimaOcorrencia";
+            this.pnlUltimaOcorrencia.Padding = new System.Windows.Forms.Padding(8, 10, 0, 0);
+            this.pnlUltimaOcorrencia.Size = new System.Drawing.Size(205, 77);
+            this.pnlUltimaOcorrencia.TabIndex = 1;
+            // 
+            // lblTipoUltimaOcorrencia
+            // 
+            this.lblTipoUltimaOcorrencia.AutoSize = true;
+            this.lblTipoUltimaOcorrencia.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoUltimaOcorrencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblTipoUltimaOcorrencia.Location = new System.Drawing.Point(8, 39);
+            this.lblTipoUltimaOcorrencia.Name = "lblTipoUltimaOcorrencia";
+            this.lblTipoUltimaOcorrencia.Size = new System.Drawing.Size(95, 17);
+            this.lblTipoUltimaOcorrencia.TabIndex = 3;
+            this.lblTipoUltimaOcorrencia.Text = "Retorno ao lar";
+            // 
+            // lblUltimaOcorrencia
+            // 
+            this.lblUltimaOcorrencia.AutoSize = true;
+            this.lblUltimaOcorrencia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblUltimaOcorrencia.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUltimaOcorrencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblUltimaOcorrencia.Location = new System.Drawing.Point(8, 10);
+            this.lblUltimaOcorrencia.Name = "lblUltimaOcorrencia";
+            this.lblUltimaOcorrencia.Size = new System.Drawing.Size(97, 13);
+            this.lblUltimaOcorrencia.TabIndex = 2;
+            this.lblUltimaOcorrencia.Text = "Última ocorrência";
+            // 
+            // pnlBordaTotalOcorrencias
+            // 
+            this.pnlBordaTotalOcorrencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(230)))));
+            this.pnlBordaTotalOcorrencias.Controls.Add(this.pnlTotalOcorrencias);
+            this.pnlBordaTotalOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBordaTotalOcorrencias.Location = new System.Drawing.Point(8, 8);
+            this.pnlBordaTotalOcorrencias.Name = "pnlBordaTotalOcorrencias";
+            this.pnlBordaTotalOcorrencias.Padding = new System.Windows.Forms.Padding(1);
+            this.pnlBordaTotalOcorrencias.Size = new System.Drawing.Size(207, 79);
+            this.pnlBordaTotalOcorrencias.TabIndex = 0;
+            // 
+            // pnlTotalOcorrencias
+            // 
+            this.pnlTotalOcorrencias.BackColor = System.Drawing.Color.White;
+            this.pnlTotalOcorrencias.Controls.Add(this.lblQtd);
+            this.pnlTotalOcorrencias.Controls.Add(this.lblTotalOcorrencias);
+            this.pnlTotalOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTotalOcorrencias.Location = new System.Drawing.Point(1, 1);
+            this.pnlTotalOcorrencias.Name = "pnlTotalOcorrencias";
+            this.pnlTotalOcorrencias.Padding = new System.Windows.Forms.Padding(8, 10, 0, 0);
+            this.pnlTotalOcorrencias.Size = new System.Drawing.Size(205, 77);
+            this.pnlTotalOcorrencias.TabIndex = 0;
+            // 
+            // lblQtd
+            // 
+            this.lblQtd.AutoSize = true;
+            this.lblQtd.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(50)))), ((int)(((byte)(85)))));
+            this.lblQtd.Location = new System.Drawing.Point(11, 34);
+            this.lblQtd.Name = "lblQtd";
+            this.lblQtd.Size = new System.Drawing.Size(25, 30);
+            this.lblQtd.TabIndex = 1;
+            this.lblQtd.Text = "2";
+            // 
+            // lblTotalOcorrencias
+            // 
+            this.lblTotalOcorrencias.AutoSize = true;
+            this.lblTotalOcorrencias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTotalOcorrencias.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalOcorrencias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
+            this.lblTotalOcorrencias.Location = new System.Drawing.Point(8, 10);
+            this.lblTotalOcorrencias.Name = "lblTotalOcorrencias";
+            this.lblTotalOcorrencias.Size = new System.Drawing.Size(109, 13);
+            this.lblTotalOcorrencias.TabIndex = 0;
+            this.lblTotalOcorrencias.Text = "Total de ocorrências";
             // 
             // pnlDados
             // 
@@ -185,7 +484,7 @@
             this.pnlDados.Controls.Add(this.lblCheckVacinas);
             this.pnlDados.Controls.Add(this.tlpInfos);
             this.pnlDados.Controls.Add(this.lblEspaco);
-            this.pnlDados.Controls.Add(this.txtLarTemporario);
+            this.pnlDados.Controls.Add(this.cbLarTemporario);
             this.pnlDados.Controls.Add(this.lblLarTemporario);
             this.pnlDados.Controls.Add(this.lblSaudeStatus);
             this.pnlDados.Controls.Add(this.pnlCaracteristicas);
@@ -201,7 +500,7 @@
             this.pnlDados.Location = new System.Drawing.Point(0, 0);
             this.pnlDados.Name = "pnlDados";
             this.pnlDados.Padding = new System.Windows.Forms.Padding(15);
-            this.pnlDados.Size = new System.Drawing.Size(650, 1725);
+            this.pnlDados.Size = new System.Drawing.Size(650, 1759);
             this.pnlDados.TabIndex = 1;
             this.pnlDados.Visible = false;
             // 
@@ -210,10 +509,10 @@
             this.pnlBotoes.Controls.Add(this.btnSalvar);
             this.pnlBotoes.Controls.Add(this.btnLimpar);
             this.pnlBotoes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBotoes.Location = new System.Drawing.Point(15, 1483);
+            this.pnlBotoes.Location = new System.Drawing.Point(15, 1503);
             this.pnlBotoes.Name = "pnlBotoes";
-            this.pnlBotoes.Size = new System.Drawing.Size(620, 43);
-            this.pnlBotoes.TabIndex = 43;
+            this.pnlBotoes.Size = new System.Drawing.Size(620, 48);
+            this.pnlBotoes.TabIndex = 107;
             // 
             // btnSalvar
             // 
@@ -230,6 +529,7 @@
             this.btnSalvar.TabIndex = 63;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
             // 
@@ -248,16 +548,17 @@
             this.btnLimpar.TabIndex = 62;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // pnlLocal
             // 
             this.pnlLocal.Controls.Add(this.wvMapa);
             this.pnlLocal.Controls.Add(this.lblLocalResgate);
             this.pnlLocal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLocal.Location = new System.Drawing.Point(15, 1113);
+            this.pnlLocal.Location = new System.Drawing.Point(15, 1172);
             this.pnlLocal.Name = "pnlLocal";
-            this.pnlLocal.Size = new System.Drawing.Size(620, 370);
-            this.pnlLocal.TabIndex = 42;
+            this.pnlLocal.Size = new System.Drawing.Size(620, 331);
+            this.pnlLocal.TabIndex = 106;
             this.pnlLocal.Visible = false;
             // 
             // wvMapa
@@ -268,8 +569,8 @@
             this.wvMapa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wvMapa.Location = new System.Drawing.Point(0, 28);
             this.wvMapa.Name = "wvMapa";
-            this.wvMapa.Size = new System.Drawing.Size(620, 342);
-            this.wvMapa.TabIndex = 1;
+            this.wvMapa.Size = new System.Drawing.Size(620, 303);
+            this.wvMapa.TabIndex = 103;
             this.wvMapa.ZoomFactor = 1D;
             // 
             // lblLocalResgate
@@ -280,7 +581,7 @@
             this.lblLocalResgate.Name = "lblLocalResgate";
             this.lblLocalResgate.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
             this.lblLocalResgate.Size = new System.Drawing.Size(94, 28);
-            this.lblLocalResgate.TabIndex = 0;
+            this.lblLocalResgate.TabIndex = 102;
             this.lblLocalResgate.Text = "Local do Resgate:";
             // 
             // tlpFotodoGato
@@ -291,14 +592,14 @@
             this.tlpFotodoGato.Controls.Add(this.gbCadastrarLocal, 1, 0);
             this.tlpFotodoGato.Controls.Add(this.pnlFoto, 0, 0);
             this.tlpFotodoGato.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpFotodoGato.Location = new System.Drawing.Point(15, 897);
+            this.tlpFotodoGato.Location = new System.Drawing.Point(15, 956);
             this.tlpFotodoGato.Name = "tlpFotodoGato";
             this.tlpFotodoGato.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.tlpFotodoGato.RowCount = 1;
             this.tlpFotodoGato.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpFotodoGato.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 206F));
             this.tlpFotodoGato.Size = new System.Drawing.Size(620, 216);
-            this.tlpFotodoGato.TabIndex = 41;
+            this.tlpFotodoGato.TabIndex = 105;
             // 
             // gbCadastrarLocal
             // 
@@ -337,17 +638,28 @@
             // 
             // pnlFoto
             // 
+            this.pnlFoto.Controls.Add(this.pbFotoGato);
             this.pnlFoto.Controls.Add(this.lblFoto);
             this.pnlFoto.Controls.Add(this.btnEscolherFoto);
-            this.pnlFoto.Controls.Add(this.pbFotoGato);
             this.pnlFoto.Location = new System.Drawing.Point(3, 13);
             this.pnlFoto.Name = "pnlFoto";
             this.pnlFoto.Size = new System.Drawing.Size(304, 200);
             this.pnlFoto.TabIndex = 42;
             // 
+            // pbFotoGato
+            // 
+            this.pbFotoGato.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbFotoGato.Location = new System.Drawing.Point(0, 13);
+            this.pbFotoGato.Name = "pbFotoGato";
+            this.pbFotoGato.Size = new System.Drawing.Size(304, 157);
+            this.pbFotoGato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFotoGato.TabIndex = 0;
+            this.pbFotoGato.TabStop = false;
+            // 
             // lblFoto
             // 
             this.lblFoto.AutoSize = true;
+            this.lblFoto.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblFoto.Location = new System.Drawing.Point(0, 0);
             this.lblFoto.Name = "lblFoto";
             this.lblFoto.Size = new System.Drawing.Size(72, 13);
@@ -370,73 +682,65 @@
             this.btnEscolherFoto.Text = "Escolher Foto";
             this.btnEscolherFoto.UseVisualStyleBackColor = false;
             // 
-            // pbFotoGato
-            // 
-            this.pbFotoGato.Location = new System.Drawing.Point(0, 16);
-            this.pbFotoGato.Name = "pbFotoGato";
-            this.pbFotoGato.Size = new System.Drawing.Size(319, 165);
-            this.pbFotoGato.TabIndex = 0;
-            this.pbFotoGato.TabStop = false;
-            // 
             // dtpDataEntrada
             // 
             this.dtpDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtpDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataEntrada.Location = new System.Drawing.Point(15, 877);
+            this.dtpDataEntrada.Location = new System.Drawing.Point(15, 936);
             this.dtpDataEntrada.Name = "dtpDataEntrada";
             this.dtpDataEntrada.Size = new System.Drawing.Size(620, 20);
-            this.dtpDataEntrada.TabIndex = 40;
+            this.dtpDataEntrada.TabIndex = 98;
             // 
             // lblDataEntrada
             // 
             this.lblDataEntrada.AutoSize = true;
             this.lblDataEntrada.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDataEntrada.Location = new System.Drawing.Point(15, 844);
+            this.lblDataEntrada.Location = new System.Drawing.Point(15, 903);
             this.lblDataEntrada.Name = "lblDataEntrada";
             this.lblDataEntrada.Padding = new System.Windows.Forms.Padding(0, 15, 0, 5);
             this.lblDataEntrada.Size = new System.Drawing.Size(88, 33);
-            this.lblDataEntrada.TabIndex = 39;
+            this.lblDataEntrada.TabIndex = 97;
             this.lblDataEntrada.Text = "Data de Entrada:";
             // 
             // txtObservacoes
             // 
             this.txtObservacoes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtObservacoes.Location = new System.Drawing.Point(15, 765);
+            this.txtObservacoes.Location = new System.Drawing.Point(15, 824);
             this.txtObservacoes.Multiline = true;
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtObservacoes.Size = new System.Drawing.Size(620, 79);
-            this.txtObservacoes.TabIndex = 38;
+            this.txtObservacoes.TabIndex = 96;
             // 
             // lblObservacoes
             // 
             this.lblObservacoes.AutoSize = true;
             this.lblObservacoes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblObservacoes.Location = new System.Drawing.Point(15, 732);
+            this.lblObservacoes.Location = new System.Drawing.Point(15, 791);
             this.lblObservacoes.Name = "lblObservacoes";
             this.lblObservacoes.Padding = new System.Windows.Forms.Padding(0, 15, 0, 5);
             this.lblObservacoes.Size = new System.Drawing.Size(73, 33);
-            this.lblObservacoes.TabIndex = 37;
+            this.lblObservacoes.TabIndex = 95;
             this.lblObservacoes.Text = "Observações:";
             // 
             // txtDeficiencia
             // 
             this.txtDeficiencia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtDeficiencia.Location = new System.Drawing.Point(15, 707);
+            this.txtDeficiencia.Location = new System.Drawing.Point(15, 766);
             this.txtDeficiencia.Multiline = true;
             this.txtDeficiencia.Name = "txtDeficiencia";
             this.txtDeficiencia.Size = new System.Drawing.Size(620, 25);
-            this.txtDeficiencia.TabIndex = 36;
+            this.txtDeficiencia.TabIndex = 94;
             // 
             // lblDeficiencias
             // 
             this.lblDeficiencias.AutoSize = true;
             this.lblDeficiencias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDeficiencias.Location = new System.Drawing.Point(15, 679);
+            this.lblDeficiencias.Location = new System.Drawing.Point(15, 738);
             this.lblDeficiencias.Name = "lblDeficiencias";
             this.lblDeficiencias.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.lblDeficiencias.Size = new System.Drawing.Size(189, 28);
-            this.lblDeficiencias.TabIndex = 35;
+            this.lblDeficiencias.TabIndex = 93;
             this.lblDeficiencias.Text = "Possui alguma doença ou deficiência?";
             // 
             // clbVacinas
@@ -455,22 +759,22 @@
             "Nobivac Raiva",
             "Rabisin",
             "Nobivac Bb"});
-            this.clbVacinas.Location = new System.Drawing.Point(15, 582);
+            this.clbVacinas.Location = new System.Drawing.Point(15, 641);
             this.clbVacinas.MultiColumn = true;
             this.clbVacinas.Name = "clbVacinas";
             this.clbVacinas.Size = new System.Drawing.Size(620, 97);
-            this.clbVacinas.TabIndex = 30;
+            this.clbVacinas.TabIndex = 92;
             this.clbVacinas.Visible = false;
             // 
             // lblCheckVacinas
             // 
             this.lblCheckVacinas.AutoSize = true;
             this.lblCheckVacinas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblCheckVacinas.Location = new System.Drawing.Point(15, 554);
+            this.lblCheckVacinas.Location = new System.Drawing.Point(15, 613);
             this.lblCheckVacinas.Name = "lblCheckVacinas";
             this.lblCheckVacinas.Padding = new System.Windows.Forms.Padding(0, 10, 0, 5);
             this.lblCheckVacinas.Size = new System.Drawing.Size(143, 28);
-            this.lblCheckVacinas.TabIndex = 29;
+            this.lblCheckVacinas.TabIndex = 91;
             this.lblCheckVacinas.Text = "Marque as vacinas tomadas:";
             this.lblCheckVacinas.Visible = false;
             // 
@@ -484,12 +788,12 @@
             this.tlpInfos.Controls.Add(this.gbVacina, 1, 0);
             this.tlpInfos.Controls.Add(this.pnlStatus, 2, 0);
             this.tlpInfos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tlpInfos.Location = new System.Drawing.Point(15, 466);
+            this.tlpInfos.Location = new System.Drawing.Point(15, 465);
             this.tlpInfos.Name = "tlpInfos";
             this.tlpInfos.RowCount = 1;
             this.tlpInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpInfos.Size = new System.Drawing.Size(620, 88);
-            this.tlpInfos.TabIndex = 19;
+            this.tlpInfos.Size = new System.Drawing.Size(620, 148);
+            this.tlpInfos.TabIndex = 90;
             // 
             // gbCastracao
             // 
@@ -498,7 +802,7 @@
             this.gbCastracao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbCastracao.Location = new System.Drawing.Point(3, 3);
             this.gbCastracao.Name = "gbCastracao";
-            this.gbCastracao.Size = new System.Drawing.Size(200, 82);
+            this.gbCastracao.Size = new System.Drawing.Size(200, 142);
             this.gbCastracao.TabIndex = 0;
             this.gbCastracao.TabStop = false;
             this.gbCastracao.Text = "Já foi Castrado?";
@@ -529,9 +833,10 @@
             // 
             this.gbVacina.Controls.Add(this.rbNaoVacinado);
             this.gbVacina.Controls.Add(this.rbVacinado);
+            this.gbVacina.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbVacina.Location = new System.Drawing.Point(209, 3);
             this.gbVacina.Name = "gbVacina";
-            this.gbVacina.Size = new System.Drawing.Size(170, 82);
+            this.gbVacina.Size = new System.Drawing.Size(200, 142);
             this.gbVacina.TabIndex = 1;
             this.gbVacina.TabStop = false;
             this.gbVacina.Text = "Possui vacinas em dia?";
@@ -562,12 +867,16 @@
             // 
             // pnlStatus
             // 
+            this.pnlStatus.Controls.Add(this.cbFELV);
+            this.pnlStatus.Controls.Add(this.lblFELV);
+            this.pnlStatus.Controls.Add(this.cbFIV);
+            this.pnlStatus.Controls.Add(this.lblFIV);
             this.pnlStatus.Controls.Add(this.cbStatus);
             this.pnlStatus.Controls.Add(this.lblStatus);
             this.pnlStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlStatus.Location = new System.Drawing.Point(415, 3);
             this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Size = new System.Drawing.Size(202, 82);
+            this.pnlStatus.Size = new System.Drawing.Size(202, 142);
             this.pnlStatus.TabIndex = 2;
             // 
             // cbStatus
@@ -577,7 +886,9 @@
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Items.AddRange(new object[] {
             "Disponível",
-            "Adotado"});
+            "Adotado",
+            "Em processo",
+            "Internado"});
             this.cbStatus.Location = new System.Drawing.Point(0, 13);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(202, 24);
@@ -597,20 +908,21 @@
             // 
             this.lblEspaco.AutoSize = true;
             this.lblEspaco.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblEspaco.Location = new System.Drawing.Point(15, 448);
+            this.lblEspaco.Location = new System.Drawing.Point(15, 447);
             this.lblEspaco.Name = "lblEspaco";
             this.lblEspaco.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.lblEspaco.Size = new System.Drawing.Size(0, 18);
-            this.lblEspaco.TabIndex = 18;
+            this.lblEspaco.TabIndex = 89;
             // 
-            // txtLarTemporario
+            // cbLarTemporario
             // 
-            this.txtLarTemporario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtLarTemporario.Location = new System.Drawing.Point(15, 423);
-            this.txtLarTemporario.Multiline = true;
-            this.txtLarTemporario.Name = "txtLarTemporario";
-            this.txtLarTemporario.Size = new System.Drawing.Size(620, 25);
-            this.txtLarTemporario.TabIndex = 17;
+            this.cbLarTemporario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbLarTemporario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLarTemporario.FormattingEnabled = true;
+            this.cbLarTemporario.Location = new System.Drawing.Point(15, 423);
+            this.cbLarTemporario.Name = "cbLarTemporario";
+            this.cbLarTemporario.Size = new System.Drawing.Size(620, 24);
+            this.cbLarTemporario.TabIndex = 88;
             // 
             // lblLarTemporario
             // 
@@ -648,7 +960,7 @@
             // 
             // pnlPeso
             // 
-            this.pnlPeso.Controls.Add(this.txbPeso);
+            this.pnlPeso.Controls.Add(this.txtPeso);
             this.pnlPeso.Controls.Add(this.lblPeso);
             this.pnlPeso.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlPeso.Location = new System.Drawing.Point(323, 0);
@@ -657,15 +969,15 @@
             this.pnlPeso.Size = new System.Drawing.Size(200, 102);
             this.pnlPeso.TabIndex = 13;
             // 
-            // txbPeso
+            // txtPeso
             // 
-            this.txbPeso.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txbPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPeso.Location = new System.Drawing.Point(5, 18);
-            this.txbPeso.Multiline = true;
-            this.txbPeso.Name = "txbPeso";
-            this.txbPeso.Size = new System.Drawing.Size(190, 25);
-            this.txbPeso.TabIndex = 1;
+            this.txtPeso.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPeso.Location = new System.Drawing.Point(5, 18);
+            this.txtPeso.Multiline = true;
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(190, 25);
+            this.txtPeso.TabIndex = 1;
             // 
             // lblPeso
             // 
@@ -867,82 +1179,61 @@
             this.lblIdentificacao.TabIndex = 0;
             this.lblIdentificacao.Text = "IDENTIFICAÇÃO";
             // 
-            // pnlOcorrencias
+            // cbFELV
             // 
-            this.pnlOcorrencias.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlOcorrencias.Controls.Add(this.tableLayoutPanel1);
-            this.pnlOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOcorrencias.Location = new System.Drawing.Point(0, 0);
-            this.pnlOcorrencias.Name = "pnlOcorrencias";
-            this.pnlOcorrencias.Size = new System.Drawing.Size(650, 1725);
-            this.pnlOcorrencias.TabIndex = 2;
-            this.pnlOcorrencias.Visible = false;
+            this.cbFELV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbFELV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFELV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFELV.FormattingEnabled = true;
+            this.cbFELV.Items.AddRange(new object[] {
+            "Negativo",
+            "Positivo",
+            "Não Realizado",
+            "Não Informado"});
+            this.cbFELV.Location = new System.Drawing.Point(0, 107);
+            this.cbFELV.Name = "cbFELV";
+            this.cbFELV.Size = new System.Drawing.Size(202, 24);
+            this.cbFELV.TabIndex = 46;
             // 
-            // pnlSwitch
+            // lblFELV
             // 
-            this.pnlSwitch.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlSwitch.Controls.Add(this.rbOcorrencias);
-            this.pnlSwitch.Controls.Add(this.rbDados);
-            this.pnlSwitch.Location = new System.Drawing.Point(18, 3);
-            this.pnlSwitch.Name = "pnlSwitch";
-            this.pnlSwitch.Size = new System.Drawing.Size(215, 42);
-            this.pnlSwitch.TabIndex = 2;
+            this.lblFELV.AutoSize = true;
+            this.lblFELV.BackColor = System.Drawing.Color.White;
+            this.lblFELV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblFELV.Location = new System.Drawing.Point(0, 84);
+            this.lblFELV.Name = "lblFELV";
+            this.lblFELV.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.lblFELV.Size = new System.Drawing.Size(66, 23);
+            this.lblFELV.TabIndex = 45;
+            this.lblFELV.Text = "Teste FELV:";
             // 
-            // rbDados
+            // cbFIV
             // 
-            this.rbDados.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbDados.AutoSize = true;
-            this.rbDados.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbDados.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rbDados.FlatAppearance.BorderSize = 0;
-            this.rbDados.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
-            this.rbDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDados.Location = new System.Drawing.Point(0, 0);
-            this.rbDados.Name = "rbDados";
-            this.rbDados.Size = new System.Drawing.Size(124, 42);
-            this.rbDados.TabIndex = 1;
-            this.rbDados.TabStop = true;
-            this.rbDados.Text = "Dados cadastrais";
-            this.rbDados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rbDados.UseVisualStyleBackColor = false;
-            this.rbDados.CheckedChanged += new System.EventHandler(this.rbDados_CheckedChanged);
+            this.cbFIV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbFIV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFIV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFIV.FormattingEnabled = true;
+            this.cbFIV.Items.AddRange(new object[] {
+            "Negativo",
+            "Positivo",
+            "Não Realizado",
+            "Não Informado"});
+            this.cbFIV.Location = new System.Drawing.Point(0, 60);
+            this.cbFIV.Name = "cbFIV";
+            this.cbFIV.Size = new System.Drawing.Size(202, 24);
+            this.cbFIV.TabIndex = 44;
             // 
-            // rbOcorrencias
+            // lblFIV
             // 
-            this.rbOcorrencias.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOcorrencias.AutoSize = true;
-            this.rbOcorrencias.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbOcorrencias.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rbOcorrencias.FlatAppearance.BorderSize = 0;
-            this.rbOcorrencias.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(232)))), ((int)(((byte)(252)))));
-            this.rbOcorrencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbOcorrencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbOcorrencias.Location = new System.Drawing.Point(125, 0);
-            this.rbOcorrencias.Name = "rbOcorrencias";
-            this.rbOcorrencias.Size = new System.Drawing.Size(90, 42);
-            this.rbOcorrencias.TabIndex = 2;
-            this.rbOcorrencias.TabStop = true;
-            this.rbOcorrencias.Text = "Ocorrências";
-            this.rbOcorrencias.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rbOcorrencias.UseVisualStyleBackColor = false;
-            this.rbOcorrencias.CheckedChanged += new System.EventHandler(this.rbOcorrencias_CheckedChanged);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(650, 114);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.lblFIV.AutoSize = true;
+            this.lblFIV.BackColor = System.Drawing.Color.White;
+            this.lblFIV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblFIV.Location = new System.Drawing.Point(0, 37);
+            this.lblFIV.Name = "lblFIV";
+            this.lblFIV.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.lblFIV.Size = new System.Drawing.Size(56, 23);
+            this.lblFIV.TabIndex = 43;
+            this.lblFIV.Text = "Teste FIV:";
             // 
             // ucEdicaoGato
             // 
@@ -956,10 +1247,25 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "ucEdicaoGato";
             this.Padding = new System.Windows.Forms.Padding(30, 70, 30, 15);
-            this.Size = new System.Drawing.Size(710, 1873);
+            this.Size = new System.Drawing.Size(710, 1907);
             this.Load += new System.EventHandler(this.ucEdicaoGato_Load);
             this.pnlAbas.ResumeLayout(false);
+            this.pnlSwitch.ResumeLayout(false);
+            this.pnlSwitch.PerformLayout();
             this.pnlConteudo.ResumeLayout(false);
+            this.pnlOcorrencias.ResumeLayout(false);
+            this.pnlOcorrenciasConteudo.ResumeLayout(false);
+            this.pnlOcorrenciasConteudo.PerformLayout();
+            this.tlpCardsInfos.ResumeLayout(false);
+            this.pnlBordaDataUltimoRegistro.ResumeLayout(false);
+            this.pnlDataUltimoRegistro.ResumeLayout(false);
+            this.pnlDataUltimoRegistro.PerformLayout();
+            this.pnlBordaUltimaOcorrencia.ResumeLayout(false);
+            this.pnlUltimaOcorrencia.ResumeLayout(false);
+            this.pnlUltimaOcorrencia.PerformLayout();
+            this.pnlBordaTotalOcorrencias.ResumeLayout(false);
+            this.pnlTotalOcorrencias.ResumeLayout(false);
+            this.pnlTotalOcorrencias.PerformLayout();
             this.pnlDados.ResumeLayout(false);
             this.pnlDados.PerformLayout();
             this.pnlBotoes.ResumeLayout(false);
@@ -986,9 +1292,6 @@
             this.pnlPelagem.PerformLayout();
             this.gbSexo.ResumeLayout(false);
             this.gbSexo.PerformLayout();
-            this.pnlOcorrencias.ResumeLayout(false);
-            this.pnlSwitch.ResumeLayout(false);
-            this.pnlSwitch.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1002,45 +1305,11 @@
         private System.Windows.Forms.Panel pnlConteudo;
         private System.Windows.Forms.Panel pnlOcorrencias;
         private System.Windows.Forms.Panel pnlDados;
-        private System.Windows.Forms.Panel pnlBotoes;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Panel pnlLocal;
-        private Microsoft.Web.WebView2.WinForms.WebView2 wvMapa;
-        private System.Windows.Forms.Label lblLocalResgate;
-        private System.Windows.Forms.TableLayoutPanel tlpFotodoGato;
-        private System.Windows.Forms.GroupBox gbCadastrarLocal;
-        private System.Windows.Forms.RadioButton rbNaoLocal;
-        private System.Windows.Forms.RadioButton rbSimLocal;
-        private System.Windows.Forms.Panel pnlFoto;
-        private System.Windows.Forms.Label lblFoto;
-        private System.Windows.Forms.Button btnEscolherFoto;
-        private System.Windows.Forms.PictureBox pbFotoGato;
-        private System.Windows.Forms.DateTimePicker dtpDataEntrada;
-        private System.Windows.Forms.Label lblDataEntrada;
-        private System.Windows.Forms.TextBox txtObservacoes;
-        private System.Windows.Forms.Label lblObservacoes;
-        private System.Windows.Forms.TextBox txtDeficiencia;
-        private System.Windows.Forms.Label lblDeficiencias;
-        private System.Windows.Forms.CheckedListBox clbVacinas;
-        private System.Windows.Forms.Label lblCheckVacinas;
-        private System.Windows.Forms.TableLayoutPanel tlpInfos;
-        private System.Windows.Forms.GroupBox gbCastracao;
-        private System.Windows.Forms.RadioButton rbNaoCastrado;
-        private System.Windows.Forms.RadioButton rbCastrado;
-        private System.Windows.Forms.GroupBox gbVacina;
-        private System.Windows.Forms.RadioButton rbNaoVacinado;
-        private System.Windows.Forms.RadioButton rbVacinado;
-        private System.Windows.Forms.Panel pnlStatus;
-        private System.Windows.Forms.ComboBox cbStatus;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Label lblEspaco;
-        private System.Windows.Forms.TextBox txtLarTemporario;
         private System.Windows.Forms.Label lblLarTemporario;
         private System.Windows.Forms.Label lblSaudeStatus;
         private System.Windows.Forms.Panel pnlCaracteristicas;
         private System.Windows.Forms.Panel pnlPeso;
-        private System.Windows.Forms.TextBox txbPeso;
+        private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.Panel pnlPelagem;
         private System.Windows.Forms.ComboBox cbColoracao;
@@ -1061,6 +1330,60 @@
         private System.Windows.Forms.Panel pnlSwitch;
         private System.Windows.Forms.RadioButton rbOcorrencias;
         private System.Windows.Forms.RadioButton rbDados;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tlpCardsInfos;
+        private System.Windows.Forms.Panel pnlBordaDataUltimoRegistro;
+        private System.Windows.Forms.Panel pnlBordaUltimaOcorrencia;
+        private System.Windows.Forms.Panel pnlBordaTotalOcorrencias;
+        private System.Windows.Forms.Panel pnlDataUltimoRegistro;
+        private System.Windows.Forms.Panel pnlUltimaOcorrencia;
+        private System.Windows.Forms.Panel pnlTotalOcorrencias;
+        private System.Windows.Forms.Label lblTotalOcorrencias;
+        private System.Windows.Forms.Label lblQtd;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Label lblDataUltimoRegistro;
+        private System.Windows.Forms.Label lblTipoUltimaOcorrencia;
+        private System.Windows.Forms.Label lblUltimaOcorrencia;
+        private System.Windows.Forms.Panel pnlOcorrenciasConteudo;
+        private System.Windows.Forms.Label lblHistorico;
+        private System.Windows.Forms.Label lblSubtituloHistorico;
+        private System.Windows.Forms.FlowLayoutPanel flpOcorrencias;
+        private System.Windows.Forms.Label lblEspaco;
+        private System.Windows.Forms.ComboBox cbLarTemporario;
+        private System.Windows.Forms.DateTimePicker dtpDataEntrada;
+        private System.Windows.Forms.Label lblDataEntrada;
+        private System.Windows.Forms.TextBox txtObservacoes;
+        private System.Windows.Forms.Label lblObservacoes;
+        private System.Windows.Forms.TextBox txtDeficiencia;
+        private System.Windows.Forms.Label lblDeficiencias;
+        private System.Windows.Forms.CheckedListBox clbVacinas;
+        private System.Windows.Forms.Label lblCheckVacinas;
+        private System.Windows.Forms.TableLayoutPanel tlpInfos;
+        private System.Windows.Forms.GroupBox gbCastracao;
+        private System.Windows.Forms.RadioButton rbNaoCastrado;
+        private System.Windows.Forms.RadioButton rbCastrado;
+        private System.Windows.Forms.GroupBox gbVacina;
+        private System.Windows.Forms.RadioButton rbNaoVacinado;
+        private System.Windows.Forms.RadioButton rbVacinado;
+        private System.Windows.Forms.Panel pnlStatus;
+        private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Panel pnlBotoes;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Panel pnlLocal;
+        private Microsoft.Web.WebView2.WinForms.WebView2 wvMapa;
+        private System.Windows.Forms.Label lblLocalResgate;
+        private System.Windows.Forms.TableLayoutPanel tlpFotodoGato;
+        private System.Windows.Forms.GroupBox gbCadastrarLocal;
+        private System.Windows.Forms.RadioButton rbNaoLocal;
+        private System.Windows.Forms.RadioButton rbSimLocal;
+        private System.Windows.Forms.Panel pnlFoto;
+        private System.Windows.Forms.PictureBox pbFotoGato;
+        private System.Windows.Forms.Label lblFoto;
+        private System.Windows.Forms.Button btnEscolherFoto;
+        private System.Windows.Forms.ComboBox cbFELV;
+        private System.Windows.Forms.Label lblFELV;
+        private System.Windows.Forms.ComboBox cbFIV;
+        private System.Windows.Forms.Label lblFIV;
     }
 }

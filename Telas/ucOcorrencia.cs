@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,27 +14,34 @@ namespace miaudota.Telas
 {
     public partial class ucOcorrencia : UserControl
     {
+        private Ocorrencia tipoSelecionado;
         public ucOcorrencia()
         {
             InitializeComponent();
 
-            List<Ocorrencia> tipos = TiposOcorrencia.ObterTodos();
-            int indice = 0;
-
-            foreach (Ocorrencia tipo in tipos)
-            {
-                ucCartaoOcorrencia cartao = new ucCartaoOcorrencia();
-                cartao.CarregarDados(tipo);
-                cartao.Dock = DockStyle.Fill;
-                cartao.Margin = new Padding(6);
-                //cartao.Selecionado += SelecionarCartao;
-
-                //coluna = indice % 3, linha = indice / 3
-                tlpTipos.Controls.Add(cartao, indice % 3, indice / 3);
-
-                indice++;
-            }
+            //Load += ucOcorrencia_Load;
         }
+
+        private void SelecionarCartao(object sender, EventArgs e)
+        {
+            ucCartaoOcorrencia clicado = (ucCartaoOcorrencia)sender;
+
+            foreach (ucCartaoOcorrencia c in tlpTipos.Controls.OfType<ucCartaoOcorrencia>())
+            {
+                c.Selecionado = false;
+            }
+
+            clicado.Selecionado = true;
+            tipoSelecionado = clicado.Ocorrencia;
+            // guardar o tipo escolhido em uma variável de classe
+            OcorrenciaGato ocorrencia = new OcorrenciaGato
+            {
+                Tipo = clicado.Ocorrencia.Nome
+            };
+
+        }
+
+
 
         public void mostrarGato(Gato gato)
         {
@@ -41,6 +50,26 @@ namespace miaudota.Telas
             lblNome.Text = gato.Nome;
             lblIdadeMicrochip.Text = $"{idade} . {gato.NumeroMicrochip}";
             lblStatus.Text = gato.Status;
+            Image fotoAnterior = pbFoto.Image;
+
+            if (gato.Foto != null && gato.Foto.Length > 0)
+            {
+                using (MemoryStream ms = new MemoryStream(gato.Foto))
+                using (Image img = Image.FromStream(ms))
+                {
+                    pbFoto.Image = new Bitmap(img);
+                }
+            }
+            else
+            {
+                pbFoto.Image = Properties.Resources.sem_foto;
+            }
+
+            // libera a foto anterior, menos a imagem padrão dos recursos
+            if (fotoAnterior != null && fotoAnterior != Properties.Resources.sem_foto)
+            {
+                fotoAnterior.Dispose();
+            }
         }
 
         private void LimparFormulario()
@@ -59,7 +88,7 @@ namespace miaudota.Telas
 
         private void txtMicrochip_TextChanged(object sender, EventArgs e)
         {
-            Gato gato = RepositorioGatosFake.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
+            Gato gato = RepositorioGatos.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
 
             // Verifica se o campo do microchip não está vazio ou apenas com espaços
             bool temMicrochip = !string.IsNullOrWhiteSpace(txtMicrochip.Text);
@@ -68,6 +97,7 @@ namespace miaudota.Telas
             lblNome.Visible = temMicrochip;
             lblIdadeMicrochip.Visible = temMicrochip;
             lblStatus.Visible = temMicrochip;
+            pbFoto.Visible = temMicrochip;
 
             if (gato != null)
             {
@@ -85,6 +115,71 @@ namespace miaudota.Telas
                 lblStatus.BackColor = Color.FromArgb(192, 255, 192); // Cor de fundo verde
             }
 
+        }
+
+        private void btnSalvarOcorrencia_Click(object sender, EventArgs e)
+        {
+            Gato gato = RepositorioGatos.ObterTodos().FirstOrDefault(g => g.NumeroMicrochip == txtMicrochip.Text.Trim());
+
+            try
+            {
+
+
+                OcorrenciaGato ocorrencia = new OcorrenciaGato
+                {
+                    NumeroMicrochip = txtMicrochip.Text,
+                    Tipo = tipoSelecionado.Nome,
+                    Data = dtpDataOcorrencia.Value,
+                    Local = txtLocal.Text,
+                    Responsavel = txtResponsavel.Text,
+                    Descricao = txtMotivo.Text
+                };
+
+                RepositorioOcorrencia.Adicionar(ocorrencia);
+
+                MessageBox.Show("Ocorrência registrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimparFormulario();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Dado inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Ocorrência não registrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Erro no banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void ucOcorrencia_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Ocorrencia> tipos = RepositorioOcorrencia.ObterTipos();
+                int indice = 0;
+
+                foreach (Ocorrencia tipo in tipos)
+                {
+                    ucCartaoOcorrencia cartao = new ucCartaoOcorrencia();
+                    cartao.CarregarDados(tipo);
+                    cartao.Dock = DockStyle.Fill;
+                    cartao.Margin = new Padding(6);
+                    cartao.CartaoClicado += SelecionarCartao;
+
+                    tlpTipos.Controls.Add(cartao, indice % 3, indice / 3);
+                    indice++;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar os tipos de ocorrência: " + ex.Message);
+            }
         }
     }
 }
