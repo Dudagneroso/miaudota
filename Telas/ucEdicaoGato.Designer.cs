@@ -32,7 +32,12 @@
             this.lblDescricaoPerfil = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.pnlAbas = new System.Windows.Forms.Panel();
+            this.pnlSwitch = new System.Windows.Forms.Panel();
+            this.rbOcorrencias = new System.Windows.Forms.RadioButton();
+            this.rbDados = new System.Windows.Forms.RadioButton();
             this.pnlConteudo = new System.Windows.Forms.Panel();
+            this.pnlOcorrencias = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlDados = new System.Windows.Forms.Panel();
             this.pnlBotoes = new System.Windows.Forms.Panel();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -90,13 +95,10 @@
             this.txtMicrochip = new System.Windows.Forms.TextBox();
             this.lblMicrochip = new System.Windows.Forms.Label();
             this.lblIdentificacao = new System.Windows.Forms.Label();
-            this.pnlOcorrencias = new System.Windows.Forms.Panel();
-            this.pnlSwitch = new System.Windows.Forms.Panel();
-            this.rbDados = new System.Windows.Forms.RadioButton();
-            this.rbOcorrencias = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlAbas.SuspendLayout();
+            this.pnlSwitch.SuspendLayout();
             this.pnlConteudo.SuspendLayout();
+            this.pnlOcorrencias.SuspendLayout();
             this.pnlDados.SuspendLayout();
             this.pnlBotoes.SuspendLayout();
             this.pnlLocal.SuspendLayout();
@@ -113,8 +115,6 @@
             this.pnlPeso.SuspendLayout();
             this.pnlPelagem.SuspendLayout();
             this.gbSexo.SuspendLayout();
-            this.pnlOcorrencias.SuspendLayout();
-            this.pnlSwitch.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPerfil
@@ -158,6 +158,56 @@
             this.pnlAbas.Size = new System.Drawing.Size(650, 63);
             this.pnlAbas.TabIndex = 4;
             // 
+            // pnlSwitch
+            // 
+            this.pnlSwitch.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlSwitch.Controls.Add(this.rbOcorrencias);
+            this.pnlSwitch.Controls.Add(this.rbDados);
+            this.pnlSwitch.Location = new System.Drawing.Point(18, 3);
+            this.pnlSwitch.Name = "pnlSwitch";
+            this.pnlSwitch.Size = new System.Drawing.Size(215, 42);
+            this.pnlSwitch.TabIndex = 2;
+            // 
+            // rbOcorrencias
+            // 
+            this.rbOcorrencias.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbOcorrencias.AutoSize = true;
+            this.rbOcorrencias.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbOcorrencias.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rbOcorrencias.FlatAppearance.BorderSize = 0;
+            this.rbOcorrencias.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(232)))), ((int)(((byte)(252)))));
+            this.rbOcorrencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbOcorrencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOcorrencias.Location = new System.Drawing.Point(125, 0);
+            this.rbOcorrencias.Name = "rbOcorrencias";
+            this.rbOcorrencias.Size = new System.Drawing.Size(90, 42);
+            this.rbOcorrencias.TabIndex = 2;
+            this.rbOcorrencias.TabStop = true;
+            this.rbOcorrencias.Text = "Ocorrências";
+            this.rbOcorrencias.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbOcorrencias.UseVisualStyleBackColor = false;
+            this.rbOcorrencias.CheckedChanged += new System.EventHandler(this.rbOcorrencias_CheckedChanged);
+            // 
+            // rbDados
+            // 
+            this.rbDados.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbDados.AutoSize = true;
+            this.rbDados.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbDados.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbDados.FlatAppearance.BorderSize = 0;
+            this.rbDados.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
+            this.rbDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDados.Location = new System.Drawing.Point(0, 0);
+            this.rbDados.Name = "rbDados";
+            this.rbDados.Size = new System.Drawing.Size(124, 42);
+            this.rbDados.TabIndex = 1;
+            this.rbDados.TabStop = true;
+            this.rbDados.Text = "Dados cadastrais";
+            this.rbDados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbDados.UseVisualStyleBackColor = false;
+            this.rbDados.CheckedChanged += new System.EventHandler(this.rbDados_CheckedChanged);
+            // 
             // pnlConteudo
             // 
             this.pnlConteudo.Controls.Add(this.pnlOcorrencias);
@@ -167,6 +217,33 @@
             this.pnlConteudo.Name = "pnlConteudo";
             this.pnlConteudo.Size = new System.Drawing.Size(650, 1725);
             this.pnlConteudo.TabIndex = 5;
+            // 
+            // pnlOcorrencias
+            // 
+            this.pnlOcorrencias.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlOcorrencias.Controls.Add(this.tableLayoutPanel1);
+            this.pnlOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlOcorrencias.Location = new System.Drawing.Point(0, 0);
+            this.pnlOcorrencias.Name = "pnlOcorrencias";
+            this.pnlOcorrencias.Size = new System.Drawing.Size(650, 1725);
+            this.pnlOcorrencias.TabIndex = 2;
+            this.pnlOcorrencias.Visible = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(1);
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(650, 114);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // pnlDados
             // 
@@ -867,83 +944,6 @@
             this.lblIdentificacao.TabIndex = 0;
             this.lblIdentificacao.Text = "IDENTIFICAÇÃO";
             // 
-            // pnlOcorrencias
-            // 
-            this.pnlOcorrencias.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlOcorrencias.Controls.Add(this.tableLayoutPanel1);
-            this.pnlOcorrencias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOcorrencias.Location = new System.Drawing.Point(0, 0);
-            this.pnlOcorrencias.Name = "pnlOcorrencias";
-            this.pnlOcorrencias.Size = new System.Drawing.Size(650, 1725);
-            this.pnlOcorrencias.TabIndex = 2;
-            this.pnlOcorrencias.Visible = false;
-            // 
-            // pnlSwitch
-            // 
-            this.pnlSwitch.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnlSwitch.Controls.Add(this.rbOcorrencias);
-            this.pnlSwitch.Controls.Add(this.rbDados);
-            this.pnlSwitch.Location = new System.Drawing.Point(18, 3);
-            this.pnlSwitch.Name = "pnlSwitch";
-            this.pnlSwitch.Size = new System.Drawing.Size(215, 42);
-            this.pnlSwitch.TabIndex = 2;
-            // 
-            // rbDados
-            // 
-            this.rbDados.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbDados.AutoSize = true;
-            this.rbDados.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbDados.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rbDados.FlatAppearance.BorderSize = 0;
-            this.rbDados.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(243)))));
-            this.rbDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDados.Location = new System.Drawing.Point(0, 0);
-            this.rbDados.Name = "rbDados";
-            this.rbDados.Size = new System.Drawing.Size(124, 42);
-            this.rbDados.TabIndex = 1;
-            this.rbDados.TabStop = true;
-            this.rbDados.Text = "Dados cadastrais";
-            this.rbDados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rbDados.UseVisualStyleBackColor = false;
-            this.rbDados.CheckedChanged += new System.EventHandler(this.rbDados_CheckedChanged);
-            // 
-            // rbOcorrencias
-            // 
-            this.rbOcorrencias.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbOcorrencias.AutoSize = true;
-            this.rbOcorrencias.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbOcorrencias.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rbOcorrencias.FlatAppearance.BorderSize = 0;
-            this.rbOcorrencias.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(232)))), ((int)(((byte)(252)))));
-            this.rbOcorrencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbOcorrencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbOcorrencias.Location = new System.Drawing.Point(125, 0);
-            this.rbOcorrencias.Name = "rbOcorrencias";
-            this.rbOcorrencias.Size = new System.Drawing.Size(90, 42);
-            this.rbOcorrencias.TabIndex = 2;
-            this.rbOcorrencias.TabStop = true;
-            this.rbOcorrencias.Text = "Ocorrências";
-            this.rbOcorrencias.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rbOcorrencias.UseVisualStyleBackColor = false;
-            this.rbOcorrencias.CheckedChanged += new System.EventHandler(this.rbOcorrencias_CheckedChanged);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(650, 114);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
             // ucEdicaoGato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -959,7 +959,10 @@
             this.Size = new System.Drawing.Size(710, 1873);
             this.Load += new System.EventHandler(this.ucEdicaoGato_Load);
             this.pnlAbas.ResumeLayout(false);
+            this.pnlSwitch.ResumeLayout(false);
+            this.pnlSwitch.PerformLayout();
             this.pnlConteudo.ResumeLayout(false);
+            this.pnlOcorrencias.ResumeLayout(false);
             this.pnlDados.ResumeLayout(false);
             this.pnlDados.PerformLayout();
             this.pnlBotoes.ResumeLayout(false);
@@ -986,9 +989,6 @@
             this.pnlPelagem.PerformLayout();
             this.gbSexo.ResumeLayout(false);
             this.gbSexo.PerformLayout();
-            this.pnlOcorrencias.ResumeLayout(false);
-            this.pnlSwitch.ResumeLayout(false);
-            this.pnlSwitch.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

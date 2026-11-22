@@ -70,5 +70,11 @@ namespace miaudota.Telas
         {
             pnlDados.Visible = rbDados.Checked;
         }
-    }
+
+        public void CarregarGato (Gato gato)
+        {
+
+        }
+    } 
+    
 }
