@@ -1,5 +1,0 @@
-//String de conexão com o banco de dados local
-string stringDeConexao = @"server=127.0.0.1;uid=root;pwd=felipe1010;database=miaudota;
-ConnectionTimeout=2";
-//cria uma conexão
-MySqlConnection conexao = new MySqlConnection(stringDeConexao);
