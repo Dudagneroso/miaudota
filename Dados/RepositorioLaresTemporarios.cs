@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -172,6 +173,93 @@ namespace miaudota
                     string.IsNullOrWhiteSpace(lar.Observacoes) ? (object)DBNull.Value : lar.Observacoes);
                 comando.ExecuteNonQuery();
             }
+        }
+
+        public static int ObterVagasDisponiveis()
+        {
+            SincronizarComAviso();
+
+            string sql = @"
+        SELECT cap.descricao AS capacidade, COUNT(g.id_gato) AS ocupados
+        FROM lar_temporario l
+        INNER JOIN capacidade_lar cap ON l.id_capacidade = cap.id_capacidade
+        INNER JOIN disponibilidade_lar d ON l.id_disponibilidade = d.id_disponibilidade
+        LEFT JOIN gato g ON g.id_lar_temporario = l.id_lar_temporario
+            AND g.id_status IN (SELECT id_status FROM status_gato WHERE descricao <> 'Adotado')
+        WHERE d.descricao = 'Disponível'
+        GROUP BY l.id_lar_temporario, cap.descricao;";
+
+            int total = 0;
+
+            using (MySqlConnection conexao = Conexao.Obter())
+            {
+                conexao.Open();
+
+                using (MySqlCommand comando = new MySqlCommand(sql, conexao))
+                using (MySqlDataReader leitor = comando.ExecuteReader())
+                {
+                    while (leitor.Read())
+                    {
+                        Match numero = Regex.Match(Convert.ToString(leitor["capacidade"]), @"\d+");
+                        int capacidade = numero.Success ? int.Parse(numero.Value) : 0;
+                        int ocupados = Convert.ToInt32(leitor["ocupados"]);
+
+                        total += Math.Max(0, capacidade - ocupados);
+                    }
+                }
+            }
+
+            return total;
+        }
+
+        public static List<LarTemporario> ObterTodosCompletos()
+        {
+            SincronizarComAviso();
+
+            List<LarTemporario> lista = new List<LarTemporario>();
+
+            string sql = @"
+                SELECT l.id_lar_temporario, l.nome_completo, l.cpf, l.telefone, l.email,
+                        tm.descricao AS tipo_moradia, cap.descricao AS capacidade,
+                        oa.descricao AS outros_animais, d.descricao AS disponibilidade,
+                        l.inicio_disponivel, l.observacoes_ambiente_rotina
+                FROM lar_temporario l
+                INNER JOIN tipo_moradia tm ON l.id_tipo_moradia = tm.id_tipo_moradia
+                INNER JOIN capacidade_lar cap ON l.id_capacidade = cap.id_capacidade
+                INNER JOIN opcao_outros_animais oa ON l.id_outros_animais = oa.id_opcao
+                INNER JOIN disponibilidade_lar d ON l.id_disponibilidade = d.id_disponibilidade
+                ORDER BY l.nome_completo;";
+
+            using (MySqlConnection conexao = Conexao.Obter())
+            {
+                conexao.Open();
+
+                using (MySqlCommand comando = new MySqlCommand(sql, conexao))
+                using (MySqlDataReader leitor = comando.ExecuteReader())
+                {
+                    while (leitor.Read())
+                    {
+                        lista.Add(new LarTemporario
+                        {
+                            Id = Convert.ToInt32(leitor["id_lar_temporario"]),
+                            NomeCompleto = Convert.ToString(leitor["nome_completo"]),
+                            Cpf = Convert.ToString(leitor["cpf"]),
+                            Telefone = Convert.ToString(leitor["telefone"]),
+                            Email = Convert.ToString(leitor["email"]),
+                            TipoMoradia = Convert.ToString(leitor["tipo_moradia"]),
+                            Capacidade = Convert.ToString(leitor["capacidade"]),
+                            OutrosAnimais = Convert.ToString(leitor["outros_animais"]),
+                            Disponibilidade = Convert.ToString(leitor["disponibilidade"]),
+                            InicioDisponivel = Convert.ToDateTime(leitor["inicio_disponivel"]),
+                            Observacoes = leitor["observacoes_ambiente_rotina"] == DBNull.Value
+                                ? null
+                                : Convert.ToString(leitor["observacoes_ambiente_rotina"])
+                        });
+                    }
+                }
+            }
+
+            return lista;
         }
 
         public static List<LarTemporarioCombo> ObterTodos()

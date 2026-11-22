@@ -67,6 +67,7 @@ namespace miaudota.Telas
         private void AtualizarIndicadoresGatos()
         {
             List<Gato> todosGatos = RepositorioGatos.ObterTodos();
+            List<LarTemporario> todosLares = RepositorioLaresTemporarios.ObterTodosCompletos();
 
             DateTime? inicio = ObterPeriodo();
             DateTime? fim = ObterFimPeriodo();
@@ -86,9 +87,18 @@ namespace miaudota.Telas
                       g.Data_Adocao < fim.Value)))
                 .ToList();
 
+            // Lares cadastrados no período
+            List<LarTemporario> laresTemporarios = todosLares
+                .Where(l => l.Disponibilidade == "Disponível" &&
+                            (inicio == null || l.InicioDisponivel.Date >= inicio.Value.Date) &&
+                            (fim == null || l.InicioDisponivel.Date <= fim.Value.Date))
+                .ToList();
+
             // Atualizar indicadores
             lblNumGatos.Text = gatosEntrada.Count.ToString();
             lblQtdAdocoes.Text = gatosAdotados.Count.ToString();
+            lblQtdLar.Text = laresTemporarios.Count.ToString();
+            lblQtdLarDisponivel.Text = $"{RepositorioLaresTemporarios.ObterVagasDisponiveis().ToString()} vagas disponíveis";
 
             var gatosComDatas = gatosAdotados
                 .Where(g => g.Data_Adocao != null &&
