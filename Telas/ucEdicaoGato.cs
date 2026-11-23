@@ -38,7 +38,14 @@ namespace miaudota.Telas
             cbColoracao.Text = gato.Coloracao;
             txtPeso.Text = gato.Peso.ToString();
 
-            cbLarTemporario.SelectedValue = gato.IdLarTemporario;
+            cbLarTemporario.DataSource = RepositorioLaresTemporarios.ObterComVaga(gato.IdLarTemporario);
+            cbLarTemporario.DisplayMember = "TextoExibicao";
+            cbLarTemporario.ValueMember = "Id";
+
+            if (gato.IdLarTemporario.HasValue)
+                cbLarTemporario.SelectedValue = gato.IdLarTemporario.Value;
+            else
+                cbLarTemporario.SelectedIndex = -1;
 
             rbCastrado.Checked = gato.Castrado == "Sim";
             rbNaoCastrado.Checked = gato.Castrado == "Não";
@@ -222,6 +229,8 @@ namespace miaudota.Telas
             gatoAtual.VacinasEmDia = rbVacinado.Checked ? "Sim" : "Não";
             gatoAtual.Vacinas = clbVacinas.CheckedItems.Cast<string>().ToList();
             gatoAtual.Status = cbStatus.SelectedItem?.ToString();
+            if (gatoAtual.Status == "Adotado")
+                gatoAtual.IdLarTemporario = null;
             gatoAtual.TesteFIV = cbFIV.Text;
             gatoAtual.TesteFelv = cbFELV.Text;
             gatoAtual.Doencas = txtDeficiencia.Text;

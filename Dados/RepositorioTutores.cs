@@ -171,10 +171,11 @@ namespace miaudota
                         {
                             // marca como Adotado somente se ainda estiver Disponível
                             string sqlStatus = @"
-                                UPDATE gato
-                                SET id_status = (SELECT id_status FROM status_gato WHERE descricao = 'Adotado')
-                                WHERE id_gato = @idGato
-                                  AND id_status = (SELECT id_status FROM status_gato WHERE descricao = 'Disponível');";
+                            UPDATE gato
+                            SET id_status = (SELECT id_status FROM status_gato WHERE descricao = 'Adotado'),
+                                id_lar_temporario = NULL
+                            WHERE id_gato = @idGato
+                                AND id_status = (SELECT id_status FROM status_gato WHERE descricao = 'Disponível');";
 
                             using (MySqlCommand comando = new MySqlCommand(sqlStatus, conexao, transacao))
                             {
@@ -224,10 +225,11 @@ namespace miaudota
                     try
                     {
                         string sqlStatus = @"
-                    UPDATE gato
-                    SET id_status = (SELECT id_status FROM status_gato WHERE descricao = 'Adotado')
-                    WHERE id_gato = @idGato
-                      AND id_status = (SELECT id_status FROM status_gato WHERE descricao = 'Disponível');";
+                            UPDATE gato
+                            SET id_status = (SELECT id_status FROM status_gato WHERE descricao = 'Adotado'),
+                                id_lar_temporario = NULL
+                            WHERE id_gato = @idGato
+                                AND id_status = (SELECT id_status FROM status_gato WHERE descricao = 'Disponível');";
 
                         using (MySqlCommand comando = new MySqlCommand(sqlStatus, conexao, transacao))
                         {

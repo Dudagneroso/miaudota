@@ -34,6 +34,11 @@ namespace miaudota
                 throw new ArgumentNullException(nameof(gato));
             }
 
+            if (gato.IdLarTemporario.HasValue && RepositorioLaresTemporarios.VagasRestantes(gato.IdLarTemporario.Value) <= 0)
+            {
+                throw new InvalidOperationException("Este lar temporário não tem mais vagas.");
+            }
+
             bool sincronizar;
 
             lock (bloqueio)
@@ -584,6 +589,11 @@ namespace miaudota
                     "A latitude e a longitude do local de resgate devem ser informadas juntas.");
             }
 
+            if (gato.IdLarTemporario.HasValue && RepositorioLaresTemporarios.VagasRestantes(gato.IdLarTemporario.Value, gato.Id) <= 0)
+            {
+                throw new InvalidOperationException("Este lar temporário não tem mais vagas.");
+            }
+
             using (MySqlConnection conexao = Conexao.Obter())
             {
                 conexao.Open();
@@ -761,6 +771,17 @@ namespace miaudota
         {
             SincronizarComAviso();
             RepositorioOcorrencia.SincronizarComAviso();
+        }
+
+        internal static Dictionary<int, int> PendentesPorLar()
+        {
+            lock (bloqueio)
+            {
+                return cache
+                    .Where(g => g.IdLarTemporario.HasValue)
+                    .GroupBy(g => g.IdLarTemporario.Value)
+                    .ToDictionary(g => g.Key, g => g.Count());
+            }
         }
 
         internal static int ObterId(

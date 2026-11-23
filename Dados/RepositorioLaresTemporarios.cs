@@ -253,6 +253,100 @@ namespace miaudota
             return lista;
         }
 
+        private static int NumeroDaCapacidade(string texto)
+        {
+            Match numero = Regex.Match(texto ?? "", @"\d+");
+            return numero.Success ? int.Parse(numero.Value) : 0;
+        }
+
+        public static int VagasRestantes(int idLar, int idGatoIgnorar = 0)
+        {
+            string sql = @"
+        SELECT cap.descricao AS capacidade, COUNT(g.id_gato) AS ocupados
+        FROM lar_temporario l
+        INNER JOIN capacidade_lar cap ON l.id_capacidade = cap.id_capacidade
+        LEFT JOIN gato g ON g.id_lar_temporario = l.id_lar_temporario
+                        AND g.id_gato <> @ignorar
+        WHERE l.id_lar_temporario = @id
+        GROUP BY cap.descricao;";
+
+            int capacidade, ocupados;
+
+            using (MySqlConnection conexao = Conexao.Obter())
+            {
+                conexao.Open();
+
+                using (MySqlCommand comando = new MySqlCommand(sql, conexao))
+                {
+                    comando.Parameters.AddWithValue("@id", idLar);
+                    comando.Parameters.AddWithValue("@ignorar", idGatoIgnorar);
+
+                    using (MySqlDataReader leitor = comando.ExecuteReader())
+                    {
+                        if (!leitor.Read()) return 0;
+
+                        capacidade = NumeroDaCapacidade(Convert.ToString(leitor["capacidade"]));
+                        ocupados = Convert.ToInt32(leitor["ocupados"]);
+                    }
+                }
+            }
+
+            int pendentes;
+            RepositorioGatos.PendentesPorLar().TryGetValue(idLar, out pendentes);
+
+            return capacidade - ocupados - pendentes;
+        }
+
+        public static List<LarTemporarioCombo> ObterComVaga(int? idLarAtual = null)
+        {
+            SincronizarComAviso();
+
+            string sql = @"
+        SELECT l.id_lar_temporario, l.nome_completo,
+               cap.descricao AS capacidade, COUNT(g.id_gato) AS ocupados
+        FROM lar_temporario l
+        INNER JOIN capacidade_lar cap ON l.id_capacidade = cap.id_capacidade
+        LEFT JOIN gato g ON g.id_lar_temporario = l.id_lar_temporario
+        GROUP BY l.id_lar_temporario, l.nome_completo, cap.descricao
+        ORDER BY l.nome_completo;";
+
+            Dictionary<int, int> pendentes = RepositorioGatos.PendentesPorLar();
+            List<LarTemporarioCombo> lares = new List<LarTemporarioCombo>();
+
+            using (MySqlConnection conexao = Conexao.Obter())
+            {
+                conexao.Open();
+
+                using (MySqlCommand comando = new MySqlCommand(sql, conexao))
+                using (MySqlDataReader leitor = comando.ExecuteReader())
+                {
+                    while (leitor.Read())
+                    {
+                        int id = Convert.ToInt32(leitor["id_lar_temporario"]);
+                        int capacidade = NumeroDaCapacidade(Convert.ToString(leitor["capacidade"]));
+                        int ocupados = Convert.ToInt32(leitor["ocupados"]);
+
+                        int pendente;
+                        pendentes.TryGetValue(id, out pendente);
+
+                        bool temVaga = capacidade - ocupados - pendente > 0;
+
+                        // na edição, o lar atual do gato aparece mesmo que esteja cheio
+                        if (temVaga || (idLarAtual.HasValue && idLarAtual.Value == id))
+                        {
+                            lares.Add(new LarTemporarioCombo
+                            {
+                                Id = id,
+                                Nome = Convert.ToString(leitor["nome_completo"])
+                            });
+                        }
+                    }
+                }
+            }
+
+            return lares;
+        }
+
         public static List<LarTemporarioCombo> ObterTodos()
         {
             // grava os lares pendentes antes, para que apareçam no combo

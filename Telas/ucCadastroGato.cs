@@ -116,7 +116,7 @@ namespace miaudota
             try
             {
                 cbLarTemporario.DataSource = null;
-                cbLarTemporario.DataSource = RepositorioLaresTemporarios.ObterTodos();
+                cbLarTemporario.DataSource = RepositorioLaresTemporarios.ObterComVaga();
                 cbLarTemporario.DisplayMember = "TextoExibicao";
                 cbLarTemporario.ValueMember = "Id";
 
