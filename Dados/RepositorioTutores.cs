@@ -262,6 +262,43 @@ namespace miaudota
             }
         }
 
+        internal static int GravarEndereco(MySqlConnection conexao, MySqlTransaction transacao, string cep, string logradouro, string bairro, string cidade, string estado, string numero)
+        {
+            int idEstado = RepositorioGatos.ObterId(
+                conexao, transacao,
+                "SELECT id_estado FROM estado WHERE sigla = @descricao OR nome = @descricao LIMIT 1",
+                estado.Trim());
+
+            int idCidade = ObterOuCriarCidade(conexao, transacao, cidade.Trim(), idEstado);
+
+            string sqlCep = @"
+                INSERT INTO cep (cep, logradouro, bairro, id_cidade)
+                VALUES (@cep, @logradouro, @bairro, @idCidade)
+                ON DUPLICATE KEY UPDATE
+                    logradouro = @logradouro,
+                    bairro = @bairro,
+                    id_cidade = @idCidade;";
+
+            using (MySqlCommand comando = new MySqlCommand(sqlCep, conexao, transacao))
+            {
+                comando.Parameters.AddWithValue("@cep", cep);
+                comando.Parameters.AddWithValue("@logradouro", logradouro.Trim());
+                comando.Parameters.AddWithValue("@bairro", bairro.Trim());
+                comando.Parameters.AddWithValue("@idCidade", idCidade);
+                comando.ExecuteNonQuery();
+            }
+
+            using (MySqlCommand comando = new MySqlCommand(
+                "INSERT INTO endereco (cep, numero) VALUES (@cep, @numero);",
+                conexao, transacao))
+            {
+                comando.Parameters.AddWithValue("@cep", cep);
+                comando.Parameters.AddWithValue("@numero", numero.Trim());
+                comando.ExecuteNonQuery();
+                return Convert.ToInt32(comando.LastInsertedId);
+            }
+        }
+
         public static void Excluir(Tutor tutor)
         {
             using (MySqlConnection conexao = Conexao.Obter())
@@ -439,6 +476,7 @@ namespace miaudota
         internal static void SincronizarTudo()
         {
             RepositorioLaresTemporarios.SincronizarComAviso();
+            RepositorioGatos.SincronizarComAviso();
             RepositorioOcorrencia.SincronizarComAviso();
         }
 

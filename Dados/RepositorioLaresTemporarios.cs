@@ -129,22 +129,7 @@ namespace miaudota
                 lar.Disponibilidade);
 
             // 1. endereço
-            int idEndereco;
-            string sqlEndereco = @"
-                INSERT INTO endereco (cep, cidade, estado, logradouro, bairro, numero)
-                VALUES (@cep, @cidade, @estado, @logradouro, @bairro, @numero);";
-
-            using (MySqlCommand comando = new MySqlCommand(sqlEndereco, conexao, transacao))
-            {
-                comando.Parameters.AddWithValue("@cep", lar.Cep);
-                comando.Parameters.AddWithValue("@cidade", lar.Cidade);
-                comando.Parameters.AddWithValue("@estado", lar.Estado);
-                comando.Parameters.AddWithValue("@logradouro", lar.Logradouro);
-                comando.Parameters.AddWithValue("@bairro", lar.Bairro);
-                comando.Parameters.AddWithValue("@numero", lar.Numero);
-                comando.ExecuteNonQuery();
-                idEndereco = Convert.ToInt32(comando.LastInsertedId);
-            }
+            int idEndereco = RepositorioTutores.GravarEndereco(conexao, transacao, lar.Cep, lar.Logradouro, lar.Bairro, lar.Cidade, lar.Estado, lar.Numero);
 
             // 2. lar temporário
             string sql = @"
@@ -220,10 +205,16 @@ namespace miaudota
 
             string sql = @"
                 SELECT l.id_lar_temporario, l.nome_completo, l.cpf, l.telefone, l.email,
-                        tm.descricao AS tipo_moradia, cap.descricao AS capacidade,
-                        oa.descricao AS outros_animais, d.descricao AS disponibilidade,
-                        l.inicio_disponivel, l.observacoes_ambiente_rotina
+                       c.cep, c.logradouro, c.bairro, e.numero,
+                       ci.nome AS cidade, es.sigla AS estado,
+                       tm.descricao AS tipo_moradia, cap.descricao AS capacidade,
+                       oa.descricao AS outros_animais, d.descricao AS disponibilidade,
+                       l.inicio_disponivel, l.observacoes_ambiente_rotina
                 FROM lar_temporario l
+                INNER JOIN endereco e ON l.id_endereco = e.id_endereco
+                INNER JOIN cep c ON e.cep = c.cep
+                INNER JOIN cidade ci ON c.id_cidade = ci.id_cidade
+                INNER JOIN estado es ON ci.id_estado = es.id_estado
                 INNER JOIN tipo_moradia tm ON l.id_tipo_moradia = tm.id_tipo_moradia
                 INNER JOIN capacidade_lar cap ON l.id_capacidade = cap.id_capacidade
                 INNER JOIN opcao_outros_animais oa ON l.id_outros_animais = oa.id_opcao

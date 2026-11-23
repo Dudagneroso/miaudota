@@ -36,6 +36,7 @@ namespace miaudota
 
         private void btnCadastroGato_Click(object sender, EventArgs e)
         {
+            RepositorioLaresTemporarios.SincronizarComAviso();
             AbrirTela(new ucCadastroGato());
         }
 

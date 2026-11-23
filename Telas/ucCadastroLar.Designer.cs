@@ -216,9 +216,8 @@ namespace miaudota.Telas
             this.cbDisponibilidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDisponibilidade.FormattingEnabled = true;
             this.cbDisponibilidade.Items.AddRange(new object[] {
-            "Imediata ",
-            "Em até 7 dias ",
-            "Em até 30 dias"});
+            "Disponível",
+            "Indisponível"});
             this.cbDisponibilidade.Location = new System.Drawing.Point(195, 573);
             this.cbDisponibilidade.Name = "cbDisponibilidade";
             this.cbDisponibilidade.Size = new System.Drawing.Size(170, 24);
@@ -287,9 +286,9 @@ namespace miaudota.Telas
             this.cbMoradia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMoradia.FormattingEnabled = true;
             this.cbMoradia.Items.AddRange(new object[] {
-            "Casa com quintal telado",
+            "Casa com quintal",
             "Casa sem quintal ",
-            "Apartamento telado",
+            "Apartamento",
             "Sítio / Chácara"});
             this.cbMoradia.Location = new System.Drawing.Point(19, 509);
             this.cbMoradia.Name = "cbMoradia";

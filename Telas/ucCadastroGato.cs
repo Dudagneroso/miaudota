@@ -112,13 +112,17 @@ namespace miaudota
         }
         private void CarregarLaresTemporarios()
         {
+            object selecionado = cbLarTemporario.SelectedValue;
             try
             {
+                cbLarTemporario.DataSource = null;
                 cbLarTemporario.DataSource = RepositorioLaresTemporarios.ObterTodos();
                 cbLarTemporario.DisplayMember = "TextoExibicao";
                 cbLarTemporario.ValueMember = "Id";
 
-                cbLarTemporario.SelectedIndex = -1;
+                cbLarTemporario.SelectedValue = selecionado ?? -1;
+                if (selecionado == null)
+                    cbLarTemporario.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
