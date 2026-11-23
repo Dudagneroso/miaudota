@@ -71,6 +71,7 @@ namespace miaudota.Telas
             rbNaoLocal.Checked = gato.LocalResgate == "Não";
             latitudeSelecionada = gato.Latitude;
             longitudeSelecionada = gato.Longitude;
+            var _ = MarcarNoMapa();
             CarregarOcorrencias(gato);
         }
 
@@ -86,6 +87,10 @@ namespace miaudota.Telas
             // assinar o evento WebMessageReceived
             wvMapa.CoreWebView2.WebMessageReceived += RegistrarLocal;
             // navegar para a página
+            wvMapa.CoreWebView2.Navigate("https://miaudota.local/mapa.html");
+
+            wvMapa.CoreWebView2.WebMessageReceived += RegistrarLocal;
+            wvMapa.CoreWebView2.NavigationCompleted += MapaCarregado;
             wvMapa.CoreWebView2.Navigate("https://miaudota.local/mapa.html");
 
             rbDados.Checked = true;
@@ -108,6 +113,33 @@ namespace miaudota.Telas
         private void rbSimLocal_CheckedChanged(object sender, EventArgs e)
         {
             pnlLocal.Visible = rbSimLocal.Checked;
+
+            if (rbSimLocal.Checked && mapaPronto)
+                wvMapa.CoreWebView2.ExecuteScriptAsync("mapa.invalidateSize();");
+        }
+
+        private bool mapaPronto = false;
+
+        private async void MapaCarregado(object sender, CoreWebView2NavigationCompletedEventArgs e)
+        {
+            mapaPronto = true;
+            await MarcarNoMapa();
+        }
+
+        private async Task MarcarNoMapa()
+        {
+            if (!mapaPronto) return;
+
+            if (latitudeSelecionada.HasValue && longitudeSelecionada.HasValue)
+            {
+                string lat = latitudeSelecionada.Value.ToString(CultureInfo.InvariantCulture);
+                string lng = longitudeSelecionada.Value.ToString(CultureInfo.InvariantCulture);
+                await wvMapa.CoreWebView2.ExecuteScriptAsync("marcarLocal(" + lat + ", " + lng + ");");
+            }
+            else
+            {
+                await wvMapa.CoreWebView2.ExecuteScriptAsync("limparMarcador();");
+            }
         }
 
         private void rbVacinado_CheckedChanged(object sender, EventArgs e)
@@ -197,8 +229,8 @@ namespace miaudota.Telas
             gatoAtual.DataChegadaOng = dtpDataEntrada.Value;
             gatoAtual.Foto = imagemSelecionada;
             gatoAtual.LocalResgate = rbSimLocal.Checked ? "Sim" : "Não";
-            gatoAtual.Latitude = latitudeSelecionada;
-            gatoAtual.Longitude = longitudeSelecionada;
+            gatoAtual.Latitude = rbSimLocal.Checked ? latitudeSelecionada : null;
+            gatoAtual.Longitude = rbSimLocal.Checked ? longitudeSelecionada : null;
 
             try
             {

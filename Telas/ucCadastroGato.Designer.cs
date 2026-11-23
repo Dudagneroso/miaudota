@@ -633,6 +633,7 @@
             // cbLarTemporario
             // 
             this.cbLarTemporario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbLarTemporario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLarTemporario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLarTemporario.FormattingEnabled = true;
             this.cbLarTemporario.Location = new System.Drawing.Point(10, 411);

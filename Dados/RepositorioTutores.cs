@@ -436,6 +436,12 @@ namespace miaudota
             }
         }
 
+        internal static void SincronizarTudo()
+        {
+            RepositorioLaresTemporarios.SincronizarComAviso();
+            RepositorioOcorrencia.SincronizarComAviso();
+        }
+
         private static int ObterOuCriarCidade(
             MySqlConnection conexao, MySqlTransaction transacao, string nome, int idEstado)
         {

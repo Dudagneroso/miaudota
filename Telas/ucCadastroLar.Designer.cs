@@ -212,6 +212,7 @@ namespace miaudota.Telas
             // 
             // cbDisponibilidade
             // 
+            this.cbDisponibilidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDisponibilidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDisponibilidade.FormattingEnabled = true;
             this.cbDisponibilidade.Items.AddRange(new object[] {
@@ -234,6 +235,7 @@ namespace miaudota.Telas
             // 
             // cbOutrosAnimais
             // 
+            this.cbOutrosAnimais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOutrosAnimais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbOutrosAnimais.FormattingEnabled = true;
             this.cbOutrosAnimais.Items.AddRange(new object[] {
@@ -257,6 +259,7 @@ namespace miaudota.Telas
             // 
             // cbCapacidade
             // 
+            this.cbCapacidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCapacidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCapacidade.FormattingEnabled = true;
             this.cbCapacidade.Items.AddRange(new object[] {
@@ -280,6 +283,7 @@ namespace miaudota.Telas
             // 
             // cbMoradia
             // 
+            this.cbMoradia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMoradia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMoradia.FormattingEnabled = true;
             this.cbMoradia.Items.AddRange(new object[] {

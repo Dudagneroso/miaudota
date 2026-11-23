@@ -94,7 +94,20 @@ namespace miaudota
         public DateTime DataNascimento
         {
             get { return dataNascimento; }
-            set { dataNascimento = value; }
+            set 
+            {
+                if (value.Date > DateTime.Today)
+                {
+                    throw new ArgumentException("A data de nascimento não pode ser futura.");
+                }
+
+                if (value.Date > DateTime.Today.AddYears(-18))
+                {
+                    throw new ArgumentException("O tutor deve ter 18 anos ou mais.");
+                }
+
+                dataNascimento = value; 
+            }
         }
         public string Email
         {

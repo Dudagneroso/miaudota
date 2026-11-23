@@ -269,6 +269,7 @@ namespace miaudota
 
         public static List<Gato> ObterDisponiveis()
         {
+            SincronizarComAviso();
             List<Gato> lista = new List<Gato>();
 
             string sql = @"
@@ -348,6 +349,7 @@ namespace miaudota
 
         public static List<Gato> ObterTodos()
         {
+            SincronizarComAviso();
             List<Gato> lista = new List<Gato>();
             Dictionary<int, Gato> porId = new Dictionary<int, Gato>();
 
@@ -463,6 +465,7 @@ namespace miaudota
 
         public static List<Gato> ObterAdotadosPorTutor(int idTutor)
         {
+            SincronizarComAviso();
             List<Gato> lista = new List<Gato>();
 
             string sql = @"

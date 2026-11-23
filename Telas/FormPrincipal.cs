@@ -46,6 +46,7 @@ namespace miaudota
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
+            RepositorioGatos.SincronizarTudo();
             AbrirTela(new ucConsultaGatos1());
         }
 
@@ -56,6 +57,7 @@ namespace miaudota
 
         private void btnConsultaTutor_Click(object sender, EventArgs e)
         {
+            RepositorioTutores.SincronizarTudo();
             AbrirTela(new ucConsultaTutor());
         }
 
@@ -118,6 +120,7 @@ namespace miaudota
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
+            RepositorioGatos.SincronizarTudo();
             List<string> erros = new List<string>();
 
             try
